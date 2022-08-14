@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="ar">
-    <html dir="rtl">
+<html  dir="rtl" lang="ar">
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +17,16 @@
 <body>
     
 
-<div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </div>
     @yield(content)
+
+
+
+
+    
     <!-- Scrollbar-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.4.6/jquery.perfect-scrollbar-with-mousewheel.js" integrity="sha512-oRXUvZLm24YRAHaeU2kzlC4RUVsxgq+8g2Tzd2+m05W2yepYH12QJjKpy/mvemZJwVzanAjpzEi4EX99D3bCCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- jQuery and JS bundle w/ Popper.js -->
+  
+<!-- jQuery and JS bundle w/ Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK" crossorigin="anonymous"></script>
 </body>
