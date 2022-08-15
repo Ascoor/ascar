@@ -14,8 +14,8 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        $place = place::latest();
-        return view('place.index', compact('place'));
+    $place = place::latest()->paginate(4);
+        return view('place.index');
     }
 
     public function create()
@@ -48,19 +48,19 @@ class PlaceController extends Controller
             'gnump17' => 'required',
         ]);
 
-        $place = place::create($request->all());
+      $place = Place::create($request->all());
         return redirect()
-            ->Route('place.index')
+            ->route('place.index')
             ->with('تمت', 'تمت الإضافة بنجاح');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Place  $place
+     * @param  \App\Place $place
      * @return \Illuminate\Http\Response
      */
-    public function show(place $places)
+    public function show(Place $place)
     {
         return view('place.show');
     }
@@ -68,15 +68,15 @@ class PlaceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Place  $place
+     * @param  \App\Place$place
      * @return \Illuminate\Http\Response
      */
-    public function edit(place $place)
+    public function edit(Place $place)
     {
         return view('place.edit', compact('place'));
     }
 
-    public function update(Request $request, place $place)
+    public function update(Request $request, Place $place)
     {
         $request->validate([
             'gnump' => 'required',
@@ -100,36 +100,10 @@ class PlaceController extends Controller
             'gnump16' => 'required',
             'gnump17' => 'required',
         ]);
-        $place = place::update($request->all(''));
+      $place = place::update($request->all(''));
         return redirect()
             ->route('place.index')
             ->with('تمت', 'تم التحديث بنجاح');
     }
 
-
-
-        
-    /**
-     * show
-     *
-     * @param  mixed $place
-     * @return void
-     */
-    public function show(place $place)
-    {
-         return view('place.show', compact(place));
-    }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Place  $place
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(place $place)
-    {
-        $place->delete();
-        return redirect()
-            ->route('place.index')
-            ->with('تمت', 'تم الحذف  بنجاح');
-    }
 }

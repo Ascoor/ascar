@@ -3,7 +3,73 @@
 
 @section('content')
 
+<div class="head">
+      <h1>محافظة الدقهلية</h1>
+      <h2>وحدة المتغيرات المكانية</h2>
+    </div>
+    <div class="crud">
+<div class="container">
+    <div class="inputs">
+ 
+      <div class="price">
+        <input type="text" id="category11" placeholder="التاريخ">
+        <input type="number" id="met1" placeholder="مسلسل المتغير">
+        <input type="number" id="met2" placeholder="خط العرض">
+        <input type="number" id="met3" placeholder="خط الطول">
+      </div>
+      <input type="text" id="category1" placeholder="المحافظة">
+      <input type="text" id="category2" placeholder="المركز">
+      <input type="text" id="category3" placeholder="القرية">
+      <input type="text" id="category4" placeholder="نوع الأملاك">
+      <input type="text" id="category5" placeholder="جهة الولاية">
+      <input type="text" id="category6" placeholder="القانونية">
+      <input type="text" id="category7" placeholder="الرد">
+      <input type="text" id="category8" placeholder="تفاصيل الرد">
+      <input type="text" id="category9" placeholder="موقف الإزالة">
+      <input type="text" id="category10" placeholder="المرفقات">
+      <button id="submit">إضافة</button>
+    </div>
 
+    <div class="outputs">
+      <div class="searchBlock">
+        <input type="text" id="search" placeholder="بحث">
+
+        <div class="btnSearch">
+          <button id="searchTitle">بحث بالمركز</button>
+          <button id="searchCategory">بحث بالتاريخ</button>
+        </div>
+        
+        <div id="deleteAll"></div>
+
+        <div class="tableContainer">
+          <table>
+            <tr>
+              <th>م</th>
+              <th>التاريخ</th>
+              <th>مسلسل المتغير</th>
+             <th>خط الطول</th>
+             <th>خط العرض</th>
+             <th>المحافظة</th>
+             <th>المركز</th>
+             <th>القرية</th>
+             <th>نوع الأملاك</th>
+             <th>جهةالولاية</th>
+             <th>القانونية</th>
+             <th>الرد</th>
+             <th>تفاصيل الرد</th>
+             <th>موقف الإزالة</th>
+             <th>المرفقات</th>
+            </tr>
+  
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <center><h3> Copyright Ask-ar.com 2022
+  </h3></center>
+  </div>
+</div>
 
 
 
