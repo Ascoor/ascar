@@ -28,13 +28,6 @@ class CreatePlacesTable extends Migration
             $table->string('gnump8');
             $table->string('gnump9');
             $table->string('gnump10');
-            $table->LongText('gnump11');
-            $table->string('gnump12');
-            $table->string('gnump13');
-            $table->string('gnump14');
-            $table->LongText('gnump15');
-            $table->LongText('gnump16');
-            $table->LongText('gnump17');
             $table->timestamps();
         });
     }

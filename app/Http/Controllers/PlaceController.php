@@ -15,19 +15,19 @@ class PlaceController extends Controller
     public function index()
     {
         
-    $place = place::latest()->paginate(4);
-        return view('place.index');
+    $places = place::latest()->paginate(4);
+        return view('place.index',compact('places'));
     }
 
     public function create()
     {
-        return view('place,create');
+        return view('place.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'gnump' => 'required',
+            'gnump'=> 'required',
             'gnumh' => 'required',
             'gnumw' => 'required',
             'gnump1' => 'required',
@@ -39,19 +39,11 @@ class PlaceController extends Controller
             'gnump7' => 'required',
             'gnump8' => 'required',
             'gnump9' => 'required',
-            'gnump10' => 'required',
-            'gnump11' => 'required',
-            'gnump12' => 'required',
-            'gnump13' => 'required',
-            'gnump14' => 'required',
-            'gnump15' => 'required',
-            'gnump16' => 'required',
-            'gnump17' => 'required',
+            'gnump10' => 'required'
         ]);
 
-      $place = Place::create($request->all());
-        return redirect()
-            ->route('place.index')
+      $places = Place::create($request->all());
+        return redirect()->route('places.index')
             ->with('تمت', 'تمت الإضافة بنجاح');
     }
 
@@ -61,7 +53,7 @@ class PlaceController extends Controller
      * @param  \App\Place $place
      * @return \Illuminate\Http\Response
      */
-    public function show(Place $place)
+    public function show(Place $places)
     {
         return view('place.show');
     }
@@ -72,12 +64,12 @@ class PlaceController extends Controller
      * @param  \App\Place$place
      * @return \Illuminate\Http\Response
      */
-    public function edit(Place $place)
+    public function edit(Place $places)
     {
         return view('place.edit', compact('place'));
     }
 
-    public function update(Request $request, Place $place)
+    public function update(Request $request, Place $places)
     {
         $request->validate([
             'gnump' => 'required',
@@ -93,17 +85,11 @@ class PlaceController extends Controller
             'gnump8' => 'required',
             'gnump9' => 'required',
             'gnump10' => 'required',
-            'gnump11' => 'required',
-            'gnump12' => 'required',
-            'gnump13' => 'required',
-            'gnump14' => 'required',
-            'gnump15' => 'required',
-            'gnump16' => 'required',
-            'gnump17' => 'required',
+ 
         ]);
-      $place = place::update($request->all(''));
+      $places = place::update($request->all(''));
         return redirect()
-            ->route('place.index')
+            ->route('places.index')
             ->with('تمت', 'تم التحديث بنجاح');
     }
 

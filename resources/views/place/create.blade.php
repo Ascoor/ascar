@@ -3,33 +3,44 @@
 
 
 @section('content')
-<div class="head">
-    <h1>محافظة الدقهلية</h1>
-    <h2>وحدة المتغيرات المكانية</h2>
-  </div>
-
-  <div class="inputs">
-
-    <div class="price">
-      <input type="text" id="" placeholder="التاريخ">
-      <input type="number" id="" placeholder="مسلسل المتغير">
-      <input type="number" id="" placeholder="خط العرض">
-      <input type="number" id="" placeholder="خط الطول">
+<div class="cotainer">
+</div>
+    <div class="head">
+      <center>
+      <h1>محافظة الدقهلية</h1>
+      <h2>وحدة المتغيرات المكانية</h2>
+    </center>
     </div>
-    <input type="text" id="" placeholder="المحافظة">
-    <input type="text" id="" placeholder="المركز">
-    <input type="text" id="" placeholder="القرية">
-    <input type="text" id="" placeholder="نوع الأملاك">
-    <input type="text" id="" placeholder="جهة الولاية">
-    <input type="text" id="" placeholder="القانونية">
-    <input type="text" id="" placeholder="الرد">
-    <input type="text" id="" placeholder="تفاصيل الرد">
-    <input type="text" id="" placeholder="موقف الإزالة">
-    <input type="text" id="" placeholder="المرفقات">
-    <button id="submit">إضافة</button>
-  </div>
 
+    <div class="container" style="padding-top: 12%">
+ <form action="{{ route('places.store') }}" method="POST">
+  @csrf
+      <div class="form-group">
+        <input class="form-control" type="number" name="gnump" placeholder="مسلسل المتغير">
+        <input class="form-control" type="number" name="gnumh" placeholder="خط العرض">
+        <input class="form-control" type="number" name="gnumw" placeholder="خط الطول">
+      </div>
  
+      <div class="form-group">
+      <input class="form-control" type="text" name="gnump1" placeholder="المحافظة">
+      <input class="form-control" type="text" name="gnump2" placeholder="المركز">
+      <input class="form-control" type="text" name="gnump3" placeholder="القرية">
+      <input class="form-control" type="text" name="gnump4" placeholder="نوع الأملاك">
+      <input class="form-control" type="text" name="gnump5" placeholder="جهة الولاية">
+      <input class="form-control" type="text" name="gnump6" placeholder="القانونية">
+      <input class="form-control" type="text" name="gnump7" placeholder="الرد">
+      <input class="form-control" type="text" name="gnump8" placeholder="تفاصيل الرد">
+      <input class="form-control" type="text" name="gnump9" placeholder="موقف الإزالة">
+      <input class="form-control" type="text" name="gnump10" placeholder="المرفقات">
+
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btm btn-danger">إضافة</button>
+</div>
+    </div>
+  </form>
+
+</div>
 <center><h3> Copyright Ask-ar.com 2022
 </h3></center>
 </div>
