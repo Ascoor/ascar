@@ -2,8 +2,14 @@
 
 
 @section('content')
-    <div class="crud">
+
+</div>
         <div class="container">
+            @if ($message = Session::get('تمت'))
+            <div class="alert alert-danger" role="alert">
+                {{$message}}
+               </div>
+            @endif
             <div class="head">
                 <center>
                     <h1>محافظة الدقهلية</h1>
@@ -38,6 +44,7 @@
                           <tr>
                           @php
                               $i = 0;
+                            
                           @endphp
                                 
            <th > {{ $item->id }}</th>
@@ -54,26 +61,28 @@
             <td>{{ $item->gnump8 }}</td>
             <td>{{ $item->gnump9 }}</td>
             <td>{{ $item->gnump10 }}</td>
-
-            <td>
-              <span>
-              <a class="btn btn-danger" href="{{ route('places.edit', $item->id) }}">
-                                    تعديل
-                                    </a></span></td>
-                                   <td> <span>
-                                    <a class="btn btn-danger" href="{{ route('places.show', $item->id) }}">
-                                        عرض
-                                    </a></span></td>
 <td>
-                                    <span>
-                                    <form action="{{ route('places.destroy',$item->id) }}" >
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                    </span>
-            </td>
-                          </tr>
+    <span>
+        <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
+    </span>
+</td>
+<td>     
+    <span>
+        <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+    </span>     
+</td> 
+<td>
+<span>
+<form action="{{ route('places.destroy',$item->id) }}"    >
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">حذف</button>
+</form>
+</span>
+</td>  
+        
+        
+        </tr>
           </tbody>
                         @endforeach
 

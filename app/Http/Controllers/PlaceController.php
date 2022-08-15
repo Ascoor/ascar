@@ -15,7 +15,7 @@ class PlaceController extends Controller
     public function index()
     {
         
-    $places = place::latest()->paginate(4);
+    $places = Place::latest()->paginate(4);
         return view('place.index',compact('places'));
     }
 
@@ -43,7 +43,7 @@ class PlaceController extends Controller
         ]);
 
       $places = Place::create($request->all());
-        return redirect()->route('places.index')
+        return redirect()->route('place.index')
             ->with('تمت', 'تمت الإضافة بنجاح');
     }
 
@@ -53,9 +53,9 @@ class PlaceController extends Controller
      * @param  \App\Place $place
      * @return \Illuminate\Http\Response
      */
-    public function show(Place $places)
+    public function show(Place $place)
     {
-        return view('place.show');
+        return view('place.show', compact('place'));
     }
 
     /**
@@ -64,12 +64,12 @@ class PlaceController extends Controller
      * @param  \App\Place$place
      * @return \Illuminate\Http\Response
      */
-    public function edit(Place $places)
+    public function edit(Place $place)
     {
         return view('place.edit', compact('place'));
     }
 
-    public function update(Request $request, Place $places)
+    public function update(Request $request, Place $place)
     {
         $request->validate([
             'gnump' => 'required',
@@ -87,10 +87,16 @@ class PlaceController extends Controller
             'gnump10' => 'required',
  
         ]);
-      $places = place::update($request->all(''));
-        return redirect()
-            ->route('places.index')
+      $place = Place::update($request->all());
+        return redirect()->route('place.index')
             ->with('تمت', 'تم التحديث بنجاح');
     }
 
+
+public function destroy(Place $place)
+    {
+        $places->delete();
+        return redirect()->route('place.index')
+            ->with('تمت', 'تم الحذف بنجاح');
+    }
 }
