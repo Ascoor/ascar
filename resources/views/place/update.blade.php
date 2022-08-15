@@ -1,4 +1,4 @@
-@extends('Place.layout')
+@extends('layouts.layout')
 
 
 

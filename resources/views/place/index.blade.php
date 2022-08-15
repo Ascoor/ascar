@@ -1,4 +1,4 @@
-@extends('place.layout')
+@extends('layouts.layout')
 
 
 @section('content')
@@ -9,26 +9,6 @@
     </div>
     <div class="crud">
 <div class="container">
-    <div class="inputs">
- 
-      <div class="price">
-        <input type="text" id="category11" placeholder="التاريخ">
-        <input type="number" id="met1" placeholder="مسلسل المتغير">
-        <input type="number" id="met2" placeholder="خط العرض">
-        <input type="number" id="met3" placeholder="خط الطول">
-      </div>
-      <input type="text" id="category1" placeholder="المحافظة">
-      <input type="text" id="category2" placeholder="المركز">
-      <input type="text" id="category3" placeholder="القرية">
-      <input type="text" id="category4" placeholder="نوع الأملاك">
-      <input type="text" id="category5" placeholder="جهة الولاية">
-      <input type="text" id="category6" placeholder="القانونية">
-      <input type="text" id="category7" placeholder="الرد">
-      <input type="text" id="category8" placeholder="تفاصيل الرد">
-      <input type="text" id="category9" placeholder="موقف الإزالة">
-      <input type="text" id="category10" placeholder="المرفقات">
-      <button id="submit">إضافة</button>
-    </div>
 
     <div class="outputs">
       <div class="searchBlock">
@@ -41,28 +21,56 @@
         
         <div id="deleteAll"></div>
 
-        <div class="tableContainer">
+
           <table>
-            <tr>
-              <th>م</th>
-              <th>التاريخ</th>
-              <th>مسلسل المتغير</th>
-             <th>خط الطول</th>
-             <th>خط العرض</th>
-             <th>المحافظة</th>
-             <th>المركز</th>
-             <th>القرية</th>
-             <th>نوع الأملاك</th>
-             <th>جهةالولاية</th>
-             <th>القانونية</th>
-             <th>الرد</th>
-             <th>تفاصيل الرد</th>
-             <th>موقف الإزالة</th>
-             <th>المرفقات</th>
-            </tr>
-  
-            <tbody id="tbody"></tbody>
+<th class="table-warning">م</th>
+<th class="table-warning">مسلسل المتغير</th>
+<th class="table-warning">خط الطول</th>
+<th class="table-warning">خط العرض</th>
+<th class="table-warning">المحافظة</th>
+<th class="table-warning">المركز</th>
+<th class="table-warning">القرية</th>
+<th class="table-warning">نوع الأملاك</th>
+<th class="table-warning">القانونية</th>
+<th class="table-warning">الرد</th>
+<th class="table-warning">تفاصيل الرد</th>
+<th class="table-warning">موقف الإزالة</th>
+<th class="table-warning">المرفقات</th>
+<th class="table-warning">تعديل</th>
+<th class="table-warning">عرض</th>
+<th class="table-warning">حذف</th>
+</th>
+<tbody>
+  @foreach ($places as $item )
+   
+  <tr>
+      <td class="table-success" scope="row">{{++$i}}</td>
+      <td class="table-success" >{{ $item->gnump }}</td>
+      <td class="table-success" >{{ $item->gnumh }}</td>
+      <td class="table-success" >{{ $item->gnumw }}</td>
+      <td class="table-success" >{{ $item->gnum1 }}</td>
+      <td class="table-success" >{{ $item->gnum2 }}</td>
+      <td class="table-success" >{{ $item->gnum3 }}</td>
+      <td class="table-success" >{{ $item->gnum4 }}</td>
+      <td class="table-success" >{{ $item->gnum5 }}</td>
+      <td class="table-success" >{{ $item->gnum6 }}</td>
+      <td class="table-success" >{{ $item->gnum7 }}</td>
+      <td class="table-success" >{{ $item->gnum8 }}</td>
+      <td class="table-success" >{{ $item->gnum9 }}</td>  
+        <td class="table-success" >
+        <a href="{{route('places.edit')}}">تعديل</a>
+        <a href="{{route('places.show')}}">عرض</a>
+        <form action="{{route('places.destroy',$item->id)}}">
+        @csrf
+        @method('DELETE')  
+        <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        </td>
+  </tr>
+@endforeach
+        </tbody>
           </table>
+         {!! $place->links() !!}
         </div>
       </div>
     </div>
