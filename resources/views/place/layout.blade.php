@@ -17,7 +17,7 @@
 <body>
     
 
-    @yield(content)
+    @yield('content')
 
 
 

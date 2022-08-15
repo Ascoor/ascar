@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Inputr;
+use App\Place;
 use Illuminate\Http\Request;
 
-class InputrController extends Controller
+class PlaceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,13 @@ class InputrController extends Controller
      */
     public function index()
     {
-        $inputr = Inputr::latest();
-        return view('inputr.index', compact('Inputr'));
+        $place = place::latest();
+        return view('place.index', compact('place'));
     }
 
     public function create()
     {
-        return view('inputr,create');
+        return view('place,create');
     }
 
     public function store(Request $request)
@@ -48,35 +48,35 @@ class InputrController extends Controller
             'gnump17' => 'required',
         ]);
 
-        $inputr = Inputr::create($request->all());
+        $place = place::create($request->all());
         return redirect()
-            ->Route('inputr.index')
+            ->Route('place.index')
             ->with('تمت', 'تمت الإضافة بنجاح');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Inputr  $inputr
+     * @param  \App\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function show(Inputr $inputrs)
+    public function show(place $places)
     {
-        return view('inputr.show');
+        return view('place.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Inputr  $inputr
+     * @param  \App\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inputr $inputr)
+    public function edit(place $place)
     {
-        return view('inputr.edit', compact('Inputr'));
+        return view('place.edit', compact('place'));
     }
 
-    public function update(Request $request, Inputr $inputr)
+    public function update(Request $request, place $place)
     {
         $request->validate([
             'gnump' => 'required',
@@ -85,7 +85,7 @@ class InputrController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'gunmp4' => 'required',
+            'gnump4' => 'required',
             'gnump5' => 'required',
             'gnump6' => 'required',
             'gnump7' => 'required',
@@ -100,33 +100,36 @@ class InputrController extends Controller
             'gnump16' => 'required',
             'gnump17' => 'required',
         ]);
-        $inputr = Inputr::update($request->all(''));
+        $place = place::update($request->all(''));
         return redirect()
-            ->route('inputr.index')
+            ->route('place.index')
             ->with('تمت', 'تم التحديث بنجاح');
     }
 
+
+
+        
     /**
-     * Display the specified resource.
+     * show
      *
-     * @param  \App\Inputr  $inputr
-     * @return \Illuminate\Http\Response
+     * @param  mixed $place
+     * @return void
      */
-    public function show(Inputr $inputr)
+    public function show(place $place)
     {
-        return view('inputr.show', compact('Inputr'));
+         return view('place.show', compact(place));
     }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Inputr  $inputr
+     * @param  \App\Place  $place
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inputr $inputr)
+    public function destroy(place $place)
     {
-        $Inputr->delete();
+        $place->delete();
         return redirect()
-            ->route('inputr.index')
+            ->route('place.index')
             ->with('تمت', 'تم الحذف  بنجاح');
     }
 }

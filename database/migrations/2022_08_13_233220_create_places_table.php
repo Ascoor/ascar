@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInputrsTable extends Migration
+class CreatePlacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateInputrsTable extends Migration
      */
     public function up()
     {
-        Schema::create('inputrs', function (Blueprint $table) {
+        Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->string('gnump');
             $table->string('gnumh');
@@ -46,6 +46,6 @@ class CreateInputrsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inputrs');
+        Schema::dropIfExists('places');
     }
 };
