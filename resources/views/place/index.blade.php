@@ -73,7 +73,7 @@
 </td> 
 <td>
 <span>
-<form action="{{ route('places.destroy',$item->id) }}"    >
+<form action="{{ route('places.destroy',$item->id) }}"   method="POST >
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger">حذف</button>
