@@ -87,8 +87,8 @@ class PlaceController extends Controller
             'gnump10' => 'required',
  
         ]);
-      $place = Place::update($request->all());
-        return redirect()->route('place.index')
+      $places = Place::update($request->all());
+        return redirect()->route('places.index')
             ->with('تمت', 'تم التحديث بنجاح');
     }
 
@@ -96,7 +96,7 @@ class PlaceController extends Controller
 public function destroy(Place $place)
     {
         $places->delete();
-        return redirect()->route('place.index')
+        return redirect()->route('places.index')
             ->with('تمت', 'تم الحذف بنجاح');
     }
 }
