@@ -87,7 +87,7 @@ class PlaceController extends Controller
             'gnump10' => 'required',
  
         ]);
-      $place = Place::update($request->all());
+      $place->update($request->all());
         return redirect()->route('places.index')
             ->with('تمت', 'تم التحديث بنجاح');
     }
