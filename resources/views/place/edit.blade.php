@@ -3,8 +3,7 @@
 
 
 @section('content')
-@extends('layouts.layout')
-
+ 
 
 
 @section('content')
@@ -50,6 +49,4 @@
 <center><h3> Copyright Ask-ar.com 2022
 </h3></center>
 </div>
-
-@endsection
 @endsection
