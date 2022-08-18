@@ -21,3 +21,7 @@ Route::get('place/soft/selete/{id}','PlaceController@softDelete')
 ->name('soft.delete');
 Route::get('place/trash','PlaceController@trashedPlaces')
 ->name('place.trash');
+Route::get('place/back/from/trash/{id}','PlaceController@backFromSoftDelete')
+->name('place.back.from.trash');
+Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
+->name('place.delete.from.database');

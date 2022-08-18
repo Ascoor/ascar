@@ -16,7 +16,7 @@
                 <center>
                     <h1>محافظة الدقهلية</h1>
                     <h2>وحدة المتغيرات المكانية</h2>
-                    <h3>المحذوف مؤقتاً</h3>
+                 
                     <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
                     <a class="btn btn-primary btn-lg" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
                     <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
@@ -43,7 +43,7 @@
                     <th class="table-warning">تعديل</th>
                     <th class="table-warning">عرض</th>
                     <th class="table-warning">حذف</th>
-                    <th class="table-warning"> حذف مؤقت</th>
+   
               </tr>
                    
                         @foreach ($places as $item)
@@ -79,19 +79,10 @@
         <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
     </span>     
 </td> 
-<td>
 
-    <div id="col-sm">
-
-        <form action="{{ route('places.destroy',$item->id) }}"   method="POST" >
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger"> نهائي حذف</button>
-        </form>
-    </div>
     <td>
         <span>
-            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حذف مؤقت</a>
+            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حذف </a>
         </span>
     </td>
 </td>  

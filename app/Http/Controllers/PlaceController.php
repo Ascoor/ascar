@@ -103,7 +103,7 @@ public function destroy(Place $place)
     {
         $place->delete();
         return redirect()->route('places.index')
-            ->with('تمت', 'تم الحذف بنجاح');
+            ->with('تمت', 'تم الحذف نهائيا بنجاح');
     }
 
 public function softDelete( $id)
@@ -113,4 +113,18 @@ public function softDelete( $id)
         return redirect()->route('places.index')
             ->with('تمت', 'تم الحذف بنجاح');
     }
+public function deleteForEver( $id)
+    {
+         $place = Place::onlyTrashed()->where('id',$id)->forceDelete();
+
+        return redirect()->route('place.trash')
+            ->with('تمت', 'تم الحذف نهائيا  بنجاح');
+    }
+    public function backFromSoftDelete( $id)
+        {
+  $place = Place::onlyTrashed()->where('id',$id)->first()->restore();
+    
+            return redirect()->route('places.index')
+            ->with('تمت', 'تم الاسترجاع  بنجاح');
+        }
 }

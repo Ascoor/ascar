@@ -1,16 +1,17 @@
 @extends('layouts.layout')
 @section('content')
 <div class="head">
-    <center>
-        <h1>محافظة الدقهلية</h1>
+    <div class="container">
+        
+        <center>
+            <h1>محافظة الدقهلية</h1>
         <h2>وحدة المتغيرات المكانية</h2>
         <h3>المحذوف مؤقتاً</h3>
         <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="Home">الصفحة الرئيسية</a>
 
     </center>
-</div>
-            <div class="tableContainer">
-
+    <div class="tableContainer">
+        
                 <table>
               <tr>
                   <th class="table-warning">م</th>
@@ -27,8 +28,8 @@
                     <th class="table-warning">تفاصيل الرد</th>
                     <th class="table-warning">موقف الإزالة</th>
                     <th class="table-warning">المرفقات</th>
-                    <th class="table-warning">تعديل</th>
-                    <th class="table-warning">عرض</th>
+                    <th class="table-warning">استرجاع</th>
+               
                     <th class="table-warning">حذف</th>
               </tr>
                    
@@ -54,36 +55,22 @@
             <td>{{ $item->gnump8 }}</td>
             <td>{{ $item->gnump9 }}</td>
             <td>{{ $item->gnump10 }}</td>
-<td>
+   <td>
     <span>
-        <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-    </span>
-</td>
-<td>     
-    <span>
-        <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+        <a class="btn btn-success" href="{{ route('place.back.from.trash', $item->id) }}">إسترجاع</a>
     </span>     
 </td> 
-<td>
+<td>     
+    <span>
+        <a class="btn btn-danger" href="{{ route('place.delete.from.database', $item->id) }}">حذف نهائ</a>
+    </span>     
+</td> 
 
-    <div id="col-sm">
 
-        <form action="{{ route('places.destroy',$item->id) }}"   method="POST" >
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">حذف نهائي</button>
-        </form>
-    </div>
-    <td>
-        <span>
-            <a class="btn btn-warring" href="{{ route('soft.delete', $item->id) }}"> تعديل</a>
-        </span>
-    </td>
-</td>  
+</div>
         
-        
-        </tr>
-          </tbody>
+</tr>
+</tbody>
                         @endforeach
 
                 </table>
@@ -96,6 +83,7 @@
         </h3>
     </center>
     </div>
-
-    </div>
+    
+</div>
+</div>
 @endsection
