@@ -15,10 +15,16 @@ class PlaceController extends Controller
     public function index()
     {
         
-    $places = Place::latest()->paginate(4);
+        $places = Place::latest()->paginate(4);
         return view('place.index',compact('places'));
     }
-
+    public function trashedPlaces()
+        {
+            
+        $places = Place::onlyTrashed()->paginate(4);
+            return view('place.trash',compact('places'));
+        }
+    
     public function create()
     {
         return view('place.create');
@@ -43,7 +49,7 @@ class PlaceController extends Controller
         ]);
 
       $places = Place::create($request->all());
-        return redirect()->route('place.index')
+        return redirect()->route('places.index')
             ->with('تمت', 'تمت الإضافة بنجاح');
     }
 
@@ -95,7 +101,15 @@ class PlaceController extends Controller
 
 public function destroy(Place $place)
     {
-        $places->delete();
+        $place->delete();
+        return redirect()->route('places.index')
+            ->with('تمت', 'تم الحذف بنجاح');
+    }
+
+public function softDelete( $id)
+    {
+         $place = Place::find($id)->delete();
+
         return redirect()->route('places.index')
             ->with('تمت', 'تم الحذف بنجاح');
     }
