@@ -83,7 +83,7 @@ body {
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}" >الصفحة الرئيسية </a>
+                        <a href="{{ url('/places') }}" >الصفحة الرئيسية </a>
                     @else
                         <a href="{{ route('login') }}">تسجيل الدخول</a>
 
