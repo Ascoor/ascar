@@ -3,13 +3,19 @@
 /public/storage
 /storage/*.key
 <<<<<<< HEAD
+<<<<<<< HEAD
 /vendor
 =======
+=======
+>>>>>>> a30cdd53d0caff41ab781d1bf19d77e20b956291
 
 .env
 
 
+<<<<<<< HEAD
 >>>>>>> ae67e37 (vemdor)
+=======
+>>>>>>> a30cdd53d0caff41ab781d1bf19d77e20b956291
 
 .env.backup
 .phpunit.result.cache
