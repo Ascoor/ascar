@@ -25,3 +25,7 @@ Route::get('place/back/from/trash/{id}','PlaceController@backFromSoftDelete')
 ->name('place.back.from.trash');
 Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 ->name('place.delete.from.database');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
