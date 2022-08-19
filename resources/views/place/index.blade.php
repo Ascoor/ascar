@@ -16,7 +16,7 @@
                 <center>
                     <h1>محافظة الدقهلية</h1>
                     <h2>وحدة المتغيرات المكانية</h2>
-                 
+                    <button  href="{{route('places.index')}}" role="button">الصفحة الرئيسية</button>
                     <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
                     <a class="btn btn-primary btn-lg" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
                     <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>

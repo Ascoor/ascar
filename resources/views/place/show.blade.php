@@ -20,8 +20,19 @@
         
       </p>
     </div>
-   <tr>
   
+    <div class="row">
+      <div class="col">
+      <span>{{ $place->gnumh }}<a>مسلسل المتغير  </a></span>
+      </div>
+      <div class="col">
+        <span>2 of 3</span>
+      </div>
+      <div class="col">
+        <span>3 of 3</span>
+      </div>
+    </div>
+  </div>
       <th>مسلسل المتغير:</th>
       <td >{{ $place->gnump}}</td>
    
@@ -58,8 +69,7 @@
     </div>
     {!! $place->detail !!}
 
-    
-</tr>
+
 
 </div>
 </div>
