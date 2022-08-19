@@ -2,8 +2,27 @@
 /public/hot
 /public/storage
 /storage/*.key
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
 /vendor
+=======
+=======
+>>>>>>> a30cdd53d0caff41ab781d1bf19d77e20b956291
+>>>>>>> 05be2770730f58ecf97146c95a3057601369f65e
+
 .env
+
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ae67e37 (vemdor)
+=======
+>>>>>>> a30cdd53d0caff41ab781d1bf19d77e20b956291
+>>>>>>> 05be2770730f58ecf97146c95a3057601369f65e
+
 .env.backup
 .phpunit.result.cache
 Homestead.json

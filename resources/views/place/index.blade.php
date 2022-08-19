@@ -8,24 +8,30 @@
             @if ($message = Session::get('تمت'))
             <div class="alert alert-danger" role="alert">
                 {{$message}}
-               </div>
-            @endif
-            <div class="cotainer">
             </div>
-            <div class="head">
+            @endif
+                  <div class="container">
                 <center>
                     <h1>محافظة الدقهلية</h1>
                     <h2>وحدة المتغيرات المكانية</h2>
-                 
+<<<<<<< HEAD
+           
+=======
+<<<<<<< HEAD
+
+                    </form>
+=======
+                    <button  href="{{route('places.index')}}" role="button">الصفحة الرئيسية</button>
+>>>>>>> a30cdd53d0caff41ab781d1bf19d77e20b956291
+>>>>>>> 05be2770730f58ecf97146c95a3057601369f65e
                     <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
                     <a class="btn btn-primary btn-lg" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
-                    <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
-                </center>
-            </div>
+                <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
+            </center>
             <div class="tableContainer">
-
-                <table>
-              <tr>
+                
+            <table>
+                <tr>
                   <th class="table-warning">م</th>
                     <th class="table-warning">مسلسل المتغير</th>
                     <th class="table-warning">خط العرض</th>
@@ -43,20 +49,20 @@
                     <th class="table-warning">تعديل</th>
                     <th class="table-warning">عرض</th>
                     <th class="table-warning">حذف</th>
-   
-              </tr>
-                   
+                    
+                </tr>
+                
                         @foreach ($places as $item)
-                        <tbody>
-                          <tr>
-                          @php
-                              $i = 0;
-                            
-                          @endphp
-                                
-           <th > {{ $item->id }}</th>
-            <td>{{ $item->gnump }}</td>
-            <td>{{ $item->gnumw }}</td>
+                <tbody>
+                    <tr>
+                        @php
+                        $i = 0;
+                        
+                        @endphp
+                        
+                        <th > {{ $item->id }}</th>
+                        <td>{{ $item->gnump }}</td>
+                        <td>{{ $item->gnumh }}</td>
             <td>{{ $item->gnumw }}</td>
             <td>{{ $item->gnump1 }}</td>
             <td>{{ $item->gnump2 }}</td>
@@ -69,8 +75,8 @@
             <td>{{ $item->gnump9 }}</td>
             <td>{{ $item->gnump10 }}</td>
             
-<td>
-    <span>
+            <td>
+                <span>
         <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
     </span>
 </td>
@@ -78,8 +84,10 @@
     <span>
         <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
     </span>     
+</div>
 </td> 
 
+</div>
     <td>
         <span>
             <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حذف </a>
