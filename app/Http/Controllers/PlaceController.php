@@ -127,4 +127,5 @@ public function deleteForEver( $id)
             return redirect()->route('places.index')
             ->with('تمت', 'تم الاسترجاع  بنجاح');
         }
+    {
 }
