@@ -7,14 +7,27 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
+            
+body {
+  overflow: visible !important;
+  background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+ }
+
             html, body {
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                color: #e8f533;
+
+                font-family: 'Noto Naskh Arabic';font-size: 22px;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -46,12 +59,13 @@
 
             .title {
                 font-size: 84px;
+                box-shadow: rgb(121, 245, 134);
             }
 
             .links > a {
-                color: #636b6f;
+                color: #f2f2f2;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 22px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -60,6 +74,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                box-shadow: rgb(121, 245, 134);
             }
         </style>
     </head>
@@ -68,12 +83,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}" >الصفحة الرئيسية </a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">تسجيل الدخول</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">تسجيل مستخدم جديد</a>
                         @endif
                     @endauth
                 </div>
@@ -81,18 +96,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    A s k a r
+           محافظة الدقهلية
                 </div>
 
+
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+      
+                    <a href="">نظام إدارة المتغيرات المكانية</a>
                 </div>
             </div>
         </div>
