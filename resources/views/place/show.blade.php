@@ -1,9 +1,12 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 
 
 @section('content')
-
+<div class="page-header1">
+  <h2>متغير رقم</h2>      
+  <h3>{{ $place->gnump}}</h3>      
+</div>
 
 
 
@@ -14,23 +17,23 @@
       
       
           
-      <th class="table-warning">مسلسل المتغير:</th>
-      <th class="table-warning">خط العرض:</th>
-      <th class="table-warning">خط الطول:</th>
-      <th class="table-warning">المحافظة:</th>
-      <th class="table-warning">المركز:</th>
-      <th class="table-warning">القرية:</th>
-      <th class="table-warning">نوع الأملاك:</th>
-      <th class="table-warning">جهة الولاية:</th>
-      <th class="table-warning">القانونية:</th>
-      <th class="table-warning">الرد:</th>
-      <th class="table-warning">تفاصيل الرد:</th>
-      <th class="table-warning">موقف الإزالة:</th>
-      <th class="table-warning">المرفقات:</th>
+      <th class="table-warning">مسلسل المتغير</th>
+      <th class="table-warning">خط العرض</th>
+      <th class="table-warning">خط الطول</th>
+      <th class="table-warning">المحافظة</th>
+      <th class="table-warning">المركز</th>
+      <th class="table-warning">القرية</th>
+      <th class="table-warning">نوع الأملاك</th>
+      <th class="table-warning">جهة الولاية</th>
+      <th class="table-warning">القانونية</th>
+      <th class="table-warning">الرد</th>
+      <th class="table-warning">تفاصيل الرد</th>
+      <th class="table-warning">موقف الإزالة</th>
+      <th class="table-warning">المرفقات</th>
         </tr>
         <tbody>
           <tr>
-            <th class="table-light">{{ $place->gnump}}</th>
+            
             <th class="table-light">{{ $place->gnump}}</td>
       <td class="table-light">{{ $place->gnumh }}</td> 
       <td class="table-light">{{ $place->gnumw }}</td>

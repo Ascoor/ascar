@@ -28,4 +28,4 @@ Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('HOME');
+Route::get('/home', 'HomeController@index')->name('home');

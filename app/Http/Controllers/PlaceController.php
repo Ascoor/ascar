@@ -15,13 +15,13 @@ class PlaceController extends Controller
     public function index()
     {
         
-        $places = Place::latest()->paginate(4);
+        $places = Place::latest()->paginate(20);
         return view('place.index',compact('places'));
     }
     public function trashedPlaces()
         {
             
-        $places = Place::onlyTrashed()->paginate(4);
+        $places = Place::onlyTrashed()->paginate(10);
             return view('place.trash',compact('places'));
         }
     

@@ -2,9 +2,12 @@
   
   body {
     
-    background: linear-gradient(45deg, #cbd8f0, #aec9fc 50%);
+    background: linear-gradient(#c2d6fd,  #cbd8f0 50%,#c2d6fd);
   
 
-    font-family: system-ui;
+    font-family: 'Noto Naskh Arabic', serif;
   }
-  
+#page-header,h3,h2{
+  text-align: center;
+
+}

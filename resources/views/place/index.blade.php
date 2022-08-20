@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 
 @section('content')
@@ -20,7 +20,7 @@
                     
                     <table>
               <tr>
-                  <th class="table-warning">م</th>
+               
                     <th class="table-warning">مسلسل المتغير</th>
                     <th class="table-warning">خط العرض</th>
                     <th class="table-warning">خط الطول</th>
@@ -48,8 +48,8 @@
                             
                           @endphp
                                 
-                                <th class="table-light" > {{ $item->id }}</th>
-                                <td class="table-light">{{ $item->gnump }}</td>
+                               
+                                <th class="table-light">{{ $item->gnump }}</th>
                                 <td class="table-light">{{ $item->gnumw }}</td>
                                 <td class="table-light">{{ $item->gnumw }}</td>
                                 <td class="table-light" >{{ $item->gnump1 }}</td>
