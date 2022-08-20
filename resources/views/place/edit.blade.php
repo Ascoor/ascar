@@ -6,19 +6,6 @@
  
 
 
-@section('content')
-<div class="cotainer">
-</div>
-<div class="head">
-  <center>
-      <h1>محافظة الدقهلية</h1>
-      <h2>وحدة المتغيرات المكانية</h2>
-      <h3>المحذوف مؤقتاً</h3>
-      <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
-      <a class="btn btn-primary btn-lg" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
-      <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
-  </center>
-</div>
 
   
   <div class="card">
@@ -74,8 +61,5 @@
     </div>
   </form>
 
-</div>
-<center><h3> Copyright Ask-ar.com 2022
-</h3></center>
-</div>
+
 @endsection

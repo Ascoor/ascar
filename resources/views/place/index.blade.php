@@ -3,28 +3,22 @@
 
 @section('content')
 
-</div>
-        <div class="container">
+
             @if ($message = Session::get('تمت'))
             <div class="alert alert-danger" role="alert">
                 {{$message}}
                </div>
             @endif
-            <div class="cotainer">
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
             </div>
-            <div class="head">
-                <center>
-                    <h1>محافظة الدقهلية</h1>
-                    <h2>وحدة المتغيرات المكانية</h2>
-                 
-                    <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
-                    <a class="btn btn-primary btn-lg" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
-                    <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
-                </center>
-            </div>
-            <div class="tableContainer">
+        @endif
 
-                <table>
+                
+                <div class="tableContainer">
+                    
+                    <table>
               <tr>
                   <th class="table-warning">م</th>
                     <th class="table-warning">مسلسل المتغير</th>
@@ -54,20 +48,20 @@
                             
                           @endphp
                                 
-           <th > {{ $item->id }}</th>
-            <td>{{ $item->gnump }}</td>
-            <td>{{ $item->gnumw }}</td>
-            <td>{{ $item->gnumw }}</td>
-            <td>{{ $item->gnump1 }}</td>
-            <td>{{ $item->gnump2 }}</td>
-            <td>{{ $item->gnump3 }}</td>
-            <td>{{ $item->gnump4 }}</td>
-            <td>{{ $item->gnump5 }}</td>
-            <td>{{ $item->gnump6 }}</td>
-            <td>{{ $item->gnump7 }}</td>
-            <td>{{ $item->gnump8 }}</td>
-            <td>{{ $item->gnump9 }}</td>
-            <td>{{ $item->gnump10 }}</td>
+                                <th class="table-light" > {{ $item->id }}</th>
+                                <td class="table-light">{{ $item->gnump }}</td>
+                                <td class="table-light">{{ $item->gnumw }}</td>
+                                <td class="table-light">{{ $item->gnumw }}</td>
+                                <td class="table-light" >{{ $item->gnump1 }}</td>
+                                <td class="table-light">{{ $item->gnump2 }}</td>
+            <td class="table-light">{{ $item->gnump3 }}</td>
+            <td class="table-light">{{ $item->gnump4 }}</td>
+            <td class="table-light">{{ $item->gnump5 }}</td>
+            <td class="table-light">{{ $item->gnump6 }}</td>
+            <td class="table-light">{{ $item->gnump7 }}</td>
+            <td class="table-light">{{ $item->gnump8 }}</td>
+            <td class="table-light">{{ $item->gnump9 }}</td>
+            <td class="table-light">{{ $item->gnump10 }}</td>
             
 <td>
     <span>
@@ -85,23 +79,13 @@
             <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حذف </a>
         </span>
     </td>
-</td>  
-        
-        
-        </tr>
-          </tbody>
-                        @endforeach
+    
+    
+  
+</tr>
+</tbody>
+@endforeach
+</table>
+    {!! $places->links() !!}
 
-                </table>
-            </div>
-            {!! $places->links() !!}
-        </div>
-    </div>
-    <center>
-        <h3> Copyright Ask-ar.com 2022
-        </h3>
-    </center>
-    </div>
-
-    </div>
 @endsection

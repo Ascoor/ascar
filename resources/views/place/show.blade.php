@@ -4,69 +4,54 @@
 
 @section('content')
 
-<div class="cotainer">
-</div>
-<div class="head">
-  <center>
-    <h1>محافظة الدقهلية</h1>
-    <h2>وحدة المتغيرات المكانية</h2>
-  </center>
-</div>
 
-  <div class="container" style="padding-top: 2%">
-        <div class="card-body">
+
+
     
-        <span ><a  href="/places"   class="card-text">عودة للخلف </a></span> المتغير رقم: {{ $place->gnump }}
-        
-      </p>
-    </div>
-   <tr>
-  
-      <th>مسلسل المتغير:</th>
-      <td >{{ $place->gnump}}</td>
-   
+<div class="table">
+  <table>
+    <tr>
+      
+      
+          
+      <th class="table-warning">مسلسل المتغير:</th>
       <th class="table-warning">خط العرض:</th>
-      <td class="table-primary">{{ $place->gnumh }}</td> 
       <th class="table-warning">خط الطول:</th>
-      <td class="table-secondary">{{ $place->gnumw }}</td>
-   
       <th class="table-warning">المحافظة:</th>
-      <td  class="table-primary">{{ $place->gnump1 }}</td>
-   
       <th class="table-warning">المركز:</th>
-      <td  class="table-danger">{{ $place->gnump2 }}</td>
-   
       <th class="table-warning">القرية:</th>
-      <td  class="table-primary">{{ $place->gnump3 }}</td>
       <th class="table-warning">نوع الأملاك:</th>
-      <td  class="table-secondary">{{ $place->gnump4 }}</td>
       <th class="table-warning">جهة الولاية:</th>
-      <td  class="table-success">{{ $place->gnump5 }}</td>
       <th class="table-warning">القانونية:</th>
-      <td  class="table-danger">{{ $place->gnump6 }}</td>
-    
       <th class="table-warning">الرد:</th>
-      <td  class="table-warning">{{ $place->gnump7 }}</td>
       <th class="table-warning">تفاصيل الرد:</th>
-      <td  class="table-info">{{ $place->gnump8 }}</td>
-
       <th class="table-warning">موقف الإزالة:</th>
-      <td  class="table-light">{{ $place->gnump9 }}</td>
-
       <th class="table-warning">المرفقات:</th>
-      <td  class="table-dark">{{ $place->gnump10 }}</td>
+        </tr>
+        <tbody>
+          <tr>
+            <th class="table-light">{{ $place->gnump}}</th>
+            <th class="table-light">{{ $place->gnump}}</td>
+      <td class="table-light">{{ $place->gnumh }}</td> 
+      <td class="table-light">{{ $place->gnumw }}</td>
+      <td  class="table-light">{{ $place->gnump1 }}</td>
+      <td  class="table-light">{{ $place->gnump2 }}</td>
+      <td  class="table-light">{{ $place->gnump3 }}</td>
+      <td  class="table-light">{{ $place->gnump4 }}</td>
+      <td  class="table-light">{{ $place->gnump5 }}</td>
+      <td  class="table-light">{{ $place->gnump6 }}</td>
+      <td  class="table-light">{{ $place->gnump7 }}</td>
+      <td  class="table-light">{{ $place->gnump8 }}</td>
+      <td  class="table-light">{{ $place->gnump9 }}</td>
+      <td  class="table-light">{{ $place->gnump10 }}</td>
+    </tr>
+        </tbody>
+</table>
     </div>
     {!! $place->detail !!}
 
     
-</tr>
 
 </div>
-</div>
-</div>
-<center>
-  <h3> Copyright Ask-ar.com 2022
-  </h3>
-</center>
 </div>
 @endsection

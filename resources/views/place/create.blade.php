@@ -3,19 +3,8 @@
 
 
 @section('content')
-<div class="cotainer">
-</div>
-<div class="head">
-  <center>
-      <h1>محافظة الدقهلية</h1>
-      <h2>وحدة المتغيرات المكانية</h2>
-      <h3>المحذوف مؤقتاً</h3>
-      <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
-      <a class="btn btn-primary btn-lg" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
-  </center>
-</div>
 
-    <div class="container" style="padding-top: 12%">
+  
  <form action="{{ route('places.store') }}" method="POST">
   @csrf
       <div class="form-group">
@@ -57,10 +46,5 @@
 </div>
     </div>
   </form>
-
 </div>
-<center><h3> Copyright Ask-ar.com 2022
-</h3></center>
-</div>
-
 @endsection

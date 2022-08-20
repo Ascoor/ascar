@@ -1,15 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-<div class="head">
-    <div class="container">
-        
-        <center>
-            <h1>محافظة الدقهلية</h1>
-        <h2>وحدة المتغيرات المكانية</h2>
-        <h3>المحذوف مؤقتاً</h3>
-        <a class="btn btn-primary btn-lg" href="{{route('places.index')}}" role="Home">الصفحة الرئيسية</a>
 
-    </center>
     <div class="tableContainer">
         
                 <table>
@@ -41,20 +32,20 @@
                             
                           @endphp
                                 
-           <th > {{ $item->id }}</th>
-            <td>{{ $item->gnump }}</td>
-            <td>{{ $item->gnumw }}</td>
-            <td>{{ $item->gnumw }}</td>
-            <td>{{ $item->gnump1 }}</td>
-            <td>{{ $item->gnump2 }}</td>
-            <td>{{ $item->gnump3 }}</td>
-            <td>{{ $item->gnump4 }}</td>
-            <td>{{ $item->gnump5 }}</td>
-            <td>{{ $item->gnump6 }}</td>
-            <td>{{ $item->gnump7 }}</td>
-            <td>{{ $item->gnump8 }}</td>
-            <td>{{ $item->gnump9 }}</td>
-            <td>{{ $item->gnump10 }}</td>
+           <th class="table-light" > {{ $item->id }}</th>
+            <td class="table-light">{{ $item->gnump }}</td>
+            <td class="table-light">{{ $item->gnumw }}</td>
+            <td class="table-light">{{ $item->gnumw }}</td>
+            <td class="table-light">{{ $item->gnump1 }}</td>
+            <td class="table-light">{{ $item->gnump2 }}</td>
+            <td class="table-light">{{ $item->gnump3 }}</td>
+            <td class="table-light">{{ $item->gnump4 }}</td>
+            <td class="table-light">{{ $item->gnump5 }}</td>
+            <td class="table-light">{{ $item->gnump6 }}</td>
+            <td class="table-light">{{ $item->gnump7 }}</td>
+            <td class="table-light">{{ $item->gnump8 }}</td>
+            <td class="table-light">{{ $item->gnump9 }}</td>
+            <td class="table-light">{{ $item->gnump10 }}</td>
    <td>
     <span>
         <a class="btn btn-success" href="{{ route('place.back.from.trash', $item->id) }}">إسترجاع</a>
@@ -74,16 +65,6 @@
                         @endforeach
 
                 </table>
-            </div>
-
-        </div>
-    </div>
-    <center>
-        <h3> Copyright Ask-ar.com 2022
-        </h3>
-    </center>
-    </div>
-    
-</div>
-</div>
+      
+                
 @endsection
