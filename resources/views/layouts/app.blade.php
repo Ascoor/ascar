@@ -21,6 +21,17 @@
 <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body>
+    @if ($message = Session::get('تمت'))
+<div class="alert alert-danger" role="alert">
+        {{$message}}
+    </div>
+    @endif
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
+    
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -82,11 +93,15 @@
                     <h1>محافظة الدقهلية</h1>
                     <h2>وحدة المتغيرات المكانية</h2>
                         <a class="btn btn-primary btn-lg" style="shadow  mb-5 rounded" href="{{route('places.index')}}" role="button">الصفحة الرئيسية</a>
-                        <a class="btn btn-primary btn-lg" style="shadow mb-5 rounded" href="" role="button"> بحث</a>
+                 
                         <a class="btn btn-primary btn-lg" style="shadow  mb-5 rounded" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
                         <a class="btn btn-primary btn-lg" style="shadow  mb-5 rounded" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
                     </center>
-
+                        <form class="form-group" type="get" action="{{ url('/search')  }}" >
+                      <input type="search" placeholder="بحث بالمتغير"  class="form-controller mr-sm2"  name="query" >
+                            <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
+                        </form>
+                </div> 
 
             @yield('content')
             <footer>
@@ -101,8 +116,11 @@
         </main>
     </div>
     <!-- jQuery and JS bundle w/ Popper.js -->
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK" crossorigin="anonymous"></script>
 </div>
-</body>
+
+    </body>
 </html>

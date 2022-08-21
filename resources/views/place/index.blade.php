@@ -4,19 +4,8 @@
 @section('content')
 
 
-            @if ($message = Session::get('تمت'))
-            <div class="alert alert-danger" role="alert">
-                {{$message}}
-               </div>
-            @endif
-            @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
 
-                
-                <div class="tableContainer">
+    <div class="tableContainer">
                     
                     <table>
               <tr>
@@ -39,7 +28,6 @@
                     <th class="table-warning">حذف</th>
    
               </tr>
-                   
                         @foreach ($places as $item)
                         <tbody>
                           <tr>
@@ -50,7 +38,7 @@
                                 
                                
                                 <th class="table-light">{{ $item->gnump }}</th>
-                                <td class="table-light">{{ $item->gnumw }}</td>
+                                <td class="table-light">{{ $item->gnumh }}</td>
                                 <td class="table-light">{{ $item->gnumw }}</td>
                                 <td class="table-light" >{{ $item->gnump1 }}</td>
                                 <td class="table-light">{{ $item->gnump2 }}</td>
@@ -86,6 +74,8 @@
 </tbody>
 @endforeach
 </table>
-    {!! $places->links() !!}
+ 
+
+{!! $places->links() !!}
 
 @endsection

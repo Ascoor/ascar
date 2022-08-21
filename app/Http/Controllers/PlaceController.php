@@ -127,4 +127,13 @@ public function deleteForEver( $id)
             return redirect()->route('places.index')
             ->with('تمت', 'تم الاسترجاع  بنجاح');
         }
+   
+        public Function search()
+        {
+    $search_text = $_GET['query'];
+    $places = Place::where('gnump','LIKE','%'.$search_text.'%')->get();
+
+    
+    return view('place.search', compact('places')); 
+    }
 }
