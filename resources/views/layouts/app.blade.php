@@ -21,17 +21,7 @@
 <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body>
-    @if ($message = Session::get('تمت'))
-<div class="alert alert-danger" role="alert">
-        {{$message}}
-    </div>
-    @endif
-    @if (session('status'))
-    <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-    </div>
-    @endif
-    
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -97,12 +87,29 @@
                         <a class="btn btn-primary btn-lg" style="shadow  mb-5 rounded" href="{{route('places.create')}}" role="button">إضافة متغير جديد</a>
                         <a class="btn btn-primary btn-lg" style="shadow  mb-5 rounded" href="{{route('place.trash')}}" role="button"> المحذوف مؤقتاً</a>
                     </center>
-                        <form class="form-group" type="get" action="{{ url('/search')  }}" >
-                      <input type="search" placeholder="بحث بالمتغير"  class="form-controller mr-sm2"  name="query" >
+            <div class="search">
+                <span>      <form class="form-group" type="get" action="{{ url('/search')  }}" >
+                    <input type="search" placeholder="بحث بالمتغير"  class="form-controller mr-sm2"  name="query" >
+                    <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
+                
+                </form></span>
+                    <span>  <form class="form-group" type="get" action="{{ url('/searchp')  }}" >
+                      <input type="search" placeholder="بحث بالمركز"  class="form-controller mr-sm2"  name="queryp" >
                             <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
-                        </form>
-                </div> 
-
+                        </form></span>
+                        
+                    </div>
+                    @if ($message = Session::get('تمت'))
+                    <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                        @endif
+                        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                        @endif
+                        
             @yield('content')
             <footer>
         

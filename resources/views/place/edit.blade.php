@@ -53,13 +53,13 @@
         <input value="{{ $place->gnump9 }}" type="text" name="gnump9" placeholder="موقف الإزالة">
                 <label>المرفقات</label>
         <input value="{{ $place->gnump10 }}" type="text" name="gnump10" placeholder="المرفقات">
-  {!! $place->detail !!}
-    </div>
-    <div class="form-group">
-    <button type="submit" class="btm btn-danger">تحديث</button>
-</div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btm btn-danger">تحديث</button>
+      </div>
     </div>
   </form>
+  {!! $place->detail !!}
 
 
 @endsection
