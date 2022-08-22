@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
 Route::resource('places', 'PlaceController');
 Route::get('place/soft/selete/{id}','PlaceController@softDelete')
@@ -29,3 +29,5 @@ Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search','PlaceController@search');
+Route::get('place/search','PlaceController@search');
