@@ -111,29 +111,21 @@ public function softDelete( $id)
          $place = Place::find($id)->delete();
 
         return redirect()->route('places.index')
-            ->with('تمت', 'تم الحذف بنجاح');
+            ->with('تمت', 'تم الإخفاء بنجاح');
     }
 public function deleteForEver( $id)
     {
          $place = Place::onlyTrashed()->where('id',$id)->forceDelete();
 
         return redirect()->route('place.trash')
-            ->with('تمت', 'تم الحذف نهائيا  بنجاح');
+            ->with('تمت', 'تم الحذف   بنجاح');
     }
     public function backFromSoftDelete( $id)
         {
   $place = Place::onlyTrashed()->where('id',$id)->first()->restore();
     
             return redirect()->route('places.index')
-            ->with('تمت', 'تم الاسترجاع  بنجاح');
+            ->with('تمت', 'تم الإظهار  بنجاح');
         }
    
-        public Function search()
-        {
-    $search_text = $_GET['query'];
-    $places = Place::where('gnump','LIKE','%'.$search_text.'%')->get();
-
-    
-    return view('place.search', compact('places')); 
-    }
 }

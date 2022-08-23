@@ -4,6 +4,7 @@
 @section('content')
 
 
+    
 
     <div class="tableContainer">
                     
@@ -25,16 +26,16 @@
                     <th class="table-warning">المرفقات</th>
                     <th class="table-warning">تعديل</th>
                     <th class="table-warning">عرض</th>
-                    <th class="table-warning">حذف</th>
+                    <th class="table-warning">إخفاء</th>
    
               </tr>
                         @foreach ($places as $item)
-                        <tbody>
-                          <tr>
                           @php
                               $i = 0;
                             
                           @endphp
+                        <tbody>
+                          <tr>
                                 
                                
                                 <th class="table-light">{{ $item->gnump }}</th>
@@ -51,18 +52,18 @@
             <td class="table-light">{{ $item->gnump9 }}</td>
             <td class="table-light">{{ $item->gnump10 }}</td>
             
-<td class="table-light">
+<td>
     <span>
         <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
     </span>
 </td>
-<td class="table-light">     
+<td>     
     <span>
         <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
     </span>     
 </td> 
 
-    <td class="table-light">
+    <td>
         <span>
             <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> إخفاء </a>
         </span>
@@ -76,6 +77,5 @@
 </table>
  
 
-{!! $places->links() !!}
 
 @endsection

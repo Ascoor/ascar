@@ -29,5 +29,7 @@ Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/search','PlaceController@search');
-Route::get('place/search','PlaceController@search');
+
+Route::resource('/search','SearchController');
+Route::get('/searchw','SearchController@searchw');
+Route::get('/searchp','SearchController@searchp');

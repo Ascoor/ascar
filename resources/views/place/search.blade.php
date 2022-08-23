@@ -77,6 +77,5 @@
 </table>
  
 
-{!! $places->links() !!}
 
 @endsection

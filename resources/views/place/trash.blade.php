@@ -46,12 +46,12 @@
             <td class="table-light">{{ $item->gnump10 }}</td>
    <td>
     <span>
-        <a class="btn btn-success" href="{{ route('place.back.from.trash', $item->id) }}">إسترجاع</a>
+        <a class="btn btn-success" href="{{ route('place.back.from.trash', $item->id) }}">إظهار</a>
     </span>     
 </td> 
 <td>     
     <span>
-        <a class="btn btn-danger" href="{{ route('place.delete.from.database', $item->id) }}">حذف نهائ</a>
+        <a class="btn btn-danger" href="{{ route('place.delete.from.database', $item->id) }}">حذف </a>
     </span>     
 </td> 
 
