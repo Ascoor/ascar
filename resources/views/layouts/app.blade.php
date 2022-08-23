@@ -102,17 +102,17 @@
                         <form  type="get" action="{{ url('/search') }}">
                             <input type="search" placeholder="بحث بالمتغير" class="form-controller mr-sm2"
                             name="query">
-                            <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button>
+                            <button class="btn btn-outline-primary pt-1 my-2 my-sm-0" type="submit>">بحث</button>
                         </form>
                             <form  type="get" action="{{ url('/searchp') }}">
                             <input type="search" placeholder="بحث بالمركز" class="form-controller mr-sm2"
                             name="queryp">
-                            <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button>
+                            <button class="btn btn-outline-primary pt-1 my-2 my-sm-0" type="submit>">بحث</button>
                         </form>
                             <form  type="get" action="{{ url('/searchw') }}">
                                 <input type="search" placeholder="بحث بالقرية" class="form-controller mr-sm2"
                                 name="queryw">
-                            <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button>
+                            <button class="btn btn-outline-primary pt-1 my-2 my-sm-0" type="submit>">بحث</button>
 
                         </form>
                 

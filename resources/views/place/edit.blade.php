@@ -51,11 +51,11 @@
         <label>تفاصيل الرد</label>
         <input value="{{ $place->gnump8 }}" type="text" name="gnump8" placeholder="تفاصيل الرد">
         <label>موقف الإزالة</label>
-        <input value="{{ $place->gnump9 }}" type="text" name="gnump9" placeholder="موقف الإزالة">
-                <label>المرفقات</label>
-        <input value="{{ $place->gnump10 }}" type="text" name="gnump10" placeholder="المرفقات">
-      </div>
-      <div class="form-group">
+        <input  value="{{ $place->gnump9 }}" type="text" name="gnump9" placeholder="موقف الإزالة">
+        <div class="form-group">
+        <label>المرفقات</label>
+<input value="{{ $place->gnump10 }}" type="text" name="gnump10" placeholder="المرفقات">
+</div>
         <button type="submit" class="btm btn-danger">تحديث</button>
       </div>
     </div>
