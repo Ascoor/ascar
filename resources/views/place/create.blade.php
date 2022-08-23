@@ -12,9 +12,9 @@
        <label>مسلسل المتغير</label>
        <input class="form-control" type="number" name="gnump" placeholder="مسلسل المتغير">
        <label>خط العرض</label>
-       <input class="form-control" type="number" name="gnumh" placeholder="خط العرض">
+       <input class="form-control" type="float" name="gnumh" placeholder="خط العرض">
        <label>خط الطول</label>
-        <input class="form-control" type="number" name="gnumw" placeholder="خط الطول">
+        <input class="form-control" type="float" name="gnumw" placeholder="خط الطول">
       </div>
  
       <div class="form-group">
