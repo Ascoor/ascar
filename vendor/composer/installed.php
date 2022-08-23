@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'afda1c9da96f856d1329a2ec95ef0e970ea59d1b',
+        'reference' => 'ea3faf0f30a995badfc14a6b17c7e30f05c68c3d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -18,6 +18,15 @@
             'install_path' => __DIR__ . '/../asm89/stack-cors',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'bestmomo/laravel5-artisan-language' => array(
+            'pretty_version' => 'V0.3.3',
+            'version' => '0.3.3.0',
+            'reference' => '7f951543c3313e764a3f18a9abb2c1033ee2a25d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bestmomo/laravel5-artisan-language',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'brick/math' => array(
             'pretty_version' => '0.9.3',
@@ -376,7 +385,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'afda1c9da96f856d1329a2ec95ef0e970ea59d1b',
+            'reference' => 'ea3faf0f30a995badfc14a6b17c7e30f05c68c3d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

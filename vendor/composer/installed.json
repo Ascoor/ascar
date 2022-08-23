@@ -60,6 +60,59 @@
             "install-path": "../asm89/stack-cors"
         },
         {
+            "name": "bestmomo/laravel5-artisan-language",
+            "version": "V0.3.3",
+            "version_normalized": "0.3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bestmomo/laravel-artisan-language.git",
+                "reference": "7f951543c3313e764a3f18a9abb2c1033ee2a25d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bestmomo/laravel-artisan-language/zipball/7f951543c3313e764a3f18a9abb2c1033ee2a25d",
+                "reference": "7f951543c3313e764a3f18a9abb2c1033ee2a25d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.4|^6|^7|^8|^9",
+                "php": ">=5.6.4"
+            },
+            "time": "2022-03-02T19:28:51+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bestmomo\\ArtisanLanguage\\ArtisanLanguageProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Bestmomo\\ArtisanLanguage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bestmomo",
+                    "email": "grandheretique@free.fr",
+                    "homepage": "https://laravel.sillo.org"
+                }
+            ],
+            "description": "Add artisan commands for language strings",
+            "homepage": "https://github.com/bestmomo/laravel-artisan-language",
+            "support": {
+                "issues": "https://github.com/bestmomo/laravel-artisan-language/issues",
+                "source": "https://github.com/bestmomo/laravel-artisan-language/tree/V0.3.3"
+            },
+            "install-path": "../bestmomo/laravel5-artisan-language"
+        },
+        {
             "name": "brick/math",
             "version": "0.9.3",
             "version_normalized": "0.9.3.0",
@@ -7347,6 +7400,7 @@
     ],
     "dev": true,
     "dev-package-names": [
+        "bestmomo/laravel5-artisan-language",
         "doctrine/instantiator",
         "facade/flare-client-php",
         "facade/ignition",

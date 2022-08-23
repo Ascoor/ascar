@@ -161,6 +161,7 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Bestmomo\\ArtisanLanguage\\' => 25,
         ),
         'A' => 
         array (
@@ -456,6 +457,10 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Bestmomo\\ArtisanLanguage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src',
+        ),
         'Asm89\\Stack\\' => 
         array (
             0 => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack',
@@ -488,6 +493,7 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PlaceController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlaceController.php',
+        'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -506,6 +512,12 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Bestmomo\\ArtisanLanguage\\ArtisanLanguageProvider' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/ArtisanLanguageProvider.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageBase' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageBase.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageDiff' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageDiff.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageMake' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageMake.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageStrings' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageStrings.php',
+        'Bestmomo\\ArtisanLanguage\\Commands\\LanguageSync' => __DIR__ . '/..' . '/bestmomo/laravel5-artisan-language/src/Commands/LanguageSync.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
