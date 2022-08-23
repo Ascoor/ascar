@@ -31,5 +31,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search','PlaceController@search');
 Route::get('/searchp','PlaceController@searchp');
-Route::get('place/search','PlaceController@search');
+Route::get('/search','PlaceController@search');
 Route::get('place/searchp','PlaceController@searchp');

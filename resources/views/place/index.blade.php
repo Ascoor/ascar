@@ -64,7 +64,7 @@
 
     <td>
         <span>
-            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حذف </a>
+            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> إخفاء </a>
         </span>
     </td>
     

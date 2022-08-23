@@ -26,16 +26,16 @@
                     <th class="table-warning">المرفقات</th>
                     <th class="table-warning">تعديل</th>
                     <th class="table-warning">عرض</th>
-                    <th class="table-warning">حذف</th>
+                    <th class="table-warning">إخفاء</th>
    
               </tr>
                         @foreach ($places as $item)
-                        <tbody>
-                          <tr>
                           @php
                               $i = 0;
                             
                           @endphp
+                        <tbody>
+                          <tr>
                                 
                                
                                 <th class="table-light">{{ $item->gnump }}</th>
@@ -65,7 +65,7 @@
 
     <td>
         <span>
-            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حذف </a>
+            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> إخفاء </a>
         </span>
     </td>
     

@@ -7,24 +7,24 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
+        <!-- Styles -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
+<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css" integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
         <style>
             
 body {
-  overflow: visible !important;
-  background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-  background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+    overflow: visible !important;
+  background: -webkit-linear-gradient(45deg, #548caa 10%, #6ea7c5 90%);
+  background: -moz-linear-gradient(45deg, #548caa 10%, #6ea7c5 90%);
+
+  background: -o-linear-gradient(45deg, #548caa 10%, #6ea7c5 90%);
+  background: linear-gradient(45deg, #548caa 10%, #6ea7c5 90%);
  }
 
             html, body {
-                background-color: #fff;
+                background-color: rgb(41, 44, 16);
                 color: #e8f533;
 
                 font-family: 'Noto Naskh Arabic';font-size: 22px;
@@ -76,10 +76,37 @@ body {
                 margin-bottom: 30px;
                 box-shadow: rgb(121, 245, 134);
             }
+            .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .h5,mb-5 font-weight-normal{
+
+        color: #ffffff
+      }
+    .h1,mb-1 font-weight-normal{
+        text-shadow: #f2f2f2
+    }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+        .collapse,navbar-collapsejustify-content-md-center{
+            background: rgb(46, 2, 2)
+        }
+    }
+
         </style>
+<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> 
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -93,18 +120,40 @@ body {
                     @endauth
                 </div>
             @endif
-
+            <div class="container-xl mt-n2 mb-3">
+            
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Centered nav only <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown08">
+    
+                  </li>
+                </ul>
+              </div>
+            <div class="flex-center position-ref full-height">
             <div class="content">
-                <div class="title m-b-md">
-           محافظة الدقهلية
-                </div>
+                <div class="title m-b-lg">
+                <img class="mb-4" src="/img/Coat.png" alt="" width="300" height="300">
+                <h1 class="h1 mb-1 font-weight-normal">محافظة الدقهلية </h1>
+                <h3 class="h5 mb-5 font-weight-normal">نظام إدارة المتغيرات المكانية </h3>
+    
 
-
-                <div class="links">
-      
-                    <a href="">نظام إدارة المتغيرات المكانية</a>
+              
+           
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK" crossorigin="anonymous"></script>
                 </div>
-            </div>
+                 </div>
         </div>
     </body>
 </html>

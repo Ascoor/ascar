@@ -26,7 +26,7 @@
        <label>مسلسل المتغير</label>
        <input value="{{ $place->gnump }}" type="number" name="gnump" placeholder="مسلسل المتغير">
     
-       <label>خط العرص</label>
+       <label>خط العرض</label>
        <input value="{{ $place->gnumh }}" type="number" name="gnumh" placeholder="خط العرض">
        <label>خط الطول</label>
        <input value="{{ $place->gnumw }}" type="number" name="gnumw" placeholder="خط الطول">

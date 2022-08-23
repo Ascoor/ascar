@@ -4,8 +4,12 @@
 
 @section('content')
 <div class="page-header1">
-  <h2>متغير رقم</h2>      
-  <h3>{{ $place->gnump}}</h3>      
+  <div class="card">
+    <div class="container" style="padding-top: 2%">
+      <div id="card-body">
+        <span ><a  href="/places"   class="card-text">عودة للخلف </a></span> المتغير رقم: {{ $place->gnump }}
+        
+      </p>
 </div>
 
 
@@ -30,6 +34,7 @@
       <th class="table-warning">تفاصيل الرد</th>
       <th class="table-warning">موقف الإزالة</th>
       <th class="table-warning">المرفقات</th>
+      <th class="table-warning">التحكم</th>
         </tr>
         <tbody>
           <tr>
@@ -47,6 +52,11 @@
       <td  class="table-light">{{ $place->gnump8 }}</td>
       <td  class="table-light">{{ $place->gnump9 }}</td>
       <td  class="table-light">{{ $place->gnump10 }}</td>
+<td class="table-light">
+        <span>
+            <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
+        </span>
+    </td>
     </tr>
         </tbody>
 </table>
