@@ -16,3 +16,13 @@
 
   text-align: center;
 }
+.card{
+align-items: center;
+text-align: center;
+  background: #f5e9b0;
+}
+.search,span{
+  align-items: center;
+  text-align: center
+  
+!important;}

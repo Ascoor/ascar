@@ -3,13 +3,14 @@
 
 
 @section('content')
+<div class="container" style="padding-top: 2%">
 <div class="page-header1">
   <div class="card">
-    <div class="container" style="padding-top: 2%">
       <div id="card-body">
-        <span ><a  href="/places"   class="card-text">عودة للخلف </a></span> المتغير رقم: {{ $place->gnump }}
-        
-      </p>
+        <center>
+        <span ><a  href="/places" >عودة للخلف </a></span> المتغير رقم: {{ $place->gnump }}
+        </center>
+
 </div>
 
 

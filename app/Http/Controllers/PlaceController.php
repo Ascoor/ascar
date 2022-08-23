@@ -128,22 +128,4 @@ public function deleteForEver( $id)
             ->with('تمت', 'تم الإظهار  بنجاح');
         }
    
-        public Function search()
-        {
-    $search_text = $_GET['query'];
-    $places = Place::where('gnump','LIKE','%'.$search_text.'%')->get();
-
-    
-    return view('place.search', compact('places')); 
-    }
-       
-    
-    public Function searchp()
-        {
-    $search_text = $_GET['queryp'];
-    $places = Place::where('gnump2','LIKE','%'.$search_text.'%')->get();
-
-    
-    return view('place.searchP', compact('places')); 
-    }
 }

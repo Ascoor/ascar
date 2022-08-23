@@ -51,18 +51,18 @@
             <td class="table-light">{{ $item->gnump9 }}</td>
             <td class="table-light">{{ $item->gnump10 }}</td>
             
-<td>
+<td class="table-light">
     <span>
         <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
     </span>
 </td>
-<td>     
+<td class="table-light">     
     <span>
         <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
     </span>     
 </td> 
 
-    <td>
+    <td class="table-light">
         <span>
             <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> إخفاء </a>
         </span>
