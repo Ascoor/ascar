@@ -36,9 +36,12 @@
       <input class="form-control" type="text" name="gnump8" placeholder="تفاصيل الرد">
       <label>موقف الإزالة</label>
       <input class="form-control" type="text" name="gnump9" placeholder="موقف الإزالة">
-      <label>المرفقات</label>
+      <label>التاريخ</label>
       <input class="form-control" type="text" name="gnump10" placeholder="المرفقات">
-
+      <label for="formFileLg" class="form-label">المرفقات</label>
+      <input class="form-control form-control-lg" name="gnump11" type="file" />
+      <input class="form-control form-control-lg" name="gnump12" type="file" />
+      <input class="form-control form-control-lg" name="gnump13" type="file" />
 
     </div>
     <div class="form-group">
