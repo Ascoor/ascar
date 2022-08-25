@@ -1,77 +1,89 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html dir="rtl" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+        integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
 
-        <!-- Fonts -->
-        <!-- Styles -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/app.css">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    </head>
-    <body>
+    <title>{{ config('وحدة المتغيرات المكانية') }}</title>
 
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/places') }}" >الصفحة الرئيسية </a>
-                    @else
-                        <a href="{{ route('login') }}">تسجيل الدخول</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">تسجيل مستخدم جديد</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-            <div class="container-xl mt-n2 mb-3">
-            
-            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Centered nav only <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown08">
+    <!-- Font ----->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
+<style>
+    .flex-container
+    {
+      
+  background-color: green;
+  opacity: .3;
+}
     
-                  </li>
-                </ul>
-            </div>
-        
+  </style>
+    
+  </head>
+<body>
+  
+  <div class="jumbotron text-center" >
+      <div class="card texxt-center"  >
+        <h1 class="bg-success text-warning">محافظة الدقهلية</h1>
+
+    </div>
+        <div class="col-md-8">
+    </div>
+    
+  </div>
   <center>
-      <div class="title ">
-          <img class="mb-4" src="/img/Coat.png" alt="" width="300" height="300">
-          <h1 class="h1 mb-1 font-weight-normal">محافظة الدقهلية </h1>
-          <h3 class="h5 mb-5 font-weight-normal">نظام إدارة المتغيرات المكانية </h3>
-          
-
-            </div>
-            <div class="footet">
-      <footer>
-
-        <div>
-          
-                <h4> Copyright Ask-ar.com 2022
-                </h4>
-            </center>
-
-</footer>
-                        <script src="/assets/js/bootstrap.min.js"></script>  
-         
-            <script src="/assets/js/jquery-3.5.1.slim.min.js"></script>  
-       
-    </body>
+  <div class="flex-container">
+  </div>
+  <div class="container">
+    <h2>نظام إدارة المتغيرات المكانية</h2>
+    
+    <img class="card-img-top" src="img/coat.png" alt="Card image" style="width:40%">
+    <div class="card-body">
+        @if (Route::has('login'))
+        
+      @auth
+                      <a class="btn btn-info" href="{{ url('/places') }}" >الصفحة الرئيسية </a>
+                      
+                      @else
+      
+      
+      <a class="btn btn-warning" href="{{ route('login') }}">تسجيل الدخول</a>
+      
+      @if (Route::has('register'))
+      
+        <a class="btn btn-danger" href="{{ route('register') }}">تسجيل مستخدم جديد</a>
+      </center>
+      </div>
+      
+      @endif
+      
+        
+        
+        @endauth
+        
+        @endif
+        </div>
+  </div>
+  <div class="footer">
+  <center>
+      
+      
+      <p herf="https://ask-ar.com">©2022 جميع الحقوق محفوظة لدي Ask-ar.com</p>
+    </center>
+  </div>
+    
+</div>
+</div>
+</body>
 </html>
