@@ -1,12 +1,25 @@
-@extends('layouts.app')
-
-
+@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
-
+ 
   
- <form action="{{ route('places.store') }}" method="POST">
-  @csrf
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <form method="post" action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal">
+          @csrf
+          @method('put')
+
+          <div class="card ">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">{{ __('Edit Profile') }}</h4>
+              <p class="card-category">{{ __('User information') }}</p>
+            </div>
+            <div class="row">
+             
+              <div class="col-sm-7">
+                
       <div class="form-group">
             
        <label>مسلسل المتغير</label>
@@ -50,4 +63,15 @@
     </div>
   </form>
 </div>
+
+
 @endsection
+
+@push('js')
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+    });
+  </script>
+@endpush
