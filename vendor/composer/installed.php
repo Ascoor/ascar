@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'ea3faf0f30a995badfc14a6b17c7e30f05c68c3d',
+        'reference' => '343519c993f08d9fb83771f01c7d6bffdb6cde3e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -373,6 +373,15 @@
                 0 => '*',
             ),
         ),
+        'laravel-frontend-presets/material-dashboard' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => '077c8430f4faeae3bdb3d4a6c1dbca5a195a1bfc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel-frontend-presets/material-dashboard',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'laravel/framework' => array(
             'pretty_version' => 'v7.30.6',
             'version' => '7.30.6.0',
@@ -385,7 +394,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'ea3faf0f30a995badfc14a6b17c7e30f05c68c3d',
+            'reference' => '343519c993f08d9fb83771f01c7d6bffdb6cde3e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
