@@ -63,7 +63,7 @@
                     <input class="form-control" type="text" name="gnump9" placeholder="موقف الإزالة">
                   </div>
                   
-              <input class="form-control" type="text" name="gnump10" placeholder="المرفقات">
+              <input class="form-control" type="date" name="gnump10" placeholder="hgjhvdo">
             </div>
     </div>
     <button type="submit" class="btm btn-danger">إضافة</button>

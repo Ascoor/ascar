@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
-
+@section('content')
 
 @section('content')
 <div class="container" style="padding-top: 2%">
@@ -68,4 +68,15 @@
 
 </div>
 </div>
+
+    
 @endsection
+
+@push('js')
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+    });
+  </script>
+@endpush

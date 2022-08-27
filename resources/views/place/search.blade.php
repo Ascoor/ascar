@@ -1,3 +1,7 @@
+@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+
+@section('content')
+  
 <div class="content">
   <div class="container-fluid">
     <div class="search" >
@@ -14,7 +18,7 @@
       
       </form></span>
           <span>  <form class="form-group" type="get" action="{{ url('/searchw')  }}" >
-            <input type="search" placeholder="بحث بالقرية"  class="form-controller mr-sm2"  name="queryp" >
+            <input type="search" placeholder="بحث بالقرية"  class="form-controller mr-sm2"  name="queryw" >
                   <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
               </form></span>
               
@@ -46,7 +50,7 @@
                               <th class="table-warning">الرد</th>
                               <th class="table-warning">تفاصيل الرد</th>
                               <th class="table-warning">موقف الإزالة</th>
-                              <th class="table-warning">المرفقات</th>
+                              <th class="table-warning">التاريخ</th>
                               <th class="table-warning">تعديل</th>
                               <th class="table-warning">عرض</th>
                               <th class="table-warning">حذف</th>
@@ -107,7 +111,7 @@
 
  
 
-
+    
 @endsection
 
 @push('js')

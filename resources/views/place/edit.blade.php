@@ -1,66 +1,89 @@
-@extends('layouts.app')
-
-
+@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
- 
 
+             
+<div class="content">
+  <div class="container-fluid">
 
+      <div class="col-md-12">
+        <form method="post"  action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal">
+          @csrf
+          @method('put')
 
-  
-  <div class="card">
-    <div class="container" style="padding-top: 2%">
-      <div id="card-body">
-      <center>  <span ><a  href="/places"   class="card-text">عودة للخلف </a></span> المتغير رقم: {{ $place->gnump }}
-      </center> 
+          <div class="card ">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">المتغير رقم: {{ $place->gnump }}:</h4>
+              <p class="card-category">{{ __(' بيانات المتغير') }}</p>
+            </div>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="row">
+                  <div class="col-4">
+                    <input class="form-control" type="number" name="gnump" placeholder="مسلسل المتغير">
+                  </div>      
+                  
+                  <div class="col-4">
+                    <input class="form-control" type="float" name="gnumh" placeholder="خط العرض">
+                  </div>  
+                  <div class="col-4">
+                          <input class="form-control" type="float" name="gnumw" placeholder="خط الطول">
+                  </div>
+             
+                  <div class="col-4">
+                          <input class="form-control" type="text" name="gnump1" placeholder="المحافظة">
+                  </div>
+             
+                  <div class="col-3">
+                          <input class="form-control" type="" name="gnumw2" placeholder="المركز">
+                  </div>
+             
+                  <div class="col-2">
+                    <input class="form-control" type="text" name="gnump3" placeholder="القرية">
+                  </div>
+                  
+                  <div class="col-4">
+                    <input class="form-control" type="text" name="gnump4" placeholder="نوع الأملاك">
+                  </div>
+                    <div class="col-4">
+                      <input class="form-control" type="text" name="gnump5" placeholder="جهة الولاية">
+                    </div>
+                    
+                    <div class="col-4">
+                      <input class="form-control" type="text" name="gnump6" placeholder="القانونية">
+                    </div>
+                    <div class="col-6">
+                    
+                    <input class="form-control form-control-lg" type="text" name="gnump7" placeholder="الرد">
+                  </div>
+                  <div class="col-5">
+                    <input class="form-control form-control-lg" type="text" placeholder="تفاصيل الرد">
+                  </div>
+              
+                    <input class="form-control" type="text" name="gnump9" placeholder="موقف الإزالة">
+                  </div>
+                  
+              <input class="form-control" type="text" name="gnump10" placeholder="المرفقات">
+            </div>
     </div>
-  </div>
-  <div class="container" style="padding-top: 2%">
-  <form action="{{ route('places.update', $place->id) }}" method="POST">
-    @csrf
-    
-        @method ('PUT')
-        <div class="form-group">
-    
-       <label>مسلسل المتغير</label>
-       <input value="{{ $place->gnump }}" type="number" name="gnump" placeholder="مسلسل المتغير">
-    
-       <label>خط العرض</label>
-       <input value="{{ $place->gnumh }}" type="number" name="gnumh" placeholder="خط العرض">
-       <label>خط الطول</label>
-       <input value="{{ $place->gnumw }}" type="number" name="gnumw" placeholder="خط الطول">
-      </div>
-      
-      <div class="form-group">
-        <label>المحافظة</label>
-        <input value="{{ $place->gnump1 }}" type="text" name="gnump1" placeholder="المحافظة">
-        <label>المركز</label>
-        <input value="{{ $place->gnump2 }}" type="text" name="gnump2" placeholder="المركز">
-        <label>القرية</label>
-        <input value="{{ $place->gnump3 }}" type="text" name="gnump3" placeholder="القرية">
-        <div class="form-group">
-          <label>نوع الأملاك</label>
-          <input value="{{ $place->gnump4 }}" type="text" name="gnump4" placeholder="نوع الأملاك">
-          <label>جهة الولاية</label>
-          <input value="{{ $place->gnump5 }}" type="text" name="gnump5" placeholder="جهة الولاية">
-          <label>القانونية</label>
-          <input value="{{ $place->gnump6 }}" type="text" name="gnump6" placeholder="القانونية">
-          <label>الرد</label>
-          <input value="{{ $place->gnump7 }}" type="text" name="gnump7" placeholder="الرد">
-          <div class="form-group">
-        <label>تفاصيل الرد</label>
-        <input value="{{ $place->gnump8 }}" type="text" name="gnump8" placeholder="تفاصيل الرد">
-        <label>موقف الإزالة</label>
-        <input  value="{{ $place->gnump9 }}" type="text" name="gnump9" placeholder="موقف الإزالة">
-        <div class="form-group">
-        <label>المرفقات</label>
-<input value="{{ $place->gnump10 }}" type="text" name="gnump10" placeholder="المرفقات">
+    <button type="submit" class="btm btn-danger">إضافة</button>
 </div>
-        <button type="submit" class="btm btn-danger">تحديث</button>
-      </div>
+</div>  
     </div>
   </form>
+</div>
+
+
   {!! $place->detail !!}
 
+  
+  @endsection
 
-@endsection
+  @push('js')
+    <script>
+      $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        md.initDashboardPageCharts();
+      });
+    </script>
+  @endpush
