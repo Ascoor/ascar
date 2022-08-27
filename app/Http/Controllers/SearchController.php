@@ -31,7 +31,7 @@ return view('place.search', compact('places'));
 
 
 
-public Function searchW()
+public Function searchw()
 {
 $search_text = $_GET['queryw'];
 $places = Place::where('gnump3','LIKE','%'.$search_text.'%')->get();

@@ -32,9 +32,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/search','SearchController');
 Route::get('/searchw','SearchController@searchw');
-Route::get('/searchp','SearchController@searchp');Auth::routes();
+Route::get('/searchp','SearchController@searchp');
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/searchw','SearchController@searchw')->name('searchw')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {

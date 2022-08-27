@@ -4,12 +4,31 @@
   
 <div class="content">
   <div class="container-fluid">
+    <div class="search" >
+      <span>      <form class="form-group" type="get" action="{{ url('/search')  }}" >
+          <input type="search" placeholder="بحث بالمتغير"  class="form-controller mr-sm2"  name="query" >
+          <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
+      
+      </form></span>
+          <span>  <form class="form-group" type="get" action="{{ url('/searchp')  }}" >
+            <input type="search" placeholder="بحث بالمركز"  class="form-controller mr-sm2"  name="queryp" >
+                  <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
+              </form></span>
+              
+      
+      </form></span>
+          <span>  <form class="form-group" type="get" action="{{ url('/searchw')  }}" >
+            <input type="search" placeholder="بحث بالقرية"  class="form-controller mr-sm2"  name="queryw" >
+                  <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
+              </form></span>
+              
+          </div>
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Simple Table</h4>
-            <p class="card-category"> Here is a subtitle for this table</p>
+            <h4 class="card-title ">نتائج البحث</h4>
+            <p class="card-category"> يمكنك البحث برقم المتغير او المركز او القرية</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
