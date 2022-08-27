@@ -5,8 +5,9 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+    <i><img style="width:25px" src="{{ asset('material') }}/img/Coat.svg" class="simple-text logo-normal">
+      {{ __('محافظة الدقهلية') }}
+    </i> 
     </a>
   </div>
   <div class="sidebar-wrapper">
