@@ -16,7 +16,7 @@ class PlaceController extends Controller
     {
         
         $places = Place::latest()->paginate(20);
-        return view('place.index',compact('places'));
+        return view('Dashboard',compact('places'));
     }
     public function trashedPlaces()
         {
