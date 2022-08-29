@@ -15,7 +15,9 @@
         "laravel-frontend-presets/material-dashboard": "^1.1",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "2.1"
+        "laravel/ui": "2.1",
+        "yajra/laravel-datatables": "^1.5",
+        "yajra/laravel-datatables-oracle": "^9.21"
     },
     "require-dev": {
         "bestmomo/laravel5-artisan-language": "^0.3.3",
