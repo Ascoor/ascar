@@ -53,25 +53,25 @@
                       <input class="form-control" type="text" name="gnump6" placeholder="القانونية">
                     </div>
                     <div class="col-6">
+                      
+                      <input class="form-control form-control-lg" type="text" name="gnump7" placeholder="الرد">
+                    </div>
                     
-                    <input class="form-control form-control-lg" type="text" name="gnump7" placeholder="الرد">
-                  </div>
-                  <div class="col-5">
+                    <div class="col-6">
                     <input class="form-control form-control-lg" type="text" placeholder="تفاصيل الرد">
                   </div>
               
                     <input class="form-control" type="text" name="gnump9" placeholder="موقف الإزالة">
                   </div>
                   
-              <input class="form-control" type="text" name="gnump10" placeholder="المرفقات">
-            </div>
+       
+                  <input class="form-control" type="date" name="gnump10" placeholder="التاريخ">
+                </div>
     </div>
+    <div>
     <button type="submit" class="btm btn-danger">إضافة</button>
-</div>
-</div>  
-    </div>
   </form>
-</div>
+<
 
 
   {!! $place->detail !!}

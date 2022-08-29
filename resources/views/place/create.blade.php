@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('layouts.app', ['activePage' => 'create', 'titlePage' => __('createpage')])
 
 @section('content')
  
@@ -63,9 +63,9 @@
                     <input class="form-control" type="text" name="gnump9" placeholder="موقف الإزالة">
                   </div>
                   
-              <input class="form-control" type="date" name="gnump10" placeholder="hgjhvdo">
-            </div>
-    </div>
+              <input class="form-control" type="date" name="gnump10" placeholder="التاريخ">
+              </div>
+
     <button type="submit" class="btm btn-danger">إضافة</button>
 </div>
 </div>  

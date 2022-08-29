@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('تسلسل المتغيرات')])
 
 @section('content')
 
@@ -34,7 +34,7 @@
       <th class="table-warning">الرد</th>
       <th class="table-warning">تفاصيل الرد</th>
       <th class="table-warning">موقف الإزالة</th>
-      <th class="table-warning">المرفقات</th>
+      <th class="table-warning">التاريخ</th>
       <th class="table-warning">التحكم</th>
         </tr>
         <tbody>

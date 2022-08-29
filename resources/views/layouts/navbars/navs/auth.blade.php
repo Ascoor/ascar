@@ -2,11 +2,25 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
   <div class="container-fluid">
     <div class="navbar-wrapper">
-      <a class="navbar-brand" href="#">{{ $titlePage }}</a>
-    </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav">
+        
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('places.index') }}">
+          <i class="material-icons">dashboard</i>
+          <p class="d-lg-none d-md-block">
+            {{ __('Stats') }}
+          </p>
+        </a>
+      </li>
+    </ul> 
+    <a class="navbar-brand" href={{route('places.index')  }}"><strong>{{ $titlePage }}</strong></a>
+  </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
     <span class="sr-only">Toggle navigation</span>
-    <span class="navbar-toggler-icon icon-bar"></span>
     <span class="navbar-toggler-icon icon-bar"></span>
     <span class="navbar-toggler-icon icon-bar"></span>
     </button>
@@ -21,14 +35,7 @@
         </div>
       </form>
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">
-            <i class="material-icons">dashboard</i>
-            <p class="d-lg-none d-md-block">
-              {{ __('Stats') }}
-            </p>
-          </a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">notifications</i>

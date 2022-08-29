@@ -26,7 +26,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title ">نتائج البحث</h4>
+      
           <p class="card-category"> يمكنك البحث برقم المتغير او المركز او القرية</p>
         </div>
         <div class="card-body">
@@ -43,13 +43,13 @@
                             <th class="table-warning">المحافظة</th>
                             <th class="table-warning">المركز</th>
                             <th class="table-warning">القرية</th>
-                            <th class="table-warning">نوع الأملاك</th>
+                           <!--- <th class="table-warning">نوع الأملاك</th>
                             <th class="table-warning">جهة الولاية</th>
                             <th class="table-warning">القانونية</th>
                             <th class="table-warning">الرد</th>
                             <th class="table-warning">تفاصيل الرد</th>
-                            <th class="table-warning">موقف الإزالة</th>
-                            <th class="table-warning">المرفقات</th>
+                            <th class="table-warning">موقف الإزالة</th>-->
+                            <th class="table-warning">التاريخ</th>
                             <th class="table-warning">تعديل</th>
                             <th class="table-warning">عرض</th>
                             <th class="table-warning">حذف</th>
@@ -59,10 +59,7 @@
                   @foreach ($places as $item)
                   <tbody>
                     <tr>
-                    @php
-                        $i = 0;
-                      
-                    @endphp
+                 
                           
                          
                           <th class="table-light">{{ $item->gnump }}</th>
@@ -71,12 +68,12 @@
                           <td class="table-light" >{{ $item->gnump1 }}</td>
                           <td class="table-light">{{ $item->gnump2 }}</td>
       <td class="table-light">{{ $item->gnump3 }}</td>
-      <td class="table-light">{{ $item->gnump4 }}</td>
+    <!--  <td class="table-light">{{ $item->gnump4 }}</td>
       <td class="table-light">{{ $item->gnump5 }}</td>
       <td class="table-light">{{ $item->gnump6 }}</td>
       <td class="table-light">{{ $item->gnump7 }}</td>
       <td class="table-light">{{ $item->gnump8 }}</td>
-      <td class="table-light">{{ $item->gnump9 }}</td>
+      <td class="table-light">{{ $item->gnump9 }}</td>--->
       <td class="table-light">{{ $item->gnump10 }}</td>
       
 <td class="table-light">
@@ -111,6 +108,8 @@
 
 
 {!! $places->links() !!}
+
+
 
 @endsection
 

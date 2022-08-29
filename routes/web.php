@@ -16,15 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
    return view('welcome');
 });
-Route::resource('places', 'PlaceController');
-Route::get('place/soft/selete/{id}','PlaceController@softDelete')
-->name('soft.delete');
-Route::get('place/trash','PlaceController@trashedPlaces')
-->name('place.trash');
-Route::get('place/back/from/trash/{id}','PlaceController@backFromSoftDelete')
-->name('place.back.from.trash');
-Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
-->name('place.delete.from.database');
 
 Auth::routes();
 
@@ -43,29 +34,20 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.table_list');
 	})->name('table');
 
-	Route::get('typography', function () {
+	/*Route::get('typography', function () {
 		return view('pages.typography');
-	})->name('typography');
+	})->name('typography');*/
+	Route::resource('places', 'PlaceController');
+	Route::get('place/soft/selete/{id}','PlaceController@softDelete')
+	->name('soft.delete');
+	Route::get('place/trash','PlaceController@trashedPlaces')
+	->name('place.trash');
+	Route::get('place/back/from/trash/{id}','PlaceController@backFromSoftDelete')
+	->name('place.back.from.trash');
+	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
+	->name('place.delete.from.database');
+	
 
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
-
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
-
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
 });
 
 Route::group(['middleware' => 'auth'], function () {

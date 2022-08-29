@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('layouts.app', ['activePage' => 'home', 'titlePage' => __('الصفحة الرئيسية')])
 
 @section('content')
   
@@ -50,7 +50,7 @@
                               <th class="table-warning">الرد</th>
                               <th class="table-warning">تفاصيل الرد</th>
                               <th class="table-warning">موقف الإزالة</th>
-                              <th class="table-warning">المرفقات</th>
+                              <th class="table-warning">التاريخ</th>
                               <th class="table-warning">تعديل</th>
                               <th class="table-warning">عرض</th>
                               <th class="table-warning">حذف</th>
@@ -60,10 +60,7 @@
                     @foreach ($places as $item)
                     <tbody>
                       <tr>
-                      @php
-                          $i = 0;
-                        
-                      @endphp
+                   
                             
                            
                             <th class="table-light">{{ $item->gnump }}</th>
