@@ -4,14 +4,8 @@
 
 <div class="content">
   <div class="container-fluid">
-    <div class="search">
-      <span>
-        <form class="form-group" method="GET" action="{{ url('/search')  }}">
 
-          <input type="search" placeholder="بحث " class="form-controller mr-sm2" name="query">
-          <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
 
-@method('GET')
 </div>
 <div class="row">
   <div class="col-md-12">

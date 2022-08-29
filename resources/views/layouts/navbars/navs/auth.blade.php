@@ -17,7 +17,7 @@
         </a>
       </li>
     </ul> 
-    <a class="navbar-brand" href={{route('places.index')  }}"><strong>{{ $titlePage }}</strong></a>
+    <a class="navbar-brand" href={{route('places.index')  }}><strong>{{ $titlePage }}</strong></a>
   </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
     <span class="sr-only">Toggle navigation</span>
@@ -25,9 +25,9 @@
     <span class="navbar-toggler-icon icon-bar"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end">
-      <form class="navbar-form">
+      <form class="navbar-form" method="GET" action="{{ url('/search')  }}">
         <div class="input-group no-border">
-        <input type="text" value="" class="form-control" placeholder="Search...">
+        <input type="search"  name="query" class="form-control" placeholder="بحث...">
         <button type="submit" class="btn btn-white btn-round btn-just-icon">
           <i class="material-icons">search</i>
           <div class="ripple-container"></div>
