@@ -45,6 +45,7 @@ class PlaceController extends Controller
             'gnump7' => 'required',
             'gnump8' => 'required',
             'gnump9' => 'required',
+            'gnump10' => 'required',
       
         ]);
 
@@ -89,7 +90,8 @@ class PlaceController extends Controller
             'gnump6' => 'required',
             'gnump7' => 'required',
             'gnump8' => 'required',
-            'gnump9' => 'required'
+            'gnump9' => 'required',
+            'gnump10' => 'required',
     
         ]);
       $place->update($request->all());

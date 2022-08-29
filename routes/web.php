@@ -43,8 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 	->name('place.delete.from.database');
 	Route::resource('search','SearchController');
-	Route::resource('searchp','SearchController@searchp');
-	/*Route::resource('searchw','SearchController@searchw');*/
+	
 });
 
 Route::group(['middleware' => 'auth'], function () {
