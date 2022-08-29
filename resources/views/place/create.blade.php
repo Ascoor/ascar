@@ -17,7 +17,7 @@
           
             <form action="{{ route('places.store')}}" method="POST">
               @csrf
-              
+
               
                
               <div class="form-group">
@@ -36,7 +36,7 @@
                           <input  type="text" name="gnump7" placeholder="الرد">
                           <input  type="text" name="gnump8" placeholder="تفاصيل الرد">
                           <input  type="text" name="gnump9" placeholder="موقف الإزالة">
-                          <input  type="text" name="gnump10" placeholder="موقف الإزالة">
+                          <input  type="date" name="gnump10" placeholder="التاريخ">
                         </div>
                 <div class="form-group">
                   <button type="submit" class="btm btn-danger">إضافة</button>

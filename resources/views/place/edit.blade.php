@@ -48,7 +48,7 @@
                   <input value="{{ $place->gnump8 }}" type="text" name="gnump8" placeholder="تفاصيل الرد">
                   <label>موقف الإزالة</label>
                   <input value="{{ $place->gnump9 }}" type="text" name="gnump9" placeholder="موقف الإزالة">
-                  <input value="{{ $place->gnump10 }}" type="text" name="gnump10" placeholder="التاريخ">
+                  <input value="{{ $place->gnump10 }}" type="date" name="gnump10" placeholder="التاريخ">
 
                 <div class="form-group">
                   <button type="submit" class="btm btn-danger">تحديث</button>
