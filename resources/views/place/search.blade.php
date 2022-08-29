@@ -5,19 +5,19 @@
 <div class="content">
   <div class="container-fluid">
     <div class="search" >
-      <span>      <form class="form-group" type="get" action="{{ url('/search')  }}" >
+      <span>      <form class="form-group" type="get" action="{{ route('search.index')  }}" >
           <input type="search" placeholder="بحث بالمتغير"  class="form-controller mr-sm2"  name="query" >
           <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
       
       </form></span>
-          <span>  <form class="form-group" type="get" action="{{ url('/searchp')  }}" >
+          <span>  <form class="form-group" type="get" action="{{ route('search.searchp')  }}" >
             <input type="search" placeholder="بحث بالمركز"  class="form-controller mr-sm2"  name="queryp" >
                   <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
               </form></span>
               
       
       </form></span>
-          <span>  <form class="form-group" type="get" action="{{ url('/searchw')  }}" >
+          <span>  <form class="form-group" type="get" action="{{ route('search.searchw')  }}" >
             <input type="search" placeholder="بحث بالقرية"  class="form-controller mr-sm2"  name="queryw" >
                   <button class="btn btn-outline-danger pt-1 my-2 my-sm-0" type="submit>">بحث</button></input>
               </form></span>

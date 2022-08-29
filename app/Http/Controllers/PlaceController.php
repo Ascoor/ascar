@@ -16,7 +16,7 @@ class PlaceController extends Controller
     {
         
         $places = Place::latest()->paginate(20);
-        return view('Dashboard',compact('places'));
+        return view('place.index',compact('places'));
     }
     public function trashedPlaces()
         {
@@ -45,7 +45,7 @@ class PlaceController extends Controller
             'gnump7' => 'required',
             'gnump8' => 'required',
             'gnump9' => 'required',
-            'gnump10' => 'required'
+      
         ]);
 
       $places = Place::create($request->all());
@@ -89,9 +89,8 @@ class PlaceController extends Controller
             'gnump6' => 'required',
             'gnump7' => 'required',
             'gnump8' => 'required',
-            'gnump9' => 'required',
-            'gnump10' => 'required',
- 
+            'gnump9' => 'required'
+    
         ]);
       $place->update($request->all());
         return redirect()->route('places.index')

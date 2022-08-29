@@ -21,13 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/search','SearchController');
-Route::get('/searchw','SearchController@searchw');
-Route::get('/searchp','SearchController@searchp');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/searchw','SearchController@searchw')->name('searchw')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
@@ -46,8 +42,9 @@ Route::group(['middleware' => 'auth'], function () {
 	->name('place.back.from.trash');
 	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 	->name('place.delete.from.database');
-	
-
+	Route::resource('search','SearchController');
+	Route::resource('searchp','SearchController@searchp');
+	/*Route::resource('searchw','SearchController@searchw');*/
 });
 
 Route::group(['middleware' => 'auth'], function () {
