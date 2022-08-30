@@ -43,6 +43,10 @@
     .h4 {
       font-family: 'Noto Kufi Arabic', sans-serif;
     }
+    .card{
+      align-items: center;
+      text-align: center
+    }
     .table{
       text-align: center;
       align-items: center;

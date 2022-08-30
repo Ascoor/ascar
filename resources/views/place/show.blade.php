@@ -3,13 +3,21 @@
 @section('content')
 
 @section('content')
-<div class="container" style="padding-top: 2%">
-<div class="page-header1">
-  <div class="card">
-      <div id="card-body">
+
+             
+<div class="content">
+  <div class="container-fluid">
+
+      <div class="col-md-12">
+        
+        <div class="card ">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">المتغير رقم {{ $place->gnump }}:</h4>
+            <p class="card-category">{{ __(' بيانات المتغير') }}</p>
+          </div>
+          <div class="card-body">
         <center>
-        <span ><a  href="/places" >عودة للخلف </a></span> المتغير رقم: {{ $place->gnump }}
-        </center>
+        <span ><a  href="/places" >عودة للخلف </a></span></center>
 
 </div>
 

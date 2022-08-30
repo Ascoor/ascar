@@ -36,7 +36,9 @@
                           <input  type="text" name="gnump7" placeholder="الرد">
                           <input  type="text" name="gnump8" placeholder="تفاصيل الرد">
                           <input  type="text" name="gnump9" placeholder="موقف الإزالة">
-                          <input  type="date" name="gnump10" placeholder="التاريخ">
+
+                          <label><a>التاريخ</a>
+                          <input  type="date" name="gnump10" placeholder="التاريخ"></label>
                         </div>
                 <div class="form-group">
                   <button type="submit" class="btm btn-danger">إضافة</button>
