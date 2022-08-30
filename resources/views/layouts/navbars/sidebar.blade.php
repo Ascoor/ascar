@@ -4,10 +4,9 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
- 
   <div class="logo">
-    <i> <center><img style="width:80% " src="{{ asset('material') }}/img/logo1.png" class="simple-text logo-normal">
-    </center>
+    <a href="#" class="simple-text logo-normal">
+      {{ __('محافظة الدقهلية') }}
     </i> 
     </a>
   </div>
@@ -34,10 +33,10 @@
                 <span class="sidebar-normal">{{ __('إضافة متغير') }} </span>
               </a>
             </li>
-            <!--<li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('search.index') }}">
+            <li class="nav-item{{ $activePage == 'upload' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ url('/multiuploads') }}">
                 <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('البحث عن متغير') }} </span>-->
+                <span class="sidebar-normal"> {{ __('المرفقات') }} </span>
               </a>
             </li>
           </ul>

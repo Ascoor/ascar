@@ -48,20 +48,20 @@
         <tbody>
           <tr>
             
-            <th class="table-light">{{ $place->gnump}}</td>
-      <td class="table-light">{{ $place->gnumh }}</td> 
-      <td class="table-light">{{ $place->gnumw }}</td>
-      <td  class="table-light">{{ $place->gnump1 }}</td>
-      <td  class="table-light">{{ $place->gnump2 }}</td>
-      <td  class="table-light">{{ $place->gnump3 }}</td>
-      <td  class="table-light">{{ $place->gnump4 }}</td>
-      <td  class="table-light">{{ $place->gnump5 }}</td>
-      <td  class="table-light">{{ $place->gnump6 }}</td>
-      <td  class="table-light">{{ $place->gnump7 }}</td>
-      <td  class="table-light">{{ $place->gnump8 }}</td>
-      <td  class="table-light">{{ $place->gnump9 }}</td>
-      <td  class="table-light">{{ $place->gnump10 }}</td>
-<td class="table-light">
+            <th class="table-success">{{ $place->gnump}}</td>
+       <td class="table-success">{{ $place->gnumh }}</td> 
+       <td class="table-success">{{ $place->gnumw }}</td>
+      <td  class="table-success">{{ $place->gnump1 }}</td>
+      <td  class="table-success">{{ $place->gnump2 }}</td>
+      <td  class="table-success">{{ $place->gnump3 }}</td>
+      <td  class="table-success">{{ $place->gnump4 }}</td>
+      <td  class="table-success">{{ $place->gnump5 }}</td>
+      <td  class="table-success">{{ $place->gnump6 }}</td>
+      <td  class="table-success">{{ $place->gnump7 }}</td>
+      <td  class="table-success">{{ $place->gnump8 }}</td>
+      <td  class="table-success">{{ $place->gnump9 }}</td>
+      <td  class="table-success">{{ $place->gnump10 }}</td>
+<td class="table-success">
         <span>
             <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
         </span>
