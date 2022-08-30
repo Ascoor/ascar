@@ -33,10 +33,10 @@
                 <span class="sidebar-normal">{{ __('إضافة متغير') }} </span>
               </a>
             </li>
-            <!--<li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('search.index') }}">
+            <li class="nav-item{{ $activePage == 'upload' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ url('/multiuploads') }}">
                 <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('البحث عن متغير') }} </span>-->
+                <span class="sidebar-normal"> {{ __('المرفقات') }} </span>
               </a>
             </li>
           </ul>
