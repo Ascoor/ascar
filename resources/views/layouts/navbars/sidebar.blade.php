@@ -4,10 +4,9 @@
 
       Tip 2: you can also add an image using data-image tag
   -->
- 
   <div class="logo">
-    <i> <center><img style="width:80% " src="{{ asset('material') }}/img/logo1.png" class="simple-text logo-normal">
-    </center>
+    <a href="#" class="simple-text logo-normal">
+      {{ __('محافظة الدقهلية') }}
     </i> 
     </a>
   </div>

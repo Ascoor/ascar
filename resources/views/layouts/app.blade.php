@@ -29,6 +29,7 @@
 
   <!-- Style Just for persian demo purpose, don't include it in your project -->
   <style>
+   
     body,
     h1,
     h2,
@@ -45,6 +46,10 @@
     .table{
       text-align: center;
       align-items: center;
+      
+      background:#ce92dc;
+      table-layout: auto
+    
       !important
     }
   </style>
