@@ -10,8 +10,8 @@
         
         <div class="card ">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">المتغير رقم: {{ $place->gnump }}:</h4>
-            <p class="card-category">{{ __(' بيانات المتغير') }}</p>
+            <h4 class="card-title"> رقم المتغير {{ $place->gnump }}</h4>
+            <p class="card-category">{{ __(' تعديل بيانات المتغير') }}</p>
           </div>
           <div class="card-body">
             <form action="{{ route('places.update', $place->id) }}" method="POST">
