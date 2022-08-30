@@ -101,7 +101,7 @@
                   <img src="{{ asset('material') }}/img/sidebar-4.jpg" alt="">
                 </a>
               </li>
-               <!-- <li class="button-container">
+              <li class="button-container">
         <a href="https://www.creative-tim.com/product/material-dashboard-laravel" target="_blank" class="btn btn-primary btn-block">Free Download</a>
               </li>
          <li class="header-title">Want more components?</li>
@@ -123,14 +123,14 @@
               <li class="button-container dragon-star">
                 <a class="apply-button" href="{{route('places.index')}}" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
               </li>
-              
-              <!--<li class="header-title">Thank you for 95 shares!</li>
-              <li class="button-container text-center">
+             <li class="header-title">Thank you for 95 shares!</li>
+               
+            <li class="button-container text-center">
                 <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
                 <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
                 <br>
                 <br>
-              </li>-->
+              </li>
             </ul>
           </div>
         </div>
@@ -149,7 +149,7 @@
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-    <script src="{{ asset('material') }}/demo/demo.js"></script>
+    <!--<script src="{{ asset('material') }}/demo/demo.js"></script>-->
     <script src="{{ asset('material') }}/js/settings.js"></script>
 </body>
 

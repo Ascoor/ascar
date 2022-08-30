@@ -49,7 +49,7 @@
             <p>{{ __('متغيرات قيد الفحص') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'trash' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('place.trash') }}">
           <i class="material-icons">library_books</i>
             <p>{{ __('  متغيرات قيد الحفظ ') }}</p>
