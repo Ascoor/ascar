@@ -28,10 +28,10 @@ if($check)
 {
 $places = Place::create($request->all());
 foreach ($request->photos as $photo) {
-$filename = $photo->store('photos');
+$filename1 = $photo->store('photos');
 Placefile::create([
 'place_id' => $places->id,
-'filename' => $filename
+'filename1' => $filename1
 ]);
 }
 echo "Upload Successfully";

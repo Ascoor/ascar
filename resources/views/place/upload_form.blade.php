@@ -32,14 +32,14 @@
 <div class="col-md-3"></div>
 <div class="col-md-6">
 <form action="{{url('/multiuploads')}}" method="post" enctype="multipart/form-data">
-{{ csrf_field() }}
+@csrf
 <div class="form-group">
 <label for="Product Name">مرفقات المتغيرات</label>
-<input type="text" name="filename" class="form-control"  placeholder="Product Name" >
+<input type="text" name="filename1" class="form-control"  placeholder="Product Name" >
 </div>
 <label for="Product Name">Product photos (can attach more than one):</label>
 <br />
-<input type="file" class="form-control" name="gnum1" multiple />
+<input type="file" class="form-control" name="gnump11" multiple />
 <br /><br />
 <input type="submit" class="btn btn-primary" value="Upload" />
 </form>

@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class PlaceFile extends Model
 {
+    
     protected $fillable = ['place_id', 'filename1'];
-    public function place()
+    public function item()
     {
-    return $this->belongsTo('App\Place');
+    return $this->belongsTo('App\place');
     }
-    protected $dates = ['deleted_at'];
     }
     ?>

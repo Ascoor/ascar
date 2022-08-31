@@ -15,9 +15,9 @@ class CreatePlaceFilesTable extends Migration
     {
         Schema::create('place_files', function (Blueprint $table) {
             $table->increments('id');
-$table->integer('item_id')->unsigned();
-$table->foreign('item_id')->references('id')->on('items');
-$table->string('filename');
+$table->bigInteger('place_id')->unsigned();
+$table->foreign('place_id')->references('id')->on('places');
+$table->string('filename1');
 $table->timestamps();
         });
     }
