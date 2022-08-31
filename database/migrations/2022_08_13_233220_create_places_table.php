@@ -16,8 +16,8 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->string('gnump');
-            $table->float ('gnumh');
-            $table->float ('gnumw');
+            $table->float('gnumh');
+            $table->float('gnumw');
             $table->string('gnump1');
             $table->string('gnump2');
             $table->string('gnump3');
