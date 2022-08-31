@@ -18,7 +18,7 @@ class CreatePlacesTable extends Migration
             $table->string('gnump');
             $table->float ('gnumh');
             $table->float ('gnumw');
-            $table->string('gnump1');
+            $table->string('gnum');
             $table->string('gnump2');
             $table->string('gnump3');
             $table->string('gnump4');
@@ -28,6 +28,9 @@ class CreatePlacesTable extends Migration
             $table->string('gnump8');
             $table->string('gnump9');
             $table->string('gnump10');
+            $table->string('gnump11');
+            $table->string('gnump12');
+            $table->string('gnump13');
             $table->timestamps();
         });
     }

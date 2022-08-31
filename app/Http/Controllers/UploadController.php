@@ -1,39 +1,37 @@
 <?php
 namespace App\Http\Controllers;
-use App\Item;
-use App\ItemDetail;
+use App\Place;
+use App\Placefile;
 use Illuminate\Http\Request;
 class UploadController extends Controller
 {
 public function uploadForm()
 {
-return view('place.upload_form');
+return view('upload_form');
 }
 public function uploadSubmit(Request $request)
 {
 $this->validate($request, [
-
- 
- 'gnum1'=>'required',
-
+'gnum11' => 'required',
+'photos'=>'required',
 ]);
 if($request->hasFile('photos'))
 {
 $allowedfileExtension=['pdf','jpg','png','docx'];
 $files = $request->file('photos');
 foreach($files as $file){
-$filename = $file->getClientOriginalName();
+$filename1 = $file->getClientOriginalName();
 $extension = $file->getClientOriginalExtension();
 $check=in_array($extension,$allowedfileExtension);
 //dd($check);
 if($check)
 {
-$items= Item::create($request->all());
+$places = Place::create($request->all());
 foreach ($request->photos as $photo) {
 $filename = $photo->store('photos');
-ItemDetail::create([
-'item_id' => $items->id,
-'filename' => $filename,
+Placefile::create([
+'place_id' => $places->id,
+'filename' => $filename
 ]);
 }
 echo "Upload Successfully";

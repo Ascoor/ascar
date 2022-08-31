@@ -45,8 +45,25 @@
                 </form>
                 </div>
               </div>
-
-
+              <br>
+              <form action="{{ url('/multiuploads')}}" method="GET">
+                @csrf
+  
+   
+              <div class="form-group">
+              <label for="Product Name">Product Name</label>
+              <input type="text" name="name" class="form-control"  placeholder="Product Name" >
+              </div>
+              <label for="Product Name">Product photos (can attach more than one):</label>
+              <br />
+              <input type="file" class="form-control" name="photos[]" multiple />
+              <br /><br />
+              <input type="submit" class="btn btn-primary" value="Upload" />
+              </form>
+              </div>
+              </div>
+              </div>
+              
           
 @if ($message = Session::get('تمت'))
 <div class="alert alert-danger" role="alert">

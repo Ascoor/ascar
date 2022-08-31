@@ -1,10 +1,10 @@
 <?php
- 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemDetailsTable extends Migration
+class CreatePlaceFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateItemDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
-            
+        Schema::create('place_files', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('gnum1');
-        
-     
-            $table->timestamps();
+$table->integer('item_id')->unsigned();
+$table->foreign('item_id')->references('id')->on('items');
+$table->string('filename');
+$table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateItemDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_details');
+        Schema::dropIfExists('place_files');
     }
 }
