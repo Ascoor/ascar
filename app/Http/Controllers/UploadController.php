@@ -15,9 +15,6 @@ $this->validate($request, [
 
  
  'gnum1'=>'required',
- 'gnum2'=>'required',
- 'gnum3'=>'required',
- 'gnum4'=>'required',
 
 ]);
 if($request->hasFile('photos'))
@@ -36,7 +33,7 @@ foreach ($request->photos as $photo) {
 $filename = $photo->store('photos');
 ItemDetail::create([
 'item_id' => $items->id,
-'filename1' => $filename
+'filename' => $filename,
 ]);
 }
 echo "Upload Successfully";

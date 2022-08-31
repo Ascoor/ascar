@@ -31,7 +31,7 @@
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6">
-<form action="/multiuploads" method="post" enctype="multipart/form-data">
+<form action="{{url('/multiuploads')}}" method="post" enctype="multipart/form-data">
 {{ csrf_field() }}
 <div class="form-group">
 <label for="Product Name">مرفقات المتغيرات</label>
@@ -40,9 +40,6 @@
 <label for="Product Name">Product photos (can attach more than one):</label>
 <br />
 <input type="file" class="form-control" name="gnum1" multiple />
-<input type="file" class="form-control" name="gnum2" multiple />
-<input type="file" class="form-control" name="gnum3" multiple />
-<input type="file" class="form-control" name="gnum4" multiple />
 <br /><br />
 <input type="submit" class="btn btn-primary" value="Upload" />
 </form>

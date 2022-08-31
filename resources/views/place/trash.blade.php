@@ -63,11 +63,6 @@
 <span>
         <a class="btn btn-success" href="{{ route('place.back.from.trash', $item->id) }}">إستئناف العمل</a>
     </span>     
-</td> 
-<td>     
-    <span>
-        <a class="btn btn-danger" href="{{ route('places.show', $item->id) }}">عرض </a>
-</span>
 </td>
 
 
