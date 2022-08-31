@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'trash', 'titlePage' => __('متغيرات قيد العمل')])
+@extends('layouts.app', ['activePage' => 'upload', 'titlePage' => __('متغيرات قيد العمل')])
 
 @section('content')
 @if (count($errors) > 0)

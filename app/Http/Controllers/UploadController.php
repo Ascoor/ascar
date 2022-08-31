@@ -17,7 +17,7 @@ $this->validate($request, [
 ]);
 if($request->hasFile('photos'))
 {
-$allowedfileExtension=['pdf','jpg','png','docx'];
+$allowedfileExtension=all();
 $files = $request->file('photos');
 foreach($files as $file){
 $filename1 = $file->getClientOriginalName();
@@ -33,6 +33,7 @@ Placefile::create([
 'place_id' => $places->id,
 'filename1' => $filename1
 ]);
+
 }
 echo "Upload Successfully";
 }
@@ -40,6 +41,7 @@ else
 {
 echo '<div class="alert alert-warning"><strong>Warning!</strong> Sorry Only Upload png , jpg , doc</div>';
 }
+return view('place.index');
 }
 }
 }

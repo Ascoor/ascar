@@ -12,13 +12,13 @@
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'index' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('places.index') }}">
           <i class="material-icons">dashboard</i>
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+      <li class="nav-item {{ ($activePage == 'home' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
           <p>{{ __('مسلسل المتغيرات') }}
@@ -27,7 +27,7 @@
         </a>
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+            <li class="nav-item{{ $activePage == 'create' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('places.create') }}">
                 <span class="sidebar-mini"> UP </span>
                 <span class="sidebar-normal">{{ __('إضافة متغير') }} </span>

@@ -91,7 +91,8 @@
                 </td>
                 <td class="table-info">
                   <span>
-                    <a class="btn btn-danger" method="post" href="{{ url('/multiuploads', $item->id) }}"> حفظ المتغير </a>
+                    <a class="btn btn-danger" method="GET" href="{{ url('/multiuploads', $item->id) }}"> حفظ المتغير </a>
+                 @csrf
                   </span>
                 </td>
 
