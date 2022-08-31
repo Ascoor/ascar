@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'upload', 'titlePage' => __('متغيرات قيد العمل')])
+@extends('layouts.app', ['activePage' => 'upload', 'titlePage' => __('مرفقات المتغير')])
 
 @section('content')
 @if (count($errors) > 0)

@@ -89,12 +89,7 @@
                     <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حفظ المتغير </a>
                   </span>
                 </td>
-                <td class="table-info">
-                  <span>
-                    <a class="btn btn-danger" method="GET" href="{{ url('/multiuploads', $item->id) }}"> حفظ المتغير </a>
-                 @csrf
-                  </span>
-                </td>
+               
 
 
 

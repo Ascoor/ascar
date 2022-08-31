@@ -45,6 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('search','SearchController');
 	Route::get('/multiuploads/{id}', 'UploadController@uploadform');
 	Route::post('/multiuploads/{id}', 'UploadController@uploadSubmit');
+	Route::get('/multiuploads', 'UploadController@uploadSubmit');
 	
 
 });
