@@ -7,7 +7,7 @@ class UploadController extends Controller
 {
 public function uploadForm()
 {
-return view('upload_form');
+return view('place.upload_form');
 }
 public function uploadSubmit(Request $request)
 {
