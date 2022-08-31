@@ -43,8 +43,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 	->name('place.delete.from.database');
 	Route::resource('search','SearchController');
+	Route::get('/multiuploads', 'UploadController@uploadForm');
+	Route::get('/multiuploads/{id}', 'UploadController@uploadForm');
 	
-Route::get('/multiuploads/{id}', 'UploadController@uploadForm');
 Route::post('/multiuploads', 'UploadController@uploadSubmit');
 });
 

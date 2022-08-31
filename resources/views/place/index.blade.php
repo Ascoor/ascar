@@ -91,7 +91,7 @@
                 </td>
                 <td class="table-info">
                   <span>
-                    <a class="btn btn-danger" href="{{ url('/multiuploads', $item->id) }}"> حفظ المتغير </a>
+                    <a class="btn btn-danger" method="post" href="{{ url('/multiuploads', $item->id) }}"> حفظ المتغير </a>
                   </span>
                 </td>
 
