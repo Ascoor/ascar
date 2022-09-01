@@ -29,19 +29,17 @@
 
   <!-- Style Just for persian demo purpose, don't include it in your project -->
   <style>
-   
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .h1,
-    .h2,
-    .h3,
-    .h4 {
+
+    body
+    ,h1
+    ,h2
+    ,h3
+    ,h4
+    ,h5
+    ,h6
+       {
       font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: 20px;
     }
     .card{
       align-items: center;
@@ -51,8 +49,8 @@
       text-align: center;
       align-items: center;
       
-      background:#ce92dc;
-      table-layout: auto
+      background:#ce92dc
+      
     
       !important
     }

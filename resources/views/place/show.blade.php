@@ -12,19 +12,18 @@
         
         <div class="card ">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">المتغير رقم {{ $place->gnump }}:</h4>
+            <h4 class="card-title">المتغير رقم {{ $place->gnump }}</h4>
             <p class="card-category">{{ __(' بيانات المتغير') }}</p>
           </div>
           <div class="card-body">
         <center>
         <span ><a  href="/places" >عودة للخلف </a></span></center>
 
-</div>
-
-
-
-    
-<div class="table">
+        
+        
+        
+        
+        <div class="table">
   <table>
     <tr>
       
@@ -43,8 +42,9 @@
       <th class="table-warning">تفاصيل الرد</th>
       <th class="table-warning">موقف الإزالة</th>
       <th class="table-warning">التاريخ</th>
-      <th class="table-warning">التحكم</th>
-        </tr>
+      <th class="table-warning">المرفقات</th>
+    <th class="table-warning">التحكم</th>
+     </tr>
         <tbody>
           <tr>
             
@@ -61,14 +61,17 @@
       <td  class="table-success">{{ $place->gnump8 }}</td>
       <td  class="table-success">{{ $place->gnump9 }}</td>
       <td  class="table-success">{{ $place->gnump10 }}</td>
-<td class="table-success">
-        <span>
+      <td  class="table-success">{{ $place->gnump11 }}</td>
+      <td  class="table-success">{{ $place->gnump12 }}</td>
+      <span><td class="table-success">
+       
             <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
-        </span>
+        
     </td>
     </tr>
-        </tbody>
+        </tbody></span>
 </table>
+</div>
     </div>
     {!! $place->detail !!}
 
