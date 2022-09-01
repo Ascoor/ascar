@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+<div class="sidebar" data-color="purple" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
   <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -18,7 +18,7 @@
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'home' || $activePage == 'user-management') ? ' active' : '' }}">
+      <li class="nav-item {{ ($activePage == 'home' || $activePage == 'index') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
           <p>{{ __('مسلسل المتغيرات') }}

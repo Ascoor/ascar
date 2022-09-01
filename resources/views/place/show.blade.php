@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('تسلسل المتغيرات')])
+@extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('غرض المتغير')])
 
 @section('content')
 
@@ -43,6 +43,9 @@
       <th class="table-warning">تفاصيل الرد</th>
       <th class="table-warning">موقف الإزالة</th>
       <th class="table-warning">التاريخ</th>
+      <th class="table-warning">المرفقات</th>
+      <th class="table-warning">الملاحظات</th>
+
       <th class="table-warning">التحكم</th>
         </tr>
         <tbody>
@@ -54,13 +57,15 @@
       <td  class="table-success">{{ $place->gnump1 }}</td>
       <td  class="table-success">{{ $place->gnump2 }}</td>
       <td  class="table-success">{{ $place->gnump3 }}</td>
-      <td  class="table-success">{{ $place->gnump4 }}</td>
+   <td  class="table-success">{{ $place->gnump4 }}</td>
       <td  class="table-success">{{ $place->gnump5 }}</td>
       <td  class="table-success">{{ $place->gnump6 }}</td>
       <td  class="table-success">{{ $place->gnump7 }}</td>
       <td  class="table-success">{{ $place->gnump8 }}</td>
       <td  class="table-success">{{ $place->gnump9 }}</td>
       <td  class="table-success">{{ $place->gnump10 }}</td>
+      <td  class="table-success">{{ $place->gnump11 }}</td>
+      <td  class="table-success">{{ $place->gnump12 }}</td>
 <td class="table-success">
         <span>
             <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
