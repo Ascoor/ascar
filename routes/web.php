@@ -43,11 +43,20 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 	->name('place.delete.from.database');
 	Route::resource('search','SearchController');
-	Route::get('/multiuploads/{id}', 'UploadController@uploadform');
+	Route::get('/multiuploads/{id}', 'UploadController@uploadForm');
 	Route::post('/multiuploads/{id}', 'UploadController@uploadSubmit');
-	Route::get('/multiuploads', 'UploadController@uploadSubmit');
-	
+	Route::get('/multiuploads', 'UploadController@uploadForm');
+	Route::post('/multiuploads', 'UploadController@uploadSubmit');
 
+
+	Route::get('/post/create', 'PostController@create')->name('post.create');
+	Route::post('/post/store', 'PostController@store')->name('post.store');
+	
+	Route::get('/posts', 'PostController@index')->name('posts');
+	Route::get('/post/show/{id}', 'PostController@show')->name('post.show');
+	
+	Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+	Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 });
 
 Route::group(['middleware' => 'auth'], function () {

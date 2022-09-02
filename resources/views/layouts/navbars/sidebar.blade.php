@@ -33,7 +33,7 @@
                 <span class="sidebar-normal">{{ __('إضافة متغير') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'upload' ? ' active' : '' }}">
+            <li class="nav-item{{ $activePage == 'uploadform' ? ' active' : '' }}">
               <a class="nav-link" href="{{ url('/multiuploads') }}">
                 <span class="sidebar-mini"> UM </span>
                 <span class="sidebar-normal"> {{ __('المرفقات') }} </span>
