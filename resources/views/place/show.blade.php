@@ -15,14 +15,9 @@
             <h4 class="card-title">المتغير رقم {{ $place->gnump }}</h4>
             <p class="card-category">{{ __(' بيانات المتغير') }}</p>
           </div>
-          <div class="card-body">
-        <center>
-        <span ><a  href="/places" >عودة للخلف </a></span></center>
-
-        
-        
-        
-        
+            <div class="card-body">
+              
+              
         <div class="table">
   <table>
     <tr>
@@ -43,6 +38,7 @@
       <th class="table-warning">موقف الإزالة</th>
       <th class="table-warning">التاريخ</th>
       <th class="table-warning">المرفقات</th>
+      <th class="table-warning">الملاحظات</th>
     <th class="table-warning">التحكم</th>
      </tr>
         <tbody>
@@ -63,14 +59,16 @@
       <td  class="table-success">{{ $place->gnump10 }}</td>
       <td  class="table-success">{{ $place->gnump11 }}</td>
       <td  class="table-success">{{ $place->gnump12 }}</td>
-      <span><td class="table-success">
+      <td class="table-success">
        
-            <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
         
+        <a class="btn btn-info" hrzef="{{ route('places.edit', $place->id) }}"> تعديل</a>
+        <a class="btn btn-info" hrzef="{{ route('post.show', $place->id) }}"> post</a>
     </td>
     </tr>
-        </tbody></span>
+  </tbody>
 </table>
+</div>
 </div>
     </div>
     {!! $place->detail !!}

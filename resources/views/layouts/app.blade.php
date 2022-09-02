@@ -54,6 +54,9 @@
     
       !important
     }
+    .display-comment .display-comment {
+        margin-left: 40px
+    }
   </style>
 </head>
     <body class="{{ $class ?? '' }}">

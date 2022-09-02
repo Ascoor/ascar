@@ -79,8 +79,9 @@
                 <span>
                 <td class="table-warning">
             
-                    <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-                
+                  
+                  <a class="btn btn-info" href="{{ url('/multiuploads', $item->id) }}"> المرفقات</a>
+                  <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
         
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
        
