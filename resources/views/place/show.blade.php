@@ -2,7 +2,6 @@
 
 @section('content')
 
-@section('content')
 
              
 <div class="content">
@@ -39,14 +38,10 @@
       <th class="table-warning">التاريخ</th>
       <th class="table-warning">المرفقات</th>
       <th class="table-warning">الملاحظات</th>
-<<<<<<< HEAD
 
-      <th class="table-warning">التحكم</th>
-        </tr>
-=======
-    <th class="table-warning">التحكم</th>
+
      </tr>
->>>>>>> adc216a4726324bd19c8b16669d7aecdd5c1cfc1
+
         <tbody>
           <tr>
             
@@ -65,20 +60,18 @@
       <td  class="table-success">{{ $place->gnump10 }}</td>
       <td  class="table-success">{{ $place->gnump11 }}</td>
       <td  class="table-success">{{ $place->gnump12 }}</td>
-<<<<<<< HEAD
-<td class="table-success">
-        <span>
-            <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
-        </span>
-=======
-      <td class="table-success">
-       
-        
-        <a class="btn btn-info" hrzef="{{ route('places.edit', $place->id) }}"> تعديل</a>
-        <a class="btn btn-info" hrzef="{{ route('post.show', $place->id) }}"> post</a>
->>>>>>> adc216a4726324bd19c8b16669d7aecdd5c1cfc1
-    </td>
-    </tr>
+      
+
+          <span>
+          <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
+          
+
+ 
+    <a class="btn btn-info" hrzef="{{ route('posts') }}"> منشورات</a>
+
+</span>
+</tr>
+
   </tbody>
 </table>
 </div>
