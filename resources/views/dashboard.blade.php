@@ -1,9 +1,7 @@
-@extends('layouts.app', ['activePage' => ' dashoard', 'titlePage' => __('لوحة التحكم')])
+@extends('layouts.app', ['activePage' => ' home', 'titlePage' => __('لوحة التحكم')])
 
 @section('content')
-<div class="content">
-<div class="container-fluid">
-  
+<div class="content">  
 
 
 

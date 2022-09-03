@@ -1,7 +1,7 @@
 @extends('layouts.app', ['activePage' => 'uploadform', 'titlePage' => __('رفع ملفات  المتغير')])
 
 @section('content')
-       
+
 <div class="content">
   <div class="container-fluid">
 
@@ -38,9 +38,12 @@
 <form action="/multiuploads/{'$id'}" method="post" enctype="multipart/form-data">
 @csrf
 <div class="form-group">
-<label for="Product Name">Product Name</label>
-<input type="text" name="name" class="form-control"  placeholder="Product Name" >
-</div>
+  <label for="Product Name">Product Name</label>
+  <input type="text" name="name" class="form-control"  placeholder="Product Name" >
+
+    <input type="hidden" class="form-control" enctype="multipart/form-data" name="place_id" />
+  </div>
+
 <label for="Product Name">Product photos (can attach more than one):</label>
 <br />
 <input type="file" class="form-control" name="photos[]" multiple />
@@ -49,8 +52,6 @@
 </form>
 </div>
 </div>
-
-
 @endsection
 
 @push('js')

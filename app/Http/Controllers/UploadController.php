@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Item;
+use App\Place;
 use App\ItemDetail;
 use Illuminate\Http\Request;
 class UploadController extends Controller
@@ -14,12 +15,14 @@ public function uploadSubmit(Request $request)
 $this->validate($request, [
 'name' => 'required',
 'photos'=>'required',
+'place_id' => Place::find('id')
 ]);
+$place_id = $id->store(' place_id');
 if($request->hasFile('photos'))
 {
-$allowedfileExtension=['pdf','jpg','png','docx'];
-$files = $request->file('photos');
-foreach($files as $file){
+    $allowedfileExtension=['pdf','jpg','png','docx'];
+    $files = $request->file('photos');
+    foreach($files as $file){
 $filename = $file->getClientOriginalName();
 $extension = $file->getClientOriginalExtension();
 $check=in_array($extension,$allowedfileExtension);
