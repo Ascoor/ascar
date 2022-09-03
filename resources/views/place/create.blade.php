@@ -36,7 +36,11 @@
                           <input  type="text" name="gnump7" placeholder="الرد">
                           <input  type="text" name="gnump8" placeholder="تفاصيل الرد">
                           <input  type="text" name="gnump9" placeholder="موقف الإزالة">
-
+                          <input  type="file" name="photo1" placeholder="مرفقات ">
+                          <input  type="file" name="photo2" placeholder=" مرفقات">
+                          <input  type="file" name="photo3" placeholder=" مرفقات">
+                          <input  type="file" name="photo4" placeholder=" مرفقات">
+                          
                           <label><a>التاريخ</a>
                           <input  type="date" name="gnump10" placeholder="التاريخ"></label>
                         </div>
@@ -45,8 +49,9 @@
                 </form>
                 </div>
               </div>
+              <br>
 
-
+              
           
 @if ($message = Session::get('تمت'))
 <div class="alert alert-danger" role="alert">

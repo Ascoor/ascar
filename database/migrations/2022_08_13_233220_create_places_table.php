@@ -14,10 +14,10 @@ class CreatePlacesTable extends Migration
     public function up()
     {
         Schema::create('places', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('gnump');
-            $table->float ('gnumh');
-            $table->float ('gnumw');
+            $table->double('gnumh');
+            $table->double('gnumw');
             $table->string('gnump1');
             $table->string('gnump2');
             $table->string('gnump3');
@@ -28,6 +28,15 @@ class CreatePlacesTable extends Migration
             $table->string('gnump8');
             $table->string('gnump9');
             $table->string('gnump10');
+            $table->string('gnump11');
+            $table->integer('gnump12')->unsigned;
+            $table->longText('gnump13');
+            $table->string('photo1');
+            $table->string('photo2');
+            $table->string('photo3');
+            $table->string('photo4');
+   
+            $table->softDeletes();
             $table->timestamps();
         });
     }

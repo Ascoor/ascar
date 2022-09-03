@@ -21,27 +21,25 @@
   <link href="https://fonts.googleapis.com/css?family=Cairo&amp;subset=arabic" rel="stylesheet">
 
   <!-- CSS Files -->
- <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-  <!-- <link href="{{ asset('material') }}/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />--->
+ <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />--->
+   <link href="{{ asset('material') }}/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
+<!---  <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />-->
   
 
   <!-- Style Just for persian demo purpose, don't include it in your project -->
   <style>
-   
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .h1,
-    .h2,
-    .h3,
-    .h4 {
+
+    body
+    ,h1
+    ,h2
+    ,h3
+    ,h4
+    ,h5
+    ,h6
+       {
       font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: 20px;
     }
     .card{
       align-items: center;
@@ -51,10 +49,13 @@
       text-align: center;
       align-items: center;
       
-      background:#ce92dc;
-      table-layout: auto
+      background:#ce92dc
+      
     
       !important
+    }
+    .display-comment .display-comment {
+        margin-left: 40px
     }
   </style>
 </head>

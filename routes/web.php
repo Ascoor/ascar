@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
 	/*Route::get('typography', function () {
 		return view('pages.typography');
 	})->name('typography');*/
+	/*$$$$$$$$$$$$$$  Places Routes  $$$$$$$$$$$$$$$$$$$ */
 	Route::resource('places', 'PlaceController');
 	Route::get('place/soft/selete/{id}','PlaceController@softDelete')
 	->name('soft.delete');
@@ -42,10 +43,24 @@ Route::group(['middleware' => 'auth'], function () {
 	->name('place.back.from.trash');
 	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 	->name('place.delete.from.database');
+	/*$$$$$$$$$$$$$$  Search Routes  $$$$$$$$$$$$$$$$$$$ */
 	Route::resource('search','SearchController');
-	
+	/*$$$$$$$$$$$$$$  Upload Routes  $$$$$$$$$$$$$$$$$$$ */
+	Route::get('/multiuploads/{id}', 'UploadController@uploadForm');
+	Route::post('/multiuploads/{id}', 'UploadController@uploadSubmit');
 	Route::get('/multiuploads', 'UploadController@uploadForm');
-Route::post('/multiuploads', 'UploadController@uploadSubmit');
+	Route::post('/multiuploads', 'UploadController@uploadSubmit');
+	
+	/*$$$$$$$$$$$$$$  Post Routes  $$$$$$$$$$$$$$$$$$$ */
+
+	Route::get('/post/create', 'PostController@create')->name('post.create');
+	Route::post('/post/store', 'PostController@store')->name('post.store');
+	
+	Route::get('/posts', 'PostController@index')->name('posts');
+	Route::get('/post/show/{id}', 'PostController@show')->name('post.show');
+	
+	Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+	Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 });
 
 Route::group(['middleware' => 'auth'], function () {

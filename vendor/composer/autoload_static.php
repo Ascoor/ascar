@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
+class ComposerStaticInit7a339d4b60d4ffc85195601452ac6066
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -480,6 +480,7 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
         'App\\Http\\Controllers\\PlaceController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlaceController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
+        'App\\Http\\Controllers\\UploadController' => __DIR__ . '/../..' . '/app/Http/Controllers/UploadController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -493,6 +494,7 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
         'App\\Http\\Requests\\ProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileRequest.php',
         'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
         'App\\Place' => __DIR__ . '/../..' . '/app/Place.php',
+        'App\\PlaceFile' => __DIR__ . '/../..' . '/app/PlaceFile.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -4955,10 +4957,10 @@ class ComposerStaticInit7d0eee364577d39b42000d280e282fcd
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7d0eee364577d39b42000d280e282fcd::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7d0eee364577d39b42000d280e282fcd::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7d0eee364577d39b42000d280e282fcd::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7d0eee364577d39b42000d280e282fcd::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7a339d4b60d4ffc85195601452ac6066::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7a339d4b60d4ffc85195601452ac6066::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7a339d4b60d4ffc85195601452ac6066::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7a339d4b60d4ffc85195601452ac6066::$classMap;
 
         }, null, ClassLoader::class);
     }
