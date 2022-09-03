@@ -42,6 +42,12 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item{{ $activePage == 'post.index' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('posts') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('المنشورات') }}</p>
+        </a>
+      </li>
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('places.index') }}">
           <i class="material-icons">content_paste</i>

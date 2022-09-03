@@ -4,17 +4,24 @@
 
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <p><b>{{ $post->title }}</b></p>
+<div class="container">
+<div class="row justify-content-center">
+        <div class="col-md-10">
+        <div class="card">
+            <div class="card-body">
+            </div>
+                <p><b>{{ $post->title }}</b></p>
                     <p>
                         {{ $post->body }}
                     </p>
                     <hr />
                     <h4>Display Comments</h4>
-                    @include('partials._comment_replies', ['comments' => $post->comments, 'post_id' => $post->id])
+                    @foreach($post->comments as $comment)
+                        <div class="display-comment">
+                            <strong>{{ $comment->user->name }}</strong>
+                            <p>{{ $comment->body }}</p>
+                        </div>
+                    @endforeach
                     <hr />
                     <h4>Add comment</h4>
                     <form method="post" action="{{ route('comment.add') }}">

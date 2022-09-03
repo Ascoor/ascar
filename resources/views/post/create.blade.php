@@ -1,5 +1,5 @@
 
-@extends('layouts.app', ['activePage' => 'حخسف', 'titlePage' => __('المنشورات')])
+@extends('layouts.app', ['activePage' => 'create.post', 'titlePage' => __('المنشورات')])
 
 @section('content')
 <div class="container">
@@ -26,6 +26,7 @@
             </div>
         </div>
     </div>
+</div>
     @endsection
 
 @push('js')
