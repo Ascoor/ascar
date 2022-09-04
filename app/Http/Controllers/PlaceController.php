@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use 	Auth;
+use App\User;
 use App\Place;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
@@ -53,7 +52,7 @@ class PlaceController extends Controller
 		'gnump9' =>'required',
 		'gnump10' => 'required',
 		'gnump11' =>'required',
-		'gnump12' => Auth::id(),
+		'gnump12' => User::id(),
 
 		'gnump13' => 'required',
 		'photo1' => 'required | image',
@@ -92,7 +91,7 @@ $place = Place::create([
 	'gnump9' => $request->gnump9,
 	'gnump10' => $request->gnump10,
 	'gnump11' => $request->gnump11,
-	'gnump12' => Auth::id(),
+	'gnump12' => User::id(),
 	'gnump13' => $request->gnump13,
 	'gnump14' => '/uploads/posts/'.$newPhoto1,
 	'gnump15' => '/uploads/posts/'.$newPhoto2,
@@ -166,7 +165,7 @@ return redirect()->back()->with('تمت', 'تمت الإضافة بنجاح');
 			$photo4 = $request->photo4;
 			$newPhoto4 = time().$photo4.getClientOrginalName();
 			$photo4->move('uploads/posts', $newPhoto4) ;
-			$place->save();
+			
 		}
 		$place->gnump = $request->gnump;
 		$place->gnumh = $request->gnumh;
@@ -182,7 +181,7 @@ return redirect()->back()->with('تمت', 'تمت الإضافة بنجاح');
 		$place->gnump9 = $request->gnump9;
 		$place->gnump10 = $request->gnump10;
 		$place->gnump11 = $request->gnump11;
-		$place->gnump12 =  Auth::id();
+		$place->gnump12 =  User::id();
 		$place->gnump13 = $request->gnump13;
 
 
