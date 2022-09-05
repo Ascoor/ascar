@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'index', 'titlePage' => __('الصفحة الرئيسية')])
+@extends('layouts.app', ['activePage' => 'place.edit', 'titlePage' => __('الصفحة الرئيسية')])
 
 @section('content')
 
@@ -65,15 +65,8 @@
         {{ session('status') }}
     </div>
     @endif
-            {!! $place->detail !!}
+
           
   @endsection
 
-  @push('js')
-    <script>
-      $(document).ready(function() {
-        // Javascript method's body can be found in assets/js/demos.js
-        md.initDashboardPageCharts();
-      });
-    </script>
-  @endpush
+

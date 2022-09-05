@@ -14,11 +14,9 @@
             <p class="card-category">{{ __(' بيانات المتغير') }}</p>
           </div>
           <div class="card-body">
-          
-            <form action="{{ route('places.store')}}" method="POST">
-              @csrf
-
-              
+   
+          <form action="{{route('places.store')}}" method="POST" enctype="multipart/form-data">
+        @csrf
                
               <div class="form-group">
                 <input type="number" name="gnump" placeholder="مسلسل المتغير">
@@ -36,17 +34,21 @@
                           <input  type="text" name="gnump7" placeholder="الرد">
                           <input  type="text" name="gnump8" placeholder="تفاصيل الرد">
                           <input  type="text" name="gnump9" placeholder="موقف الإزالة">
-                          <input  type="file" name="photo1" placeholder="مرفقات ">
-                          <input  type="file" name="photo2" placeholder=" مرفقات">
-                          <input  type="file" name="photo3" placeholder=" مرفقات">
-                          <input  type="file" name="photo4" placeholder=" مرفقات">
                           
                           <label><a>التاريخ</a>
                           <input  type="date" name="gnump10" placeholder="التاريخ"></label>
-                        </div>
-                <div class="form-group">
-                  <button type="submit" class="btm btn-danger">إضافة</button>
-                </form>
+                          <input  type="text" name="gnump11" placeholder="الملاحظات">
+               
+ 
+  <input type="photo" class="custom-file-input" name="photo1">
+  <label class="custom-file-label" >Choose file</label>
+</div>
+            <div class="form-group">
+
+                <button class="btn btn-danger" type="submit">حفظ</button>
+            </div>
+
+          </form>
                 </div>
               </div>
               <br>

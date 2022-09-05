@@ -14,17 +14,8 @@
         <h4 class="card-title ">نتائج البحث</h4>
         <p class="card-category"> يمكنك البحث برقم المتغير او المركز او القرية</p>
       </div>
-      <div class="card-body">
-        @if ($message = Session::get('تمت'))
-        <div class="alert alert-danger" role="alert">
-                {{$message}}
-            </div>
-            @endif
-            @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-            @endif
+      @if ($places->count() > 0 )
+
       
         <div class="table-responsive">
           <table class="table">
@@ -33,6 +24,7 @@
 
 
 
+              <th class="table-warning">مسلسل </th>
               <th class="table-warning">مسلسل المتغير</th>
               <th class="table-warning">خط العرض</th>
               <th class="table-warning">خط الطول</th>
@@ -56,11 +48,14 @@
 </tr>
             </thead>
             <tbody>
-              @foreach ($places as $item)
-      
+                 @php
+                        $i = 1;
+                    @endphp
+                    @foreach ($places as $item)
               <tr>
 
 
+              <th scope="row">{{$i++}}</th>
                 <td class="table-info">{{ $item->gnump }}</td>
                 <td class="table-info">{{ $item->gnumh }}</td>
                 <td class="table-info">{{ $item->gnumw }}</td>
@@ -80,7 +75,7 @@
                 <td class="table-warning">
             
                   
-                  <a class="btn btn-info" href="{{ url('/multiuploads', $item->id) }}"> المرفقات</a>
+                
                   <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
         
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
@@ -95,7 +90,7 @@
               </tr>
               <tr>
 
-
+              <th scope="row">{{$i++}}</th>
                 <td class="table-primary">{{ $item->gnump }}</td>
                 <td class="table-primary">{{ $item->gnumh }}</td>
                 <td class="table-primary">{{ $item->gnumw }}</td>
@@ -131,7 +126,7 @@
               </tr>
               <tr>
 
-
+              <th scope="row">{{$i++}}</th>
                 <td class="table-secondary">{{ $item->gnump }}</td>
                 <td class="table-secondary">{{ $item->gnumh }}</td>
                 <td class="table-secondary">{{ $item->gnumw }}</td>
@@ -163,7 +158,7 @@
               </tr>
               <tr>
 
-
+              <th scope="row">{{$i++}}</th>
                 <td class="table-success">{{ $item->gnump }}</td>
                 <td class="table-success">{{ $item->gnumh }}</td>
                 <td class="table-success">{{ $item->gnumw }}</td>
@@ -200,7 +195,7 @@
             </tbody>
               <tr>
 
-
+              <th scope="row">{{$i++}}</th>
                 <td class="table-info">{{ $item->gnump }}</td>
                 <td class="table-info">{{ $item->gnumh }}</td>
                 <td class="table-info">{{ $item->gnumw }}</td>
@@ -233,16 +228,24 @@
 
 
               </tr>
+              @endforeach
             </tbody>
-            @endforeach
 
           </table>
         </div>
       </div>
     </div>
+    @else
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                Not places
+              </div>
+        </div>
+
+        @endif
   </div>
  
-  {!! $places->links() !!}
+
 
 
 
