@@ -16,8 +16,9 @@ class PlaceController extends Controller
 
 	public function index()
     {
-		$places = Place::latest()->paginate(10);
-		return view('place.index', compact('places',$places));
+	   
+        $places = Place::latest()->paginate(10);
+        return view('place.index',compact('places'));
 
     }
 
@@ -27,7 +28,7 @@ class PlaceController extends Controller
 	public function trashedPlaces()
 		{
 			
-		$places = Place::onlyTrashed()->paginate(10);
+		$places = Place::onlyTrashed()->paginate();
 			return view('place.trash',compact('places'));
 		}
 	
@@ -56,9 +57,7 @@ class PlaceController extends Controller
 		'gnump11' =>'required',
 		'gnump13' => 'required',
 		'photo1' => 'required | image',
-		'photo2' => 'required | image',
-		'photo3' => 'required | image',
-		'photo4' => 'required | image',
+
   
         ]);
 
@@ -67,7 +66,6 @@ class PlaceController extends Controller
         $photo->move('uploads/posts',$newPhoto);
 
         $place = Place::create([
-            'gnump12' =>  Auth::id(),
 			'gnump' => $request->gnump,
 			'gnumh' => $request->gnumh,
 			'gnumw' => $request->gnumw,
@@ -82,13 +80,11 @@ class PlaceController extends Controller
 			'gnump9' => $request->gnump9,
 			'gnump10' => $request->gnump10,
 			'gnump11' => $request->gnump11,
-		
+			
+            'gnump12' =>  Auth::id(),
 			'gnump13' => $request->gnump13,
 			'photo1' => '/uploads/posts/'.$newPhoto,
-			'photo2' => '/uploads/posts/'.$newPhoto,
-			'photo3' => '/uploads/posts/'.$newPhoto,
-			'photo4' =>'/uploads/posts/'.$newPhoto,
-					
+		
 
         ]);
 
@@ -176,12 +172,13 @@ public function destroy(Place $id)
 	   return redirect()->back() ;
 	}
 	
-public function softDeletes($id)
-{
-	$place = Place::find($id)->delete();
 
-   return redirect()->route('places.index')
-	   ->with('تمت', 'تم الإخفاء بنجاح');
+	public function softDelete( $id)
+    {
+         $place = Place::find($id)->delete();
+
+        return redirect()->route('places.index')
+            ->with('تمت', 'تم الإخفاء بنجاح');
 }
 
 public function deleteForEver  	( $id)

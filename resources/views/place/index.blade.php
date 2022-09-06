@@ -24,7 +24,7 @@
 
 
 
-              <th class="table-warning">مسلسل </th>
+              <th class="table-warning ">م </th>
               <th class="table-warning">مسلسل المتغير</th>
               <th class="table-warning">خط العرض</th>
               <th class="table-warning">خط الطول</th>
@@ -34,7 +34,7 @@
               
               
               <th class="table-warning">التاريخ</th>
-              <th class="table-warning">المرفقات</th>
+  
               <th class="table-warning">ملاحظات</th>
               
               <th class="table-warning">التحكم</th>
@@ -55,7 +55,7 @@
               <tr>
 
 
-              <th scope="row">{{$i++}}</th>
+              <th class="table-warning scope="row">{{$i++}}</th>
                 <td class="table-info">{{ $item->gnump }}</td>
                 <td class="table-info">{{ $item->gnumh }}</td>
                 <td class="table-info">{{ $item->gnumw }}</td>
@@ -64,8 +64,8 @@
                 <td class="table-info">{{ $item->gnump3 }}</td>
                 <td class="table-info">{{ $item->gnump10 }}</td>
                 <td class="table-info">{{ $item->gnump11 }}</td>
-                <td class="table-info">{{ $item->gnump12 }}</td>
-                <!---<td class="table-light">{{ $item->gnump4 }}</td>
+                 <!---<td class="table-info">{{ $item->gnump12 }}</td>
+               <td class="table-light">{{ $item->gnump4 }}</td>
                 <td class="table-light">{{ $item->gnump5 }}</td>
                 <td class="table-light">{{ $item->gnump6 }}</td>
                 <td class="table-light">{{ $item->gnump7 }}</td>
@@ -90,7 +90,7 @@
               </tr>
               <tr>
 
-              <th scope="row">{{$i++}}</th>
+              <th class="table-warning scope="row">{{$i++}}</th>
                 <td class="table-primary">{{ $item->gnump }}</td>
                 <td class="table-primary">{{ $item->gnumh }}</td>
                 <td class="table-primary">{{ $item->gnumw }}</td>
@@ -99,8 +99,8 @@
                 <td class="table-primary">{{ $item->gnump3 }}</td>
                 <td class="table-primary">{{ $item->gnump10 }}</td>
                 <td class="table-primary">{{ $item->gnump11 }}</td>
-                <td class="table-primary">{{ $item->gnump12 }}</td>
-           <!--- <td class="table-light">{{ $item->gnump4 }}</td>
+               <!--- <td class="table-primary">{{ $item->gnump12 }}</td>
+            <td class="table-light">{{ $item->gnump4 }}</td>
                 <td class="table-light">{{ $item->gnump5 }}</td>
                 <td class="table-light">{{ $item->gnump6 }}</td>
                 <td class="table-light">{{ $item->gnump7 }}</td>
@@ -126,7 +126,7 @@
               </tr>
               <tr>
 
-              <th scope="row">{{$i++}}</th>
+              <th class="table-warning scope="row">{{$i++}}</th>
                 <td class="table-secondary">{{ $item->gnump }}</td>
                 <td class="table-secondary">{{ $item->gnumh }}</td>
                 <td class="table-secondary">{{ $item->gnumw }}</td>
@@ -135,8 +135,8 @@
                 <td class="table-secondary">{{ $item->gnump3 }}</td>
                 <td class="table-secondary">{{ $item->gnump10 }}</td>
                 <td class="table-secondary">{{ $item->gnump11 }}</td>
-                <td class="table-secondary">{{ $item->gnump12 }}</td>
-                <!---<td class="table-light">{{ $item->gnump4 }}</td>
+                  <!---<td class="table-secondary">{{ $item->gnump12 }}</td>
+              <td class="table-light">{{ $item->gnump4 }}</td>
                 <td class="table-light">{{ $item->gnump5 }}</td>
                 <td class="table-light">{{ $item->gnump6 }}</td>
                 <td class="table-light">{{ $item->gnump7 }}</td>
@@ -158,7 +158,7 @@
               </tr>
               <tr>
 
-              <th scope="row">{{$i++}}</th>
+              <th class="table-warning scope="row">{{$i++}}</th>
                 <td class="table-success">{{ $item->gnump }}</td>
                 <td class="table-success">{{ $item->gnumh }}</td>
                 <td class="table-success">{{ $item->gnumw }}</td>
@@ -167,8 +167,8 @@
                 <td class="table-success">{{ $item->gnump3 }}</td>
                 <td class="table-success">{{ $item->gnump10 }}</td>
                 <td class="table-success">{{ $item->gnump11 }}</td>
-                <td class="table-success">{{ $item->gnump12 }}</td>
-                <!---<td class="table-light">{{ $item->gnump4 }}</td>
+                 <!---<td class="table-success">{{ $item->gnump12 }}</td>
+               <td class="table-light">{{ $item->gnump4 }}</td>
                 <td class="table-light">{{ $item->gnump5 }}</td>
                 <td class="table-light">{{ $item->gnump6 }}</td>
                 <td class="table-light">{{ $item->gnump7 }}</td>
@@ -195,7 +195,7 @@
             </tbody>
               <tr>
 
-              <th scope="row">{{$i++}}</th>
+              <th class="table-warning scope="row">{{$i++}}</th>
                 <td class="table-info">{{ $item->gnump }}</td>
                 <td class="table-info">{{ $item->gnumh }}</td>
                 <td class="table-info">{{ $item->gnumw }}</td>
@@ -204,8 +204,8 @@
                 <td class="table-info">{{ $item->gnump3 }}</td>
                 <td class="table-info">{{ $item->gnump10 }}</td>
                 <td class="table-info">{{ $item->gnump11 }}</td>
-                <td class="table-info">{{ $item->gnump12 }}</td>
-                <!---<td class="table-light">{{ $item->gnump4 }}</td>
+                 <!---<td class="table-info">{{ $item->gnump12 }}</td>
+               <td class="table-light">{{ $item->gnump4 }}</td>
                 <td class="table-light">{{ $item->gnump5 }}</td>
                 <td class="table-light">{{ $item->gnump6 }}</td>
                 <td class="table-light">{{ $item->gnump7 }}</td>
@@ -232,6 +232,7 @@
             </tbody>
 
           </table>
+          {!!$places->links()  !!}
         </div>
       </div>
     </div>
