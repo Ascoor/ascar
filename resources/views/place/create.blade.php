@@ -5,31 +5,35 @@
 
 <div class="content">
   <div class="container-fluid">
-
+  </div>
     <div class="col-md-12">
+    </div>
+
+
 
       <div class="card ">
+        
         <div class="card-header card-header-primary">
           <h4 class="card-title">إضافة متغير</h4>
           <p class="card-category">{{ __(' بيانات المتغير') }}</p>
-        </div>
-<div class="row">
-  @if (count($errors)>0)
-      <ul>
-        @foreach ($errors as $item)
-            <li>
-              {{$items}}
-            </li>
-        @endforeach
-      </ul>
-  @endif
-</div>
 
-        <div class="card-body">
+      </div>
+  
+  <div class="card-body">
+    <div class="row">
+      @if (count($errors)>0)
+          <ul>
+            @foreach ($errors->all() as $item)
+                <li>
+                  {{$item}}
+                </li>
+            @endforeach
+          </ul>
+      @endif  
           <div class="col">
             <form action="{{route('places.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
-
+              @method('POST')
               <div class="form-group">
                 <input type="number" name="gnump" placeholder="مسلسل المتغير">
               </div>
@@ -82,21 +86,23 @@
                   <label><a>التعليق</a>
                   <input type="text" name="gnump13" placeholder="التعليق"></label>
                 </div>
-              <div class="form-group form-file-upload form-file-simple">
-                <label><a>المرفق الأول </a>
-                <input type="text"  class="form-control inputFileVisible" placeholder="Simple chooser..."></label>
-                <input type="file" name="photo1" class="inputFileHidden">
-     
-
+                
+                <div class="form-group">
+                <label for="exampleFormControlInput1">المرفق الأول</label>
+              
+                <input type="photo" name="photo1" class="form-control">
+                
+              </div>
+         
 
               <div class="form-group">
                 <button class="btn btn-danger" type="submit">حفظ</button>
               </div>
 
             </form>
+          </div>
          
-        </div>
-        <br>
+   
 
 
 
@@ -104,13 +110,14 @@
         <div class="alert alert-danger" role="alert">
           {{$message}}
         </div>
-        @endif
-        @if (session('status'))
-        <div class="alert alert-success" role="alert">
-          {{ session('status') }}
+          @endif
+          @if (session('status'))
+          <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+            @endif
         </div>
-        @endif
-
+      </div>
+        
         @endsection
 
         @push('js')

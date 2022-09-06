@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "ctf0.laravel-goto-controller"
+        "ctf0.laravel-goto-controller",
+        "waderyan.nodejs-extension-pack"
     ]
 }

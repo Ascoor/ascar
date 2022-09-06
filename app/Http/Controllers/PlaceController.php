@@ -37,7 +37,7 @@ class PlaceController extends Controller
 		return view('place.create');
 	}
 
-	public function store(Request $request)
+	public function store (Request $request)
 	{
 
 		$this->validate($request,[
@@ -63,7 +63,7 @@ class PlaceController extends Controller
 
         $photo = $request->photo;
         $newPhoto = time().$photo->getClientOriginalName();
-        $photo->move('uploads/posts',$newPhoto);
+        $photo->move('/uploads/posts',$newPhoto);
 
         $place = Place::create([
 			'gnump' => $request->gnump,

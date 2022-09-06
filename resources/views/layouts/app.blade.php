@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html  dir="rtl">
 
 <head>
   <meta charset="utf-8" />
@@ -11,9 +11,6 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
@@ -21,18 +18,13 @@
   <link href="https://fonts.googleapis.com/css?family=Cairo&amp;subset=arabic" rel="stylesheet">
 
   <!-- CSS Files -->
- <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-   <link href="{{ asset('material') }}/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <!---<link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />-->
+  <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <link href="{{ asset('material') }}/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />
+
   
 
   <!-- Style Just for persian demo purpose, don't include it in your project -->
   <style>
-   *{
-    margin: 0%;
-    padding: 0%
-   }
     body,
     h1,
     h2,
@@ -44,10 +36,9 @@
     .h2,
     .h3,
     .h4 {
-      font-family: 'Noto Kufi Arabic', sans-serif;
-      text-align: center;
-      !important
+      font-family: "Cairo";
     }
+
     .card{
       align-items: center;
       text-align: center
@@ -78,19 +69,18 @@
   
         </div>
     <!--   Core JS Files   -->
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
     <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
     <script src="{{ asset('material') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
     
-    <!--  Google Maps Plugin    -->
-
+    <!--  Google Maps Plugin    
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'"></script> -->
     <!-- Chartist JS -->
     <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
     <!--  Notifications Plugin    -->
     <script src="{{ asset('material') }}/js/plugins/bootstrap-notify.js"></script>
-
-
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 
     <script src="{{ asset('material') }}/js/settings.js"></script>
 </body>
