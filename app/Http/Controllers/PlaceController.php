@@ -61,9 +61,9 @@ class PlaceController extends Controller
   
         ]);
 
-        $photo = $request->photo;
-        $newPhoto = time().$photo->getClientOriginalName();
-        $photo->move('/uploads/posts',$newPhoto);
+        $photo1 = $request->photo;
+        $newPhoto = time().$photo1->getClientOriginalName();
+        $photo1->move('/uploads/posts',$newPhoto);
 
         $place = Place::create([
 			'gnump' => $request->gnump,
