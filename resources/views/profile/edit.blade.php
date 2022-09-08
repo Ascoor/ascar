@@ -15,169 +15,39 @@
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <i class="material-icons">close</i>
                       </button>
-                      <span>{{ session('status') }}</span>
+              
 
-                </div>
-             </div>
+            
              @endif
-             <div class="row">
-                <div class="col-md-12">
-                   <form method="PUT" action="{{ route('profile.update') }}" autocomplete="off"
-                      class="form-horizontal">
-                      @csrf
-                      @method('put')
-                      <div class="row">
-                         <label class="col-sm-2 col-form-label">{{ __('Name') }}</label>
-                         <div class="col-sm-7">
-                            <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                               <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                  name="name" id="input-name" type="text" placeholder="{{ __('Name') }}"
-                                  value="{{ old('name', auth()->user()->name) }}" required="true"
-                                  aria-required="true" />
-                               @if($errors->has('name'))
-                               <span id="name-error" class="error text-danger" for="input-name">{{
-                               $errors->first('name')
-                               }}</span>
-                               @endif
-                            </div>
-                         </div>
-                      </div>
-                      <div class="row">
-                         <label class="col-sm-2 col-form-label">{{ __('Email') }}</label>
-                         <div class="col-sm-7">
-                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                               <input
-                                  class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                  name="email" id="input-email" type="email"
-                                  placeholder="{{ __('Email') }}"
-                                  value="{{ old('email', auth()->user()->email) }}" required />
-                               @if($errors->has('email'))
-                               <span id="email-error" class="error text-danger" for="input-email">{{
-                               $errors->first('email')
-                               }}</span>
-                               @endif
-                            </div>
-                         </div>
-                      </div>
-                      <div class="row">
-                         <label class="col-sm-2 col-form-label">{{ __('Nickname') }}</label>
-                         <div class="col-sm-7">
-                            <div
-                               class="form-group{{ $errors->has('nickname') ? ' has-danger' : '' }}">
-                               <input
-                                  class="form-control{{ $errors->has('nickname') ? ' is-invalid' : '' }}"
-                                  name="nickname" type="text"
-                                  value="{{ old('nickname',  $user->profile->nickname) }}" />
-                               @if($errors->has('nickname'))
-                               <span id="nickname-error" class="error text-danger"
-                                  for="input-nickname">{{
-                               $errors->first('nickname') }}</span>
-                               @endif
-                            </div>
-                         </div>
-                      </div>
-                      <div class="row">
-                         <label class="col-sm-2 col-form-label">{{ __('Place') }}</label>
-                         <div class="col-sm-7">
-                            <div
-                               class="form-group{{ $errors->has('place') ? ' has-danger' : '' }}">
-                               <input
-                                  class="form-control{{ $errors->has('place') ? ' is-invalid' : '' }}"
-                                  name="place" type="text"
-                                  value="{{ old('place', $user->profile->place) }}" />
-                               @if($errors->has('name'))
-                               <span id="name-error" class="error text-danger"
-                                  for="input-name">{{ $errors->first('name')
-                               }}</span>
-                               @endif
-                            </div>
-                         </div>
-                      </div>
-                      <div class="row">
-                         <label class="col-sm-2 col-form-label">{{ __('Postion') }}</label>
-                         <div class="col-sm-7">
-                            <div
-                               class="form-group{{ $errors->has('Postion') ? ' has-danger' : '' }}">
-                               <input
-                                  class="form-control{{ $errors->has('Postion') ? ' is-invalid' : '' }}"
-                                  name="Postion" type="text"
-                                  value="{{ old('place', $user->profile->postion) }}" />
-                               @if($errors->has('name'))
-                               <span id="Postion-error" class="error text-danger"
-                                  for="input-Postion">{{ $errors->first('Postion')
-                               }}</span>
-                               @endif
-                            </div>
-                         </div>
-                         <div class="card-footer ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
-                         </div>
-                      </div>
-                   </form>
-                </div>
-             </div>
-          </div>
-          <div class="row">
-             <div class="col-md-12">
-                <form method="post" action="{{ route('profile.password') }}" class="form-horizontal">
-                   @csrf
-                   @method('put')
-                   <div class="card ">
-                      <div class="card-header card-header-primary">
-                         <h4 class="card-title">{{ __('Change password') }}</h4>
-                         <p class="card-category">{{ __('Password') }}</p>
-                      </div>
-                      <div class="card-body ">
-                         @if (session('status_password'))
-                         <div class="row">
-                            <div class="col-sm-12">
-                               <div class="alert alert-success">
-                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <i class="material-icons">close</i>
-                                  </button>
-                                  <span>{{ session('status_password') }}</span>
-                               </div>
-                            </div>
-                         </div>
-                         @endif
-                         <div class="row">
-                            <label class="col-sm-2 col-form-label" for="input-current-password">{{ __('Current Password') }}</label>
-                            <div class="col-sm-7">
-                               <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
-                                  <input class="form-control{{ $errors->has('old_password') ? ' is-invalid' : '' }}" input type="password" name="old_password" id="input-current-password" placeholder="{{ __('Current Password') }}" value="" required />
-                                  @if ($errors->has('old_password'))
-                                  <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('old_password') }}</span>
-                                  @endif
-                               </div>
-                            </div>
-                         </div>
-                         <div class="row">
-                            <label class="col-sm-2 col-form-label" for="input-password">{{ __('New Password') }}</label>
-                            <div class="col-sm-7">
-                               <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                  <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="input-password" type="password" placeholder="{{ __('New Password') }}" value="" required />
-                                  @if ($errors->has('password'))
-                                  <span id="password-error" class="error text-danger" for="input-password">{{ $errors->first('password') }}</span>
-                                  @endif
-                               </div>
-                            </div>
-                         </div>
-                         <div class="row">
-                            <label class="col-sm-2 col-form-label" for="input-password-confirmation">{{ __('Confirm New Password') }}</label>
-                            <div class="col-sm-7">
-                               <div class="form-group">
-                                  <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('Confirm New Password') }}" value="" required />
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="card-footer ml-auto mr-auto">
-                         <button type="submit" class="btn btn-primary">{{ __('Change password') }}</button>
-                      </div>
-                   </div>
-                </form>
-             </div>
-          </div>
-       </div>
+             <div class="form-row">
+             <form method="PUT" action="{{ route('profile.update') }}" autocomplete="off" class="form-group">
+             @csrf
+             @method('PUT')
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" name="name" value="{{$user->email}}">
+    
     </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Name</label>
+      <input type="text" class="form-control" name="name" value="{{$user->name}}" >
+    </div>
+  <div class="form-group">
+    <label for="inputAddress">Nickname</label>
+    <input type="text" class="form-control" name="nickname" value="{{$user->profile->nickname}}" >
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">postion</label>
+    <input type="text" class="form-control" name="postion" value="{{$user->profile->postion}}" >
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">place</label>
+      <input type="text" class="form-control" name="place" value="{{$user->profile->place}}" >
+  </div>
+    <<div class="form-group">
+       <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+   </form>
+</div>
 @endsection

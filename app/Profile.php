@@ -13,6 +13,6 @@ class Profile extends Model
    ];
    public function user()
    {
-    return $this->beLongsTo('App\use','user_id');
+    return $this->beLongsTo('App\user','user_id');
    }
 }
