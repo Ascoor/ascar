@@ -20,6 +20,7 @@
   <!-- CSS Files -->
   <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <link href="{{ asset('material') }}/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />
+  <link href="{{ asset('material') }}/css/app.css" rel="stylesheet" />
 
   
 

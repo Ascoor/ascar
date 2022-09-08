@@ -1,4 +1,6 @@
-{
+{"php.validate.enable": true,
+
+"html.format.extraLiners": "head, body, /html",
     "blade.format.enable": true,
     "html.format.enable": true,
     "laravel_goto_view.extensions": [
@@ -48,6 +50,7 @@
     "Config::get(",
     "Config::set("
 ],
-"css.format.enable": true
+"css.format.enable": true,
+"php.validate.run": "onType"
 
 }

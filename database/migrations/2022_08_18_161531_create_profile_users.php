@@ -15,11 +15,10 @@ class CreateProfileUsers extends Migration
     {
         Schema::create('profile_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('nickname');
             $table->string('place');
-            $table->string('email');
             $table->integer('user_id')->unsigned();
-            $table->string('genader');
+            $table->string('postion');
             $table->timestamps(); 
            
             $table->foreign('user_id')->references('id')->on('users')

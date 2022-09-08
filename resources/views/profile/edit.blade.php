@@ -1,19 +1,19 @@
-@extends('layouts.app', ['activePage' => 'profile', 'titlePage' => __('User Profile')])
+@extends('layouts.app', ['activePage' => 'profile', 'titlePage' => __('الملف الشخصي')])
 
 @section('content')
   <div class="content">
     <div class="container-fluid">
       <div class="row">
+        <div class="card ">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">{{ __('Edit Profile') }}</h4>
+            <p class="card-category">{{ __('User information') }}</p>
+          </div>
         <div class="col-md-12">
           <form method="post" action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal">
             @csrf
             @method('put')
 
-            <div class="card ">
-              <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Edit Profile') }}</h4>
-                <p class="card-category">{{ __('User information') }}</p>
-              </div>
               <div class="card-body ">
                 @if (session('status'))
                   <div class="row">
@@ -36,24 +36,39 @@
                         <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                       @endif
                     </div>
-                  </div>
-                </div>
                 <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('Email') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email', auth()->user()->email) }}" required />
+                      <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" id="input-email" type="email" placeholder="{{ __('Email') }}" value="{{ old('email', auth()->user()->email) }}" required="true" aria-required="true" />
                       @if ($errors->has('email'))
                         <span id="email-error" class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                       @endif
+             
                     </div>
                   </div>
+        
+                <div class="form-group">
+                <label>{{ __('nickname') }}
+                  <input class="form-control" name="nickname" type="text" value="{{ old('الدرجة', auth()->user()->nickname) }}" />
+                </label>
                 </div>
-              </div>
+        
+                <div class="form-group">
+                <label>{{ __('placeid') }}
+                  <input class="form-control" name="place" type="text"  value="{{ old('الوحدة', auth()->user()->place) }}" />
+                </label>
+                </div>
+                <div class="form-group">
+                <label>{{ __('postion') }}
+                  <input class="form-control" name="postion" type="text"  value="{{ old('الوظيفة', auth()->user()->postion) }}"  />
+                </label>
+                </div>
               <div class="card-footer ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
               </div>
             </div>
+            
           </form>
         </div>
       </div>
@@ -116,9 +131,11 @@
                 <button type="submit" class="btn btn-primary">{{ __('Change password') }}</button>
               </div>
             </div>
+            
           </form>
         </div>
       </div>
     </div>
   </div>
+  
 @endsection
