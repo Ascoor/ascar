@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
+use Auth;
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -15,7 +17,17 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        $user = Auth::user();
+        $id = Auth::id();
+if ($user->profile == null) {$profile = Profile::create([
+'nickname' => 'محرر',
+'user_id' => $id,
+'place' => 'الوحدة',
+'postion' => 'ادمن',
+
+]);
+}
+return view('profile.edit')->with('user',$user);
     }
 
     /**
@@ -25,8 +37,22 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(ProfileRequest $request)
-    {
-        auth()->user()->update($request->all());
+    {   
+        $this->validate($request , [
+     
+            'nickname' => 'required',
+            'place' => 'required',
+            'postion' =>'required',
+        ]);
+
+    $user = Auth::use();
+
+    $user->profile->nickname = $request->nickname;
+    $user->profile->place = $request->place;
+    $user->profile->postion = $request->position;
+
+    $user->profile->save();
+
 
         return back()->withStatus(__('Profile successfully updated.'));
     }
