@@ -1,7 +1,7 @@
 @extends('layouts.app', ['activePage' => ' profile', 'titlePage' => __('user profile ')])
 @section('content')
 <div class="content">
-<div class="container-fluid">
+<div class="container pt-3-fluid">
 <div class="row">
 <div class="col-md-12">
 <form method="post" action="{{Route('profile.update')}}" autocomplete="off" class="form-horizontal">

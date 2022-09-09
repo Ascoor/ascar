@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-  <div class="container-fluid">
+  <div class="container pt-3">
     <div class="navbar-wrapper">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
     </ul> 
     <a class="navbar-brand" href={{route('places.index')  }}><strong>{{ $titlePage }}</strong></a>
   </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="true" aria-label="Toggle navigation">
     <span class="sr-only">Toggle navigation</span>
     <span class="navbar-toggler-icon icon-bar"></span>
     <span class="navbar-toggler-icon icon-bar"></span>
@@ -30,7 +30,7 @@
         <input type="search"  name="query" class="form-control" placeholder="بحث...">
         <button type="submit" class="btn btn-white btn-round btn-just-icon">
           <i class="material-icons">search</i>
-          <div class="ripple-container"></div>
+          <div class="ripple-container pt-3"></div>
         </button>
         </div>
       </form>

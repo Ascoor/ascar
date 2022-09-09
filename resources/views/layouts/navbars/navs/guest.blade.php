@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
-  <div class="container">
+  <div class="container pt-3">
     <div class="navbar-wrapper">
       <a class="navbar-brand" href="{{ route('places.index') }}">{{ $titlePage }}</a>
     </div>

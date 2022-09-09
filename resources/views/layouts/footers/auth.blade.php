@@ -1,6 +1,6 @@
 </div>
 <footer class="footer">
-  <div class="container-fluid">
+  <div class="container pt-3">
 
  
     <div class="copyright float-center">

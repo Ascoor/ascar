@@ -4,7 +4,7 @@
 
 
 <div class="content">
-  <div class="container-fluid">
+  <div class="container pt-3">
 
 
 </div>
