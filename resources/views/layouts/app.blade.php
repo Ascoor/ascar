@@ -40,6 +40,7 @@
 
         body {
   background-image: url("https://dkgov.ask-ar.com/img/bg-1.jpg");
+  background-blend-mode: lighten;
 }
 </style>
 
