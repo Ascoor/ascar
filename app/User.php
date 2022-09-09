@@ -40,4 +40,15 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Profile');
     }
-}
+
+        /**
+         * Get the user associated with the User
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasOne
+         */
+        public function place()
+        {
+            return $this->hasOne('App\place');
+        }
+    }
+

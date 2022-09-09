@@ -25,7 +25,7 @@ class ProfileController extends Controller
         $id = Auth::id();
         if ($user->profile == null) {
            $profile = Profile::create([
-            'nickename' => 'مسئول',
+            'nickname' => 'مسئول',
             'user_id'	 => $id,
             'place' => 'المقر',
             'postion'	 => 'مدير',
@@ -40,8 +40,9 @@ class ProfileController extends Controller
 
     public function update(Request $request )
     {
+
         $this->validate($request,[
-  
+
             'nickname' => 'required',
             'place'    => 'required',
             'postion'	   => 'required',
@@ -56,15 +57,10 @@ class ProfileController extends Controller
         $user->profile->postion = $request->postion ;
         $user->save();
         $user->profile->save();
-
-     //   dd($request->all());
-        if ($request->has('password')) {
-            $user->password = Hash::make($request->password);
-            $user->save();
-        }
+        auth()->user()->update($request->all());
 
         return back()->withStatus(__('Profile successfully updated.'));
-        
+
     }
 
 /**

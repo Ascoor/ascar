@@ -4,7 +4,7 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12">
-<form method="PUT" action="{{Route('profile.update')}}" autocomplete="off" class="form-horizontal">
+<form method="post" action="{{Route('profile.update')}}" autocomplete="off" class="form-horizontal">
   @csrf
   @method('PUT')
 
@@ -35,13 +35,15 @@
   <label class="col-sm-2 col-form-label">postion</label>
   <div class="col-sm-7">
   <div class="form-group">
-  <input class="form-control" name="postion" id="input-postion" type="text" placeholder="Email" value="{{$user->profile->postion}}" required />
-
+  <input class="form-control" name="postion" id="input-postion" type="text" value="{{$user->profile->postion}}" required />
+  </div>
+  </div>
+  </div>
 <div class="row">
   <label class="col-sm-2 col-form-label">place</label>
   <div class="col-sm-7">
   <div class="form-group">
-  <input class="form-control" name="place" id="input-place" type="email" value="{{user->profile->place}}" required />
+  <input class="form-control" name="place" id="input-place" type="text" value="{{ $user->profile->place  }}" required />
 
 </div>
 </div>
@@ -50,7 +52,7 @@
   <label class="col-sm-2 col-form-label">Email</label>
   <div class="col-sm-7">
   <div class="form-group">
-  <input class="form-control" name="email" id="input-email" type="email" placeholder="Email" value="admin@material.com" required />
+  <input class="form-control" name="email" id="input-email" type="email" placeholder="Email" value="{{ $user->email }}" required />
 </div>
 </div>
 </div>
@@ -59,49 +61,69 @@
 <button type="submit" class="btn btn-primary">Save</button>
 </div>
 </div>
-</form>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<form method="post" action="https://material-dashboard-laravel.creative-tim.com/profile/password" class="form-horizontal">
-<input type="hidden" name="_token" value="8lWbZTZAmqFXByXpVMtPFyU6Pyhh89TCY0M9ORR4"> <input type="hidden" name="_method" value="put">
-<div class="card ">
-<div class="card-header card-header-primary">
-<h4 class="card-title">Change password</h4>
-<p class="card-category">Password</p>
-</div>
-<div class="card-body ">
-<div class="row">
-<label class="col-sm-2 col-form-label" for="input-current-password">Current Password</label>
-<div class="col-sm-7">
-<div class="form-group">
-<input class="form-control" input type="password" name="old_password" id="input-current-password" placeholder="Current Password" value="" required />
-</div>
-</div>
+</form>     </div>
 </div>
 <div class="row">
-<label class="col-sm-2 col-form-label" for="input-password">New Password</label>
-<div class="col-sm-7">
-<div class="form-group">
-<input class="form-control" name="password" id="input-password" type="password" placeholder="New Password" value="" required />
+   <div class="col-md-12">
+      <form method="post" action="{{ route('password.request') }}" class="form-horizontal">
+         @csrf
+         @method('POST')
+         <div class="card ">
+            <div class="card-header card-header-primary">
+               <h4 class="card-title">{{ __('Change password') }}</h4>
+               <p class="card-category">{{ __('Password') }}</p>
+            </div>
+            <div class="card-body ">
+               @if (session('status_password'))
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                        </button>
+                        <span>{{ session('status_password') }}</span>
+                     </div>
+                  </div>
+               </div>
+               @endif
+               <div class="row">
+                  <label class="col-sm-2 col-form-label" for="input-current-password">{{ __('Current Password') }}</label>
+                  <div class="col-sm-7">
+                     <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
+                        <input class="form-control{{ $errors->has('old_password') ? ' is-invalid' : '' }}" input type="password" name="old_password" id="input-current-password"    value="{{ $user->password }}" required />
+                        @if ($errors->has('old_password'))
+                        <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('old_password') }}</span>
+                        @endif
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <label class="col-sm-2 col-form-label" for="input-password">{{ __('New Password') }}</label>
+                  <div class="col-sm-7">
+                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                        <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="input-password" type="password" placeholder="{{ __('New Password') }}" value="" required />
+                        @if ($errors->has('password'))
+                        <span id="password-error" class="error text-danger" for="input-password">{{ $errors->first('password') }}</span>
+                        @endif
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <label class="col-sm-2 col-form-label" for="input-password-confirmation">{{ __('Confirm New Password') }}</label>
+                  <div class="col-sm-7">
+                     <div class="form-group">
+                        <input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="{{ __('Confirm New Password') }}" value="" required />
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="card-footer ml-auto mr-auto">
+               <button type="submit" class="btn btn-primary">{{ __('Change password') }}</button>
+            </div>
+         </div>
+      </form>
+   </div>
 </div>
-</div>
-</div>
-<div class="row">
-<label class="col-sm-2 col-form-label" for="input-password-confirmation">Confirm New Password</label>
-<div class="col-sm-7">
-<div class="form-group">
-<input class="form-control" name="password_confirmation" id="input-password-confirmation" type="password" placeholder="Confirm New Password" value="" required />
-</div>
-</div>
-</div>
-</div>
-<div class="card-footer ml-auto mr-auto">
-<button type="submit" class="btn btn-primary">Change password</button>
-</div>
-</div>
-</form>
 </div>
 </div>
 @endsection

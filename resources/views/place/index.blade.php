@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="content">
   <div class="container-fluid">
 
@@ -16,7 +17,7 @@
       </div>
       @if ($places->count() > 0 )
 
-      
+
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
@@ -31,14 +32,14 @@
               <th class="table-warning">المحافظة</th>
               <th class="table-warning">المركز</th>
               <th class="table-warning">القرية</th>
-              
-              
+
+
               <th class="table-warning">التاريخ</th>
-  
+
               <th class="table-warning">ملاحظات</th>
-              
+
               <th class="table-warning">التحكم</th>
-              
+
               <!--     <th class="table-warning">نوع الأملاك</th>
                    <th class="table-warning">جهة الولاية</th>
                    <th class="table-warning">القانونية</th>
@@ -73,17 +74,17 @@
                 <td class="table-light">{{ $item->gnump9 }}</td>-->
                 <span>
                 <td class="table-warning">
-            
-                  
-                
+
+
+
                   <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-        
+
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
-       
+
                     <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
-                
+
                 </td>
-               
+
                 </span>
 
 
@@ -109,18 +110,18 @@
 
                 <span>
                 <td class="table-warning">
-            
+
                     <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-                
-        
+
+
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
-       
+
                     <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
-                
+
                 </td>
-               
+
                 </span>
-               
+
 
 
               </tr>
@@ -144,16 +145,16 @@
                 <td class="table-light">{{ $item->gnump9 }}</td>-->
                 <span>
                 <td class="table-warning">
-            
+
                     <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-                
-        
+
+
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
-       
+
                     <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
-                
+
                 </td>
-               
+
                 </span>
               </tr>
               <tr>
@@ -177,21 +178,21 @@
 
                 <span>
                 <td class="table-warning">
-            
+
                     <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-                
-        
+
+
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
-       
+
                     <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
-                
+
                 </td>
-               
+
                 </span>
 
 
               </tr>
-           
+
             </tbody>
               <tr>
 
@@ -213,16 +214,16 @@
                 <td class="table-light">{{ $item->gnump9 }}</td>-->
                 <span>
                 <td class="table-warning">
-            
+
                     <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
-                
-        
+
+
                     <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
-       
+
                     <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
-                
+
                 </td>
-               
+
                 </span>
 
 
@@ -245,7 +246,7 @@
 
         @endif
   </div>
- 
+
 
 
 

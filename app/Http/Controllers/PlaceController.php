@@ -16,7 +16,7 @@ class PlaceController extends Controller
 
 	public function index()
     {
-	   
+
         $places = Place::latest()->paginate(10);
         return view('place.index',compact('places'));
 
@@ -27,11 +27,11 @@ class PlaceController extends Controller
 	/** Trashed places */
 	public function trashedPlaces()
 		{
-			
+
 		$places = Place::onlyTrashed()->paginate();
 			return view('place.trash',compact('places'));
 		}
-	
+
 	public function create()
 	{
 		return view('place.create');
@@ -39,6 +39,9 @@ class PlaceController extends Controller
 
 	public function store (Request $request)
 	{
+
+        $user = Auth::user();
+        $id = Auth::id();
 
 		$this->validate($request,[
         'gnump'=> 'required',
@@ -55,15 +58,16 @@ class PlaceController extends Controller
 		'gnump9' =>'required',
 		'gnump10' => 'required',
 		'gnump11' =>'required',
+
 		'gnump13' => 'required',
 		'photo1' => 'required | image',
 
-  
+
         ]);
 
-        $photo1 = $request->photo;
-        $newPhoto = time().$photo1->getClientOriginalName();
-        $photo1->move('/uploads/posts',$newPhoto);
+        $photo = $request->photo1;
+        $newPhoto = time().$photo->getClientOriginalName();
+        $photo->move('/uploads/posts',$newPhoto);
 
         $place = Place::create([
 			'gnump' => $request->gnump,
@@ -80,19 +84,19 @@ class PlaceController extends Controller
 			'gnump9' => $request->gnump9,
 			'gnump10' => $request->gnump10,
 			'gnump11' => $request->gnump11,
-			
-            'gnump12' =>  Auth::id(),
+			'gnump12' => $id,
+
 			'gnump13' => $request->gnump13,
 			'photo1' => '/uploads/posts/'.$newPhoto,
-		
+
 
         ]);
-
+        auth()->user()->update($request->all());
 
         return redirect()->back() ;
 
 
-	} 	
+	}
 
 
 
@@ -126,8 +130,8 @@ class PlaceController extends Controller
 			'gnump9' =>'required',
 			'gnump10' => 'required',
 			'gnump11' =>'required',
-		
-	
+
+
 			'gnump13' => 'required',
 			'photo1' => 'required | image',
 		]);
@@ -135,7 +139,7 @@ class PlaceController extends Controller
      //   dd($request->all());
 
     if ($request->has('photo')) {
-        $photo = $request->photo;
+        $photo = $request->photo1;
         $newPhoto = time().$photo->getClientOriginalName();
         $photo->move('uploads/posts',$newPhoto);
         $place->photo1 ='uploads/posts/'.$newPhoto ;
@@ -171,7 +175,7 @@ public function destroy(Place $id)
 	   $place->delete($id);
 	   return redirect()->back() ;
 	}
-	
+
 
 	public function softDelete( $id)
     {
