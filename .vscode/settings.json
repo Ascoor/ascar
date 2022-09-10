@@ -7,6 +7,11 @@
         ".blade.php",
         ".bootstrap"
     ],
+    "editor.formatOnSave": false,
+"[php]": {
+  "editor.formatOnSave": true
+},
+
     "laravel_goto_view.quickJump":true,
     "laravel_jump_controller.pathNamespace": "App\\Http\\Controllers",
     "laravel_goto_components.regex": "(?<=<x-)(?!slot)[a-z.-]+",
@@ -51,6 +56,6 @@
     "Config::set("
 ],
 "css.format.enable": true,
-"php.validate.run": "onType"
+
 
 }

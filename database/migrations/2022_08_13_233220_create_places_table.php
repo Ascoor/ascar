@@ -11,6 +11,7 @@ class CreatePlacesTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('places', function (Blueprint $table) {
@@ -30,17 +31,18 @@ class CreatePlacesTable extends Migration
             $table->string('gnump10');
             $table->string('gnump11');
             $table->integer('gnump12')->unsigned();
-            $table->longText('gnump13');
-            $table->string('photo1');
-            $table->string('photo2');
-            $table->string('photo3');
-            $table->string('photo4');
+            $table->string('gnump13')->nullable();
+            $table->string('photo1')->nullable();
+            $table->string('photo2')->nullable();
+            $table->string('photo3')->nullable();
+            $table->string('photo4')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
             $table->foreign('gnump12')->references('id')->on('users')
             ->onDelete('cascade');
         });
+
     }
 
     /**

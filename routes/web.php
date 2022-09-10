@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('places', 'PlaceController');
 	Route::get('place/soft/selete/{id}','PlaceController@softDelete')
 	->name('soft.delete');
+
 	Route::get('place/trash','PlaceController@trashedPlaces')
 	->name('place.trash');
 	Route::get('place/back/from/trash/{id}','PlaceController@backFromSoftDelete')

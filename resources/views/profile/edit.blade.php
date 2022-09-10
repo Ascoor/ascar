@@ -4,7 +4,7 @@
 <div class="container pt-3-fluid">
 <div class="row">
 <div class="col-md-12">
-<form method="post" action="{{Route('profile.update')}}" autocomplete="off" class="form-horizontal">
+<form method="post" action="{{Route('profile.edit')}}" autocomplete="off" class="form-horizontal">
   @csrf
   @method('PUT')
 
@@ -23,7 +23,7 @@
 </div>
 </div>
 <div class="row">
-<label class="col-sm-2 col-form-label">Nickname</label>
+<label class="col-sm-2 col-form-label">nickname</label>
 <div class="col-sm-7">
 <div class="form-group">
 <input class="form-control" name="nickname" id="input-nickname" type="text" value="{{$user->profile->nickname}}" required />

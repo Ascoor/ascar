@@ -3,26 +3,26 @@
 @section('content')
 
 
-             
+
 <div class="content">
   <div class="container pt-3-fluid">
 
       <div class="col-md-12">
-        
+
         <div class="card ">
           <div class="card-header card-header-primary">
             <h4 class="card-title">المتغير رقم {{ $place->gnump }}</h4>
             <p class="card-category">{{ __(' بيانات المتغير') }}</p>
           </div>
             <div class="card-body">
-              
-              
+
+
         <div class="table">
   <table>
     <tr>
-      
-      
-          
+
+
+
       <th class="table-warning">مسلسل المتغير</th>
       <th class="table-warning">خط العرض</th>
       <th class="table-warning">خط الطول</th>
@@ -44,9 +44,9 @@
 
         <tbody>
           <tr>
-            
+
             <th class="table-success">{{ $place->gnump}}</td>
-       <td class="table-success">{{ $place->gnumh }}</td> 
+       <td class="table-success">{{ $place->gnumh }}</td>
        <td class="table-success">{{ $place->gnumw }}</td>
       <td  class="table-success">{{ $place->gnump1 }}</td>
       <td  class="table-success">{{ $place->gnump2 }}</td>
@@ -60,13 +60,13 @@
       <td  class="table-success">{{ $place->gnump10 }}</td>
       <td  class="table-success">{{ $place->gnump11 }}</td>
       <td  class="table-success">{{ $place->gnump12 }}</td>
-      
+
 
           <span>
           <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
-          
 
- 
+
+
     <a class="btn btn-info" hrzef="{{ route('posts') }}"> منشورات</a>
 
 </span>
@@ -79,12 +79,12 @@
     </div>
     {!! $place->detail !!}
 
-    
+
 
 </div>
 </div>
 
-    
+
 @endsection
 
 @push('js')
