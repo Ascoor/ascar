@@ -4,116 +4,262 @@
 
 
 <div class="content">
-    <div class="container pt-3">
-
-        <div class="container" style="align-items: center;">
-            <div class="jumbotron jumbotron-fluid" style="align-items: center;">
-                <h1 class="display-4" style="text-align: center;">إدارة المتغيرات المكانية</h1>
-                <p class="lead" style="text-align: center; padding-top: 20px;"></p>
-                <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search.index') }}"">
-@csrf
-<input class=" form-control mr-sm-2" style="text-align:center;" type="search"
-                    placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
-                </form>
-            </div>
-            <div class="container">
-            </div>
-
-            @if($places->count() > 0 )
+  <div class="container pt-3">
 
 
-            <table class="table">
-                <thead>
-                    <tr>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">نتائج البحث</h4>
+        <p class="card-category"> يمكنك البحث برقم المتغير او المركز او القرية</p>
+      </div>
+      @if ($places->count() > 0 )
+
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
 
 
 
-                        <th>م </th>
-                        <th>مسلسل المتغير</th>
-                        <th>خط العرض</th>
-                        <th>خط الطول</th>
-                        <th>المحافظة</th>
-                        <th>المركز</th>
-                        <th>القرية</th>
+
+              <th class="table-warning ">م </th>
+              <th class="table-warning">مسلسل المتغير</th>
+              <th class="table-warning">خط العرض</th>
+              <th class="table-warning">خط الطول</th>
+              <th class="table-warning">المحافظة</th>
+              <th class="table-warning">المركز</th>
+              <th class="table-warning">القرية</th>
 
 
-                        <th>التاريخ</th>
+              <th class="table-warning">التاريخ</th>
 
-                        <th>ملاحظات</th>
+              <th class="table-warning">ملاحظات</th>
 
-                        <th>التحكم</th>
+              <th class="table-warning">التحكم</th>
 
-                        <!--     <th>نوع الأملاك</th>
-                        <th>جهة الولاية</th>
-             <th>القانونية</th>
-             <th>الرد</th>
-             <th>تفاصيل الرد</th>
-             <th>موقف الإزالة</th>--->
-                    </tr>
-
-                </thead>
-
-                <tbody>
-                    @php
-                    $i = 1;
+              <!--     <th class="table-warning">نوع الأملاك</th>
+                   <th class="table-warning">جهة الولاية</th>
+                   <th class="table-warning">القانونية</th>
+                   <th class="table-warning">الرد</th>
+                   <th class="table-warning">تفاصيل الرد</th>
+                   <th class="table-warning">موقف الإزالة</th>--->
+</tr>
+            </thead>
+            <tbody>
+                 @php
+                        $i = 1;
                     @endphp
-                    @foreach($places as $item)
-                    <tr class="table-primary">
+                    @foreach ($places as $item)
+              <tr>
+
+
+              <th class="table-warning scope="row">{{$i++}}</th>
+                <td class="table-info">{{ $item->gnump }}</td>
+                <td class="table-info">{{ $item->gnumh }}</td>
+                <td class="table-info">{{ $item->gnumw }}</td>
+                <td class="table-info">{{ $item->gnump1 }}</td>
+                <td class="table-info">{{ $item->gnump2 }}</td>
+                <td class="table-info">{{ $item->gnump3 }}</td>
+                <td class="table-info">{{ $item->gnump10 }}</td>
+                <td class="table-info">{{ $item->gnump11 }}</td>
+                 <!---<td class="table-info">{{ $item->gnump12 }}</td>
+               <td class="table-light">{{ $item->gnump4 }}</td>
+                <td class="table-light">{{ $item->gnump5 }}</td>
+                <td class="table-light">{{ $item->gnump6 }}</td>
+                <td class="table-light">{{ $item->gnump7 }}</td>
+                <td class="table-light">{{ $item->gnump8 }}</td>
+                <td class="table-light">{{ $item->gnump9 }}</td>-->
+                <span>
+                <td class="table-warning">
 
 
 
-                        <th scope="row">{{ $i++ }}</th>
-                        <td>{{ $item->gnump }}</td>
-                        <td>{{ $item->gnumh }}</td>
-                        <td>{{ $item->gnumw }}</td>
-                        <td>{{ $item->gnump1 }}</td>
-                        <td>{{ $item->gnump2 }}</td>
-                        <td>{{ $item->gnump3 }}</td>
-                        <td>{{ $item->gnump10 }}</td>
-                        <td>{{ $item->gnump11 }}</td>
+                  <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
+
+                    <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+
+                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
+
+                </td>
+
+                </span>
 
 
-                        <td>
+              </tr>
+              <tr>
+
+              <th class="table-warning scope="row">{{$i++}}</th>
+                <td class="table-primary">{{ $item->gnump }}</td>
+                <td class="table-primary">{{ $item->gnumh }}</td>
+                <td class="table-primary">{{ $item->gnumw }}</td>
+                <td class="table-primary">{{ $item->gnump1 }}</td>
+                <td class="table-primary">{{ $item->gnump2 }}</td>
+                <td class="table-primary">{{ $item->gnump3 }}</td>
+                <td class="table-primary">{{ $item->gnump10 }}</td>
+                <td class="table-primary">{{ $item->gnump11 }}</td>
+               <!--- <td class="table-primary">{{ $item->gnump12 }}</td>
+            <td class="table-light">{{ $item->gnump4 }}</td>
+                <td class="table-light">{{ $item->gnump5 }}</td>
+                <td class="table-light">{{ $item->gnump6 }}</td>
+                <td class="table-light">{{ $item->gnump7 }}</td>
+                <td class="table-light">{{ $item->gnump8 }}</td>
+                <td class="table-light">{{ $item->gnump9 }}</td>-->
+
+                <span>
+                <td class="table-warning">
+
+                    <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
+
+
+                    <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+
+                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
+
+                </td>
+
+                </span>
 
 
 
-                            <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}">
-                                تعديل</a>
+              </tr>
+              <tr>
 
-                            <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+              <th class="table-warning scope="row">{{$i++}}</th>
+                <td class="table-secondary">{{ $item->gnump }}</td>
+                <td class="table-secondary">{{ $item->gnumh }}</td>
+                <td class="table-secondary">{{ $item->gnumw }}</td>
+                <td class="table-secondary">{{ $item->gnump1 }}</td>
+                <td class="table-secondary">{{ $item->gnump2 }}</td>
+                <td class="table-secondary">{{ $item->gnump3 }}</td>
+                <td class="table-secondary">{{ $item->gnump10 }}</td>
+                <td class="table-secondary">{{ $item->gnump11 }}</td>
+                  <!---<td class="table-secondary">{{ $item->gnump12 }}</td>
+              <td class="table-light">{{ $item->gnump4 }}</td>
+                <td class="table-light">{{ $item->gnump5 }}</td>
+                <td class="table-light">{{ $item->gnump6 }}</td>
+                <td class="table-light">{{ $item->gnump7 }}</td>
+                <td class="table-light">{{ $item->gnump8 }}</td>
+                <td class="table-light">{{ $item->gnump9 }}</td>-->
+                <span>
+                <td class="table-warning">
 
-                            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل
-                                المتغير</a>
+                    <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
 
 
-                        </td>
+                    <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+
+                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
+
+                </td>
+
+                </span>
+              </tr>
+              <tr>
+
+              <th class="table-warning scope="row">{{$i++}}</th>
+                <td class="table-success">{{ $item->gnump }}</td>
+                <td class="table-success">{{ $item->gnumh }}</td>
+                <td class="table-success">{{ $item->gnumw }}</td>
+                <td class="table-success">{{ $item->gnump1 }}</td>
+                <td class="table-success">{{ $item->gnump2 }}</td>
+                <td class="table-success">{{ $item->gnump3 }}</td>
+                <td class="table-success">{{ $item->gnump10 }}</td>
+                <td class="table-success">{{ $item->gnump11 }}</td>
+                 <!---<td class="table-success">{{ $item->gnump12 }}</td>
+               <td class="table-light">{{ $item->gnump4 }}</td>
+                <td class="table-light">{{ $item->gnump5 }}</td>
+                <td class="table-light">{{ $item->gnump6 }}</td>
+                <td class="table-light">{{ $item->gnump7 }}</td>
+                <td class="table-light">{{ $item->gnump8 }}</td>
+                <td class="table-light">{{ $item->gnump9 }}</td>-->
+
+                <span>
+                <td class="table-warning">
+
+                    <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
 
 
-                    </tr>
-@endforeach
-                </tbody>
+                    <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
 
-            </table>
-            {!!$places->links() !!}
+                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
+
+                </td>
+
+                </span>
+
+
+              </tr>
+
+            </tbody>
+              <tr>
+
+              <th class="table-warning scope="row">{{$i++}}</th>
+                <td class="table-info">{{ $item->gnump }}</td>
+                <td class="table-info">{{ $item->gnumh }}</td>
+                <td class="table-info">{{ $item->gnumw }}</td>
+                <td class="table-info">{{ $item->gnump1 }}</td>
+                <td class="table-info">{{ $item->gnump2 }}</td>
+                <td class="table-info">{{ $item->gnump3 }}</td>
+                <td class="table-info">{{ $item->gnump10 }}</td>
+                <td class="table-info">{{ $item->gnump11 }}</td>
+                 <!---<td class="table-info">{{ $item->gnump12 }}</td>
+               <td class="table-light">{{ $item->gnump4 }}</td>
+                <td class="table-light">{{ $item->gnump5 }}</td>
+                <td class="table-light">{{ $item->gnump6 }}</td>
+                <td class="table-light">{{ $item->gnump7 }}</td>
+                <td class="table-light">{{ $item->gnump8 }}</td>
+                <td class="table-light">{{ $item->gnump9 }}</td>-->
+                <span>
+                <td class="table-warning">
+
+                    <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}"> تعديل</a>
+
+
+                    <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+
+                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل المتغير</a>
+
+                </td>
+
+                </span>
+
+
+
+              </tr>
+              @endforeach
+            </tbody>
+
+          </table>
+          {!!$places->links()  !!}
         </div>
+      </div>
     </div>
-</div>
-@else
-<div class="col">
-    <div class="alert alert-danger" role="alert">
-        Not places
-    </div>
-</div>
+    @else
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                Not places
+              </div>
+        </div>
 
-@endif
-</div>
-
+        @endif
+  </div>
 
 
 
 
 
 
-@endsection
 
+  @endsection
+
+  @push('js')
+  <script>
+    $(document).ready(function () {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+    });
+  </script>
+  @endpush
