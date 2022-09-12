@@ -1,0 +1,61 @@
+{"php.validate.enable": true,
+
+"html.format.extraLiners": "head, body, /html",
+    "blade.format.enable": true,
+    "html.format.enable": true,
+    "laravel_goto_view.extensions": [
+        ".blade.php",
+        ".bootstrap"
+    ],
+    "editor.formatOnSave": false,
+"[php]": {
+  "editor.formatOnSave": true
+},
+
+    "laravel_goto_view.quickJump":true,
+    "laravel_jump_controller.pathNamespace": "App\\Http\\Controllers",
+    "laravel_goto_components.regex": "(?<=<x-)(?!slot)[a-z.-]+",
+    "laravelGotoController.routeMethods": [
+        "route",
+        "tenant_route",
+        "action",
+        "Route::has",
+        "Route::is"
+    ],
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json",
+                "jsonc"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautifyrc"
+            ]
+        },
+        "css": [
+            "css",
+            "less",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html",
+            "php",
+            "blade.php"
+        ]
+    },
+"laravelGotoConfig.folders": [
+    "config"
+],
+"laravelGotoConfig.methods": [
+    "config(",
+    "config([",
+    "Config::get(",
+    "Config::set("
+],
+"css.format.enable": true,
+
+
+}

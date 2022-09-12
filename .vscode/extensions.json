@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "ctf0.laravel-goto-controller",
+        "waderyan.nodejs-extension-pack",
+        "ecmel.vscode-html-css",
+        "pgl.laravel-jump-controller",
+        "emmanuelbeziat.vscode-great-icons",
+        "xdebug.php-pack",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "thekalinga.bootstrap4-vscode"
+    ]
+}

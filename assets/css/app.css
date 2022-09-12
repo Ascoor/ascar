@@ -1,0 +1,10 @@
+
+  .card [class*="card-header-"] .card-title + .card-category {
+    color: rgba(255, 255, 255, 0.8);
+    
+      font-size: 32px;
+      line-height: 45px;
+      letter-spacing: 0.101em;
+      font-weight: 200;
+      font-style: inherit;
+  }
