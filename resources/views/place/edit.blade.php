@@ -29,8 +29,9 @@
 
       <div class="col">
                     <div class="form-group form-file-upload form-file-multiple">
-                    <form action={{ route('places.update', $place->id) }}" method="PUT" enctype="multipart/form-data">
+                    <form action={{ route('places.update', $place->id) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="form-group">
             <label for="exampleFormControlInput1">مسلسل المتغير  </label>
             <input type="number" name="gnump" value="{{ $place->gnump }}">
@@ -88,13 +89,16 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1">التعليق  </label>
                 <input type="text" name="gnump11" value="{{ $place->gnump11 }}">
-              </div>
+
+            </div>
 
 
+            <div class="form-group">
 
 
                 <label for="exampleFormControlInput1">Photo  </label>
                 <input type="file"  name="photo1" class="form-control"   >
+            </div>
 
 
                 <div class="form-group">

@@ -2,96 +2,37 @@
 
 @section('content')
 
-
-
-<div class="content">
-  <div class="container pt-3-fluid">
-
-      <div class="col-md-12">
-
-        <div class="card ">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">المتغير رقم {{ $place->gnump }}</h4>
-            <p class="card-category">{{ __(' بيانات المتغير') }}</p>
-          </div>
-            <div class="card-body">
-
-
-        <div class="table">
-  <table>
-    <tr>
-
-
-
-      <th class="table-warning">مسلسل المتغير</th>
-      <th class="table-warning">خط العرض</th>
-      <th class="table-warning">خط الطول</th>
-      <th class="table-warning">المحافظة</th>
-      <th class="table-warning">المركز</th>
-      <th class="table-warning">القرية</th>
-      <th class="table-warning">نوع الأملاك</th>
-      <th class="table-warning">جهة الولاية</th>
-      <th class="table-warning">القانونية</th>
-      <th class="table-warning">الرد</th>
-      <th class="table-warning">تفاصيل الرد</th>
-      <th class="table-warning">موقف الإزالة</th>
-      <th class="table-warning">التاريخ</th>
-      <th class="table-warning">المرفقات</th>
-      <th class="table-warning">الملاحظات</th>
-
-
-     </tr>
-
-        <tbody>
-          <tr>
-
-            <th class="table-success">{{ $place->gnump}}</td>
-       <td class="table-success">{{ $place->gnumh }}</td>
-       <td class="table-success">{{ $place->gnumw }}</td>
-      <td  class="table-success">{{ $place->gnump1 }}</td>
-      <td  class="table-success">{{ $place->gnump2 }}</td>
-      <td  class="table-success">{{ $place->gnump3 }}</td>
-   <td  class="table-success">{{ $place->gnump4 }}</td>
-      <td  class="table-success">{{ $place->gnump5 }}</td>
-      <td  class="table-success">{{ $place->gnump6 }}</td>
-      <td  class="table-success">{{ $place->gnump7 }}</td>
-      <td  class="table-success">{{ $place->gnump8 }}</td>
-      <td  class="table-success">{{ $place->gnump9 }}</td>
-      <td  class="table-success">{{ $place->gnump10 }}</td>
-      <td  class="table-success">{{ $place->gnump11 }}</td>
-
-
-
-          <span>
-          <a class="btn btn-info" href="{{ route('places.edit', $place->id) }}"> تعديل</a>
-
-
-
-    <a class="btn btn-info" hrzef="{{ route('posts') }}"> منشورات</a>
-
-</span>
-</tr>
-
-  </tbody>
-</table>
+<div class="card text-left">
+  <img class="card-img-top" src="holder.js/100px180/" alt="">
+  <div class="card-body">
+    <h4 class="card-title">عرض بيانات المتغير</h4>
+    <p class="card-text">المتغير رقم {{ $place->gnump }}</p>
+  </div>
 </div>
-</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+
+
+        <tr class="table-active">...</tr>
+
+        <tr class="table-primary">...</tr>
+        <tr class="table-secondary">...</tr>
+        <tr class="table-success">...</tr>
+        <tr class="table-danger">...</tr>
+        <tr class="table-warning">...</tr>
+        <tr class="table-info">...</tr>
+        <tr class="table-light">...</tr>
+        <tr class="table-dark">...</tr>
+
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+        </p>
     </div>
-    {!! $place->detail !!}
-
-
-
-</div>
 </div>
 
 
+
+
+{!! $place->detail !!}
 @endsection
-
-@push('js')
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
-    });
-  </script>
-@endpush

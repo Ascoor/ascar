@@ -3,28 +3,28 @@
 @section('content')
 
 
-<div class="content">
-    <div class="container pt-3">
-
-        <div class="container" style="align-items: center;">
-            <div class="jumbotron jumbotron-fluid" style="align-items: center;">
+    <div class="container pt-3" style="background: rgb(155, 170, 255)">
+        <div class="container" style="align-items: center;background:rgb(176, 186, 252);">
+            <div class="jumbotron jumbotron-fluid" style="color:rgb(0, 46, 65); center;">
                 <h1 class="display-4" style="text-align: center;">إدارة المتغيرات المكانية</h1>
                 <p class="lead" style="text-align: center; padding-top: 20px;"></p>
                 <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search.index') }}"">
-@csrf
-<input class=" form-control mr-sm-2" style="text-align:center;" type="search"
+                    @csrf
+<input  style="align-content: center" class=" form-control mr-sm-2" style="text-align:center;" type="search"
                     placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
                 </form>
-            </div>
-            <div class="container">
-            </div>
+                <div class="container" style="align-items: center;">
+                    <center> <button type="button" href="{{ route('export') }}" class="btn btn-warning">إخراج ملف Excel</button></center>
+
+               <br></br> </div>
+
 
             @if($places->count() > 0 )
 
 
             <table class="table">
-                <thead>
+                <thead class="table-warning">
                     <tr>
 
 
@@ -92,12 +92,14 @@
 
                     </tr>
 @endforeach
-                </tbody>
+</tbody>
 
-            </table>
-            {!!$places->links() !!}
-        </div>
+</table>
+{!!$places->links() !!}
+</div>
+
     </div>
+</div>
 </div>
 @else
 <div class="col">

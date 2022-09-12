@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+
 use App\Place;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,7 @@ class PlaceController extends Controller
         $places = Place::latest()->paginate(10);
         return view('place.index', compact('places', $places));
     }
+
 
 
 
@@ -45,16 +47,6 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'gnump4' => 'required',
-            'gnump5' => 'required',
-            'gnump6' => 'required',
-            'gnump7' => 'required',
-            'gnump8' => 'required',
-            'gnump9' => 'required',
-            'gnump10' => 'required',
-            'gnump11' => 'required',
-
-            'photo1' => 'required | image',
 
         ]);
         $photo = $request->photo1;
@@ -88,10 +80,10 @@ class PlaceController extends Controller
 
 
 
-    public function show(place $id)
+    public function show( $id)
     {
-        $place = Place::where('id', $id)->first();
-        return view('place.show', compact('place'));
+        $place = Place::find($id);
+        return view('place.show' ,compact('place') );
     }
 
 
@@ -111,18 +103,9 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'gnump4' => 'required',
-            'gnump5' => 'required',
-            'gnump6' => 'required',
-            'gnump7' => 'required',
-            'gnump8' => 'required',
-            'gnump9' => 'required',
-            'gnump10' => 'required',
-            'gnump11' => 'required',
 
 
 
-            'photo1' => 'required | image',
         ]);
 
         //   dd($request->all());
@@ -151,6 +134,7 @@ class PlaceController extends Controller
         $place->gnump12 =  Auth::id();
 
         $place->save();
+     return redirect()->back();
     }
 
     public function destroy(Place $id)

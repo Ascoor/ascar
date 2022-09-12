@@ -1,19 +1,26 @@
 <!-- Navbar -->
-<nav class="navbar navbar-light" style="background-color: #b9def8;">
+<div class="container-fluid">
+    <nav class="navbar navbar-dark bg-primary">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <large style="color:rgb(251, 255, 0)">محافظة الدقهلية</large>
         <span class="navbar-toggler-icon">
+        </span>
+        <img
+        src="/img/Coat.png"
+        class="me-2"
+        height="50"
+        width="50"
+        alt="MDB Logo"
+        loading="lazy"
+        />
 
-        </button>
-        <img href="/img/Coat.png" width="30" height="30" class="align-top" alt="" loading="lazy">
+
         <a class="navbar-brand" href="{{ route('places.index') }}">
-            محافظة الدقهلية
-        </a>
-    </span>
 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
             <a class="nav-link" href="{{ route('places.index') }}">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
 
         </li>

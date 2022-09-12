@@ -81,16 +81,18 @@
               <input type="date" name="gnump10" class="form-control"   >
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1">التعليق  </label>
-              <input type="text" name="gnump11" class="form-control"   >
-            </div>
+            <label for="exampleFormControlInput1">التعليق  </label>
+            <input type="text" name="gnump11" class="form-control"   >
+        </div>
 
 
 
+        <div class="form-group">
 
                 <label for="exampleFormControlInput1">Photo  </label>
                 <input type="file"  name="photo1" class="form-control"   >
 
+        </div>
 
             <div class="form-group">
 
