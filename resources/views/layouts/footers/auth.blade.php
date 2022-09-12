@@ -1,14 +1,14 @@
-</div>
 <footer class="footer">
-  <div class="container pt-3">
+<center>
 
- 
-    <div class="copyright float-center">
-      &copy;
-      <script>
-        document.write(new Date().getFullYear())
-      </script>, made with <i class="material-icons">favorite</i> 
-      <a href="https://www.creative-tim.com" target="_blank"> Ask-ar.com</a>  <a href="https://www.ask-ar.com" target="_blank">Solutions</a> .
+
+    <div class="copyright float">
+        &copy;
+        <script>
+            document.write(new Date().getFullYear())
+            </script> made with Ask-ar T.S<i class="material-icons"></i>
+        <a href="https://www.creative-tim.com" target="_blank"></a> جميع الحقوق محفوظة لمحافظة الدقهلية <a href="https://www.ask-ar.com" target="_blank"></a>تصمصم لبمهندس أحمد محمد عسكر
     </div>
-  </div>
+</center>
+    </div>
 </footer>
