@@ -59,7 +59,7 @@
       <td  class="table-success">{{ $place->gnump9 }}</td>
       <td  class="table-success">{{ $place->gnump10 }}</td>
       <td  class="table-success">{{ $place->gnump11 }}</td>
-      <td  class="table-success">{{ $place->gnump12 }}</td>
+
 
 
           <span>
