@@ -1,0 +1,66 @@
+<div class="sidebar" data-color="purple" data-background-color="orange" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+  <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+  <div class="logo">
+    <a href="https://dkgov.ask-ar.com" class="simple-text logo-normal">
+      {{ __('محافظة الدقهلية') }}
+    </i> 
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="nav-item{{ $activePage == 'index' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('places.index') }}">
+          <i class="material-icons">dashboard</i>
+            <p>{{ __('Dashboard') }}</p>
+        </a>
+      </li>
+      <li class="nav-item {{ ($activePage == 'home' || $activePage == 'index') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
+          <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
+          <p>{{ __('مسلسل المتغيرات') }}
+            <b class="caret"></b>
+          </p>
+        </a>
+        <div class="collapse show" id="laravelExample">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'create' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('places.create') }}">
+                <span class="sidebar-mini"> UP </span>
+                <span class="sidebar-normal">{{ __('إضافة متغير') }} </span>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'uploadform' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ url('/multiuploads') }}">
+                <span class="sidebar-mini"> UM </span>
+                <span class="sidebar-normal"> {{ __('المرفقات') }} </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item{{ $activePage == 'post.index' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('places.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('المنشورات') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('places.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('متغيرات قيد الفحص') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'trash' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('place.trash') }}">
+          <i class="material-icons">library_books</i>
+            <p>{{ __('  متغيرات قيد الحفظ ') }}</p>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>

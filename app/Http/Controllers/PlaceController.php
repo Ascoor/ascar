@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use App\User;
 use App\Place;
 use Illuminate\Http\Request;
 
@@ -57,11 +57,13 @@ class PlaceController extends Controller
             'photo1' => 'required | image',
 
         ]);
-        $photo = $request->photo1;
-        $newPhoto = time().$photo->getClientOriginalName();
+        $photo = $request->photo;
+        $newPhoto = time() . $photo->getClientOriginalName();
         $photo->move('uploads/posts', $newPhoto);
+        $photo->photo1 = 'uploads/posts' . $newPhoto;
 
         $place = Place::create([
+            'gnump12' =>  User::id(),
             'gnump' => $request->gnump,
             'gnumh' => $request->gnumh,
             'gnumw' => $request->gnumw,
@@ -76,21 +78,19 @@ class PlaceController extends Controller
             'gnump9' => $request->gnump9,
             'gnump10' => $request->gnump10,
             'gnump11' => $request->gnump11,
-            'gnump12' =>  Auth::id(),
-            'photo1' => 'uploads/posts/'.$newPhoto,
+            'gnump11' => $request->gnump11,
+
+
 
         ]);
 
-        return redirect()->route('places.index')
-            ->with('تمت', 'تم الإضافة  بنجاح');
 
-
-
+        return redirect()->back();
     }
 
 
 
-    public function show( $id)
+    public function show(Place $id)
     {
         $place = Place::where('id', $id)->first();
         return view('place.show', compact('place'));
@@ -107,7 +107,6 @@ class PlaceController extends Controller
     {
         $place = Place::find($id);
         $this->validate($request, [
-            'gnump' => 'required',
             'gnumh' => 'required',
             'gnumw' => 'required',
             'gnump1' => 'required',
@@ -119,19 +118,21 @@ class PlaceController extends Controller
             'gnump7' => 'required',
             'gnump8' => 'required',
             'gnump9' => 'required',
-           
+            'gnump10' => 'required',
+            'gnump11' => 'required',
 
 
-      
+
+            'photo1' => 'required | image',
         ]);
 
         //   dd($request->all());
 
         if ($request->has('photo')) {
-            $photo = $request->photo1;
-        $newPhoto = time().$photo->getClientOriginalName();
-        $photo->move('uploads/posts', $newPhoto);
-
+            $photo = $request->photo;
+            $newPhoto = time() . $photo->getClientOriginalName();
+            $photo->move('uploads/posts', $newPhoto);
+            $place->photo1 = 'uploads/posts' . $newPhoto;
         }
 
         $place->gnump = $request->gnump;
@@ -148,18 +149,14 @@ class PlaceController extends Controller
         $place->gnump9 = $request->gnump9;
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
-        $place->gnump12 =  Auth::id();
-        $place->photo1  = 'uploads/posts/'.$newPhoto;
+        $place->gnump12 =  User::id();
 
         $place->save();
-        return redirect()->route('places.index')
-        ->with('تمت', 'تم التحديث  بنجاح');
     }
-
 
     public function destroy(Place $id)
     {
-        $place = Place::where('id', $id)->where('Auth_id', Auth::id())->first();
+        $place = Place::where('id', $id)->where('user_id', User::id())->first();
         if ($place === null) {
             return redirect()->back();
         }
@@ -167,10 +164,9 @@ class PlaceController extends Controller
         return redirect()->back();
     }
 
-    public function softDeletes( $id)
+    public function softDeletes($id)
     {
         $place = Place::find($id)->delete();
-
 
         return redirect()->route('places.index')
             ->with('تمت', 'تم الإخفاء بنجاح');

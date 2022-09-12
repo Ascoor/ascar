@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('typography');*/
 	/*$$$$$$$$$$$$$$  Places Routes  $$$$$$$$$$$$$$$$$$$ */
 	Route::resource('places', 'PlaceController');
-	Route::get('place/soft/selete/{id}','PlaceController@softDeletes')
+	Route::get('place/soft/selete/{id}','PlaceController@softDelete')
 	->name('soft.delete');
 
 	Route::get('place/trash','PlaceController@trashedPlaces')
@@ -51,3 +51,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
+

@@ -4,104 +4,126 @@
 @section('content')
 
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="jumbotron">
-                <h4 class="card-title"> رقم المتغير {{ $place->gnump }}</h4>
-                <p class="card-category">{{ __(' تعديل بيانات المتغير') }}</p>
-            </div>
+<div class="content">
+    <div class="container pt-3">
+    </div>
+    <div class="col-md-12">
+    </div>
+
+
+
+    <div class="card ">
+
+        <div class="card-header card-header-primary">
+            <h4 class="card-title"> رقم المتغير {{ $place->gnump }}</h4>
+            <p class="card-category">{{ __(' تعديل بيانات المتغير') }}</p>
         </div>
 
-    </div>
-    <div class="row">
+        <div class="card-body">
+            <div class="row">
+                @if (count($errors)>0)
+                <ul>
+                    @foreach ($errors->all() as $item)
+                    <li>
+                        {{$item}}
+                    </li>
+                    @endforeach
+                </ul>
+                @endif
+                <div class="col">
+                    <div class="form-group form-file-upload form-file-multiple">
+                    <form action={{ route('places.update', $place->id) }}" method="PUT" enctype="multipart/form-data">
+                        @csrf
 
-        @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $item)
-            <li>
-                {{$item}}
-            </li>
-            @endforeach
-        </ul>
-        @endif
-
-
-        <div class="col">
-            <div class="form-group form-file-upload form-file-multiple">
-                <form action="{{ route('places.update', $place->id) }}" method="PUT" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-
-
-                    
-                        <div class="form-group" style="align-items:center; text-align:center;">
-                        <label for="exampleFormControlInput1">مسلسل المتغير </label>
-                        <input type="number" name="gnump" value="{{ $place->gnump }}">
-                        <label for="exampleFormControlInput1">خط العرض </label>
-                        <input type="float" name="gnumh" value="{{ $place->gnumh }}">
-                        <label for="exampleFormControlInput1">خط الطول </label>
-                        <input type="float" name="gnumw" value="{{ $place->gnumw }}">
-                        
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">المحافظة </label>
+                            <input type="number" name="gnump" value="{{ $place->gnump }}">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="float" name="gnumh" value="{{ $place->gnumh }}">
+                        </div>
+                        <div class="form-group">
+                            <input type="float" name="gnumw" value="{{ $place->gnumw }}">
+                        </div>
+                        <div class="form-group">
                             <input type="text" name="gnump1" value="{{ $place->gnump1 }}">
-                            <label for="exampleFormControlInput1"> المركز </label>
+                        </div>
+                        <div class="form-group">
                             <input type="text" name="gnump2" value="{{ $place->gnump2 }}">
-                            <label for="exampleFormControlInput1">القرية </label>
+                        </div>
+                        <div class="form-group">
                             <input type="text" name="gnump3" value="{{ $place->gnump3 }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">نوع الأملاك </label>
                             <input type="text" name="gnump4" value="{{ $place->gnump4 }}">
-                            <label for="exampleFormControlInput1">جهة الولاية </label>
+
+                        </div>
+
+                        <div class="form-group">
                             <input type="text" name="gnump5" value="{{ $place->gnump5 }}">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">القانونية </label>
                             <input type="text" name="gnump6" value="{{ $place->gnump6 }}">
-                            <label for="exampleFormControlInput1">الرد </label>
-                            <input type="text" name="gnump7" value="{{ $place->gnump7 }}">
-                            <label for="exampleFormControlInput1">تفاصيل الرد </label>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="gnump7" value="{{ $place->gnump7 }} ">
+                                               </div>
+                        <div class="form-group">
                             <input type="text" name="gnump8" value="{{ $place->gnump8 }}">
                         </div>
-                        <div class="form-group" style="align-items:center; text-align:center;">
-                            <label for="exampleFormControlInput1">موقف الإزالة </label>
+                        <div class="form-group">
                             <input type="text" name="gnump9" value="{{ $place->gnump9 }}">
-                            <label for="exampleFormControlInput1"> التاريخ </label>
-                            <input type="date" name="gnump10" value="{{ $place->gnump10 }}">
-
-                            <label for="exampleFormControlInput1">التعليق </label>
-                            <input type="text" name="gnump11" value="{{ $place->gnump11 }}">
                         </div>
-
+                        <div class="form-group">
+                            <label><a>التاريخ</a>
+                                <input type="date" name="gnump10" value="{{ $place->gnump10 }}">
+                        </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Photo </label>
-                            <input type="file" name="photo1" class="form-control">
+                            <label><a>الملاحظات</a>
+                                <input type="text" name="gnump11" value="{{ $place->gnump11 }}"></label>
+                            </div>
 
                         </div>
-                         <div class="form-group">
+                                            <div class="form-group">
+                                                <label><a>التعليق</a>
+                                                    <input type="text" name="gnump13" value="{{ $place->gnump13 }}"></label>
+                                            </div>
 
-                            <button class="btn btn-danger" class="form-group" type="submit">save</button>
-                        </div>
+<div class="form-group">
+  <label for=""></label>
+  <input type="file" name="photo1" id="" class="form-control" placeholder="" aria-describedby="helpId">
+  <small id="photo1" class="text-muted">Help text</small>
+</div>
+    <input type="file" name="photo1" multiple="" class="inputFileHidden">
 
-                </form>
+                        <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+
+            @if ($message = Session::get('تمت'))
+            <div class="alert alert-danger" role="alert">
+                {{$message}}
+            </div>
+            @endif
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+                @endif
             </div>
         </div>
-    </div>
 
-    @if ($message = Session::get('تمت'))
-    <div class="alert alert-danger" role="alert">
-        {{$message}}
-    </div>
-    @endif
-    @if (session('status'))
-    <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-        @endif
-    </div>
-</div>
-</div>
+        @endsection
 
-@endsection
+        @push('js')
+        <script>
+        $(document).ready(function() {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+        });
+        </script>
+        @endpush
