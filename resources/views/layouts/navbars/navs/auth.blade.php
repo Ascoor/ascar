@@ -1,27 +1,28 @@
 <!-- Navbar -->
 <div class="container-fluid">
     <nav class="navbar navbar-dark bg-primary">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <large style="color:rgb(251, 255, 0)">محافظة الدقهلية</large>
-        <span class="navbar-toggler-icon">
-        </span>
-        <img
-        src="/img/Coat.png"
-        class="me-2"
-        height="50"
-        width="50"
-        alt="MDB Logo"
-        loading="lazy"
-        />
 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" >
 
+            </span>
+        </button>
+        <large style="text-align:center;font-family:Amiri,serif;font-size:38pt;color:rgb(251, 255, 0);">محافظة الدقهلية</large>
         <a class="navbar-brand" href="{{ route('places.index') }}">
+            <img
+            src="/img/Coat.png"
+            class="me-2"
+            height="100"
 
+            width="100"
+            alt="MDB Logo"
+            loading="lazy"
+            />
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-            <a class="nav-link" href="{{ route('places.index') }}">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('places.index') }}">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
 
         </li>
         <li class="nav-item dropdown">
