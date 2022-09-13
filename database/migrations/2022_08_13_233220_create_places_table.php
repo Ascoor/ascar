@@ -19,17 +19,17 @@ class CreatePlacesTable extends Migration
             $table->string('gnump');
             $table->double('gnumh');
             $table->double('gnumw');
-            $table->string('gnump1');
+            $table->string('gnump1')
             $table->string('gnump2');
-            $table->string('gnump3');
-            $table->string('gnump4');
-            $table->string('gnump5');
-            $table->string('gnump6');
-            $table->string('gnump7');
-            $table->string('gnump8');
-            $table->string('gnump9');
-            $table->string('gnump10');
-            $table->string('gnump11');
+            $table->string('gnump3')->nullable();
+            $table->string('gnump4')->nullable();
+            $table->string('gnump5')->nullable();
+            $table->string('gnump6')->nullable();
+            $table->string('gnump7')->nullable();
+            $table->string('gnump8')->nullable();
+            $table->string('gnump9')->nullable();
+            $table->string('gnump10')->nullable();
+            $table->string('gnump11')->nullable();
             $table->integer('gnump12')->unsigned();
             $table->string('gnump13')->nullable();
             $table->string('photo1')->nullable();
