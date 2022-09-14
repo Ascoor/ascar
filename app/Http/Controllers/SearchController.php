@@ -25,16 +25,4 @@ $places = Place::where('gnump','LIKE','%'.$search_text.'%')
 ->get();
 return view('place.search', compact('places'));
 }
-
-public function export()
-    {
-$places = Place::all();
-        return Excel::download(new PlacesExport(),'places.xlsx' );
-    }
-
-
-
-
-
-
 }
