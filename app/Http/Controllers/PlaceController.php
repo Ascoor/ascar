@@ -134,7 +134,9 @@ class PlaceController extends Controller
         $place->gnump12 =  Auth::id();
 
         $place->save();
-     return redirect()->back();
+  
+        return redirect()->route('places.index')
+            ->with('تمت', 'تم الإضافة بنجاح');
     }
 
     public function destroy(Place $id)

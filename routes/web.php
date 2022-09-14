@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/export', 'HomeController@export')->name('export')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -42,10 +42,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}','PlaceController@deleteForEver')
 	->name('place.delete.from.database');
 	/*$$$$$$$$$$$$$$  Search Routes  $$$$$$$$$$$$$$$$$$$ */
-	Route::get('search','SearchController@index')
-	->name('search.index');
-	Route::post('search.export','SearchController@export')
-	->name('search.export');
+	// Route::get('search','SearchController@index')
+	// ->name('search.index');
+	// Route::post('search.export','SearchController@export')
+	// ->name('search.export');
+	Route::resource('search','SearchController');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -54,4 +56,3 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-

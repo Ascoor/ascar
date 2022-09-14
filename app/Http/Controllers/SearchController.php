@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Place;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Exports\PlacesExport;
-use Maatwebsite\Excel\Facades\Excel;
-
 
 class SearchController extends Controller
 {

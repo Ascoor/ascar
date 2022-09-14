@@ -8,7 +8,7 @@
    <div class="logo">
        <img src="/img/coat.png" class="rounded mx-auto d-block" alt="...">
     </div>
-    <h1 class="text-warning text-center">{{ __('محافظة الدقهلية') }}</h1></a>
+    <h1 class="text text-center" style="color: rgb(231, 244, 3);font-size: 42pt;">{{ __('محافظة الدقهلية') }}</h1></a>
     <h2 class="text-white text-center">{{ __('نظام إدارة المتغيرات المكانية') }}</h2>
 
 
