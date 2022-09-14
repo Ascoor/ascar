@@ -135,7 +135,7 @@ class PlaceController extends Controller
 
         $place->save();
   
-        return redirect()->route('places.index');
+        return redirect()->back();
     }
 
     public function destroy(Place $id)
