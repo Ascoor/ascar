@@ -17,20 +17,22 @@
 
     </ul>
 </div>
-<div class="container">
 
-</div>
 
 <div class="container" style="background: rgb(221, 225, 248)">
     <div class="container" style="align-items: center;background:rgb(220, 225, 255);">
         <div class="jumbotron jumbotron-fluid" style="color:rgb(0, 46, 65); ">
             <div class="card-body">
-
-                <h1 class="card-title" style="text-align: center; font-size:42pt; font-family: 'Amiri', serif;">إدارة
-                    المتغيرات المكانية</h1>
+                <center>
+                    <img style="width:350px;
+                
+                mer;
+                height:350px ;
+                padding:auto ;   " src="/img/main.png">
+                </center>
 
                 @yield('content')
 
                 @include('layouts.footers.auth')
             </div>
-        </div>
+        </div>hei
