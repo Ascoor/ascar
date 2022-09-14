@@ -1,8 +1,7 @@
-@extends('layouts.app', ['activePage' => ' home', 'titlePage' => __('لوحة التحكم')])
+@extends('layouts.app', ['activePage' => ' dashboard', 'titlePage' => __('لوحة التحكم')])
 
 @section('content')
-<div class="content">  
-
+<div class="content">
 
 
 

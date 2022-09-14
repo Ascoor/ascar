@@ -4,6 +4,17 @@
 @section('content')
 
 
+@if ($message = Session::get('تمت'))
+            <div class="alert alert-danger" role="alert">
+                {{$message}}
+            </div>
+            @endif
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+                @endif
+
+
 <div class="container">
     <div class="row">
       <div class="col">
@@ -109,18 +120,7 @@
           </form>
       </div>
     </div>
-  </div>
-
-@if ($message = Session::get('تمت'))
-            <div class="alert alert-danger" role="alert">
-                {{$message}}
-            </div>
-            @endif
-            @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-                @endif
-            </div>
+  </div>            </div>
             </div>
         </div>
 

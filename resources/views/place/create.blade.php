@@ -81,7 +81,7 @@
               <input type="date" name="gnump10" class="form-control"   >
             </div>
             <div class="form-group">
-            <label for="exampleFormControlInput1">التعليق  </label>
+            <label for="exampleFormControlInput1">الملاحظات  </label>
             <input type="text" name="gnump11" class="form-control"   >
         </div>
 

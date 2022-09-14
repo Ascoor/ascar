@@ -1,4 +1,4 @@
-@extends('layouts.login', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'titlePage' => __('إدارة المتغيرات المكانية')])
+@extends('layouts.logapp', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'titlePage' => __('إدارة المتغيرات المكانية')])
 
 @section('content')
 <div class="container" style="height: auto;">

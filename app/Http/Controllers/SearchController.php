@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Place; 
+use App\Place;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Exports\PlacesExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class SearchController extends Controller
 {
-   
+
     public Function index()
     {
 $search_text = $_GET['query'];
@@ -20,9 +23,15 @@ $places = Place::where('gnump','LIKE','%'.$search_text.'%')
 ->orwhere('gnump10', 'LIKE' ,'%'.$search_text.'%')
 
 ->get();
-return view('place.search', compact('places')); 
+return view('place.search', compact('places'));
 }
-   
+
+public function export()
+    {
+$places = Place::all();
+        return Excel::download(new PlacesExport(),'places.xlsx' );
+    }
+
 
 
 

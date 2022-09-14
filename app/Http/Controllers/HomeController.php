@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Place;
-use App\Exports\PlacesExport;
-use Maatwebsite\Excel\Facades\Excel;
 
 class HomeController extends Controller
 {
@@ -27,11 +25,4 @@ class HomeController extends Controller
         $places = Place::latest()->paginate(10);
         return view('place.index', compact('places', $places));
     }
-
-    public function export()
-    {
-
-        return Excel::download(new PlacesExport(),'places.xlsx' );
-    }
-
 }
