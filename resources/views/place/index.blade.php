@@ -5,24 +5,6 @@
 
 </div>
 
-    <div class="container" style="background: rgb(221, 225, 248)">
-        <div class="container" style="align-items: center;background:rgb(220, 225, 255);">
-            <div class="jumbotron jumbotron-fluid" style="color:rgb(0, 46, 65); center;">
-                <div class="card-body">
-                    <h1 class="card-title" style="text-align: center; font-size:42pt; font-family: 'Amiri', serif;">إدارة المتغيرات المكانية</h1>
-                    <p class="card-text" style="font-size:35pt;text-align: center;font-family: 'Amiri', serif">فهرس المتغيرات</p>
-                    <p class="lead" style="text-align: center; padding-top: 20px;"></p>
-                    <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search.index') }}"">
-                        @csrf
-<input  style="align-content: center" class=" form-control mr-sm-2" style="text-align:center;" type="search"
-                    placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
-                </form>
-                <div class="container" style="align-items: center;">
-                    <center> <button type="button" href="{{ route('export') }}" class="btn btn-warning">إخراج ملف Excel</button></center>
-
-
-
 
             @if($places->count() > 0 )
 <div class="container-fluid">

@@ -19,6 +19,12 @@
                 placeholder=" المتغير-المدينة-القرية"name=" query" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
         </div>
+        <div class="container" style="align-items: center;">
+            <center> <button type="button" href="{{ route('search.export') }}" class="btn btn-warning">إخراج ملف Excel</button></center>
+
+
+        </div>
+
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
