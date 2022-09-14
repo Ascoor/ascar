@@ -26,7 +26,7 @@
                 <center>
                     <img style="width:350px;
                 
-                mer;
+            
                 height:350px ;
                 padding:auto ;   " src="/img/main.png">
                 </center>
