@@ -135,8 +135,7 @@ class PlaceController extends Controller
 
         $place->save();
   
-        return redirect()->route('places.index')
-            ->with('تمت', 'تم الإضافة بنجاح');
+        return redirect()->route('places.index');
     }
 
     public function destroy(Place $id)
