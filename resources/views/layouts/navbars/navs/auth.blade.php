@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <div class="container-fluid">
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark " style="font-size:21px;background:#ffffff;background-color: #153257;outline-color:#ffffff;">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
