@@ -8,9 +8,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header" style="background-color:#e78125;align-items: center;">
+                    <div class="card-header card-header" style="background-color:#153257;align-items: center;">
                         <h4 class="card-title " style="color:#fff;text-align: center;">نتائج البحث</h4>
-                        <p class="card-category" style="color:rgb(255, 255, 255);text-align: center;"> يمكنك البحث برقم المتغير او المركز او
+                        <p class="card-category" style="color:rgb(255, 255, 255);text-align: center;"> يمكنك البحث برقم
+                            المتغير او المركز او
                             القرية
                         </p>
                         <p class="lead" style="text-align: center; padding-top: 20px;"></p>
@@ -26,7 +27,8 @@
 
                     </div>
 
-                    <a class="btn btn-danger" href="{{ route('export') }}" type="button"> إستخراج نتيجة البحث ملف Excel</a>
+                    <a class="btn btn-warning" href="{{ route('export') }}" type="button"> إستخراج نتيجة البحث ملف
+                        Excel</a>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
