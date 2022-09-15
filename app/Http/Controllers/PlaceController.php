@@ -76,12 +76,12 @@ class PlaceController extends Controller
         return redirect()->back();
         }
 
-
+///////* Export Excel sheet *//////
 
         public function export()
 {
-
-   return Excel::download(new PlacesExport, 'places.csv');
+    
+       return Excel::download(new PlacesExport, 'places.xlsx');
 }
 
 
