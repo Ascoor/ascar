@@ -2,10 +2,11 @@
 <div class="container" style="align-items:center;text-align: center; ">
 
     <div class="btn-group" role="group" style="align-items: center">
-        <a class="btn btn-primary" type="button" href="{{ route('home') }}" >الرئيسية
+        <a class="btn btn-primary" type="button" href="{{ route('home') }}">الرئيسية
         </a>
 
-        <button  type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             فهرس المتغيرات
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -13,9 +14,9 @@
             <a class="dropdown-item" href="{{ route('home') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
             <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
         </div>
-        <a class="btn btn-primary" type="button" href="{{ route('search.index') }}" >إدارة البيانات</a>
+        <a class="btn btn-primary" type="button" href="{{ route('search.index') }}">إدارة البيانات</a>
     </div>
-    </div>
+</div>
 
 
 
@@ -35,4 +36,4 @@
 
                 @include('layouts.footers.auth')
             </div>
-        </div>hei
+        </div>
