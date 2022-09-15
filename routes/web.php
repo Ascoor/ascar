@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/export', 'PlaceController@export')->name('export');
 
 
 Route::group(['middleware' => 'auth'], function () {

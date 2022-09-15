@@ -26,6 +26,7 @@
 
                     </div>
 
+                    <a class="btn btn-danger" href="{{ route('export') }}" type="button"> إستخراج نتيجة البحث ملف Excel</a>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
