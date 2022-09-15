@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Auth;
-
+use Excel;
 use App\Place;
 use Illuminate\Http\Request;
-
+use App\Exports\PlacesExport;
 
 class PlaceController extends Controller
 {
@@ -73,10 +73,18 @@ class PlaceController extends Controller
 
         ]);
 
-
-
         return redirect()->back();
-    }
+        }
+
+
+
+        public function export()
+{
+    $item->get(array('id', 'gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump4'));
+
+   return Excel::download(new PlacesExport, 'places.csv');
+}
+
 
 
 
@@ -134,7 +142,7 @@ class PlaceController extends Controller
         $place->gnump12 =  Auth::id();
 
         $place->save();
-  
+
         return redirect()->back();
     }
 

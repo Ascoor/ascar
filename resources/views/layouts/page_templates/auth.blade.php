@@ -1,22 +1,22 @@
 @include('layouts.navbars.navs.auth')
-<div class="container">
-    <ul class="nav nav-tabs" style="padding-right:228px ">
-        <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link ">الصفحة الرئيسية</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">فهرس المتغيرات</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ route('places.create') }}">{{ __('إضافة متغير') }}</a>
-                <a class="dropdown-item" href="{{ route('home') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
-                <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
+<div class="container" style="align-items:center;text-align: center; ">
 
-            </div>
-        </li>
+    <div class="btn-group" role="group" style="align-items: center">
+        <a class="btn btn-primary" type="button" href="{{ route('home') }}" >الرئيسية
+        </a>
 
-    </ul>
-</div>
+        <button  type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            فهرس المتغيرات
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="{{ route('places.create') }}">{{ __('إضافة متغير') }}</a>
+            <a class="dropdown-item" href="{{ route('home') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
+            <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
+        </div>
+        <a class="btn btn-primary" type="button" href="{{ route('search.index') }}" >إدارة البيانات</a>
+    </div>
+    </div>
+
 
 
 <div class="container" style="background: rgb(221, 225, 248)">
@@ -25,8 +25,8 @@
             <div class="card-body">
                 <center>
                     <img style="width:350px;
-                
-            
+
+
                 height:350px ;
                 padding:auto ;   " src="/img/main.png">
                 </center>
