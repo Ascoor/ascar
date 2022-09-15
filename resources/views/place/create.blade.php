@@ -3,16 +3,23 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="jumbotron">
-            <h1 class="display-4">إضافة متغير</h1>
-            <a class="btn btn-success" href="{{route('places.index')}}">جميع المتغيرات</a>
-           </div>
-      </div>
+</div>
 
-    </div>
-    <div class="row">
+            <div class="card">
+    <div class="card-header card-header" style="
+    color: rgb(255, 242, 64);
+    background-color: #153257;
+    align-items: center;
+    text-align: center;
+<h1 class="display-4">اضافة بيانات المتغير</h1>
+
+
+<p class="lead" style="text-align: center; padding-top: 20px"></p>
+
+<a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
+</div>
+
+
 
         @if (count($errors) > 0)
         <ul>
@@ -23,9 +30,20 @@
             @endforeach
         </ul>
         @endif
+        <div class="container">
 
-
-      <div class="col">
+            <div class="card">
+                <div class="card-body">
+                <div class="card-header card-header" style="
+                color: rgb(255, 242, 64);
+                background-color: #d3e6ff;
+                align-items: center;
+                text-align: center;
+            <h1 class="display-4">ت
+                    <img class="card-img-top" style="width:350px;
+                    height:350px ;
+                    padding:auto ;   " src="/img/main.png">
+                    </div>
       <form action="{{route('places.store')}}" method="post" enctype="multipart/form-data">
         @csrf
             <div class="form-group">
