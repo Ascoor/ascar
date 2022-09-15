@@ -76,13 +76,12 @@ class PlaceController extends Controller
         return redirect()->back();
         }
 
-
+///////* Export Excel sheet *//////
 
         public function export()
 {
-    $item->get(array('id', 'gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump4'));
-
-   return Excel::download(new PlacesExport, 'places.csv');
+    
+       return Excel::download(new PlacesExport, 'places.xlsx');
 }
 
 
