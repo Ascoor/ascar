@@ -1,15 +1,16 @@
-@extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('غرض
-المتغير')]) @section('content')
-<div class="container pt-3">
+@extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('عرض المتغير')])
+
+ @section('content')
+<div class="container">
     <div class="row">
-        <div class="col-md-12">
+
             <div class="card">
                 <div class="card-header card-header" style="
-                        color: rgb(255, 242, 64);
-                        background-color: #153257;
-                        align-items: center;
-                        text-align: center;
-                    ">
+                color: rgb(255, 242, 64);
+                background-color: #153257;
+                align-items: center;
+                text-align: center;
+            <h1 class="display-4">
                     <h1 class="display-4">عرض بيانات المتغير</h1>
                     <h4 class="display-5">المتغير رقم {{ $place->gnump }}</h4>
 
@@ -17,8 +18,22 @@
 
                     <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
                 </div>
+                <div class="container">
 
-                <div class="card-body">
+
+                    <div class="card">
+                        <div class="card-body">
+                        <div class="card-header card-header" style="
+                        color: rgb(255, 242, 64);
+                        background-color: #d3e6ff;
+                        align-items: center;
+                        text-align: center;
+                    <h1 class="display-4">ت
+                            <img class="card-img-top" style="width:350px;
+                            height:350px ;
+                            padding:auto ;   " src="/img/main.png">
+                            </div>
+
                     <table class="table-warning" style="
                             font-size: 21px;
                             text-align: center;

@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+<<<<<<< HEAD
     <div class="container" style="align-items: center;">
         <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search.index') }}"">
                             @csrf
@@ -10,10 +11,25 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
     </div>
 </div>
+=======
 
+>>>>>>> bcd0adc9f35d09c0bc1151de3e043f80d23083aa
+
+        <div class="card">
+            <div class="card-body">
+            <div class="card-header card-header" style="
+            color: rgb(255, 242, 64);
+            background-color: #d3e6ff;
+            align-items: center;
+            text-align: center;
+        <h1 class="display-4">ت
+                <img class="card-img-top" style="width:350px;
+                height:350px ;
+                padding:auto ;   " src="/img/main.png">
+                </div>
 
 @if($places->count() > 0 )
-<div class="container-fluid">
+
     <div class="table-responsive-md">
 
         <table class="table-warning" style="text-align: center; align-items:center;">
