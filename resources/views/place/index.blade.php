@@ -9,7 +9,6 @@
             placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
     </div>
-
 </div>
 
 
@@ -20,24 +19,15 @@
         <table class="table-warning" style="text-align: center; align-items:center;">
             <thead>
                 <tr>
-
-
-
-
                     <th>مسلسل المتغير</th>
                     <th>خط العرض</th>
                     <th>خط الطول</th>
                     <th>المحافظة</th>
                     <th>المركز</th>
                     <th>القرية</th>
-
-
                     <th>التاريخ</th>
-
                     <th>ملاحظات</th>
-
                     <th>التحكم</th>
-
                     <!--     <th>نوع الأملاك</th>
                         <th>جهة الولاية</th>
              <th>القانونية</th>
@@ -66,12 +56,7 @@
                     <td>{{ $item->gnump3 }}</td>
                     <td>{{ $item->gnump10 }}</td>
                     <td>{{ $item->gnump11 }}</td>
-
-
                     <td>
-
-
-
                         <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}">
                             تعديل</a>
 
@@ -80,12 +65,7 @@
                         <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء عمل
                             المتغير</a>
 
-
                     </td>
-
-
-
-
                 </tr>
                 @endforeach
             </tbody>

@@ -14,7 +14,7 @@
             <a class="dropdown-item" href="{{ route('home') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
             <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
         </div>
-        <a class="btn btn-primary" type="button" href="{{ route('search.index') }}">إدارة البيانات</a>
+        <a class="btn btn-primary" type="button" href="{{ route('tags.index') }}">إدارة الحالة</a>
     </div>
 </div>
 

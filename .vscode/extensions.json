@@ -1,7 +1,12 @@
 {
     "recommendations": [
         "ctf0.laravel-goto-controller",
-        "waderyan.nodejs-extension-pack",
+        "onecentlin.laravel-blade",
+        "xdebug.php-debug",
+        "rifi2k.format-html-in-php",
+        "naoray.laravel-goto-components",
+        "christian-kohler.npm-intellisense",
+        "inci-august.august-themes",
         "ecmel.vscode-html-css",
         "pgl.laravel-jump-controller",
         "emmanuelbeziat.vscode-great-icons",

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Excel;
+use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Place;
 use Illuminate\Http\Request;
 use App\Exports\PlacesExport;
@@ -50,7 +50,7 @@ class PlaceController extends Controller
 
         ]);
         $photo = $request->photo1;
-        $newPhoto = time().$photo->getClientOriginalName();
+        $newPhoto = time() . $photo->getClientOriginalName();
         $photo->move('uploads/posts', $newPhoto);
 
         $place = Place::create([
@@ -69,28 +69,28 @@ class PlaceController extends Controller
             'gnump10' => $request->gnump10,
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
-            'photo1' => 'uploads/posts/'.$newPhoto,
+            'photo1' => 'uploads/posts/' . $newPhoto,
 
         ]);
 
         return redirect()->back();
-        }
+    }
 
-///////* Export Excel sheet *//////
+    ///////* Export Excel sheet *//////
 
-        public function export()
-{
-    
-       return Excel::download(new PlacesExport, 'places.xlsx');
-}
+    public function export()
+    {
 
-
+        return Excel::download(new PlacesExport, 'places.xlsx');
+    }
 
 
-    public function show( $id)
+
+
+    public function show($id)
     {
         $place = Place::find($id);
-        return view('place.show' ,compact('place') );
+        return view('place.show', compact('place'));
     }
 
 
@@ -155,7 +155,7 @@ class PlaceController extends Controller
         return redirect()->back();
     }
 
-    public function softDeletes( $id)
+    public function softDeletes($id)
     {
         $place = Place::find($id)->delete();
 
