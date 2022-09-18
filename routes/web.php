@@ -15,19 +15,31 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/export', 'PlaceController@export')->name('export');
+=======
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+>>>>>>> 64690d525dc049ec57ac386c0912377178cf494c
 
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 64690d525dc049ec57ac386c0912377178cf494c
 	Route::resource('places', 'PlaceController');
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
 
+	Route::get('/export', 'PlaceController@export')->name('export');
 	Route::get('place/trash', 'PlaceController@trashedPlaces')
 		->name('place.trash');
 	Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
@@ -38,6 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('search', 'SearchController');
 
+<<<<<<< HEAD
 
     // Routes for Tags
     Route::get('/tags', 'TagController@index' )->name('tags');
@@ -48,6 +61,11 @@ Route::get('/tag/edit/{id}', 'TagController@edit' )->name('tag.edit');
 Route::post('/tag/update/{id}', 'TagController@update' )->name('tag.update');
 Route::get('/tag/destroy/{id}', 'TagController@destroy' )->name('tag.destroy');
 
+=======
+	Route::resource('tags', 'TagController');
+	Route::get('tag/delete/from/database/{id}', 'TagController@deleteForEver')
+		->name('tag.delete.from.database');
+>>>>>>> 64690d525dc049ec57ac386c0912377178cf494c
 });
 
 Route::group(['middleware' => 'auth'], function () {

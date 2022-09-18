@@ -38,9 +38,9 @@ class TagController extends Controller
         $tag = Tag::create([
             'tag' => $request->tag,
 
-        ]);
 
-        return redirect()->back();
+        ]);
+        return redirect()->back()->with('تمت', 'تم إضافة الحالة بنجاح');
     }
 
 
@@ -68,7 +68,7 @@ class TagController extends Controller
 
         $tag->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('تمت', 'تم التعديل بنجاح');
     }
 
 

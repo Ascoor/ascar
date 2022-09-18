@@ -1,4 +1,5 @@
 @include('layouts.navbars.navs.auth')
+<<<<<<< HEAD
 </div>
 </div>
 </div>
@@ -10,26 +11,45 @@
     placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
 </form></div></div>
+=======
+
+
+
+>>>>>>> 64690d525dc049ec57ac386c0912377178cf494c
 <div class="container" style="align-items:center;text-align: center; ">
     <div class="btn-group" role="group" style="align-items: center">
         <a class="btn btn-primary" type="button" href="{{ route('home') }}">الرئيسية
         </a>
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
-        فهرس المتغيرات
+        إدارة الحالة
     </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="{{ route('tags.index') }}">{{ __('قائمة الحالات') }}</a>
+        <a class="dropdown-item" href="{{ route('tags.create') }}">{{ __('إضافة حالة') }}</a>
+
+
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        فهرس المتغيرات
+</button>
 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+<<<<<<< HEAD
             <a class="dropdown-item" href="{{ route('places.create') }}">{{ __('إضافة متغير') }}</a>
             <a class="dropdown-item" href="{{ route('places.index') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
             <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
         </div>
         <a class="btn btn-primary" type="button" href="{{ route('tags') }}">إدارة الحالة</a>
     </div>
+=======
+    <a class="dropdown-item" href="{{ route('places.create') }}">{{ __('إضافة متغير') }}</a>
+    <a class="dropdown-item" href="{{ route('home') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
+    <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
+</div>
+        </div>
+>>>>>>> 64690d525dc049ec57ac386c0912377178cf494c
 </div>
 
-</div>
-
-</div>
 
 
 <div class="container" style="background: rgb(221, 225, 248)">
