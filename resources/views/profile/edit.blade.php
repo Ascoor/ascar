@@ -29,7 +29,7 @@
                                 <div class="col-sm-7">
                                     <div class="form-group">
                                         <input class="form-control" name="nickname" id="input-nickname" type="text"
-                                            value="{{$user->profile->nickname}}" required="true" aria-required="true" />
+                                            value="{{$user->profile->nickname}}" required="true" />
 
                                     </div>
                                 </div>
