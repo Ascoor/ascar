@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Place;
 use Illuminate\Http\Request;

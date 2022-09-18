@@ -1,13 +1,22 @@
-@extends('layouts.app', ['activePage' => 'create', 'titlePage' => __('إضافة متغير')])
+@extends('layouts.app', ['activePage' => 'tags.create', 'titlePage' => __('إضافة حالة')])
 
 @section('content')
+@if ($message = Session::get('تمت'))
+<div class="alert alert-danger" role="alert">
+    {{$message}}
+</div>
+@endif
+@if (session('status'))
+<div class="alert alert-success" role="alert">
+    {{ session('status') }}
+    @endif
 
 <div class="container">
     <div class="row">
         <div class="col">
             <div class="jumbotron">
-                <h1 class="display-4">إضافة متغير</h1>
-                <a class="btn btn-success" href="{{route('tags.index')}}">جميع المتغيرات</a>
+                <h1 class="display-4">إضافة حالة</h1>
+                <a class="btn btn-success" href="{{route('tags.index')}}">عوده للخلف</a>
             </div>
         </div>
 
@@ -30,7 +39,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput1">الحالة</label>
-                    <input type="number" name="gnump" class="form-control">
+                    <input type="text" name="tag" class="form-control">
                 </div>
 
 

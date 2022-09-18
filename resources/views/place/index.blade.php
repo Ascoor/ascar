@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-<<<<<<< HEAD
     <div class="container" style="align-items: center;">
         <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search.index') }}"">
                             @csrf
@@ -11,9 +10,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
     </div>
 </div>
-=======
 
->>>>>>> bcd0adc9f35d09c0bc1151de3e043f80d23083aa
 
         <div class="card">
             <div class="card-body">

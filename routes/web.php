@@ -17,7 +17,7 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Auth::routdes();
+Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/export', 'PlaceController@export')->name('export');
@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.typography');
 	})->name('typography');*/
 	/*$$$$$$$$$$$$$$  Places Routes  $$$$$$$$$$$$$$$$$$$ */
-	Route::resource('places', 'PlaceController');
+	Route::resource('places', 'PlaceController');\\
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
 
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 	// ->name('search.export');
 	Route::resource('search', 'SearchController');
 	/// Tags Routr /////
-	Route::resource('tags', 'PlaceController');
+	Route::resource('tags', 'TagController');
 	Route::get('tag/delete/from/database/{id}', 'TagController@deleteForEver')
 		->name('tag.delete.from.database');
 });

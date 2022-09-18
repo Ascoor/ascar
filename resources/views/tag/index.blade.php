@@ -1,55 +1,52 @@
-@extends('layouts.app', ['activePage' => 'home', 'titlePage' => __('الصفحة الرئيسية')])
+@extends('layouts.app', ['activePage' => 'tags', 'titlePage' => __('إدارة الحالة ')])
 
 @section('content')
 <div class="container">
     <div class="container" style="align-items: center;">
-        <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search.index') }}"">
-                            @csrf
-                            <input class=" form-control mr-sm-2" style="text-align: center;" type="search"
-            placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
+        <a href="{{ route('tags.create') }}" class="btn btn-primary" type="bottom"> إضافة حالة</a>
     </div>
 </div>
-
+@if ($message = Session::get('تمت'))
+<div class="alert alert-danger" role="alert">
+    {{$message}}
+   </div>
+@endif
 
 @if($tags->count() > 0 )
 <div class="container-fluid">
-    <div class="table-responsive-md">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">الحالة</th>
+            <th scope="col">التحكم</th>
 
-        <table class="table-warning" style="text-align: center; align-items:center;">
-            <thead>
-                <tr>
-                    <th>الحالة</th>
+          </tr>
+        </thead>
 
-                </tr>
+        @php
+        $i = 1;
+        @endphp
+        @foreach($tags as $item)
+        <tbody>
+          <tr>
+            <th scope="row">{{  $item->id }}</th>
 
-            </thead>
+            <td>{{ $item->tag }}</td>
 
-            @php
-            $i = 1;
-            @endphp
-            @foreach($tags as $item)
-            <tbody>
+            <td>
+                <a class="btn btn-info" href="{{ route('tags.edit', $item->id) }}">
+                    تعديل</a>
 
-                <tr class="table-primary">
+                <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">حذف</a>
 
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
 
-
-                    <td>{{ $item->tag }}</td>
-
-                    <td>
-                        <a class="btn btn-info" href="{{ route('tags.edit', $item->id) }}">
-                            تعديل</a>
-
-                        <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">حذف</a>
-
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-
-        </table>
-    </div>
+</table>
+</div>
 </div>
 {!!$tags->links() !!}
 </div>
@@ -59,13 +56,13 @@
 </div>
 @else
 <div class="col">
-    <div class="alert alert-danger" role="alert">
-        Not tags
-    </div>
+<div class="alert alert-danger" role="alert">
+Not tags
+</div>
 </div>
 
-@endif
 </div>
+@endif
 
 
 
@@ -74,3 +71,5 @@
 
 
 @endsection
+
+

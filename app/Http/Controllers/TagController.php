@@ -37,18 +37,13 @@ class TagController extends Controller
         $tag = Tag::create([
             'tag' => $request->tag,
 
+
         ]);
-
-        return redirect()->back();
+        return redirect()->back()->with('تمت', 'تم إضافة الحالة بنجاح');
     }
 
 
 
-    public function show($id)
-    {
-        $tag = Tag::find($id);
-        return view('tag.show', compact('tag'));
-    }
 
 
     public function edit($id)
@@ -70,7 +65,7 @@ class TagController extends Controller
 
         $tag->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('تمت', 'تم التعديل بنجاح');
     }
 
     public function destroy(Tag $tag, $id)

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'tag.edit', 'titlePage' => __('تعديل إسم الحالة')])
+@extends('layouts.app', ['activePage' => 'tags.edit', 'titlePage' => __('تعديل  الحالة')])
 
 
 @section('content')
@@ -22,13 +22,13 @@
                     <div class="card-header card-header"
                         style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
 
-                        <h1 class="display-4">تعديل إسم الحالة</h1>
-                        <h4 class="display-5">إسم الحالة {{ $tag->tag }}</h4>
+                        <h1 class="display-4">تعديل  الحالة</h1>
+                        <h4 class="display-5"> الحالة : {{ $tag->tag }}</h4>
 
 
                         <p class="lead" style="text-align: center; padding-top: 20px;"></p>
 
-                        <a class="btn btn-success" href="{{route('tags.index')}}">جميع الحالات</a>
+                        <a class="btn btn-success" href="{{route('tags.index')}}">عوده للخلف </a>
                     </div>
                     <div class="row">
 
@@ -42,8 +42,11 @@
                         </ul>
                         @endif
 
+<div class="container">
+    <div class="card">
+      <div class="card-body">
 
-                        <div class="col">
+                           <div class="col">
                             <div class="form-group form-file-upload form-file-multiple">
                                 <form action="{{ route('tags.update', $tag->id) }}" method="post"
                                     enctype="multipart/form-data">
@@ -51,7 +54,7 @@
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">إسم الحالة</label>
-                                        <input type="number" name="tag" value="{{ $tag->tag }}">
+                                        <input type="text" name="tag" value="{{ $tag->tag }}">
                                     </div>
 
 

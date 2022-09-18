@@ -9,7 +9,7 @@ class Tag extends Model
     protected $fillable = ['tag'];
 
 
-    public function places()
+    public function place()
     {
         return $this->belongsToMany('App\Place');
     }
