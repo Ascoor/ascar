@@ -108,9 +108,8 @@ class PlaceController extends Controller
             'gnumh' => 'required',
             'gnumw' => 'required',
             'gnump1' => 'required',
-            'gnump2' => 'required',
-            'gnump3' => 'required',
-
+            'gnump2' => 'required'
+     
 
 
         ]);
@@ -118,8 +117,8 @@ class PlaceController extends Controller
         //   dd($request->all());
 
         if ($request->has('photo')) {
-            $photo = $request->photo;
-            $newPhoto = time() . $photo->getClientOriginalName();
+            $photo = $request->photo1;
+            $newPhoto = time().$photo->getClientOriginalName();
             $photo->move('uploads/posts', $newPhoto);
             $place->photo1 = 'uploads/posts' . $newPhoto;
         }

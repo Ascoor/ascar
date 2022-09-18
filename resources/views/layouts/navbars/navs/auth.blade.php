@@ -1,6 +1,7 @@
 <!-- Navbar -->
 <div class="container-fluid">
-    <nav class="navbar navbar-dark " style="font-size:21px;background:#ffffff;background-color: #153257;outline-color:#ffffff;">
+    <nav class="navbar navbar-dark "
+        style="font-size:21px;background:#ffffff;background-color: #153257;outline-color:#ffffff;">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,9 +31,7 @@
                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
                             <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+
                     </li>
                 </ul>
 

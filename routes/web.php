@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
-    Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+	Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
 	Route::resource('places', 'PlaceController');
 	Route::get('/home', 'HomeController@i');
@@ -40,16 +40,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('search', 'SearchController');
 
 
-    // Routes for Tags
-    Route::get('/tags', 'TagController@index' )->name('tags');
-Route::get('/tag/create', 'TagController@create' )->name('tag.create');
-Route::post('/tag/store', 'TagController@store' )->name('tag.store');
-Route::get('/tag/show/{slug}', 'TagController@show' )->name('tag.show');
-Route::get('/tag/edit/{id}', 'TagController@edit' )->name('tag.edit');
-Route::post('/tag/update/{id}', 'TagController@update' )->name('tag.update');
-Route::get('/tag/destroy/{id}', 'TagController@destroy' )->name('tag.destroy');
-
-
+	// Routes for Tags
+	Route::get('/tags', 'TagController@index')->name('tags');
+	Route::get('/tag/create', 'TagController@create')->name('tag.create');
+	Route::post('/tag/store', 'TagController@store')->name('tag.store');
+	Route::get('/tag/show/{slug}', 'TagController@show')->name('tag.show');
+	Route::get('/tag/edit/{id}', 'TagController@edit')->name('tag.edit');
+	Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update');
+	Route::get('/tag/destroy/{id}', 'TagController@destroy')->name('tag.destroy');
 });
 
 Route::group(['middleware' => 'auth'], function () {

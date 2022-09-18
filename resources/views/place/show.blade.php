@@ -1,93 +1,94 @@
 @extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('عرض المتغير')])
 
- @section('content')
+@section('content')
 <div class="container">
     <div class="row">
 
-            <div class="card">
-                <div class="card-header card-header" style="
+        <div class="card">
+            <div class="card-header card-header" style="
                 color: rgb(255, 242, 64);
                 background-color: #153257;
                 align-items: center;
-                text-align: center;
-            <h1 class="display-4">
+                text-align: center;">
+                <h1 class=" display-4">
                     <h1 class="display-4">عرض بيانات المتغير</h1>
                     <h4 class="display-5">المتغير رقم {{ $place->gnump }}</h4>
 
                     <p class="lead" style="text-align: center; padding-top: 20px"></p>
 
                     <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
-                </div>
-                <div class="container">
+            </div>
+            <div class="container">
 
 
-                    <div class="card">
-                        <div class="card-body">
+                <div class="card">
+                    <div class="card-body">
                         <div class="card-header card-header" style="
                         color: rgb(255, 242, 64);
                         background-color: #d3e6ff;
                         align-items: center;
-                        text-align: center;
-                    <h1 class="display-4">ت
-                            <img class="card-img-top" style="width:350px;
+                        text-align: center;">
+                            <h1 class=" display-4">
+                                <img class="card-img-top" style="width:350px;
                             height:350px ;
                             padding:auto ;   " src="/img/main.png">
-                            </div>
+                        </div>
 
-                    <table class="table-warning" style="
+                        <table class="table-warning" style="
                             font-size: 21px;
                             text-align: center;
                             align-items: center;
                         ">
-                        <thead>
-                            <tr>
-                                <th>مسلسل المتغير</th>
-                                <th>خط العرض</th>
-                                <th>خط الطول</th>
-                                <th>المحافظة</th>
-                                <th>المركز</th>
-                                <th>القرية</th>
-                                <th>نوع الأملاك</th>
-                                <th>جهة الولاية</th>
-                                <th>القانونية</th>
-                                <th>الرد</th>
-                                <th>تفاصيل الرد</th>
-                                <th>موقف الإزالة</th>
-                                <th>التاريخ</th>
-                                <th>ملاحظات</th>
+                            <thead>
+                                <tr>
+                                    <th>مسلسل المتغير</th>
+                                    <th>خط العرض</th>
+                                    <th>خط الطول</th>
+                                    <th>المحافظة</th>
+                                    <th>المركز</th>
+                                    <th>القرية</th>
+                                    <th>نوع الأملاك</th>
+                                    <th>جهة الولاية</th>
+                                    <th>القانونية</th>
+                                    <th>الرد</th>
+                                    <th>تفاصيل الرد</th>
+                                    <th>موقف الإزالة</th>
+                                    <th>التاريخ</th>
+                                    <th>ملاحظات</th>
+                                </tr>
+                            </thead>
+                            <tr class="table-info">
+                                <td>{{ $place->gnump }}</td>
+                                <td>{{ $place->gnumh }}</td>
+                                <td>{{ $place->gnumw }}</td>
+                                <td>{{ $place->gnump1 }}</td>
+                                <td>{{ $place->gnump2 }}</td>
+                                <td>{{ $place->gnump3 }}</td>
+                                <td>{{ $place->gnump4 }}</td>
+                                <td>{{ $place->gnump5 }}</td>
+                                <td>{{ $place->gnump6 }}</td>
+                                <td>{{ $place->gnump7 }}</td>
+                                <td>{{ $place->gnump8 }}</td>
+                                <td>{{ $place->gnump9 }}</td>
+                                <td>{{ $place->gnump10 }}</td>
+                                <td>{{ $place->gnump11 }}</td>
+                                <td>{{ $place->gnump13 }}</td>
                             </tr>
-                        </thead>
-                        <tr class="table-info">
-                            <td>{{ $place->gnump }}</td>
-                            <td>{{ $place->gnumh }}</td>
-                            <td>{{ $place->gnumw }}</td>
-                            <td>{{ $place->gnump1 }}</td>
-                            <td>{{ $place->gnump2 }}</td>
-                            <td>{{ $place->gnump3 }}</td>
-                            <td>{{ $place->gnump4 }}</td>
-                            <td>{{ $place->gnump5 }}</td>
-                            <td>{{ $place->gnump6 }}</td>
-                            <td>{{ $place->gnump7 }}</td>
-                            <td>{{ $place->gnump8 }}</td>
-                            <td>{{ $place->gnump9 }}</td>
-                            <td>{{ $place->gnump10 }}</td>
-                            <td>{{ $place->gnump11 }}</td>
-                            <td>{{ $place->gnump13 }}</td>
-                        </tr>
-                    </table>
+                        </table>
 
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="{{ route('places.edit', $place->id) }}" role="button">
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="{{ route('places.edit', $place->id) }}"
+                                role="button">
 
-                            تعديل</a>
+                                تعديل</a>
 
-                        <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->id) }}">إنهاء عمل
-                            المتغير</a>
-                    </p>
+                            <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->id) }}">إنهاء عمل
+                                المتغير</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {!! $place->detail !!} @endsection
+            {!! $place->detail !!} @endsection
+        </div>
     </div>
-</div>
