@@ -20,7 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/export', 'PlaceController@export')->name('export');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -28,14 +27,12 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.table_list');
 	})->name('table');
 
-	/*Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');*/
-	/*$$$$$$$$$$$$$$  Places Routes  $$$$$$$$$$$$$$$$$$$ */
-	Route::resource('places', 'PlaceController');\\
+
+	Route::resource('places', 'PlaceController');
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
 
+	Route::get('/export', 'PlaceController@export')->name('export');
 	Route::get('place/trash', 'PlaceController@trashedPlaces')
 		->name('place.trash');
 	Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
@@ -43,13 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
 	Route::get('place.filter', 'FilterPlaceExport@view')->name('place.filter');
-	/*$$$$$$$$$$$$$$  Search Routes  $$$$$$$$$$$$$$$$$$$ */
-	// Route::get('search','SearchController@index')
-	// ->name('search.index');
-	// Route::post('search.export','SearchController@export')
-	// ->name('search.export');
+
 	Route::resource('search', 'SearchController');
-	/// Tags Routr /////
+
 	Route::resource('tags', 'TagController');
 	Route::get('tag/delete/from/database/{id}', 'TagController@deleteForEver')
 		->name('tag.delete.from.database');
