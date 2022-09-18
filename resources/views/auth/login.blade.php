@@ -28,7 +28,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="card-body">
+                <div class="card-body">
                         <p class="card-description text-center">{{ __('سجل الدخول ') }} <strong>إسم المستخدم</strong>
                             {{ __(' كلمة المرور ') }}<strong>السرية</strong> </p>
                         <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
@@ -37,10 +37,10 @@
                                     <span class="input-group-text">
                                         <i class="material-icons">email</i>
                                     </span>
-                                </div>
+                            </div>
                                 <input type="email" name="email" class="form-control"
                                     placeholder="{{ __('إسم المستخدم') }}" value="{{ old('email', '') }}" required>
-                            </div>
+                        </div>
                             @if ($errors->has('email'))
                             <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
                                 <strong>{{ $errors->first('email') }}</strong>
@@ -53,11 +53,11 @@
                                     <span class="input-group-text">
                                         <i class="material-icons">lock_outline</i>
                                     </span>
-                                </div>
+                            </div>
                                 <input type="password" name="password" id="password" class="form-control"
                                     placeholder="{{ __('كلمة المرور') }}"
                                     value="{{ !$errors->has('password') ? "secret" : "" }}" required>
-                            </div>
+                        </div>
                             @if ($errors->has('password'))
                             <div id="password-error" class="error text-danger pl-3" for="password"
                                 style="display: block;">
@@ -72,30 +72,30 @@
                                 <span class="form-check-sign">
                                     <span class="check"></span>
                                 </span>
-                            </label>
-                        </div>
-                    </div>
+                                    </label>
+                                </div>
+                            </div>
                     <div class="card-footer justify-content-center">
                         <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('سجل الدخول ') }}</button>
-                    </div>
+                        </div>
                 </div>
             </form>
             <!---
       <div class="row">
         <div class="col-6">
-            @if (Route::has('password.request'))
+                                @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}" class="text-light">
                     <small>{{ __('Forgot password?') }}</small>
-                </a>
-            @endif
-        </div>
+                                    </a>
+                                @endif
+                            </div>
         <div class="col-6 text-right">
             <a href="{{ route('register') }}" class="text-light">
                 <small>{{ __('Create new account') }}</small>
             </a>
         </div>-->
+            </div>
         </div>
     </div>
-</div>
 </div>
 @endsection

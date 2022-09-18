@@ -9,7 +9,7 @@
     <input class=" form-control mr-sm-2" style="text-align: center;" type="search"
     placeholder=" المتغير-المدينة-القرية" name=" query" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
-</form></div>
+</form></div></div>
 <div class="container" style="align-items:center;text-align: center; ">
     <div class="btn-group" role="group" style="align-items: center">
         <a class="btn btn-primary" type="button" href="{{ route('home') }}">الرئيسية
@@ -20,18 +20,11 @@
     </button>
 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
             <a class="dropdown-item" href="{{ route('places.create') }}">{{ __('إضافة متغير') }}</a>
-            <a class="dropdown-item" href="{{ route('home') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
+            <a class="dropdown-item" href="{{ route('places.index') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
             <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
-<<<<<<< HEAD
         </div>
-        <a class="btn btn-primary" type="button" href="{{ route('tags.index') }}">إدارة الحالة</a>
+        <a class="btn btn-primary" type="button" href="{{ route('tags') }}">إدارة الحالة</a>
     </div>
-=======
-</div>
-<div>
-
-
->>>>>>> bcd0adc9f35d09c0bc1151de3e043f80d23083aa
 </div>
 
 </div>

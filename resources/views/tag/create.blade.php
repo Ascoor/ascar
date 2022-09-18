@@ -6,8 +6,8 @@
     <div class="row">
         <div class="col">
             <div class="jumbotron">
-                <h1 class="display-4">إضافة متغير</h1>
-                <a class="btn btn-success" href="{{route('tags.index')}}">جميع المتغيرات</a>
+                <h1 class="display-4">إضافةحالة</h1>
+                <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
             </div>
         </div>
 
@@ -26,11 +26,11 @@
 
 
         <div class="col">
-            <form action="{{route('tags.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('tag.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput1">الحالة</label>
-                    <input type="number" name="gnump" class="form-control">
+                    <input type="فثءف" name="tag" class="form-control">
                 </div>
 
 

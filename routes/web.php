@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Auth::routes();
 
-Auth::routdes();
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/export', 'PlaceController@export')->name('export');
 
 
@@ -27,11 +24,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
-
-	/*Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');*/
-	/*$$$$$$$$$$$$$$  Places Routes  $$$$$$$$$$$$$$$$$$$ */
 	Route::resource('places', 'PlaceController');
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
@@ -43,16 +35,19 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
 	Route::get('place.filter', 'FilterPlaceExport@view')->name('place.filter');
-	/*$$$$$$$$$$$$$$  Search Routes  $$$$$$$$$$$$$$$$$$$ */
-	// Route::get('search','SearchController@index')
-	// ->name('search.index');
-	// Route::post('search.export','SearchController@export')
-	// ->name('search.export');
+
 	Route::resource('search', 'SearchController');
-	/// Tags Routr /////
-	Route::resource('tags', 'PlaceController');
-	Route::get('tag/delete/from/database/{id}', 'TagController@deleteForEver')
-		->name('tag.delete.from.database');
+
+
+    // Routes for Tags
+    Route::get('/tags', 'TagController@index' )->name('tags');
+Route::get('/tag/create', 'TagController@create' )->name('tag.create');
+Route::post('/tag/store', 'TagController@store' )->name('tag.store');
+Route::get('/tag/show/{slug}', 'TagController@show' )->name('tag.show');
+Route::get('/tag/edit/{id}', 'TagController@edit' )->name('tag.edit');
+Route::post('/tag/update/{id}', 'TagController@update' )->name('tag.update');
+Route::get('/tag/destroy/{id}', 'TagController@destroy' )->name('tag.destroy');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {

@@ -6,7 +6,7 @@ Dashboard')])
     <div class="row align-items-center">
         <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
             <form class="form" method="POST" action="{{ route('register') }}">
-                @csrf
+                        @csrf
 
                 <div class="card card-login card-hidden mb-3">
                     <div class="card-header card-header-primary text-center">
@@ -31,10 +31,10 @@ Dashboard')])
                                     <span class="input-group-text">
                                         <i class="material-icons">face</i>
                                     </span>
-                                </div>
+                            </div>
                                 <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}"
                                     value="{{ old('name') }}" required>
-                            </div>
+                        </div>
                             @if ($errors->has('name'))
                             <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
                                 <strong>{{ $errors->first('name') }}</strong>
@@ -47,10 +47,10 @@ Dashboard')])
                                     <span class="input-group-text">
                                         <i class="material-icons">email</i>
                                     </span>
-                                </div>
+                            </div>
                                 <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}"
                                     value="{{ old('email') }}" required>
-                            </div>
+                        </div>
                             @if ($errors->has('email'))
                             <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
                                 <strong>{{ $errors->first('email') }}</strong>
@@ -63,10 +63,10 @@ Dashboard')])
                                     <span class="input-group-text">
                                         <i class="material-icons">lock_outline</i>
                                     </span>
-                                </div>
+                            </div>
                                 <input type="password" name="password" id="password" class="form-control"
                                     placeholder="{{ __('Password...') }}" required>
-                            </div>
+                        </div>
                             @if ($errors->has('password'))
                             <div id="password-error" class="error text-danger pl-3" for="password"
                                 style="display: block;">
@@ -81,10 +81,10 @@ Dashboard')])
                                     <span class="input-group-text">
                                         <i class="material-icons">lock_outline</i>
                                     </span>
-                                </div>
+                            </div>
                                 <input type="password" name="password_confirmation" id="password_confirmation"
                                     class="form-control" placeholder="{{ __('Confirm Password...') }}" required>
-                            </div>
+                        </div>
                             @if ($errors->has('password_confirmation'))
                             <div id="password_confirmation-error" class="error text-danger pl-3"
                                 for="password_confirmation" style="display: block;">
@@ -106,8 +106,8 @@ Dashboard')])
                     <div class="card-footer justify-content-center">
                         <button type="submit"
                             class="btn btn-primary btn-link btn-lg">{{ __('Create account') }}</button>
-                    </div>
                 </div>
+            </div>
             </form>
         </div>
     </div>
