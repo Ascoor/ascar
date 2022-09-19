@@ -11,48 +11,54 @@
     {{ session('status') }}
     @endif
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col">
 
-                <h1 class="display-4">إضافةحالة</h1>
-                <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
+                <div class="card">
+                    <div class="card-header card-header" style="
+    color: rgb(255, 242, 64);
+    background-color: #153257;
+    align-items: center;
+    text-align: center;">
 
-            </div>
+                        <h1 class="display-4">إضافةحالة</h1>
+                        <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
 
-    <div class="row">
+                    </div>
 
-
-        <div class="col">
-            <form action="{{route('tag.store')}}" method="PUT" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">الحالة</label>
-
-                    <input type="text" name="tag" class="form-control">
+                    <div class="row">
 
 
+                        <div class="col">
+                            <form action="{{route('tag.store')}}" method="PUT" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">الحالة</label>
+
+                                    <input type="text" name="tag" class="form-control">
 
 
-                <div class="form-group">
 
-                    <button class="btn btn-danger" class="form-group" type="submit">save</button>
+
+                                    <div class="form-group">
+
+                                        <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                                    </div>
+
+                            </form>
+                        </div>
+
+                        @if (count($errors) > 0)
+                        <ul>
+                            @foreach ($errors->all() as $item)
+                            <li>
+                                {{$item}}
+                            </li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    </div>
                 </div>
 
-            </form>
-        </div>
-
-                @if (count($errors) > 0)
-                <ul>
-                    @foreach ($errors->all() as $item)
-                    <li>
-                        {{$item}}
-                    </li>
-                    @endforeach
-                </ul>
-                @endif
-    </div>
-</div>
-
-@endsection
+                @endsection

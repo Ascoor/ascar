@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'tag.edit', 'titlePage' => __('تعديل  الحالة')])
+@extends('layouts.app', ['activePage' => 'tag.edit', 'titlePage' => __('تعديل الحالة')])
 
 
 @section('content')
@@ -22,8 +22,8 @@
                     <div class="card-header card-header"
                         style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
 
-                        <h1 class="display-4">تعديل  الحالة</h1>
-                        <h4  class="display-6"> الحالة :  {{ $tag->tag }}</h4>
+                        <h1 class="display-4">تعديل الحالة</h1>
+                        <h4 class="display-6"> الحالة : {{ $tag->tag }}</h4>
 
 
                         <p class="lead" style="text-align: center; padding-top: 20px;"></p>
@@ -44,9 +44,8 @@
 
 
                         <div class="col">
-                            <form action="{{ route('tag.update', $tag->id) }}" method="post"
-                                >
-                            <div class="form-group">
+                            <form action="{{ route('tag.update', $tag->id) }}" method="post">
+                                <div class="form-group">
                                     @csrf
 
                                     <div class="form-group">
@@ -61,12 +60,12 @@
                                         <button class="btn btn-danger" class="form-group" type="submit">save</button>
                                     </div>
 
-                                </form>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        @endsection
+    @endsection
