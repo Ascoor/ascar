@@ -4,17 +4,17 @@
 @section('content')
 <div class="container">
 
-            @if (count($errors) > 0)
-            <ul>
-                @foreach ($errors->all() as $item)
-                <li>
-                    {{$item}}
-                </li>
-                @endforeach
-            </ul>
-            @endif
+    @if (count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $item)
+        <li>
+            {{$item}}
+        </li>
+        @endforeach
+    </ul>
+    @endif
 
-        <div class="card">
+    <div class="card">
         <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
     background-color: #153257;
@@ -36,7 +36,7 @@
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
             @endif
-        <div class="container">
+            <div class="container">
 
                 <div class="card-body">
 
@@ -145,17 +145,18 @@
                                 <input type="file" name="photo4" class="form-control" >
                             </div>
 
-                            </div>
+                    </div>
 
-                            <div class="form-group">
+                    <div class="form-group">
 
-                                <button class="btn btn-danger" class="form-group" type="submit">save</button>
-                            </div>
-                            </div>
-                        </form>
+                        <button class="btn btn-danger" class="form-group" type="submit">save</button>
                     </div>
                 </div>
+                </form>
             </div>
+        </div>
+    </div>
 
 
-            @endsection
+
+    @endsection

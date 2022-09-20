@@ -124,7 +124,7 @@ class PlaceController extends Controller
 
         if ($request->has('photo')) {
             $photo = $request->photo1;
-            $newPhoto = time().$photo->getClientOriginalName();
+            $newPhoto = time() . $photo->getClientOriginalName();
             $photo->move('uploads/posts', $newPhoto);
             $place->photo1 = 'uploads/posts' . $newPhoto;
         }
@@ -154,9 +154,7 @@ class PlaceController extends Controller
     public function destroy(Place $id)
     {
         $place = Place::where('id', $id)->where('Auth_id', Auth::id())->first();
-        if ($place === null) {
-
-        }
+        if ($place === null) { }
         $place->delete($id);
         return redirect()->back();
     }
