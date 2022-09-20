@@ -113,14 +113,36 @@
                                 <label for="exampleFormControlInput1">الملاحظات </label>
                                 <input type="text" name="gnump11" class="form-control" value="{{ $place->gnump11 }}">
 
+
+
+
+
                             </div>
-
-
-
                             <div class="form-group">
 
                                 <label for="exampleFormControlInput1">Photo </label>
-                                <input type="file" name="photo1" class="form-control" value="{{ $place->photo1 }}">
+                                <input type="file" name="photo1" class="form-control" >
+                            </div>
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="exampleFormControlInput1">Photo </label>
+                                <input type="file" name="photo2" class="form-control" >
+                            </div>
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="exampleFormControlInput1">Photo </label>
+                                <input type="file" name="photo3" class="form-control" >
+                            </div>
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="exampleFormControlInput1">Photo </label>
+                                <input type="file" name="photo4" class="form-control" >
                             </div>
 
                             </div>

@@ -49,7 +49,10 @@ class PlaceController extends Controller
             'gnump3' => 'required',
 
         ]);
-        $photo = $request->photo1;
+        $photo= $request->photo1;
+        $photo = $request->photo2;
+        $photo = $request->photo3;
+        $photo = $request->photo4;
         $newPhoto = time() . $photo->getClientOriginalName();
         $photo->move('uploads/posts', $newPhoto);
 
@@ -70,6 +73,9 @@ class PlaceController extends Controller
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'photo1' => 'uploads/posts/' . $newPhoto,
+            'photo2' => 'uploads/posts/' . $newPhoto,
+            'photo3' => 'uploads/posts/' . $newPhoto,
+            'photo4' => 'uploads/posts/' . $newPhoto,
 
         ]);
 
