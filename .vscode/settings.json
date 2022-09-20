@@ -56,6 +56,16 @@
     "Config::set("
 ],
 "css.format.enable": true,
+"laravelGotoController.classmap_file": true,
+
+
+    "laravel_jump_controller.pathController":"/app/Http/Controllers",
+    "laravel_goto_view.maxLinesCount": 666,
+    "emmet.triggerExpansionOnTab": true, // enable tab to expanse emmet tags,
+
+    "[blade]": {
+        "editor.autoClosingBrackets": "always"
+    },
 
 
 }
