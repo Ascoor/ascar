@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/home', 'HomeController@i');
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
+	Route::get('tag/soft/selete/{id}', 'TagController@softDeletes')
+		->name('softtag.delete');
 
 	Route::get('/export', 'PlaceController@export')->name('export');
 	Route::get('place/trash', 'PlaceController@trashedPlaces')
@@ -44,10 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/tags', 'TagController@index')->name('tags');
 	Route::get('/tag/create', 'TagController@create')->name('tag.create');
 	Route::post('/tag/store', 'TagController@store')->name('tag.store');
-	Route::get('/tag/show/{slug}', 'TagController@show')->name('tag.show');
+
 	Route::get('/tag/edit/{id}', 'TagController@edit')->name('tag.edit');
 	Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update');
-	Route::get('/tag/destroy/{id}', 'TagController@destroy')->name('tag.destroy');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -56,3 +58,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

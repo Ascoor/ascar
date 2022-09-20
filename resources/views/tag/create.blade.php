@@ -31,7 +31,7 @@
 
 
                         <div class="col">
-                            <form action="{{route('tag.store')}}" method="PUT" enctype="multipart/form-data">
+                            <form action="{{route('tag.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">الحالة</label>

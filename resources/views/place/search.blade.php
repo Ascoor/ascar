@@ -20,6 +20,7 @@
 
                             <div class="card">
                                 <div class="card-body">
+                                <div class="card-header">
 
 
 
@@ -29,10 +30,16 @@
                                     <a class="btn btn-warning" href="{{ route('export') }}" type="button"> إستخراج نتيجة
                                         البحث ملف
                                         Excel</a>
+
+
+
+                                </div>
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class=" text-dark">
+                                            <div class="table-responsive-sm">
+
+                                                <table class="table-warning">
+                                                    <thead>
 
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.logapp')
+@extends('layouts.logapp', ['activePage' => 'email', 'titlePage' => __('الأميل ')])
 
 @section('content')
 <div class="container">

@@ -109,7 +109,7 @@ class PlaceController extends Controller
             'gnumw' => 'required',
             'gnump1' => 'required',
             'gnump2' => 'required'
-     
+
 
 
         ]);
@@ -141,14 +141,15 @@ class PlaceController extends Controller
 
         $place->save();
 
-        return redirect()->back();
+        return redirect()->back()
+            ->with('تمت', 'تم التعديل  بنجاح');
     }
 
     public function destroy(Place $id)
     {
         $place = Place::where('id', $id)->where('Auth_id', Auth::id())->first();
         if ($place === null) {
-            return redirect()->back();
+
         }
         $place->delete($id);
         return redirect()->back();

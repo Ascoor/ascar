@@ -33,12 +33,10 @@
                             height:350px ;
                             padding:auto ;   " src="/img/main.png">
                         </div>
+                        <div class="table-responsive-sm">
 
-                        <table class="table-warning" style="
-                            font-size: 21px;
-                            text-align: center;
-                            align-items: center;
-                        ">
+                            <table class="table-warning">
+
                             <thead>
                                 <tr>
                                     <th>مسلسل المتغير</th>

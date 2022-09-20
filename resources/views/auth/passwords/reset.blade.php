@@ -1,5 +1,4 @@
-@extends('layouts.logapp')
-
+@extends('layouts.logapp', ['activePage' => 'reset', 'titlePage' => __('إستعادة حساب ')])
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

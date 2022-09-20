@@ -40,7 +40,9 @@ class TagController extends Controller
 
 
         ]);
-        return redirect()->back()->with('تمت', 'تم إضافة الحالة بنجاح');
+
+        return redirect()->route('tags')
+            ->with('تمت', 'تم الإضافة بنجاح');
     }
 
 
@@ -68,17 +70,20 @@ class TagController extends Controller
 
         $tag->save();
 
-        return redirect()->back()->with('تمت', 'تم التعديل بنجاح');
+        return redirect()->route('tags')
+            ->with('تمت', 'تم التعديل بنجاح');
     }
 
 
 
 
 
-    public function destroy(Request  $id)
+    public function softDeletes($id)
     {
-        $tag = Tag::find($id);
-        $tag->destroy($id);
-        return redirect()->back();
+        $Tag = Tag::find($id)->delete();
+
+
+        return redirect()->route('tags')
+            ->with('تمت', 'تم الحذف بنجاح');
     }
 }

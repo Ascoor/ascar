@@ -9,9 +9,9 @@
 
             </span>
         </button>
-        <large style="text-align:center;font-family:Amiri,serif;font-size:32px;color:#f7ce17;">محافظة الدقهلية
-        </large>
-        <a class="navbar-brand" href="{{ route('places.index') }}">
+        <div class="nav-header" style="text-align:center;font-family:Amiri,serif;font-size:48px;color:#f7ce17;">محافظة الدقهلية
+        </div>
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img src="/img/Coat.png" class="me-2" height="100" width="100" alt="MDB Logo" loading="lazy" />
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

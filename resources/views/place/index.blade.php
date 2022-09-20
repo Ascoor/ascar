@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
+
+    @if($places->count() > 0 )
+
     <div class="container" style="align-items: center;">
         <div class="card-body">
-
-            @if($places->count() > 0 )
-
-            <div class="table-responsive-md">
+            <div class="table-responsive-sm">
 
                 <table class="table-warning">
                     <thead>
@@ -60,8 +60,8 @@
 
                             </td>
                         </tr>
-                        @endforeach
                     </tbody>
+                    @endforeach
 
                 </table>
             </div>
@@ -69,23 +69,14 @@
         {!!$places->links() !!}
     </div>
 
-</div>
-</div>
-</div>
-@else
-<div class="col">
-    <div class="alert alert-danger" role="alert">
-        Not places
+
+    @else
+    <div class="col">
+        <div class="alert alert-danger" role="alert">
+            لا بوجد متغيرات
+        </div>
     </div>
+
+    @endif
 </div>
-
-@endif
-</div>
-
-
-
-
-
-
-
 @endsection

@@ -4,8 +4,17 @@
 @section('content')
 <div class="container">
 
+            @if (count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $item)
+                <li>
+                    {{$item}}
+                </li>
+                @endforeach
+            </ul>
+            @endif
 
-    <div class="card">
+        <div class="card">
         <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
     background-color: #153257;
@@ -18,22 +27,17 @@
 
             <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
         </div>
-
-
-
-        @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $item)
-            <li>
-                {{$item}}
-            </li>
-            @endforeach
-        </ul>
+        @if ($message = Session::get('تمت'))
+        <div class="alert alert-danger" role="alert">
+            {{$message}}
+        </div>
         @endif
-
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+            @endif
         <div class="container">
 
-            <div class="card">
                 <div class="card-body">
 
                     <div class="col">
@@ -117,7 +121,7 @@
 
                                 <label for="exampleFormControlInput1">Photo </label>
                                 <input type="file" name="photo1" class="form-control" value="{{ $place->photo1 }}">
-
+                            </div>
 
                             </div>
 
@@ -125,7 +129,7 @@
 
                                 <button class="btn btn-danger" class="form-group" type="submit">save</button>
                             </div>
-
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -2,7 +2,12 @@
 
 
 @section('content')
-
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container pt-3">
 
 @if ($message = Session::get('تمت'))
 <div class="alert alert-danger" role="alert">
@@ -14,7 +19,6 @@
     {{ session('status') }}
     @endif
 
-    <div class="container pt-3">
 
         <div class="row">
             <div class="col-md-12">
@@ -28,7 +32,7 @@
 
                         <p class="lead" style="text-align: center; padding-top: 20px;"></p>
 
-                        <a class="btn btn-success" href="{{route('tag.index')}}">جميع الحالات</a>
+                        <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
                     </div>
                     <div class="row">
 
@@ -47,6 +51,7 @@
                             <form action="{{ route('tag.update', $tag->id) }}" method="post">
                                 <div class="form-group">
                                     @csrf
+
 
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">إسم الحالة</label>

@@ -8,7 +8,7 @@
     "Forgot Your Password?": "فقدت كلمة السر",
     "If you did not receive the email": "إن لم يتم إستلام رسالة التحقق",
     "Login": "تسجيل دخول",
-    "Logout": "تسجيل خروج",
+    "Log out": "تسجيل خروج",
     "Name": "الإسم",
     "Password": "كلمة السر",
     "Please confirm your password before continuing.": "قبل الإستمرار قم بتأكيد كلمة السر",
@@ -20,9 +20,12 @@
     "Verify Your Email Address": "قم بتأكيد البريد الإلكتروني",
     "You are logged in!": "لقد قمت بتسجيل الخروج",
     "Sidebar Filters": "ألوان القوالب",
-    "Change password": "تغيير كلمة السر"
-   
-    
+    "Change password": "تغيير كلمة السر",
+    "Profile": "الملف الشخصس",
+
+    "Settings": "الإعدادات"
+
+
 
 
 
