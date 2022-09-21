@@ -120,36 +120,35 @@
                             </div>
                             <div class="form-group">
 
-                                <label for="exampleFormControlInput1">Photo </label>
+                                <label for="exampleFormControlInput1">المرفقات 1 </label>
                                 <input type="file" name="photo1" class="form-control" >
                             </div>
+<!--
+    <div class="form-group">
 
-                            </div>
-                            <div class="form-group">
-
-                                <label for="exampleFormControlInput1">Photo </label>
+                                <label for="exampleFormControlInput1">المرفقات 2 </label>
                                 <input type="file" name="photo2" class="form-control" >
                             </div>
 
-                            </div>
                             <div class="form-group">
 
-                                <label for="exampleFormControlInput1">Photo </label>
+                                <label for="exampleFormControlInput1">المرفقات 3</label>
                                 <input type="file" name="photo3" class="form-control" >
                             </div>
 
-                            </div>
+
                             <div class="form-group">
 
-                                <label for="exampleFormControlInput1">Photo </label>
+                                <label for="exampleFormControlInput1">المرفقات 4</label>
                                 <input type="file" name="photo4" class="form-control" >
                             </div>
+                        -->
 
-                    </div>
 
-                    <div class="form-group">
+                            <div class="form-group">
 
-                        <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                                <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                            </div>
                     </div>
                 </div>
                 </form>

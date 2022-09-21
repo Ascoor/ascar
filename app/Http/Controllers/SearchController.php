@@ -20,6 +20,6 @@ class SearchController extends Controller
             ->orwhere('gnump10', 'LIKE', '%' . $search_text . '%')
 
             ->get();
-        return view('place.index', compact('places', $places));
+        return view('place.index', compact('places'));
     }
 }

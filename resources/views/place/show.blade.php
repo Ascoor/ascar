@@ -1,8 +1,13 @@
 @extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('عرض المتغير')])
 
 @section('content')
-<div class="container">
-    <div class="row">
+
+<div class="content">
+    <div class="container pt-3">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
 
         <div class="card">
             <div class="card-header card-header" style="
@@ -18,26 +23,13 @@
 
                     <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
             </div>
-            <div class="container">
+<div class="card-body">
 
-
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-header card-header" style="
-                        color: rgb(255, 242, 64);
-                        background-color: #d3e6ff;
-                        align-items: center;
-                        text-align: center;">
-                            <h1 class=" display-4">
-                                <img class="card-img-top" style="width:350px;
-                            height:350px ;
-                            padding:auto ;   " src="/img/main.png">
-                        </div>
-                        <div class="table-responsive-sm">
+    <div class="table-responsive-sm">
 
                             <table class="table-warning">
 
-                            <thead>
+                                <thead>
                                 <tr>
                                     <th>مسلسل المتغير</th>
                                     <th>خط العرض</th>
@@ -82,11 +74,12 @@
 
                             <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->id) }}">إنهاء عمل
                                 المتغير</a>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
                 </div>
             </div>
 
             {!! $place->detail !!} @endsection
         </div>
     </div>
+</div>

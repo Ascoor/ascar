@@ -35,7 +35,7 @@
 
                                 </div>
                                     <div class="card-body">
-                                        <div class="table-responsive">
+
                                             <div class="table-responsive-sm">
 
                                                 <table class="table-warning">
@@ -115,6 +115,7 @@
                                                     @endforeach
                                                 </tbody>
 
+                                                {!!$places->links() !!}
                                             </table>
                                         </div>
                                     </div>

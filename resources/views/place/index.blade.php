@@ -34,8 +34,8 @@
                     @php
                     $i = 1;
                     @endphp
-                    @foreach($places as $item)
                     <tbody>
+                        @foreach($places as $item)
 
                         <tr class="table-primary">
 
@@ -60,13 +60,12 @@
 
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
-                    @endforeach
 
                 </table>
             </div>
         </div>
-        {!!$places->links() !!}
     </div>
 
 
@@ -75,6 +74,7 @@
         <div class="alert alert-danger" role="alert">
             لا بوجد متغيرات
         </div>
+        {!! $places->links() !!}
     </div>
 
     @endif
