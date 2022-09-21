@@ -63,8 +63,8 @@
                         @endforeach
                     </tbody>
 
-                    {!! $places->links() !!}
                 </table>
+                {!! $places->links() !!}
             </div>
         </div>
     </div>

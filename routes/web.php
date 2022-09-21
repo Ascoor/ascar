@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 		->name('place.delete.from.database');
 	Route::get('place.filter', 'FilterPlaceExport@view')->name('place.filter');
 
-	Route::resource('search', 'SearchController');
+	Route::get('search', 'SearchController@index')->name('search.index');
 
 
 	// Routes for Tags

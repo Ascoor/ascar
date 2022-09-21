@@ -62,11 +62,10 @@
                             <input class=" form-control mr-sm-2" style="text-align: center;" type="search"
                         placeholder=" المتغير - المدينة  - القرية" name=" query" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">بحث</button>
+                    </div>
                 </form>
+            </div>
                 </div>
-            </div>
-            </div>
-
             </div>
             @yield('content')
             @include('layouts.footers.auth')
