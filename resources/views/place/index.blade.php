@@ -63,6 +63,7 @@
                         @endforeach
                     </tbody>
 
+                    {!! $places->links() !!}
                 </table>
             </div>
         </div>
@@ -74,7 +75,6 @@
         <div class="alert alert-danger" role="alert">
             لا بوجد متغيرات
         </div>
-        {!! $places->links() !!}
     </div>
 
     @endif

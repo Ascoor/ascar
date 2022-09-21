@@ -34,8 +34,9 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{route('places.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('places/store/')}}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">مسلسل المتغير </label>
@@ -94,15 +95,14 @@
                     <input type="text" name="gnump11" class="form-control">
                 </div>
 
-
-
                 <div class="form-group">
 
-                    <label for="exampleFormControlInput1">Photo </label>
-                    <input type="file" name="photo1" class="form-control">
+                <div class="input-group hdtuto control-group lst increment" >
+                    <input type="file" name="photo1[]" class="myfrm form-control">
 
-                </div>
-        </div>
+                    </div>
+
+
 
         <div class="form-group">
 

@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="card">
 
-        <div class="card">
+        <div class="card-body">
             <div class="card-header card-header" style="
                 color: rgb(255, 242, 64);
                 background-color: #153257;
@@ -23,9 +23,9 @@
 
                     <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
             </div>
-<div class="card-body">
+<div class="card">
 
-    <div class="table-responsive-sm">
+    <div class="table-responsive-md">
 
                             <table class="table-warning">
 
@@ -63,23 +63,24 @@
                                 <td>{{ $place->gnump10 }}</td>
                                 <td>{{ $place->gnump11 }}</td>
                                 <td>{{ $place->gnump13 }}</td>
-                            </tr>
-                        </table>
+                                <td>
 
-                        <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="{{ route('places.edit', $place->id) }}"
-                                role="button">
 
-                                تعديل</a>
+                                    <a class="btn btn-primary btn-md" href="{{ route('places.edit', $place->id) }}"
+                                    role="button">
+                                    تعديل</a>
+                                </td>
+                                <td>
 
-                            <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->id) }}">إنهاء عمل
-                                المتغير</a>
-                            </p>
-                        </div>
+                                 <a class="btn btn-danger btn-md" href="{{ route('soft.delete', $place->id) }}">إنهاء عمل
+                                    المتغير</a>
+
+                        </td>
+                    </tr>
+                    </table>
                 </div>
-            </div>
 
+            </div>
             {!! $place->detail !!} @endsection
-        </div>
     </div>
 </div>
