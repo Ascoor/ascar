@@ -87,7 +87,7 @@ class PlaceController extends Controller
     public function export()
     {
 
-        return Excel::download(new PlacesExport, 'places.xlsx');
+        return Excel::download(new PlacesExport, 'places.csv');
     }
 
 
