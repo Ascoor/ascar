@@ -17,6 +17,10 @@
             <i class="material-icons">fingerprint</i> {{ __('Login') }}
           </a>
         </li>
+    </ul>
+  </div>
+</div>
+</nav>
      <!--  <li class="nav-item ">
           <a href="{{ route('profile.edit') }}" class="nav-link">
             <i class="material-icons">face</i> {{ __('Profile') }}
@@ -32,8 +36,4 @@
             <i class="material-icons">person_add</i> {{ __('Register') }}
           </a>
         </li>--->
-      </ul>
-    </div>
-  </div>
-</nav>
 <!-- End Navbar -->

@@ -1,5 +1,6 @@
-<?php
 
+<?php
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
 	Route::get('place.filter', 'FilterPlaceExport@view')->name('place.filter');
-
-	Route::get('search', 'SearchController@index')->name('search.index');
-
+    Route::get('/search',['uses' => 'SearchController@Search','as' => 'search']);
 
 	// Routes for Tags
 	Route::get('/tags', 'TagController@index')->name('tags');

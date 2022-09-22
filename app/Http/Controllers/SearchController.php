@@ -1,25 +1,31 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Place;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-
-    public function index()
+    public function search(Request $request)
     {
-        $search_text = $_GET['query'];
-        $places = Place::where('gnump', 'LIKE', '%' . $search_text . '%')
-            ->orwhere('gnump2', 'LIKE', '%' . $search_text . '%')
-            ->orwhere('gnump3', 'LIKE', '%' . $search_text . '%')
-            ->orwhere('gnumh', 'LIKE', '%' . $search_text . '%')
-            ->orwhere('gnumw', 'LIKE', '%' . $search_text . '%')
-            ->orwhere('gnump10', 'LIKE', '%' . $search_text . '%')
 
-            ->get();
-            return view('place.search', compact('places', $places));
+        $search = $request->input('search');
+
+        $places = Place::query()
+            ->where('gnump', 'LIKE', "%{$search}%")
+            ->orWhere('gnumh', 'LIKE', "%{$search}%")
+            ->orWhere('gnumw', 'LIKE', "%{$search}%")
+            ->orWhere('gnump1', 'LIKE', "%{$search}%")
+            ->orWhere('gnump2', 'LIKE', "%{$search}%")
+            ->orWhere('gnump3', 'LIKE', "%{$search}%")
+            ->orWhere('gnump4', 'LIKE', "%{$search}%")
+
+            ->paginate();
+
+        return view('place.search', compact('places'));
     }
 }

@@ -43,7 +43,7 @@
                                         </thead> @php
                                         $i = 1;
                                         @endphp
-                                        <tbody>
+
                                             @foreach ($places as $item)
                                         <tbody>
                                             <tr>
