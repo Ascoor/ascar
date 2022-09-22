@@ -24,8 +24,8 @@ class SearchController extends Controller
             ->orWhere('gnump3', 'LIKE', "%{$search}%")
             ->orWhere('gnump4', 'LIKE', "%{$search}%")
 
-            ->paginate();
+            ->paginate(50);
 
-        return view('place.search', compact('places'));
+        return view('place.search', compact('places', $places));
     }
 }
