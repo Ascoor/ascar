@@ -47,7 +47,7 @@ return [
             'line_ending'            => PHP_EOL,
             'use_bom'                => true,
             'include_separator_line' => false,
-            'excel_compatibility'    => true,
+            'excel_compatibility'    => false,
             'output_encoding'        => '',
         ],
 
