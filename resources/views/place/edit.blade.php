@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'place.edit', 'titlePage' => __('الصفحة الرئيسية')])
+@extends('layouts.app', ['activePage' => 'place.edit', 'titlePage' => __('تعديل بيانات المتغير')])
 
 
 @section('content')
@@ -41,8 +41,7 @@
                 <div class="card-body">
 
                     <div class="col">
-                        <form action="{{route('place.update',$place->id)}}" method="Post"
-                            enctype="multipart/form-data">
+                        <form action="{{route('place.update',$place->id)}}" method="Post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -51,21 +50,19 @@
                             </div>
                             <div class="form-group">
                                 @foreach ($tags as $item)
-                                <input type="checkbox" name="tags[]"
-                                   value="{{$item->id}}"
-
-                                   @foreach ($place->tag as $item2)
-                                       @if ($item->id == $item2->id)
-                                           checked
-                                       @endif
-                                   @endforeach
-
-                                   >
-
-                                   <label for="">{{$item->tag}}</label>
+                                <input type="checkbox" name="tags[]" value="{{$item->id}}" @foreach ($place->tag as
+                                $item2)
+                                @if ($item->id == $item2->id)
+                                checked
+                                @endif
                                 @endforeach
 
-                              </div>
+                                >
+
+                                <label for="">{{$item->tag}}</label>
+                                @endforeach
+
+                            </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">خط العرض </label>
                                 <input type="float" name="gnumh" class="form-control" value="{{ $place->gnumh }}">
@@ -134,13 +131,12 @@
 
 
 
-                            </div>
-                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">المرفق الأول </label>
+                                    <input type="file" name="photo1" class="form-control">
 
-                                <label for="exampleFormControlInput1">المرفقات 1 </label>
-                                <input type="file" name="photo1" class="form-control" >
-                            </div>
-<!--
+                                </div>
+                                <!--
     <div class="form-group">
 
                                 <label for="exampleFormControlInput1">المرفقات 2 </label>
@@ -162,17 +158,17 @@
                         -->
 
 
-                            <div class="form-group">
+                                <div class="form-group">
 
-                                <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                                    <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                                </div>
                             </div>
                     </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
 
 
 
-    @endsection
+        @endsection

@@ -32,96 +32,95 @@
             @endforeach
         </ul>
         @endif
-<br>
-        <div class="col">
-            <div class="card">
-    <div class="card-body">
-            <form action="{{route('place.store')}}" method="POST" enctype="multipart/form-data">
-                @csrf
+        <br>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <form action="{{route('place.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
 
 
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">مسلسل المتغير </label>
-                    <input type="number" name="gnump" class="form-control">
-                </div>
-                <div class="form-group">
-                    @foreach ($tags as $item)
-                    <input type="checkbox" name="tags[]"
-                       value="{{$item->id}}"  >
-                       <label for="">{{$item->tag}}</label>
-                    @endforeach
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">مسلسل المتغير </label>
+                        <input type="number" name="gnump" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        @foreach ($tags as $item)
+                        <input type="checkbox" name="tags[]" value="{{$item->id}}">
+                        <label for="">{{$item->tag}}</label>
+                        @endforeach
 
-                  </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">خط العرض </label>
-                    <input type="float" name="gnumh" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">خط الطول </label>
-                    <input type="float" name="gnumw" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">المحافظة </label>
-                    <input type="text" name="gnump1" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1"> المركز </label>
-                    <input type="text" name="gnump2" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">القرية </label>
-                    <input type="text" name="gnump3" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">نوع الأملاك </label>
-                    <input type="text" name="gnump4" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">جهة الولاية </label>
-                    <input type="text" name="gnump5" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">القانونية </label>
-                    <input type="text" name="gnump6" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">الرد </label>
-                    <input type="text" name="gnump7" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">تفاصيل الرد </label>
-                    <input type="text" name="gnump8" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">موقف الإزالة </label>
-                    <input type="text" name="gnump9" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1"> التاريخ </label>
-                    <input type="date" name="gnump10" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">الملاحظات </label>
-                    <input type="text" name="gnump11" class="form-control">
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">خط العرض </label>
+                        <input type="float" name="gnumh" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">خط الطول </label>
+                        <input type="float" name="gnumw" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">المحافظة </label>
+                        <input type="text" name="gnump1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1"> المركز </label>
+                        <input type="text" name="gnump2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">القرية </label>
+                        <input type="text" name="gnump3" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">نوع الأملاك </label>
+                        <input type="text" name="gnump4" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">جهة الولاية </label>
+                        <input type="text" name="gnump5" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">القانونية </label>
+                        <input type="text" name="gnump6" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">الرد </label>
+                        <input type="text" name="gnump7" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">تفاصيل الرد </label>
+                        <input type="text" name="gnump8" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">موقف الإزالة </label>
+                        <input type="text" name="gnump9" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1"> التاريخ </label>
+                        <input type="date" name="gnump10" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">الملاحظات </label>
+                        <input type="text" name="gnump11" class="form-control">
+                    </div>
 
-                <div class="form-group">
-
-                <div class="input-group hdtuto control-group lst increment" >
-                    <input type="file" name="photo1[]" class="myfrm form-control">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">المرفق الأول </label>
+                        <input type="file" name="photo1" class="form-control">
 
                     </div>
 
 
 
-        <div class="form-group">
+                    <div class="form-group">
 
-            <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                        <button class="btn btn-danger" class="form-group" type="submit">save</button>
 
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
     </div>
-</div>
-</div>
 
-@endsection
+    @endsection

@@ -61,7 +61,6 @@ class PlaceController extends Controller
 
         ]);
 
-
         $place = Place::create([
             'gnump' => $request->gnump,
             'gnumh' => $request->gnumh,
@@ -79,15 +78,16 @@ class PlaceController extends Controller
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
+            'photo1' =>  'uploads/posts/',
         ]);
-
-        $place->tag()->attach($request->tags);
 
         if ($request->has('photo')) {
             $photo = $request->photo1;
             $newPhoto = time() . $photo->getClientOriginalName();
             $photo->move('uploads/posts', $newPhoto);
         }
+        $place->tag()->attach($request->tags);
+
         return redirect()->back();
     }
 
@@ -144,7 +144,6 @@ class PlaceController extends Controller
             $photo = $request->photo1;
             $newPhoto = time() . $photo->getClientOriginalName();
             $photo->move('uploads/posts', $newPhoto);
-            $place->photo1 = 'uploads/posts' . $newPhoto;
         }
 
         $place->gnump = $request->gnump;
@@ -161,7 +160,10 @@ class PlaceController extends Controller
         $place->gnump9 = $request->gnump9;
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
+
+
         $place->gnump12 =  Auth::id();
+
 
         $place->save();
         $place->tag()->sync($request->tags);
