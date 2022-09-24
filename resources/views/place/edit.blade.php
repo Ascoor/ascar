@@ -25,7 +25,7 @@
 
             <p class="lead" style="text-align: center; padding-top: 20px"></p>
 
-            <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
+            <a class="btn btn-success" href="{{ route('places') }}">جميع المتغيرات</a>
         </div>
         @if ($message = Session::get('تمت'))
         <div class="alert alert-danger" role="alert">
@@ -41,14 +41,31 @@
                 <div class="card-body">
 
                     <div class="col">
-                        <form action="{{route('places.update',$place->id)}}" method="post"
+                        <form action="{{route('place.update',$place->id)}}" method="Post"
                             enctype="multipart/form-data">
                             @csrf
-                            @method ('PUT')
+
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">مسلسل المتغير </label>
                                 <input type="number" name="gnump" class="form-control" value="{{ $place->gnump }}">
                             </div>
+                            <div class="form-group">
+                                @foreach ($tags as $item)
+                                <input type="checkbox" name="tags[]"
+                                   value="{{$item->id}}"
+
+                                   @foreach ($place->tag as $item2)
+                                       @if ($item->id == $item2->id)
+                                           checked
+                                       @endif
+                                   @endforeach
+
+                                   >
+
+                                   <label for="">{{$item->tag}}</label>
+                                @endforeach
+
+                              </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">خط العرض </label>
                                 <input type="float" name="gnumh" class="form-control" value="{{ $place->gnumh }}">

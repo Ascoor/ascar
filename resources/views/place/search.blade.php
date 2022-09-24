@@ -73,13 +73,15 @@
 
                                 <td class="table-primary">
                                     <span>
-                                        <a class="btn btn-info" href="{{ route('places.edit', $item->id) }}">
+                                        <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
                                             تعديل</a>
                                     </span>
                                 </td>
                                 <td class="table-primary">
                                     <span>
-                                        <a class="btn btn-success" href="{{ route('places.show', $item->id) }}">عرض</a>
+                                        <span>
+                                            <a class="btn btn-success"
+                                            href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
                                     </span>
                                 </td>
 

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Place;
+use App\Tag;
+use Auth;
 use Illuminate\Http\Request;
-use App\Exports\PlacesExport;
+
 
 class PlaceController extends Controller
 {
@@ -25,16 +25,26 @@ class PlaceController extends Controller
 
 
     /** Trashed places */
-    public function trashedPlaces()
+    public function PlacesTrashed()
     {
 
         $places = Place::onlyTrashed()->paginate(10);
-        return view('place.trash', compact('places'));
+        return view('place.trash')->with('places', $places);
     }
 
+
+
+
+
+
+    /**      Place Create     */
     public function create()
     {
-        return view('place.create');
+        $tags = Tag::all();
+        if ($tags->count() == 0) {
+            return   redirect()->route('tag.create');
+        }
+        return view('place.create')->with('tags',  $tags);
     }
 
     public function store(Request $request)
@@ -47,14 +57,10 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
+            'tags' =>  'required',
 
         ]);
-        $photo= $request->photo1;
-        $photo = $request->photo2;
-        $photo = $request->photo3;
-        $photo = $request->photo4;
-        $newPhoto = time() . $photo->getClientOriginalName();
-        $photo->move('uploads/posts', $newPhoto);
+
 
         $place = Place::create([
             'gnump' => $request->gnump,
@@ -72,39 +78,51 @@ class PlaceController extends Controller
             'gnump10' => $request->gnump10,
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
-            'photo1' => 'uploads/posts/' . $newPhoto,
-            'photo2' => 'uploads/posts/' . $newPhoto,
-            'photo3' => 'uploads/posts/' . $newPhoto,
-            'photo4' => 'uploads/posts/' . $newPhoto,
-
+            'slug' =>   str_slug($request->gnump),
         ]);
 
+        $place->tag()->attach($request->tags);
+
+        if ($request->has('photo')) {
+            $photo = $request->photo1;
+            $newPhoto = time() . $photo->getClientOriginalName();
+            $photo->move('uploads/posts', $newPhoto);
+        }
         return redirect()->back();
     }
 
-    ///////* Export Excel sheet *//////
 
-    public function export()
+    /**      Place show     */
+
+
+    public function show($slug)
     {
+        $tags = Tag::all();
+        $place = Place::where('slug', $slug)->first();
 
-        return Excel::download(new PlacesExport, 'places.csv');
+        return view('place.show')->with('place', $place)
+            ->with('tags', $tags);
     }
 
 
 
 
-    public function show($id)
-    {
-        $place = Place::find($id);
-        return view('place.show', compact('place'));
-    }
 
 
+    /**      Place Edit     */
     public function edit($id)
     {
+        $tags = Tag::all();
         $place = Place::find($id);
-        return view('place.edit')->with('place', $place);
+        return view('place.edit')->with('place', $place)
+            ->with('tags', $tags);
     }
+
+
+
+
+
+    /**      Place update     */
 
     public function update(Request $request,  $id)
     {
@@ -146,27 +164,46 @@ class PlaceController extends Controller
         $place->gnump12 =  Auth::id();
 
         $place->save();
-
+        $place->tag()->sync($request->tags);
         return redirect()->back()
             ->with('تمت', 'تم التعديل  بنجاح');
     }
 
-    public function destroy(Place $id)
+
+
+
+
+
+    /**      Place destroy     */
+
+    public function destroy($id)
     {
-        $place = Place::where('id', $id)->where('Auth_id', Auth::id())->first();
-        if ($place === null) { }
+        $place = Place::where('id', $id)->where('gunup12', Auth::id())->first();
+        if ($place === null) {
+            return redirect()->back();
+        }
+
+
         $place->delete($id);
         return redirect()->back();
     }
+
+
+
+
+    /**      Place softDeletes     */
 
     public function softDeletes($id)
     {
         $place = Place::find($id)->delete();
 
 
-        return redirect()->route('places.index')
+        return redirect()->route('places')
             ->with('تمت', 'تم الإخفاء بنجاح');
     }
+
+
+
 
     public function deleteForEver($id)
     {

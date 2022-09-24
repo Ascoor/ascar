@@ -18,8 +18,8 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
-                <a class="dropdown-item" href="{{ route('places.create') }}">{{ __('إضافة متغير') }}</a>
-                <a class="dropdown-item" href="{{ route('places.index') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
+                <a class="dropdown-item" href="{{ route('place.create') }}">{{ __('إضافة متغير') }}</a>
+                <a class="dropdown-item" href="{{ route('places') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
                 <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
             </div>
         </div>

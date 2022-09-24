@@ -30,17 +30,16 @@ class CreatePlacesTable extends Migration
             $table->string('gnump9')->nullable();
             $table->string('gnump10')->nullable();
             $table->string('gnump11')->nullable();
-            $table->integer('gnump12')->unsigned();
+            $table->integer('gnump12')->nullable();
             $table->string('gnump13')->nullable();
             $table->string('photo1')->nullable();
             $table->string('photo2')->nullable();
             $table->string('photo3')->nullable();
-            $table->string('photo4')->nullable();
+            $table->string('slug')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('gnump12')->references('id')->on('users')
-            ->onDelete('cascade');
+
         });
 
     }

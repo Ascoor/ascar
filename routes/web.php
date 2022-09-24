@@ -18,27 +18,34 @@ Auth::routes();
 
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
 	Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+// Routes for Posts
+Route::get('/places', 'PlaceController@index' )->name('places');
+Route::get('/place/create', 'PlaceController@create' )->name('place.create');
+Route::post('/place/store', 'PlaceController@store' )->name('place.store');
+Route::get('/place/show/{slug}', 'PlaceController@show' )->name('place.show');
+Route::get('/place/edit/{id}', 'PlaceController@edit' )->name('place.edit');
+Route::post('/place/update/{id}', 'PlaceController@update' )->name('place.update');
 
-	Route::resource('places', 'PlaceController');
-	Route::get('/home', 'HomeController@i');
+
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
-	Route::get('tag/soft/selete/{id}', 'TagController@softDeletes')
-		->name('softtag.delete');
 
-	Route::get('/export', 'PlaceController@export')->name('export');
-	Route::get('place/trash', 'PlaceController@trashedPlaces')
+
+        Route::get('place/trash', 'PlaceController@PlacesTrashed')
 		->name('place.trash');
-	Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
+        Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
 		->name('place.back.from.trash');
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
-	Route::get('place.filter', 'FilterPlaceExport@view')->name('place.filter');
+
     Route::get('/search',['uses' => 'SearchController@Search','as' => 'search']);
 
 	// Routes for Tags
@@ -47,16 +54,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/tag/store', 'TagController@store')->name('tag.store');
 
 	Route::get('/tag/edit/{id}', 'TagController@edit')->name('tag.edit');
+    Route::get('tag/soft/selete/{id}', 'TagController@softDeletes')->name('softtag.delete');
 	Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update');
 
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
+    Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

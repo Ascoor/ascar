@@ -18,9 +18,9 @@
                                 يمكنك البحث برقم المتغير او المركز او القرية
                             </p>
 
+                            @if($places->count() > 0 )
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    @if($places->count() > 0 )
                                     <table class="table">
                                         <thead class="text-dark">
                                             <th class="table-warning">مسلسل المتغير</th>
@@ -40,12 +40,13 @@
                                             <th class="table-warning">تعديل</th>
                                             <th class="table-warning">عرض</th>
                                             <th class="table-warning">التحكم</th>
-                                        </thead> @php
+                                        </thead>
+
+<tbody>
+                                        @php
                                         $i = 1;
                                         @endphp
-
                                             @foreach ($places as $item)
-                                        <tbody>
                                             <tr>
                                                 <th class="table-primary">
                                                     {{ $item->gnump }}
@@ -78,7 +79,7 @@
                                                 <td class="table-primary">
                                                     <span>
                                                         <a class="btn btn-info"
-                                                            href="{{ route('places.edit', $item->id) }}">
+                                                            href="{{ route('place.edit', $item->id) }}">
                                                             تعديل</a>
                                                     </span>
                                                 </td>
@@ -86,7 +87,7 @@
                                                 <td class="table-primary">
                                                     <span>
                                                         <a class="btn btn-success"
-                                                            href="{{ route('places.show', $item->id) }}">عرض</a>
+                                                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
 
                                                     </span>
                                                 </td>

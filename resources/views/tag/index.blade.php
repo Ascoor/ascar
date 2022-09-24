@@ -59,7 +59,7 @@
                         </tbody>
                     </table>
                     @if ($tags->count() > 0 )
-                    {!!$tags->links() !!}
+
                 </div>
                 @else
                 <div class="col">

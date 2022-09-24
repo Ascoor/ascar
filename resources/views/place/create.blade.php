@@ -15,33 +15,43 @@
 
             <p class="lead" style="text-align: center; padding-top: 20px"></p>
 
-            <a class="btn btn-success" href="{{ route('places.index') }}">جميع المتغيرات</a>
+            <a class="btn btn-success" href="{{ route('places') }}">جميع المتغيرات</a>
         </div>
 
     </div>
 
 
+    <div class="row">
 
-    @if (count($errors) > 0)
-    <ul>
-        @foreach ($errors->all() as $item)
-        <li>
-            {{$item}}
-        </li>
-        @endforeach
-    </ul>
-    @endif
-
-    <div class="card">
-        <div class="card-body">
-            <form action="{{url('places/store/')}}" method="post" enctype="multipart/form-data">
+        @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $item)
+            <li>
+                {{$item}}
+            </li>
+            @endforeach
+        </ul>
+        @endif
+<br>
+        <div class="col">
+            <div class="card">
+    <div class="card-body">
+            <form action="{{route('place.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
+
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">مسلسل المتغير </label>
                     <input type="number" name="gnump" class="form-control">
                 </div>
+                <div class="form-group">
+                    @foreach ($tags as $item)
+                    <input type="checkbox" name="tags[]"
+                       value="{{$item->id}}"  >
+                       <label for="">{{$item->tag}}</label>
+                    @endforeach
+
+                  </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">خط العرض </label>
                     <input type="float" name="gnumh" class="form-control">
@@ -109,8 +119,8 @@
             <button class="btn btn-danger" class="form-group" type="submit">save</button>
 
         </div>
-    </div>
     </form>
+    </div>
 </div>
 </div>
 
