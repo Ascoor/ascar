@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Exports;
+use Maatwebsite\Excel\Concerns\Exportable;
 
 use App\Place;
 use Maatwebsite\Excel\Concerns\FromCollection;
