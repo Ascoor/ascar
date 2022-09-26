@@ -1,6 +1,7 @@
 
 <?php
-use App\Http\Controllers\SearchController;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+
 
 
 
@@ -26,27 +27,27 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.table_list');
 	})->name('table');
 	Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
-// Routes for Posts
-Route::get('/places', 'PlaceController@index' )->name('places');
-Route::get('/place/create', 'PlaceController@create' )->name('place.create');
-Route::post('/place/store', 'PlaceController@store' )->name('place.store');
-Route::get('/place/show/{slug}', 'PlaceController@show' )->name('place.show');
-Route::get('/place/edit/{id}', 'PlaceController@edit' )->name('place.edit');
-Route::post('/place/update/{id}', 'PlaceController@update' )->name('place.update');
+	// Routes for Posts
+	Route::get('/places', 'PlaceController@index')->name('places');
+	Route::get('/place/create', 'PlaceController@create')->name('place.create');
+	Route::post('/place/store', 'PlaceController@store')->name('place.store');
+	Route::get('/place/show/{slug}', 'PlaceController@show')->name('place.show');
+	Route::get('/place/edit/{id}', 'PlaceController@edit')->name('place.edit');
+	Route::post('/place/update/{id}', 'PlaceController@update')->name('place.update');
 
 
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
 
 
-        Route::get('place/trash', 'PlaceController@PlacesTrashed')
+	Route::get('place/trash', 'PlaceController@PlacesTrashed')
 		->name('place.trash');
-        Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
+	Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
 		->name('place.back.from.trash');
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
 
-    Route::get('/search',['uses' => 'SearchController@Search','as' => 'search']);
+	Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
 
 	// Routes for Tags
 	Route::get('/tags', 'TagController@index')->name('tags');
@@ -54,13 +55,17 @@ Route::post('/place/update/{id}', 'PlaceController@update' )->name('place.update
 	Route::post('/tag/store', 'TagController@store')->name('tag.store');
 
 	Route::get('/tag/edit/{id}', 'TagController@edit')->name('tag.edit');
-    Route::get('tag/soft/selete/{id}', 'TagController@softDeletes')->name('softtag.delete');
+	Route::get('tag/soft/selete/{id}', 'TagController@softDeletes')->name('softtag.delete');
 	Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update');
-
+	// Routes for users
+	Route::get('/users', 'UserController@index')->name('users');
+	Route::get('/user/create', 'UserController@create')->name('user.create');
+	Route::post('/user/store', 'UserController@store')->name('user.store');
+	Route::get('/user/destroy/{id}', 'UserController@destroy')->name('user.destroy');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);

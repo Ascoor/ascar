@@ -1,4 +1,5 @@
-@extends('layouts.app', ['activePage' => 'create', 'titlePage' => __('إضافة متغير')])
+@extends('layouts.app', ['activePage' => 'place.create', 'titlePage' => __('إضافة متغير ')])
+
 
 @section('content')
 
@@ -23,11 +24,11 @@
 
     <div class="row">
 
-        @if (count($errors) > 0)
+        @if(count($errors) > 0)
         <ul>
-            @foreach ($errors->all() as $item)
+            @foreach($errors->all() as $item)
             <li>
-                {{$item}}
+                {{ $item }}
             </li>
             @endforeach
         </ul>
@@ -37,18 +38,16 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('place.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-
-
                     <div class="form-group">
                         <label for="exampleFormControlInput1">مسلسل المتغير </label>
                         <input type="number" name="gnump" class="form-control">
                     </div>
                     <div class="form-group">
-                        @foreach ($tags as $item)
-                        <input type="checkbox" name="tags[]" value="{{$item->id}}">
-                        <label for="">{{$item->tag}}</label>
+                        @foreach($tags as $item)
+                        <input type="checkbox" name="tags[]" value="{{ $item->id }}">
+                        <label for="">{{ $item->tag }}</label>
                         @endforeach
 
                     </div>
@@ -100,26 +99,31 @@
                         <label for="exampleFormControlInput1"> التاريخ </label>
                         <input type="date" name="gnump10" class="form-control">
                     </div>
+     
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">الملاحظات </label>
-                        <input type="text" name="gnump11" class="form-control">
-                    </div>
+                        <label for="exampleFormControlTextarea1">الملاحظات  </label>
+                        <textarea class="form-control"  name="gnump11"   rows="3"></textarea>
+                                        
+
+                </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">المرفق الأول </label>
+
+                        <label for="exampleFormControlInput1">الصور </label>
                         <input type="file" name="photo1" class="form-control">
-
                     </div>
-
-
-
-                    <div class="form-group">
-
-                        <button class="btn btn-danger" class="form-group" type="submit">save</button>
-
-                    </div>
-                </form>
-            </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">المرفقات  </label>
+                            <input type="file"  name="photo2" class="form-control"   >
+                          </div>
+            
+                        <div class="form-group">
+            
+                            <button class="btn btn-danger" type="submit">save</button>
+                        </div>
+            
+                      </form>
+                  </div>
         </div>
     </div>
 
