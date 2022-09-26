@@ -11,9 +11,14 @@
       @method('PUT')
 
 <div class="card ">
-<div class="card-header card-header-primary">
-<h4 class="card-title">Edit Profile</h4>
-<p class="card-category">User information</p>
+  <div class="card">
+    <div class="card-header card-header" style="
+color: rgb(255, 242, 64);
+background-color: #153257;
+align-items: center;
+text-align: center;">
+<h4 class="card-title">تعديل الملف الشخصي</h4>
+<p class="card-category"> بيانات المستخدم</p>
 </div>
 <div class="card-body ">
 <div class="row">
@@ -28,7 +33,7 @@
 <label class="col-sm-2 col-form-label">nickname</label>
 <div class="col-sm-7">
 <div class="form-group">
-<input class="form-control" name="nickname" id="input-nickname" type="text" value="{{$user->profile->nickname}}"  />
+<input class="form-control" name="nickname" type="text" value="{{$user->profile->nickname}}"  />
 
 </div>
 </div>
@@ -59,12 +64,17 @@
 </div>
 </div>
 </div>
-<div class="card-body">
 
-   
-   <div class="card-header card-header-primary">
+
+<div class="card">
+    <div class="card-body">
+    <div class="card-header card-header" style="
+color: rgb(255, 242, 64);
+background-color: #153257;
+align-items: center;
+text-align: center;">
                <h4 class="card-title">{{ __('Change password') }}</h4>
-
+    </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1"> password </label>
               <input type="password" name="password" class="form-control" >

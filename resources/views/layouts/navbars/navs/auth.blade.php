@@ -37,10 +37,10 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">{{ __('الإعدادت') }}</a>
+                            <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('ملف المستخدم') }}</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
-                            <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
-                            <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
 
                     </li>
                 </ul>

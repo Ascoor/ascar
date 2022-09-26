@@ -17,11 +17,14 @@
     <p class="card-category" style="text-align: center;"> يمكنك البحث برقم المتغير او المركز او القرية
     </p>
 </div>
-
-            <a href="{{ url('/export') }}" class="btn btn-warning" type="bootom">Export</a>
+<a href="{!! route('export') !!}" class="btn btn-success">
+    <i class="la la-download"></i>
+    Export Filter
+</a>
+  
             </div>
             <div class="card-body">
-                {!! $places->links() !!}
+   S
                 <table class="table">
                         <div class="table-responsive-md">
                         <thead class=" text-dark">
@@ -114,7 +117,5 @@
 
 
 
-
-
-
         @endsection
+

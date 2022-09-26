@@ -7,7 +7,6 @@ use App\Tag;
 use Auth;
 use Illuminate\Http\Request;
 
-
 class PlaceController extends Controller
 {
     public function __construct()
@@ -58,9 +57,14 @@ class PlaceController extends Controller
             'gnump2' => 'required',
             'gnump3' => 'required',
             'tags' =>  'required',
-
+            'photo1 ' =>  'required|image',
+            
         ]);
+        $photo = $request->photo1;
 
+        $newPhoto = time().$photo->getClientOriginalName();
+        $photo->move('uploads/posts', $newPhoto);
+        
         $place = Place::create([
             'gnump' => $request->gnump,
             'gnumh' => $request->gnumh,
@@ -78,14 +82,11 @@ class PlaceController extends Controller
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
-            'photo1' =>  'uploads/posts/',
+            'photo1' =>  'uploads/posts/'.$newPhoto
+
         ]);
 
-        if ($request->has('photo')) {
-            $photo = $request->photo1;
-            $newPhoto = time() . $photo->getClientOriginalName();
-            $photo->move('uploads/posts', $newPhoto);
-        }
+      
         $place->tag()->attach($request->tags);
 
         return redirect()->back();
@@ -132,7 +133,9 @@ class PlaceController extends Controller
             'gnumh' => 'required',
             'gnumw' => 'required',
             'gnump1' => 'required',
-            'gnump2' => 'required'
+            'gnump2' => 'required',
+            'gnump3' => 'required',
+
 
 
 
@@ -140,11 +143,13 @@ class PlaceController extends Controller
 
         //   dd($request->all());
 
-        if ($request->has('photo')) {
-            $photo = $request->photo1;
-            $newPhoto = time() . $photo->getClientOriginalName();
-            $photo->move('uploads/posts', $newPhoto);
-        }
+       
+    if ($request->has('photo')) {
+        $photo = $request->photo1;
+        $newPhoto = time().$photo->getClientOriginalName();
+        $photo->move('uploads/posts',$newPhoto);
+        $place->photo1 ='storage/posts/'.$newPhoto ;
+    }
 
         $place->gnump = $request->gnump;
         $place->gnumh = $request->gnumh;

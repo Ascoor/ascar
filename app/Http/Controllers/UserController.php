@@ -16,10 +16,10 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(User $model)
+    public function index()
     {
-        $user = User::all();
-        return view('users.index', ['users' => $model->paginate(15)]);
+        $users = User::all();
+        return view('users.index')->with('users', $users);
     }
 
 

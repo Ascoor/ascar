@@ -127,6 +127,10 @@ class ComposerStaticInitf9f2fe14596715bb5f7e4512a947dd9e
             'Laravel\\Tinker\\' => 15,
             'LaravelFrontendPresets\\MaterialPreset\\' => 38,
         ),
+        'K' => 
+        array (
+            'Kyslik\\ColumnSortable\\' => 22,
+        ),
         'I' => 
         array (
             'Illuminate\\Foundation\\Auth\\' => 27,
@@ -399,6 +403,10 @@ class ComposerStaticInitf9f2fe14596715bb5f7e4512a947dd9e
         array (
             0 => __DIR__ . '/..' . '/laravel-frontend-presets/material-dashboard/src',
         ),
+        'Kyslik\\ColumnSortable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable',
+        ),
         'Illuminate\\Foundation\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
@@ -517,7 +525,7 @@ class ComposerStaticInitf9f2fe14596715bb5f7e4512a947dd9e
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Exports\\PlacesExport' => __DIR__ . '/../..' . '/app/Exports/PlacesExport.php',
+        'App\\Exports\\FilterPlaceExport' => __DIR__ . '/../..' . '/app/Exports/FilterPlaceExport.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -2698,6 +2706,10 @@ class ComposerStaticInitf9f2fe14596715bb5f7e4512a947dd9e
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Kyslik\\ColumnSortable\\ColumnSortableServiceProvider' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/ColumnSortableServiceProvider.php',
+        'Kyslik\\ColumnSortable\\Exceptions\\ColumnSortableException' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/Exceptions/ColumnSortableException.php',
+        'Kyslik\\ColumnSortable\\Sortable' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/Sortable.php',
+        'Kyslik\\ColumnSortable\\SortableLink' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/SortableLink.php',
         'LaravelFrontendPresets\\MaterialPreset\\MaterialPreset' => __DIR__ . '/..' . '/laravel-frontend-presets/material-dashboard/src/MaterialPreset.php',
         'LaravelFrontendPresets\\MaterialPreset\\MaterialPresetServiceProvider' => __DIR__ . '/..' . '/laravel-frontend-presets/material-dashboard/src/MaterialPresetServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',

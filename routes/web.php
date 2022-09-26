@@ -46,9 +46,9 @@ Route::group(['middleware' => 'auth'], function () {
 		->name('place.back.from.trash');
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
-
 	Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
 
+	Route::get('place/export/', 'SearchController@export')->name('export');
 	// Routes for Tags
 	Route::get('/tags', 'TagController@index')->name('tags');
 	Route::get('/tag/create', 'TagController@create')->name('tag.create');
@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
+	
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);

@@ -61,6 +61,7 @@ return array(
     'Laravel\\Ui\\' => array($vendorDir . '/laravel/ui/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
     'LaravelFrontendPresets\\MaterialPreset\\' => array($vendorDir . '/laravel-frontend-presets/material-dashboard/src'),
+    'Kyslik\\ColumnSortable\\' => array($vendorDir . '/kyslik/column-sortable/src/ColumnSortable'),
     'Illuminate\\Foundation\\Auth\\' => array($vendorDir . '/laravel/ui/auth-backend'),
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),

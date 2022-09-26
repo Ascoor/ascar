@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'c1a83812800670bbc58907e0d8f9cd217e76d965',
+        'reference' => '9aad65089c450193f25e9e1460321790d95f4d9b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -382,6 +382,15 @@
                 0 => '*',
             ),
         ),
+        'kyslik/column-sortable' => array(
+            'pretty_version' => '6.4.2',
+            'version' => '6.4.2.0',
+            'reference' => '91792a166dd02aaaeb7928417bb49d808b0c58ea',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../kyslik/column-sortable',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'laravel-frontend-presets/material-dashboard' => array(
             'pretty_version' => 'v1.1.1',
             'version' => '1.1.1.0',
@@ -412,7 +421,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'c1a83812800670bbc58907e0d8f9cd217e76d965',
+            'reference' => '9aad65089c450193f25e9e1460321790d95f4d9b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

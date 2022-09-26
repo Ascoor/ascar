@@ -7,6 +7,9 @@ use App\Place;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Exports\PlacesExport;
+
+use Maatwebsite\Excel\Facades\Excel;
 
 class SearchController extends Controller
 {
@@ -23,9 +26,16 @@ class SearchController extends Controller
             ->orWhere('gnump2', 'LIKE', "%{$search}%")
             ->orWhere('gnump3', 'LIKE', "%{$search}%")
             ->orWhere('gnump4', 'LIKE', "%{$search}%")
-
-            ->paginate(50);
+            ->get();
 
         return view('place.search', compact('places', $places));
+    }
+
+
+    public function export()
+    {
+
+
+        return Excel::download(new PlacesExport, 'places.csv');
     }
 }
