@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use App\Place;
 use App\Http\Controllers\Controller;
-use Maatwebsite\Excel\Concerns\Exportable;
 
 use Illuminate\Http\Request;
 use App\Exports\PlacesExport;
