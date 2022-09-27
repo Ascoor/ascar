@@ -5,26 +5,15 @@ namespace App\Exports;
 
 
 use App\Place;
-use Illuminate\Contracts\View\View;
-use Maatwebsite\Excel\Concerns\FromView;
-use Maatwebsite\Excel\Concerns\Exportable;
-use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\FromCollection;
 
-class PlacesExport implements FromView, ShouldAutoSize
+class PlacesExport implements FromCollection
 {
-    use Exportable;
-    private $places;
-    public function __construct()
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
     {
-        $this->places = Place::all();
-    }
-
-
-
-    public function view(): View
-    {
-        return view('place.export', [
-            'places' => $this->places
-        ]);
+        return Place::all();
     }
 }
