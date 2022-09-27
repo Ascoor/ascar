@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
 		->name('soft.delete');
 
 
+	Route::get('place/export', 'PlaceController@export')
+		->name('export');
 	Route::get('place/trash', 'PlaceController@PlacesTrashed')
 		->name('place.trash');
 	Route::get('place/back/from/trash/{id}', 'PlaceController@backFromSoftDelete')
@@ -48,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 		->name('place.delete.from.database');
 	Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
 
-	Route::get('places/export/', 'SearchController@export')->name('export');
+
 	// Routes for Tags
 	Route::get('/tags', 'TagController@index')->name('tags');
 	Route::get('/tag/create', 'TagController@create')->name('tag.create');

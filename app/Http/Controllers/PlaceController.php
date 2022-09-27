@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Place;
 use App\Tag;
-use Auth;
+
+use App\Exports\PlacesExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlaceController extends Controller
 {
@@ -58,13 +61,13 @@ class PlaceController extends Controller
             'gnump3' => 'required',
             'tags' =>  'required',
             'photo1 ' =>  'required|image',
-            
+
         ]);
         $photo = $request->photo1;
 
-        $newPhoto = time().$photo->getClientOriginalName();
+        $newPhoto = time() . $photo->getClientOriginalName();
         $photo->move('uploads/posts', $newPhoto);
-        
+
         $place = Place::create([
             'gnump' => $request->gnump,
             'gnumh' => $request->gnumh,
@@ -82,11 +85,11 @@ class PlaceController extends Controller
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
-            'photo1' =>  'uploads/posts/'.$newPhoto
+            'photo1' =>  'uploads/posts/' . $newPhoto
 
         ]);
 
-      
+
         $place->tag()->attach($request->tags);
 
         return redirect()->back();
@@ -143,13 +146,13 @@ class PlaceController extends Controller
 
         //   dd($request->all());
 
-       
-    if ($request->has('photo')) {
-        $photo = $request->photo1;
-        $newPhoto = time().$photo->getClientOriginalName();
-        $photo->move('uploads/posts',$newPhoto);
-        $place->photo1 ='storage/posts/'.$newPhoto ;
-    }
+
+        if ($request->has('photo')) {
+            $photo = $request->photo1;
+            $newPhoto = time() . $photo->getClientOriginalName();
+            $photo->move('uploads/posts', $newPhoto);
+            $place->photo1 = 'storage/posts/' . $newPhoto;
+        }
 
         $place->gnump = $request->gnump;
         $place->gnumh = $request->gnumh;
@@ -224,5 +227,12 @@ class PlaceController extends Controller
         $place = Place::withTrashed()->where('id',  $id)->first();
         $place->restore();
         return redirect()->back();
+    }
+
+
+
+    public function export()
+    {
+        return Excel::download(new PlacesExport, 'places.csv');
     }
 }

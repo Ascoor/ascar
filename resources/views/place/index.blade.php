@@ -17,7 +17,13 @@
                             <p class="card-category" style="text-align: center">
                                 يمكنك البحث برقم المتغير او المركز او القرية
                             </p>
+                        </div>
+                        <a href="{{  route('export')  }}" class="btn btn-success">
+                            <i class="la la-download"></i>
+                            Export Filter
+                        </a>
 
+                                    </div>
                             @if($places->count() > 0 )
                             <div class="card-body">
                                 <div class="table-responsive">
