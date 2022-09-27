@@ -36,6 +36,6 @@ class SearchController extends Controller
     {
 
 
-        return Excel::download(new PlacesExport, 'places.csv');
+        return Excel::download(new PlacesExport, 'places.xls');
     }
 }
