@@ -50,7 +50,7 @@
 
 
 
-            <th class="table-primary">{{ $+->gnump }}</th>
+            <th class="table-primary">{{ $place->gnump }}</th>
             <td class="table-primary">{{ $place->gnumh }}</td>
             <td class="table-primary">{{ $place->gnumw }}</td>
             <td class="table-primary">{{ $place->gnump1 }}</td>
