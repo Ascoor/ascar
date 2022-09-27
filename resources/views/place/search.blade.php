@@ -21,7 +21,7 @@
     <i class="la la-download"></i>
     Export Filter
 </a>
-  
+
             </div>
             <div class="card-body">
    S
@@ -37,7 +37,7 @@
                                 <th class="table-warning">خط العرض</th>
                                 <th class="table-warning">خط الطول</th>
                                 <th class="table-warning">المحافظة</th>
-                                <th class="table-warning">المركز</th>
+                                <th class="table-warning">المركز</th>ow
                                 <th class="table-warning">القرية</th>
                                 <!--     <th class="table-warning">نوع الأملاك</th>
                                 <th class="table-warning">جهة الولاية</th>

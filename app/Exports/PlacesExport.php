@@ -1,19 +1,30 @@
 <?php
 
 namespace App\Exports;
-use Maatwebsite\Excel\Concerns\Exportable;
+
+
 
 use App\Place;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class PlacesExport implements FromCollection
+class PlacesExport implements FromView, ShouldAutoSize
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    use Exportable;
+    private $places;
+    public function __construct()
     {
-      
-        return Place::select('id','gnump','gnumh','gnumw','gnump1','gnump2','gnump3','gnump4','gnump5')->get();
+        $this->items = Place::all();
+    }
+
+
+
+    public function view(): View
+    {
+        return view('place.search', [
+            'places' => $this->items
+        ]);
     }
 }
