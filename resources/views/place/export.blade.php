@@ -50,23 +50,23 @@
 
 
 
-            <th class="table-primary">{{ $item->gnump }}</th>
-            <td class="table-primary">{{ $item->gnumh }}</td>
-            <td class="table-primary">{{ $item->gnumw }}</td>
-            <td class="table-primary">{{ $item->gnump1 }}</td>
-            <td class="table-primary">{{ $item->gnump2 }}</td>
-            <td class="table-primary">{{ $item->gnump3 }}</td>
-            <!---<td class="table-primary">{{ $item->gnump4 }}</td>
-<td class="table-primary">{{ $item->gnump5 }}</td>
-<td class="table-primary">{{ $item->gnump6 }}</td>
-<td class="table-primary">{{ $item->gnump7 }}</td>
-<td class="table-primary">{{ $item->gnump8 }}</td>
-<td class="table-primary">{{ $item->gnump9 }}</td>-->
-            <td class="table-primary">{{ $item->gnump10 }}</td>
+            <th class="table-primary">{{ $+->gnump }}</th>
+            <td class="table-primary">{{ $place->gnumh }}</td>
+            <td class="table-primary">{{ $place->gnumw }}</td>
+            <td class="table-primary">{{ $place->gnump1 }}</td>
+            <td class="table-primary">{{ $place->gnump2 }}</td>
+            <td class="table-primary">{{ $place->gnump3 }}</td>
+            <!---<td class="table-primary">{{ $place->gnump4 }}</td>
+<td class="table-primary">{{ $place->gnump5 }}</td>
+<td class="table-primary">{{ $place->gnump6 }}</td>
+<td class="table-primary">{{ $place->gnump7 }}</td>
+<td class="table-primary">{{ $place->gnump8 }}</td>
+<td class="table-primary">{{ $place->gnump9 }}</td>-->
+            <td class="table-primary">{{ $place->gnump10 }}</td>
 
             <td class="table-primary">
                 <span>
-                    <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
+                    <a class="btn btn-info" href="{{ route('place.edit', $place->id) }}">
                         تعديل</a>
                 </span>
             </td>
@@ -74,13 +74,13 @@
                 <span>
                     <span>
                         <a class="btn btn-success"
-                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
+                        href="{{route('place.show',['slug'=> $place->slug])}}">عرض</a>
                 </span>
             </td>
 
             <td class="table-primary">
                 <span>
-                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حفظ
+                    <a class="btn btn-danger" href="{{ route('soft.delete', $place->id) }}"> حفظ
                         المتغير </a>
                 </span>
             </td>

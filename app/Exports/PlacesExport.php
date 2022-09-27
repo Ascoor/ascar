@@ -16,15 +16,15 @@ class PlacesExport implements FromView, ShouldAutoSize
     private $places;
     public function __construct()
     {
-        $this->items = Place::all();
+        $this->places = Place::all();
     }
 
 
 
     public function view(): View
     {
-        return view('place.search', [
-            'places' => $this->items
+        return view('place.export', [
+            'places' => $this->places
         ]);
     }
 }
