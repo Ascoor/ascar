@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `u973484608_ask`
@@ -29,30 +29,30 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `places` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `gnump` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gnump` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
   `gnumh` double NOT NULL,
   `gnumw` double NOT NULL,
-  `gnump1` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gnump2` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gnump3` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gnump4` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump5` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump6` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump7` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump8` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump9` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump10` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `gnump11` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gnump1` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `gnump2` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `gnump3` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `gnump4` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump5` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump6` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump7` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump8` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump9` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump10` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gnump11` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   `gnump12` int(10) UNSIGNED NOT NULL,
-  `gnump13` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo3` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gnump13` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `photo1` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `photo2` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `photo3` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `slug` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `places`

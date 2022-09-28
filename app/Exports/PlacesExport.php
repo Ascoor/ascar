@@ -3,15 +3,14 @@
 namespace App\Exports;
 
 use App\Place;
+
+
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class PlacesExport implements FromCollection
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
     public function collection()
     {
-        return Place::all();
+        return Place::select('gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump4')->get();
     }
 }
