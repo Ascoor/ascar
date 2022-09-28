@@ -18,12 +18,7 @@
                                 يمكنك البحث برقم المتغير او المركز او القرية
                             </p>
                     </div>
-                    <a href="{{  route('export')  }}" class="btn btn-success">
-                        <i class="la la-download"></i>
-                        Export Filter
-                    </a>
 
-                </div>
                 @if($places->count() > 0 )
                 <div class="card-body">
                     <div class="table-responsive">
@@ -35,17 +30,19 @@
                                 <th class="table-warning">المحافظة</th>
                                 <th class="table-warning">المركز</th>
                                 <th class="table-warning">القرية</th>
-                                <!--     <th class="table-warning">نوع الأملاك</th>
+                                <th class="table-warning">الملاحظات</th>
+                                  {{-- <th class="table-warning">نوع الأملاك</th>
               <th class="table-warning">جهة الولاية</th>
               <th class="table-warning">القانونية</th>
               <th class="table-warning">الرد</th>
               <th class="table-warning">تفاصيل الرد</th>
-              <th class="table-warning">موقف الإزالة</th>--->
+              <th class="table-warning">موقف الإزالة</th>
 
-                                <th class="table-warning">التاريخ</th>
-                                <th class="table-warning">تعديل</th>
-                                <th class="table-warning">عرض</th>
+                                <th class="table-warning">التاريخ</th> --}}
+
+                                <th class="table-warning"></th>
                                 <th class="table-warning">التحكم</th>
+                                <th class="table-warning"></th>
                             </thead>
 
                             <tbody>
@@ -72,14 +69,17 @@
                                     <td class="table-primary">
                                         {{ $item->gnump3 }}
                                     </td>
-                                    <!---<td class="table-primary">{{ $item->gnump4 }}</td>
+                                    {{-- <td class="table-primary">{{ $item->gnump4 }}</td>
                 <td class="table-primary">{{ $item->gnump5 }}</td>
                 <td class="table-primary">{{ $item->gnump6 }}</td>
                 <td class="table-primary">{{ $item->gnump7 }}</td>
                 <td class="table-primary">{{ $item->gnump8 }}</td>
-                <td class="table-primary">{{ $item->gnump9 }}</td>-->
+                <td class="table-primary">{{ $item->gnump9 }}</td>
                                     <td class="table-primary">
                                         {{ $item->gnump10 }}
+                                    </td> --}}
+                                    <td class="table-primary">
+                                        {{ $item->gnump11 }}
                                     </td>
 
                                     <td class="table-primary">
