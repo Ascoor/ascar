@@ -38,7 +38,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('place.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">مسلسل المتغير </label>
@@ -99,11 +99,11 @@
                         <label for="exampleFormControlInput1"> التاريخ </label>
                         <input type="date" name="gnump10" class="form-control">
                     </div>
-     
+
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">الملاحظات  </label>
                         <textarea class="form-control"  name="gnump11"   rows="3"></textarea>
-                                        
+
 
                 </div>
 
@@ -116,12 +116,12 @@
                             <label for="exampleFormControlInput1">المرفقات  </label>
                             <input type="file"  name="photo2" class="form-control"   >
                           </div>
-            
+
                         <div class="form-group">
-            
+
                             <button class="btn btn-danger" type="submit">save</button>
                         </div>
-            
+
                       </form>
                   </div>
         </div>
