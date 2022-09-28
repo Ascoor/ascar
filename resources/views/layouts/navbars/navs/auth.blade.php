@@ -9,16 +9,17 @@
             </span>
         </button>
 
-        <div class="nav-header" style="text-align:center;font-family:Amiri,serif;font-size:48px;color:#f7ce17;">محافظة الدقهلية
+        <div class="nav-header" style="text-align:center;font-family:Amiri,serif;font-size:48px;color:#f7ce17;">محافظة
+            الدقهلية
         </div>
-<div class="form-input">
+        <div class="form-input">
 
-    <form action="{{ route('search') }}" method="GET">
-        @csrf
-        <input style="border-bottom: #fff;" type="text" name="search" required/>
-        <button class="btn btn-success" type="submit">بحث</button>
-    </form>
-</div>
+            <form action="{{ route('search') }}" method="GET">
+                @csrf
+                <input style="border-bottom: #fff;" type="text" name="search" required />
+                <button class="btn btn-success" type="submit">بحث</button>
+            </form>
+        </div>
 
 
         <a class="navbar-brand" href="{{ route('home') }}">
@@ -40,7 +41,7 @@
                             <a class="dropdown-item" href="#">{{ __('الإعدادت') }}</a>
                             <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('ملف المستخدم') }}</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
 
                     </li>
                 </ul>

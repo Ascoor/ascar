@@ -3,13 +3,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PlacesExport;
 use App\Place;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-
-
-
+use Excel;
 
 class SearchController extends Controller
 {
@@ -29,5 +27,11 @@ class SearchController extends Controller
             ->get();
 
         return view('place.search', compact('places', $places));
+    }
+
+    public function export()
+    {
+
+        return Excel::download(new PlacesExport, 'المتغيرات.xlsx');
     }
 }

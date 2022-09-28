@@ -11,6 +11,6 @@ class PlacesExport implements FromCollection
 {
     public function collection()
     {
-        return Place::select('gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump4')->get();
+        return Place::select('id', 'gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump4', 'gnump5', 'gnump6', 'gnump7', 'gnump8', 'gnump9', 'gnump10', 'gnump11')->get();
     }
 }

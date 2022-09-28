@@ -1,8 +1,8 @@
-
 <?php
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 		->name('soft.delete');
 
 
-	Route::get('place/export', 'PlaceController@export')
+	Route::get('place/export', 'SearchController@export')
 		->name('export');
 	Route::get('place/trash', 'PlaceController@PlacesTrashed')
 		->name('place.trash');

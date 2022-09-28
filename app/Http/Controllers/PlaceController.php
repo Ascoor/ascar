@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Place;
 use App\Tag;
 
-use App\Exports\PlacesExport;
-use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -227,12 +225,5 @@ class PlaceController extends Controller
         $place = Place::withTrashed()->where('id',  $id)->first();
         $place->restore();
         return redirect()->back();
-    }
-
-
-
-    public function export()
-    {
-        return Excel::download(new PlacesExport, 'places.csv');
     }
 }
