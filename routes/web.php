@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('test', 'SearchController@test')->name('test');
 
 Auth::routes();
 
@@ -38,7 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
-
 
 	Route::get('place/export', 'SearchController@export')
 		->name('export');

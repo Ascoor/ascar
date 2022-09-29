@@ -34,4 +34,10 @@ class SearchController extends Controller
 
         return Excel::download(new PlacesExport, 'المتغيرات.xlsx');
     }
+
+    public function test()
+    {
+
+        return view('place.test');
+    }
 }
