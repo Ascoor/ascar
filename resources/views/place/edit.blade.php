@@ -47,7 +47,7 @@
                             <label for="exampleFormControlInput1">مسلسل المتغير </label>
                             <input type="number" name="gnump" class="form-control" value="{{ $place->gnump }}">
                         </div>
-            
+
                             @foreach($tags as $item)
                                 <input type="checkbox" name="tags[]" value="{{ $item->id }}" @foreach ($place->tag as
                                 $item2)
@@ -117,36 +117,36 @@
                             <input type="text" name="gnump9" class="form-control" value="{{ $place->gnump9 }}">
 
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1"> التاريخ </label>
-                            <input type="date" name="gnump10" class="form-control" value="{{ $place->gnump10 }}">
-
+                            <div class="md-form">
+                                <label for="exampleFormControlInput1"> التاريخ </label>
+                                <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد" type="date"  value="{{ $place->gnump10 }}" class="form-control datepicker">
+                            </div>
                         </div>
-                      
+
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">الملاحظات  </label>
                             <textarea class="form-control"  type="text"  name="gnump11"   rows="3">{{ $place->gnump11 }}</textarea>
-                                            
+
 
                     </div>
 
 
                             <div class="form-group">
-                                
+
                                 <label for="exampleFormControlInput1">الصور </label>
                                 <input type="file" name="photo1" class="form-control">
                             </div>
-                            
+
                             <div class="form-group">
                                     <label for="exampleFormControlInput1">المرفقات  </label>
                                     <input type="file"  name="photo2" class="form-control"   >
                                   </div>
-                       
+
                                 <div class="form-group">
-                    
+
                                     <button class="btn btn-danger" type="submit">save</button>
                                 </div>
-                    
+
                               </form>
                           </div>
 
@@ -154,17 +154,35 @@
 
     <!--
                                     <div class="form-group">
-        
+
                                         <label for="exampleFormControlInput1">المرفقات 3</label>
                                         <input type="file" name="photo3" class="form-control" >
                                     </div>
-        
-        
+
+
                                     <div class="form-group">
-        
+
                                         <label for="exampleFormControlInput1">المرفقات 4</label>
                                         <input type="file" name="photo4" class="form-control" >
                                     </div>
                                 -->
 
     @endsection
+
+    @push('js')
+    <script>
+      $(document).ready(function() {
+        $('#date-picker-exchange').pickadate({
+  monthsFull: ['يناير', 'فبراير', '	مارس', '	أبريل/إبريل', 'أيار', 'حزيران', 'تموز', '	آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+  monthsShort: ['يناير', 'فبراير', '	مارس', '	أبريل/إبريل', 'أيار', 'حزيران', 'تموز', '	آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'],
+  weekdaysFull: ['الأحد' ,'السبت' ,'الجمعه', 'الخميس', 'الأربعاء', 'الثلاثاء', 'الأثنين'],
+  weekdaysShort: ['الأحد' ,'السبت' ,'الجمعه', 'الخميس', 'الأربعاء', 'الثلاثاء', 'الأثنين'],
+  today: 'اليوم',
+  clear: 'اختيار واضح',
+  close: 'إلغاء',
+  formatSubmit: 'yyyy/mm/dd'
+});
+        demo.initGoogleMaps();
+      });
+    </script>
+    @endpush

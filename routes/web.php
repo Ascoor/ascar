@@ -15,19 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::get('test', 'SearchController@test')->name('test');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
-	Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 	// Routes for Posts
 	Route::get('/places', 'PlaceController@index')->name('places');
 	Route::get('/place/create', 'PlaceController@create')->name('place.create');
