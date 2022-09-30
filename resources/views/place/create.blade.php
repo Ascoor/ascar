@@ -16,7 +16,7 @@
 
             <p class="lead" style="text-align: center; padding-top: 20px"></p>
 
-            <a class="btn btn-success" href="{{ route('places') }}">جميع المتغيرات</a>
+            <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
         </div>
 
     </div>
@@ -101,29 +101,29 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">الملاحظات  </label>
-                        <textarea class="form-control"  name="gnump11"   rows="3"></textarea>
+                        <label for="exampleFormControlTextarea1">الملاحظات </label>
+                        <textarea class="form-control" name="gnump11" rows="3"></textarea>
 
 
-                </div>
+                    </div>
 
                     <div class="form-group">
 
                         <label for="exampleFormControlInput1">الصور </label>
-                        <input type="file" name="photo1" class="form-control">
+                        <input type="file" name="photo1[]" multiple>
                     </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">المرفقات  </label>
-                            <input type="file"  name="photo2" class="form-control"   >
-                          </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">المرفقات </label>
+                        <input type="file" name="photo2" class="form-control">
+                    </div>
 
-                        <div class="form-group">
+                    <div class="form-group">
 
-                            <button class="btn btn-danger" type="submit">save</button>
-                        </div>
+                        <button class="btn btn-danger" type="submit">save</button>
+                    </div>
 
-                      </form>
-                  </div>
+                </form>
+            </div>
         </div>
     </div>
 

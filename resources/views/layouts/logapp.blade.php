@@ -28,26 +28,6 @@
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
         integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
 
-    <style>
-        body
-        ,h1
-        ,h2
-
-    ,h4
-    ,h5
-    {
-        color: rgb(235, 255, 135);
-
-    }
-    .justify-content-center {
-        -ms-flex-pack: center !important;
-        justify-content: center !important;
-        width: max-content;
-        align-items: center;
-        text-align: center;
-        margin-inline: auto;
-    }
-    </style>
 </head>
 
 <body class="{{ $class ?? '' }}">

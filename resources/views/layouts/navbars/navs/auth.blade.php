@@ -17,7 +17,7 @@
             <form action="{{ route('search') }}" method="GET">
                 @csrf
                 <input style="border-bottom: #fff;" type="text" name="search" required />
-                <button class="btn btn-success" type="submit">بحث</button>
+                <button class="btn btn-ask3" type="submit">بحث</button>
             </form>
         </div>
 

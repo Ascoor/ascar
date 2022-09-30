@@ -60,11 +60,21 @@ class PlaceController extends Controller
             'tags' =>  'required',
             'photo1 ' =>  'required|image',
 
-        ]);
-        $photo = $request->photo1;
 
-        $newPhoto = time() . $photo->getClientOriginalName();
-        $photo->move('uploads/posts', $newPhoto);
+            'photo1.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+
+        if ($request->hasFile('photo1')) {
+            $imageNameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imageName = time() . '-' . $file->getClientOriginalName();
+                $imageNameArr[] = $imageName;
+                // Upload file to public path in images directory
+                $file->move(public_path('uploads/posts'), $imageName);
+            }
+        }
 
         $place = Place::create([
             'gnump' => $request->gnump,
@@ -83,7 +93,7 @@ class PlaceController extends Controller
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
-            'photo1' =>  'uploads/posts/' . $newPhoto
+            'photo1' =>  'uploads/posts/' . $imageName
 
         ]);
 
@@ -144,12 +154,15 @@ class PlaceController extends Controller
 
         //   dd($request->all());
 
-
-        if ($request->has('photo')) {
-            $photo = $request->photo1;
-            $newPhoto = time() . $photo->getClientOriginalName();
-            $photo->move('uploads/posts', $newPhoto);
-            $place->photo1 = 'storage/posts/' . $newPhoto;
+        if ($request->hasFile('photo1')) {
+            $imageNameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imageName = time() . '-' . $file->getClientOriginalName();
+                $imageNameArr[] = $imageName;
+                // Upload file to public path in images directory
+                $file->move(public_path('uploads/posts'), $imageName);
+            }
         }
 
         $place->gnump = $request->gnump;

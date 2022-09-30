@@ -14,7 +14,7 @@
     align-items: center;
     text-align: center;">
                 <h1 class="display-4">جميع الحالات</h1>
-                <a class="btn btn-success" href="{{route('tag.create')}}"> إضافة حالة</a>
+                <a class="btn btn-ask1" href="{{route('tag.create')}}"> إضافة حالة</a>
             </div>
 
 
@@ -29,7 +29,7 @@
                     {{ session('status') }}
                     @endif
                     <table class="table">
-                        <thead class="thead-dark">
+                        <thead class="thead text-white" style=" background-color:#153257">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">الحالة</th>
@@ -46,11 +46,10 @@
                                 <td>{{$item->tag}}</td>
 
                                 <td>
-                                    <a class="btn btn-info" href="{{route('tag.edit',['id'=> $item->id])}}">
+                                    <a class="btn btn-ask" href="{{route('tag.edit',['id'=> $item->id])}}">
                                         تعديل</a>
 
-                                    <a class="btn btn-danger"
-                                        href="{{route('softtag.delete',['id'=>$item->id])}}">حذف</a>
+                                    <a class="btn btn-ask1" href="{{route('softtag.delete',['id'=>$item->id])}}">حذف</a>
 
                                 </td>
                             </tr>

@@ -13,8 +13,8 @@
     background-color: #153257;
     align-items: center;
     text-align: center;">
-                <h1 class="display-4">جميع المستخدمين</h1>
-                <a class="btn btn-success" href="{{route('user.create')}}"> إضافة مستخدم</a>
+                <h3 class="display-8    ">جميع المستخدمين</h3>
+                <a class="btn btn-ask2" href="{{route('user.create')}}"> إضافة مستخدم</a>
             </div>
 
 
@@ -33,7 +33,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">الإسم</th>
-                                
+
                                 <th scope="col"> اللإيميل</th>
                                 <th scope="col"> التحكم</th>
                             </tr>
@@ -50,20 +50,21 @@
 
 
                                 <td>
-                                  
-                                        <span>
-                                            <a class="btn btn-success"
+
+                                    <span>
+                                        <a class="btn btn-success"
                                             href="{{route('user.destroy',['id'=> $item->id])}}">حذف</a>
 
-                                        </span>                 </td>
-                                
+                                    </span>
+                                </td>
+
                                 </td>
                             </tr>
                             @endforeach
 
                         </tbody>
                     </table>
-    
+
 
                 </div>
 

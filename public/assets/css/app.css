@@ -65,3 +65,36 @@ body{
     clear: both;
     display: table;
   }
+
+.btn-ask {
+color: azure;
+border-color : #ffffff;
+background-color: #0069d9;
+
+}
+
+.btn-ask1 {
+color: azure;
+border-color : #ffffff;
+background-color: #28a745;
+
+}
+.btn-ask2 {
+color: azure;
+border-color : #ffffff;
+background-color: #dc0025;
+
+}
+
+.btn-ask3 {
+color: azure;
+border-color : #ffffff;
+background-color: #153257;
+
+}
+.text-ask
+{
+  font-size: 32px;
+background-color: #d8e4f3;
+  text-align:center !important;
+}
