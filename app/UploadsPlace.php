@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UploadPlace extends Model
+class UploadsPlace extends Model
 {
     protected $fillable = ['place_id', 'filename'];
 

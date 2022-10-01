@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUploadPlacesTable extends Migration
+class CreateUploadsPlacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUploadPlacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('upload_places', function (Blueprint $table) {
+        Schema::create('uploads_places', function (Blueprint $table) {
             $table->increments('id');
-$table->integer('place_id')->unsigned();
-$table->foreign('place_id')->references('id')->on('items');
-$table->string('filename');
-$table->timestamps();
-});
+            $table->integer('place_id')->unsigned();
+            $table->foreign('place_id')->references('id')->on('places');
+            $table->string('filename');
+            $table->timestamps();
+        });
     }
     /**
      * Reverse the migrations.
@@ -28,6 +28,6 @@ $table->timestamps();
      */
     public function down()
     {
-        Schema::dropIfExists('upload_places');
+        Schema::dropIfExists('uploads_places');
     }
 }
