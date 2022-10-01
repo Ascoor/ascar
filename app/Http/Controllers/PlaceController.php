@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Place;
 use App\Tag;
+use App\UploadPlace;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,10 +59,11 @@ class PlaceController extends Controller
             'gnump2' => 'required',
             'gnump3' => 'required',
             'tags' =>  'required',
-            'photo1 ' =>  'required|image',
+
 
 
             'photo1.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
 
         ]);
 
@@ -72,9 +74,15 @@ class PlaceController extends Controller
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $imageNameArr[] = $imageName;
                 // Upload file to public path in images directory
+                $filename = $imageName->store('photos');
                 $file->move(public_path('uploads/posts'), $imageName);
             }
         }
+
+        $uploadplace = UploadPlace::create([
+            'place_id' =>   str_slug($request->gnump),
+            'filename' =>  'uploads/posts/' . $imageName,
+            ]);
 
         $place = Place::create([
             'gnump' => $request->gnump,
@@ -93,9 +101,11 @@ class PlaceController extends Controller
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
-            'photo1' =>  'uploads/posts/' . $imageName
+
 
         ]);
+
+
 
 
         $place->tag()->attach($request->tags);
@@ -165,6 +175,8 @@ class PlaceController extends Controller
             }
         }
 
+
+
         $place->gnump = $request->gnump;
         $place->gnumh = $request->gnumh;
         $place->gnumw = $request->gnumw;
@@ -179,13 +191,15 @@ class PlaceController extends Controller
         $place->gnump9 = $request->gnump9;
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
-
-
         $place->gnump12 =  Auth::id();
-
 
         $place->save();
         $place->tag()->sync($request->tags);
+        $uploadplace->place()->sync($request->slug);
+        $uploadplace->filename =  'uploads/posts/' . $imageName;
+
+        $uploadplace->save();
+
         return redirect()->back()
             ->with('تمت', 'تم التعديل  بنجاح');
     }

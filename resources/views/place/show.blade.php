@@ -26,9 +26,9 @@
                     <div class="col-12 mt-3 mb-1">
                         <div class="row">
 
-                            <div class=" text-ask ">
-                                <p>المتغير رقم : {{ $place->slug }}</p>
-                            </div>
+                        </div>
+                        <div class=" text-ask ">
+                                <h2>المتغير رقم : {{ $place->slug }}</h2>
                         </div>
 
                         <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">

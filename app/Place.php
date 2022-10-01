@@ -15,8 +15,13 @@ public function user()
 {
   return $this->belongsTo('App\User','gnump12');
 }
+public function uploadplace()
+{
+  return $this->belongsTo('App\User','slug');
+}
 public function tag()
     {
         return $this->belongsToMany('App\Tag' );
     }
+
 }
