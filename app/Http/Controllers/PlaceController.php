@@ -59,25 +59,8 @@ class PlaceController extends Controller
             'gnump2' => 'required',
             'gnump3' => 'required',
             'tags' =>  'required',
-            'photo1' => 'required | image',
 
         ]);
-
-
-        if ($request->hasFile('photo1')) {
-            $imageNameArr = [];
-            foreach ($request->photos as $file) {
-                // you can also use the original name
-                $imageName = time() . '-' . $file->getClientOriginalName();
-                $imageNameArr[] = $imageName;
-                // Upload file to public path in images directory
-                $filename = $imageName->store('photo1');
-
-                $file->move(public_path('/uploads/posts/'), $imageName);
-                $place->photo1
-            }
-        }
-
         $place = Place::create([
             'gnump' => $request->gnump,
             'gnumh' => $request->gnumh,
@@ -96,8 +79,28 @@ class PlaceController extends Controller
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
 
-            'photo1' => '/uploads/posts/' . $imageName,
+
         ]);
+        if ($request->hasFile('photo1')) {
+            $imageNameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imageName = time() . '-' . $file->getClientOriginalName();
+                $imageNameArr[] = $imageName;
+            }
+
+            $file->move(public_path('uploads/posts'), $imageName);
+            // Upload file to public path in images directory
+
+        }
+
+
+        UploadsPlace::create([
+            'place_id' => $place->id,
+            'filename' => 'uploads/posts' . $imageName,
+        ]);
+
+
 
         return redirect()->back();
     }
@@ -109,9 +112,9 @@ class PlaceController extends Controller
     {
         $tags = Tag::all();
         $place = Place::where('slug', $slug)->first();
-
+        $uploads_place = UploadsPlace::where('place_id', $place->id);
         return view('place.show')->with('place', $place)
-            ->with('tags', $tags);
+            ->with('tags', $tags)->with('uploads_place', $uploads_place);
     }
 
 
@@ -144,11 +147,27 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'photo1.*' => 'required',
 
 
 
         ]);
+        if ($request->hasFile('photo1')) {
+            $imageNameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imageName = time() . '-' . $file->getClientOriginalName();
+                $imageNameArr[] = $imageName;
+                // Upload file to public path in images directory
+                $file->move(public_path('uploads/posts'), $imageName);
+            }
+
+
+            UploadsPlace::create([
+                'place_id' => $place->id,
+                'filename' => 'uploads/posts' . $imageName,
+            ]);
+        }
+
 
         //   dd($request->all());
         $place->gnump = $request->gnump;
@@ -166,33 +185,21 @@ class PlaceController extends Controller
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
         $place->gnump12 =  Auth::id();
-
-        $place->save();
+        $place->photo1 = 'uploads/posts' . $imageName;
         $place->tag()->sync($request->tags);
+        $place->save();
 
-
-        if ($request->hasFile('photo1')) {
-            $files = $request->file('photo1');
-            foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-
-
-                //dd($check);
-
-                $place = $photo->store('photo1');
-                foreach ($request->photo1 as $photo) {
-                    $filename = $photo->store('photo1');
-
-                    $uploadsplace->place_id =  Place::id();
-                    $uploadsplace->filename =  $filename;
-                }
-            }
-        }
 
         return redirect()->back()
             ->with('تمت', 'تم التعديل  بنجاح');
     }
 
+
+
+
+
+    public function uploadsView($uploads_place)
+    { }
 
     /**      Place destroy     */
 
