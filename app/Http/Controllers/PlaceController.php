@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Place;
 use App\Tag;
-use App\UploadPlace;
+use App\UploadsPlace;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,30 +59,24 @@ class PlaceController extends Controller
             'gnump2' => 'required',
             'gnump3' => 'required',
             'tags' =>  'required',
-
-
-
-            'photo1.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
+            'photo1' => 'required | image',
 
         ]);
 
+
         if ($request->hasFile('photo1')) {
             $imageNameArr = [];
-            foreach ($request->photo1 as $file) {
+            foreach ($request->photos as $file) {
                 // you can also use the original name
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $imageNameArr[] = $imageName;
                 // Upload file to public path in images directory
-                $filename = $imageName->store('photos');
-                $file->move(public_path('uploads/posts'), $imageName);
+                $filename = $imageName->store('photo1');
+
+                $file->move(public_path('/uploads/posts/'), $imageName);
+                $place->photo1
             }
         }
-
-        $uploadplace = UploadPlace::create([
-            'place_id' =>   str_slug($request->gnump),
-            'filename' =>  'uploads/posts/' . $imageName,
-            ]);
 
         $place = Place::create([
             'gnump' => $request->gnump,
@@ -102,17 +96,11 @@ class PlaceController extends Controller
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
 
-
+            'photo1' => '/uploads/posts/' . $imageName,
         ]);
-
-
-
-
-        $place->tag()->attach($request->tags);
 
         return redirect()->back();
     }
-
 
     /**      Place show     */
 
@@ -156,27 +144,13 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-
+            'photo1.*' => 'required',
 
 
 
         ]);
 
         //   dd($request->all());
-
-        if ($request->hasFile('photo1')) {
-            $imageNameArr = [];
-            foreach ($request->photo1 as $file) {
-                // you can also use the original name
-                $imageName = time() . '-' . $file->getClientOriginalName();
-                $imageNameArr[] = $imageName;
-                // Upload file to public path in images directory
-                $file->move(public_path('uploads/posts'), $imageName);
-            }
-        }
-
-
-
         $place->gnump = $request->gnump;
         $place->gnumh = $request->gnumh;
         $place->gnumw = $request->gnumw;
@@ -195,18 +169,29 @@ class PlaceController extends Controller
 
         $place->save();
         $place->tag()->sync($request->tags);
-        $uploadplace->place()->sync($request->slug);
-        $uploadplace->filename =  'uploads/posts/' . $imageName;
 
-        $uploadplace->save();
+
+        if ($request->hasFile('photo1')) {
+            $files = $request->file('photo1');
+            foreach ($files as $file) {
+                $filename = $file->getClientOriginalName();
+
+
+                //dd($check);
+
+                $place = $photo->store('photo1');
+                foreach ($request->photo1 as $photo) {
+                    $filename = $photo->store('photo1');
+
+                    $uploadsplace->place_id =  Place::id();
+                    $uploadsplace->filename =  $filename;
+                }
+            }
+        }
 
         return redirect()->back()
             ->with('تمت', 'تم التعديل  بنجاح');
     }
-
-
-
-
 
 
     /**      Place destroy     */

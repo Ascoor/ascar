@@ -8,7 +8,6 @@ class UploadsPlace extends Model
 {
     protected $fillable = ['place_id', 'filename'];
 
-
     public function place()
     {
         return $this->hasOne('App\place');

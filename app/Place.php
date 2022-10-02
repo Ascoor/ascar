@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Place extends Model
 {
-  use SoftDeletes;
-   protected $fillable = ['gnump','gnumh','gnumw','gnump1','gnump2','gnump3','gnump12','slug'];
-   protected $dates = ['deleted_at'];
+    use SoftDeletes;
+    protected $fillable = ['gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump12', 'slug'];
+    protected $dates = ['deleted_at'];
 
-public function user()
-{
-  return $this->belongsTo('App\User','gnump12');
-}
-public function uploadplace()
-{
-  return $this->belongsTo('App\User','slug');
-}
-public function tag()
+    public function user()
     {
-        return $this->belongsToMany('App\Tag' );
+        return $this->belongsTo('App\User', 'gnump12');
+    }
+    public function uploadsplace()
+    {
+        return $this->belongsTo('App\UploadsPlace', 'gnump12');
     }
 
+    public function tag()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
 }
