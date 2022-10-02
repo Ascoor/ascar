@@ -89,7 +89,7 @@ class PlaceController extends Controller
                 $imageNameArr[] = $imageName;
             }
 
-            $file->move(public_path('uploads/posts'), $imageName);
+            $file->move(public_path('storage/posts'), $imageName);
             // Upload file to public path in images directory
 
         }
@@ -97,7 +97,7 @@ class PlaceController extends Controller
 
         UploadsPlace::create([
             'place_id' => $place->id,
-            'filename' => 'uploads/posts' . $imageName,
+            'filename' => 'storage/posts' . $imageName,
         ]);
 
 
@@ -158,13 +158,13 @@ class PlaceController extends Controller
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $imageNameArr[] = $imageName;
                 // Upload file to public path in images directory
-                $file->move(public_path('uploads/posts'), $imageName);
+                $file->move(public_path('storage/posts'), $imageName);
             }
 
 
             UploadsPlace::create([
                 'place_id' => $place->id,
-                'filename' => 'uploads/posts' . $imageName,
+                'filename' => 'storage/posts' . $imageName,
             ]);
         }
 
@@ -185,7 +185,7 @@ class PlaceController extends Controller
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
         $place->gnump12 =  Auth::id();
-        $place->photo1 = 'uploads/posts' . $imageName;
+        $place->photo1 = 'storage/posts' . $imageName;
         $place->tag()->sync($request->tags);
         $place->save();
 
