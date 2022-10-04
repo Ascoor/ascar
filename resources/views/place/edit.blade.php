@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="container">
+
 
     @if(count($errors) > 0)
     <ul>

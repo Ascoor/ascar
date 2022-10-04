@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+
     @if($places->count() > 0 )
 
 

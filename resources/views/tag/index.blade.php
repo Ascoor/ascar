@@ -13,7 +13,7 @@
     background-color: #153257;
     align-items: center;
     text-align: center;">
-                <h1 class="display-4">جميع الحالات</h1>
+                <h1 class="display-8">جميع الحالات</h1>
                 <a class="btn btn-ask1" href="{{route('tag.create')}}"> إضافة حالة</a>
             </div>
 

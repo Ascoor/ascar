@@ -5,6 +5,8 @@
 
 
 
+<div class="container">
+
 
 <div class="card">
     <div class="card-body">
@@ -21,12 +23,12 @@
 
 
 
-    <div class="container" style="align-items: center;background:rgb(220, 225, 255);">
-        <div class="card-body">
+        <div class="container" style="align-items: center;background:rgb(220, 225, 255);">
+            <div class="card-body">
 
+            </div>
         </div>
     </div>
-        </div>
-    </div>
+</div>
 
-    @endsection
+@endsection
