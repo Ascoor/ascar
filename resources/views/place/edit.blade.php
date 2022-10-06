@@ -142,7 +142,7 @@
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">المرفقات </label>
-                        <input type="file" name="photo1[]" class="form-control" multiple>
+                        <input type="file" name="photo2[]" class="form-control" multiple>
                     </div>
 
                     <div class="form-group">

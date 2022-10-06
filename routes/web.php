@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Place;
 
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 
@@ -40,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
 		->name('soft.delete');
 
+
 	Route::get('place/export', 'SearchController@export')
 		->name('export');
 	Route::get('place/trash', 'PlaceController@PlacesTrashed')
@@ -49,7 +51,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
 	Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
-
+	Route::get('/download/{filename}', ['uses' => 'PlaceController@download', 'as' => 'download']);
+	Route::get('/view/{filename}', ['uses' => 'PlaceController@view', 'as' => 'view']);
 
 	// Routes for Tags
 	Route::get('/tags', 'TagController@index')->name('tags');

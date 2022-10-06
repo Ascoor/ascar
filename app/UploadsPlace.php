@@ -10,6 +10,6 @@ class UploadsPlace extends Model
 
     public function place()
     {
-        return $this->hasOne('App\place');
+        return $this->belongsToMany('App\place');
     }
 }
