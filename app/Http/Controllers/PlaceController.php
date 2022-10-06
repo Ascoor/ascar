@@ -83,7 +83,7 @@ class PlaceController extends Controller
 
 
         ]);
-        $data = new uploads_place();
+        $data = new uploadsplace();
         if ($request->hasFile('photo1')) {
             $imageNameArr = [];
             foreach ($request->photo1 as $file) {
