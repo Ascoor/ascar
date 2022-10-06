@@ -9,7 +9,6 @@ use App\UploadsPlace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Storage;
-use Image;
 
 
 class PlaceController extends Controller
