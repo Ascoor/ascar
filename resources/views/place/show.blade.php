@@ -30,35 +30,36 @@
 
                     <h2>المتغير رقم : {{ $place->slug }}</h2>
 
+                    <center>
+                        <table style="text-align:center" class="table-warning" border="2px">
+                            <tr>
 
-                    <table border="1px">
-                        <tr>
+                                <th>مرققات المتغير</th>
 
-                            <th>مرققات المتغير</th>
+                                <th>مشاهدة
+                                </th>
 
-                            <th>مشاهدة
-                            </th>
+                                <th>تحميل
+                                </th>
+                            </tr>
+                            @foreach ($data as $data )
 
-                            <th>تحميل
-                            </th>
-                        </tr>
-                        @foreach ($data as $data )
+                            <tr class="table-info ">
 
-                        <tr>
-
-                            <td>{{$data->filename}}</td>
-                            <td><a href="{{url('/view',$data->id)}}">مشاهدة </a>
-                            </td>
-                            <td><a href="{{url('/download',$data->filename)}}">تحميل</a>
-                            </td>
-                        </tr>
+                                <td>{{$data->filename}}</td>
+                                <td><a href="{{url('/view',$data->id)}}">مشاهدة </a>
+                                </td>
+                                <td><a href="{{url('/download',$data->filename)}}">تحميل</a>
+                                </td>
+                            </tr>
 
 
 
-                        @endforeach
+                            @endforeach
 
-                    </table>
+                        </table>
 
+                    </center>
                     <div class=" row">
 
                         <div class="col-xl-6 col-md-12">
