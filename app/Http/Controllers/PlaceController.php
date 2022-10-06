@@ -9,6 +9,7 @@ use App\UploadsPlace;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Storage;
+use Image;
 
 
 class PlaceController extends Controller
@@ -232,6 +233,7 @@ class PlaceController extends Controller
     public function view($id)
     {
         $data = UploadsPlace::find($id);
+
         return view('place.view', compact('data'));
     }
 
