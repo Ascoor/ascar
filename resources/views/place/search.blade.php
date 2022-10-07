@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="container">
-</div>
 <div class="card">
     <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
@@ -15,7 +13,7 @@
         <h4 class="card-title " style="text-align: center;">نتائج البحث</h4>
         <p class="card-category" style="text-align: center;"> يمكنك البحث برقم المتغير او المركز او القرية
         </p>
-        <a href="{{  route('export') ,$search }}" class="btn btn-success">
+        <a href="{{  route('export')  }}" class="btn btn-success">
             <i class="la la-download"></i>
             Export Filter
         </a>
@@ -104,7 +102,6 @@
                 </div>
                 @endif
             </tbody>
-            {!! $places->Links() !!}
     </table>
 </div>
 
