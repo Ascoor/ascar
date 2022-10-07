@@ -559,7 +559,7 @@ class ComposerStaticInit060691a403cac1dd84eaefd9647cfed9
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Rules\\CurrentPasswordCheckRule' => __DIR__ . '/../..' . '/app/Rules/CurrentPasswordCheckRule.php',
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
-        'App\\UploadsPlace' => __DIR__ . '/../..' . '/app/UploadsPlace.php',
+        'App\\UploadPlace' => __DIR__ . '/../..' . '/app/UploadPlace.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
