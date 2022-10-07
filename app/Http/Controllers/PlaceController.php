@@ -8,6 +8,8 @@ use App\UploadsPlace;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Storage;
+
 
 class PlaceController extends Controller
 {
@@ -81,24 +83,32 @@ class PlaceController extends Controller
 
 
         ]);
+        $data = new uploads_place();
         if ($request->hasFile('photo1')) {
             $imageNameArr = [];
             foreach ($request->photo1 as $file) {
                 // you can also use the original name
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $imageNameArr[] = $imageName;
+                // Upload file to public path in images directory
+                $file->move(public_path('storage/posts'), $imageName);
+                $data->file = $imageName;
+            }
+            $data->filename = $request->photo1;
+        }
+        if ($request->hasFile('photo2')) {
+            $fileNameArr = [];
+            foreach ($request->photo2 as $file) {
+                // you can also use the original name
+                $fileName = time() . '-' . $file->getClientOriginalName();
+                $fileNameArr[] = $fileName;
+                // Upload file to public path in images directory
+                $file->move(public_path('storage/files'), $fileName);
+                $data->file = $fileName;
             }
 
-            $file->move(public_path('storage/posts'), $imageName);
-            // Upload file to public path in images directory
-
+            $data->filename = $request->photo2;
         }
-
-
-        UploadsPlace::create([
-            'place_id' => $place->id,
-            'filename' => 'storage/posts' . $imageName,
-        ]);
 
 
 
@@ -112,9 +122,9 @@ class PlaceController extends Controller
     {
         $tags = Tag::all();
         $place = Place::where('slug', $slug)->first();
-        $uploads_place = UploadsPlace::where('place_id', $place->id);
+        $data = UploadsPlace::all();
         return view('place.show')->with('place', $place)
-            ->with('tags', $tags)->with('uploads_place', $uploads_place);
+            ->with('tags', $tags)->with('data', $data);
     }
 
 
@@ -158,13 +168,29 @@ class PlaceController extends Controller
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $imageNameArr[] = $imageName;
                 // Upload file to public path in images directory
-                $file->move(public_path('storage/posts'), $imageName);
+                $file->move(public_path('storage/posts/'), $imageName);
             }
 
 
             UploadsPlace::create([
                 'place_id' => $place->id,
-                'filename' => 'storage/posts' . $imageName,
+                'filename' =>  $imageName,
+            ]);
+        }
+        if ($request->hasFile('photo2')) {
+            $fileNameArr = [];
+            foreach ($request->photo2 as $file) {
+                // you can also use the original name
+                $fileName = time() . '-' . $file->getClientOriginalName();
+                $fileNameArr[] = $fileName;
+                // Upload file to public path in images directory
+                $file->move(public_path('storage/posts/'), $fileName);
+            }
+
+
+            UploadsPlace::create([
+                'place_id' => $place->id,
+                'filename' =>   $fileName,
             ]);
         }
 
@@ -185,7 +211,7 @@ class PlaceController extends Controller
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
         $place->gnump12 =  Auth::id();
-        $place->photo1 = 'storage/posts' . $imageName;
+
         $place->tag()->sync($request->tags);
         $place->save();
 
@@ -197,9 +223,21 @@ class PlaceController extends Controller
 
 
 
+    public function download(Request $request, $imageName)
+    {
+        return response()->download(public_path('storage/posts/' . $imageName));
+    }
 
-    public function uploadsView($uploads_place)
-    { }
+
+    public function view($id)
+    {
+        $data = UploadsPlace::find($id);
+        return view('place.view', compact('data'));
+    }
+
+
+
+
 
     /**      Place destroy     */
 
