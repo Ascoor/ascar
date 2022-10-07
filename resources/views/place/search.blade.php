@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="container">
-</div>
 <div class="card">
     <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
