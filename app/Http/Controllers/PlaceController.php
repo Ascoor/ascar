@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class PlaceController extends Controller
 {
     public function __construct()
@@ -51,6 +52,38 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
+        $data = new uploadsplace();
+
+        if ($request->hasFile('photo1')) {
+            $imagenameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = $request->place->id;
+
+
+            $data->filename = $request->photo1;
+            $data->save();
+        }
+        if ($request->hasFile('photo2')) {
+            $imagenameArr = [];
+            foreach ($request->photo2 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = Place::id();
+
+
+            $data->filename = $imagename;
+            $data->save();
+        }
 
         $this->validate($request, [
             'gnump' => 'required',
@@ -88,10 +121,6 @@ class PlaceController extends Controller
 
 
         ]);
-
-
-
-
         return redirect()->back();
     }
 
@@ -129,6 +158,9 @@ class PlaceController extends Controller
 
     public function update(Request $request,  $id)
     {
+
+
+
         $place = Place::find($id);
         $this->validate($request, [
             'gnump' => 'required',
@@ -137,6 +169,7 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
+
 
 
         ]);
@@ -208,40 +241,6 @@ class PlaceController extends Controller
         $data = UploadsPlace::find($id);
         return view('place.view', compact('data'));
     }
-
-
-
-
-
-    /**      Place destroy     */
-
-    public function destroy($id)
-    {
-        $place = Place::where('id', $id)->where('gunup12', Auth::id())->first();
-        if ($place === null) {
-            return redirect()->back();
-        }
-
-
-        $place->delete($id);
-        return redirect()->back();
-    }
-
-
-
-
-    /**      Place softDeletes     */
-
-    public function softDeletes($id)
-    {
-        $place = Place::find($id)->delete();
-
-
-        return redirect()->route('places')
-            ->with('تمت', 'تم الإخفاء بنجاح');
-    }
-
-
 
 
     public function deleteForEver($id)
