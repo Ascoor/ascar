@@ -8,7 +8,6 @@ use App\UploadsPlace;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Storage;
 
 
 class PlaceController extends Controller
@@ -62,7 +61,13 @@ class PlaceController extends Controller
             'gnump3' => 'required',
             'tags' =>  'required',
 
+            'photo1.*' => 'required | photos',
+            'photo2.*' => 'required | photos'
+
         ]);
+
+
+
         $place = Place::create([
             'gnump' => $request->gnump,
             'gnumh' => $request->gnumh,
@@ -83,32 +88,7 @@ class PlaceController extends Controller
 
 
         ]);
-        $data = new uploads_place();
-        if ($request->hasFile('photo1')) {
-            $imageNameArr = [];
-            foreach ($request->photo1 as $file) {
-                // you can also use the original name
-                $imageName = time() . '-' . $file->getClientOriginalName();
-                $imageNameArr[] = $imageName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/posts'), $imageName);
-                $data->file = $imageName;
-            }
-            $data->filename = $request->photo1;
-        }
-        if ($request->hasFile('photo2')) {
-            $fileNameArr = [];
-            foreach ($request->photo2 as $file) {
-                // you can also use the original name
-                $fileName = time() . '-' . $file->getClientOriginalName();
-                $fileNameArr[] = $fileName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/files'), $fileName);
-                $data->file = $fileName;
-            }
 
-            $data->filename = $request->photo2;
-        }
 
 
 
@@ -159,40 +139,7 @@ class PlaceController extends Controller
             'gnump3' => 'required',
 
 
-
         ]);
-        if ($request->hasFile('photo1')) {
-            $imageNameArr = [];
-            foreach ($request->photo1 as $file) {
-                // you can also use the original name
-                $imageName = time() . '-' . $file->getClientOriginalName();
-                $imageNameArr[] = $imageName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/posts/'), $imageName);
-            }
-
-
-            UploadsPlace::create([
-                'place_id' => $place->id,
-                'filename' =>  $imageName,
-            ]);
-        }
-        if ($request->hasFile('photo2')) {
-            $fileNameArr = [];
-            foreach ($request->photo2 as $file) {
-                // you can also use the original name
-                $fileName = time() . '-' . $file->getClientOriginalName();
-                $fileNameArr[] = $fileName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/posts/'), $fileName);
-            }
-
-
-            UploadsPlace::create([
-                'place_id' => $place->id,
-                'filename' =>   $fileName,
-            ]);
-        }
 
 
         //   dd($request->all());
@@ -215,7 +162,31 @@ class PlaceController extends Controller
         $place->tag()->sync($request->tags);
         $place->save();
 
+        $data = new UploadsPlace();
+        if ($request->hasFile('photo1')) {
+            $files = $request->file('photo1');
+            foreach ($files as $file) {
+                $filename = $file->getClientOriginalName();
+                $file->move(public_path('storage/posts'), $filename);
+                UploadsPlace::create([
+                    'place_id' => $place->id,
+                    'filename' =>   $filename,
 
+                ]);
+            }
+        }
+        if ($request->hasFile('photo2')) {
+            $files = $request->file('photo2');
+            foreach ($files as $file) {
+                $filename = $file->getClientOriginalName();
+                $file->move(public_path('storage/posts'), $filename);
+                UploadsPlace::create([
+                    'place_id' => $place->id,
+                    'filename' =>   $filename,
+
+                ]);
+            }
+        }
         return redirect()->back()
             ->with('تمت', 'تم التعديل  بنجاح');
     }
@@ -223,9 +194,12 @@ class PlaceController extends Controller
 
 
 
-    public function download(Request $request, $imageName)
+
+
+
+    public function download(Request $request, $filename)
     {
-        return response()->download(public_path('storage/posts/' . $imageName));
+        return response()->download(public_path('storage/posts/' . $filename));
     }
 
 

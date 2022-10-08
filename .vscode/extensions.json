@@ -11,9 +11,15 @@
         "pgl.laravel-jump-controller",
         "emmanuelbeziat.vscode-great-icons",
         "xdebug.php-pack",
-        "amiralizadeh9480.laravel-extra-intellisense",
+
         "amiralizadeh9480.laravel-extra-intellisense",
         "thekalinga.bootstrap4-vscode",
-        "erlangparasu.goto-route-controller-laravel"
-    ]
-}
+        "erlangparasu.goto-route-controller-laravel",
+        "glitchbl.laravel-create-view",
+        "aeschli.vscode-css-formatter",
+        "Zignd.html-css-class-completion",
+        "MehediDracula.php-namespace-resolver",
+        "onecentlin.laravel5-snippets",
+        "apility.beautify-blade",
+        "codingyu.laravel-goto-view",
+]}

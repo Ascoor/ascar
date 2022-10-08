@@ -21,7 +21,7 @@
                 <center>
 
 
-                    <iframe height="650px" width="800px" src="/storage/posts/{{$data->filename}}"></iframe>
+                    <iframe height="1050px" width="1150px" src="/storage/posts/{{$data->filename}}"></iframe>
                 </center>
 
 

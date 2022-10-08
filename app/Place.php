@@ -15,10 +15,6 @@ class Place extends Model
     {
         return $this->belongsTo('App\User', 'gnump12');
     }
-    public function uploadsplace()
-    {
-        return $this->belongsTo('App\UploadsPlace', 'gnump12');
-    }
 
     public function tag()
     {
