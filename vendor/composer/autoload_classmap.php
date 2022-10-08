@@ -42,7 +42,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Rules\\CurrentPasswordCheckRule' => $baseDir . '/app/Rules/CurrentPasswordCheckRule.php',
     'App\\Tag' => $baseDir . '/app/Tag.php',
-    'App\\UploadPlace' => $baseDir . '/app/UploadPlace.php',
+    'App\\UploadsPlace' => $baseDir . '/app/UploadsPlace.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',

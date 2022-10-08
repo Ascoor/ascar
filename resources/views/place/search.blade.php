@@ -102,6 +102,7 @@
                 </div>
                 @endif
             </tbody>
+            {!! $places->links() !!}
     </table>
 </div>
 
