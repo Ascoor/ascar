@@ -8,7 +8,7 @@ use App\UploadsPlace;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Storage;
+use Illuminate\Support\Facades\Stroage;
 
 
 class PlaceController extends Controller
@@ -52,6 +52,38 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
+        $data = new uploadsplace();
+
+        if ($request->hasFile('photo1')) {
+            $imagenameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = $request->place->id;
+
+
+            $data->filename = $request->photo1;
+            $data->save();
+        }
+        if ($request->hasFile('photo2')) {
+            $imagenameArr = [];
+            foreach ($request->photo2 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = Place::id();
+
+
+            $data->filename = $imagename;
+            $data->save();
+        }
 
         $this->validate($request, [
             'gnump' => 'required',
@@ -83,34 +115,6 @@ class PlaceController extends Controller
 
 
         ]);
-        $data = new uploads_place();
-        if ($request->hasFile('photo1')) {
-            $imageNameArr = [];
-            foreach ($request->photo1 as $file) {
-                // you can also use the original name
-                $imageName = time() . '-' . $file->getClientOriginalName();
-                $imageNameArr[] = $imageName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/posts'), $imageName);
-                $data->file = $imageName;
-            }
-            $data->filename = $request->photo1;
-        }
-        if ($request->hasFile('photo2')) {
-            $fileNameArr = [];
-            foreach ($request->photo2 as $file) {
-                // you can also use the original name
-                $fileName = time() . '-' . $file->getClientOriginalName();
-                $fileNameArr[] = $fileName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/files'), $fileName);
-                $data->file = $fileName;
-            }
-
-            $data->filename = $request->photo2;
-        }
-
-
 
         return redirect()->back();
     }
@@ -149,6 +153,9 @@ class PlaceController extends Controller
 
     public function update(Request $request,  $id)
     {
+
+
+
         $place = Place::find($id);
         $this->validate($request, [
             'gnump' => 'required',
@@ -157,42 +164,54 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-
-
+            'photo1.*' => 'required|image',
+            'photo2.*' => 'required|file',
 
         ]);
+        $data = new uploadsplace();
+
+
         if ($request->hasFile('photo1')) {
-            $imageNameArr = [];
+            $imagenameArr = [];
             foreach ($request->photo1 as $file) {
                 // you can also use the original name
-                $imageName = time() . '-' . $file->getClientOriginalName();
-                $imageNameArr[] = $imageName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/posts/'), $imageName);
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
             }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
 
 
             UploadsPlace::create([
-                'place_id' => $place->id,
-                'filename' =>  $imageName,
+
+                'place_id'  => Place::id(),
+                'filename' => '/storage/posts/', $imagename,
+
             ]);
         }
         if ($request->hasFile('photo2')) {
-            $fileNameArr = [];
+            $imagenameArr = [];
             foreach ($request->photo2 as $file) {
                 // you can also use the original name
-                $fileName = time() . '-' . $file->getClientOriginalName();
-                $fileNameArr[] = $fileName;
-                // Upload file to public path in images directory
-                $file->move(public_path('storage/posts/'), $fileName);
-            }
-
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+        
 
             UploadsPlace::create([
-                'place_id' => $place->id,
-                'filename' =>   $fileName,
+
+                'place_id'  => Place::id(),
+                'filename' => '/storage/posts/', $imagename,
+
             ]);
+
+            $data->filename = $imagename;
+
+            $data->save();
         }
+
 
 
         //   dd($request->all());
@@ -216,16 +235,14 @@ class PlaceController extends Controller
         $place->save();
 
 
-        return redirect()->back()
-            ->with('تمت', 'تم التعديل  بنجاح');
+        return redirect()->back();
     }
 
 
 
-
-    public function download(Request $request, $imageName)
+    public function download(Request $request, $file)
     {
-        return response()->download(public_path('storage/posts/' . $imageName));
+        return response()->download(public_path('/storage/posts/', $file));
     }
 
 
@@ -234,40 +251,6 @@ class PlaceController extends Controller
         $data = UploadsPlace::find($id);
         return view('place.view', compact('data'));
     }
-
-
-
-
-
-    /**      Place destroy     */
-
-    public function destroy($id)
-    {
-        $place = Place::where('id', $id)->where('gunup12', Auth::id())->first();
-        if ($place === null) {
-            return redirect()->back();
-        }
-
-
-        $place->delete($id);
-        return redirect()->back();
-    }
-
-
-
-
-    /**      Place softDeletes     */
-
-    public function softDeletes($id)
-    {
-        $place = Place::find($id)->delete();
-
-
-        return redirect()->route('places')
-            ->with('تمت', 'تم الإخفاء بنجاح');
-    }
-
-
 
 
     public function deleteForEver($id)

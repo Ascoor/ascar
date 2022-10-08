@@ -51,8 +51,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
 		->name('place.delete.from.database');
 	Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
-	Route::get('/download/{filename}', ['uses' => 'PlaceController@download', 'as' => 'download']);
-	Route::get('/view/{filename}', ['uses' => 'PlaceController@view', 'as' => 'view']);
+	Route::get('/download/{file}', ['uses' => 'PlaceController@download', 'as' => 'download']);
+	Route::get('/view', ['uses' => 'PlaceController@view', 'as' => 'view']);
 
 	// Routes for Tags
 	Route::get('/tags', 'TagController@index')->name('tags');
