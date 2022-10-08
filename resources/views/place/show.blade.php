@@ -49,7 +49,7 @@
                             <td>{{$data->filename}}</td>
                             <td><a href="{{url('/view',$data->id)}}">مشاهدة </a>
                             </td>
-                            <td><a href="{{url('/download',$data->filename)}}">تحميل</a>
+                            <td><a href="{{url('/download',$data->file)}}">تحميل</a>
                             </td>
                         </tr>
 

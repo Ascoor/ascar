@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-
 class PlaceController extends Controller
 {
     public function __construct()
@@ -169,10 +168,11 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-
-
+            'photo1.*' => 'required|image',
+            'photo2.*' => 'required|file',
 
         ]);
+
 
 
         //   dd($request->all());
