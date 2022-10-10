@@ -11,8 +11,6 @@
         <div class="head-text">
             <h1 class="display-8">عرض بيانات المتغير</h1>
             <div class="button-group">
-                <a class="btn btn-primary btn-lg text-white" href="{{ route('place.edit', $place->id) }}" role="button">
-                    تعديل</a>
 
                 <a class="btn btn-primary btn-lg" href="{{ route('places') }}" role="button">جميع المتغيرات</a>
                 <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->slug ) }}" role="button">إنهاء
@@ -30,8 +28,10 @@
     </div>
     <div class="card-body">
         <div class=" text-center text-lg">
+            <a class="btn btn-primary btn-lg text-white" href="{{ route('place.edit', $place->id) }}" role="button">
+                تعديل بيانات المتغير رقم {{$place->gnump}}</a>
 
-            المتغير رقم : {{ $place->slug }}
+
 
             <div class="grey-bg container-fluid">
                 <section id="minimal-statistics">
@@ -369,6 +369,12 @@
     </div>
 </div>
 </div>
+
+
+
+
+
+
 
 
 

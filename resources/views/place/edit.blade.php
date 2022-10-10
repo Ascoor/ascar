@@ -25,7 +25,9 @@
 
         <p class="lead" style="text-align: center; padding-top: 20px">{{$place->gnump}}</p>
 
+        <a class="btn btn-ask1" href="{{route('place.show',['slug'=> $place->slug])}}">الرجوع للمتغير</a>
         <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
+
     </div>
     @if($message = Session::get('تمت'))
     <div class="alert alert-danger" role="alert">
@@ -169,6 +171,11 @@
                                     </div>
 
          -->
+
+
+
+
+
 
 
 
