@@ -251,10 +251,24 @@ class PlaceController extends Controller
         return redirect()->back();
     }
 
-    public function backFromSoftDelete($id)
+    public function backFromSoftDelete($slug)
     {
-        $place = Place::withTrashed()->where('id',  $id)->first();
+        $place = Place::withTrashed()->where('slug',  $slug)->first();
         $place->restore();
+        return redirect()->back();
+    }
+
+    public function Softdeletes($slug)
+    {
+        //dd($id);
+        // $post = Post::find( $id ) ;
+
+        $place = Place::where('slug', $slug);
+        if ($place === null) {
+            return redirect()->back();
+        }
+
+        $place->delete($slug);
         return redirect()->back();
     }
 }

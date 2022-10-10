@@ -1,17 +1,19 @@
 @extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('عرض المتغير')])
 
 @section('content')
+<div class="container-fluid">
 
+</div>
+<div class="button-group">
 
-<div class="card">
-
-
-    <a class="btn btn-primary btn-md" href="{{ route('place.edit', $place->id) }}" role="button">
+    <a class="btn btn-primary btn-lg text-white" href="{{ route('place.edit', $place->id) }}" role="button">
         تعديل</a>
-    <a class="btn btn-danger btn-md" href="{{ route('soft.delete', $place->id) }}">إنهاء عمل
-        المتغير</a>
 
-    <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
+    <a class="btn btn-primary btn-lg" href="{{ route('places') }}" role="button">جميع المتغيرات</a>
+    <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->slug ) }}" role="button">إنهاء عمل
+        المتغير</a>
+</div>
+<div class="card">
     <div class="card-header" style="
             color: rgb(255, 242, 64);
             background-color: #153257;
@@ -337,7 +339,7 @@
                     <h3 class="success">الملاحظات</h3>
                     <span>{{ $place->gnump11 }}</span>
                     <div class="align-self-center"> <i class="icon-direction danger font-large-2 float-right"></i>
-                </div>
+                    </div>
 
                 </div>
 
@@ -353,13 +355,36 @@
                     <textarea type="text" name="desc" class="form-control"></textarea>
                     <input type="hidden" name="place_id" value="{{ $place->id }}" class="form-control">
                     <button type="submit" class="btn btn-primary">إضافة ملاحظة</button>
-                </form>
-            </div>
-                @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
+            </form>
         </div>
+        @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
     </div>
-            </div>
-        </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/place/update/{id}', 'PlaceController@update')->name('place.update');
 
 
-    Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
+    Route::get('place/soft/delete/{id}', 'PlaceController@softDeletes')
         ->name('soft.delete');
 
 

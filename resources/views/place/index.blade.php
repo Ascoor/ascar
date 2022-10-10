@@ -3,21 +3,21 @@
 @section('content')
 <div class="content">
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card-body">
-                    <div class="card-header card-header" style="
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <div class="card-header card-header" style="
                         color: rgb(255, 242, 64);
                         background-color: #153257;
                         align-items: center;
                         text-align: center;">
-                        <h1 class=" display-4">
-                            <h4 class="card-title" style="text-align: center">فهرس المتغيرات
-                            </h4>
-                            <p class="card-category" style="text-align: center">
-                                يمكنك البحث برقم المتغير او المركز او القرية
-                            </p>
-                    </div>
+                    <h1 class=" display-4">
+                        <h4 class="card-title" style="text-align: center">فهرس المتغيرات
+                        </h4>
+                        <p class="card-category" style="text-align: center">
+                            يمكنك البحث برقم المتغير او المركز او القرية
+                        </p>
+                </div>
 
                 @if($places->count() > 0 )
                 <div class="card-body">
@@ -31,7 +31,7 @@
                                 <th class="table-warning">المركز</th>
                                 <th class="table-warning">القرية</th>
                                 <th class="table-warning">الملاحظات</th>
-                                  {{-- <th class="table-warning">نوع الأملاك</th>
+                                {{-- <th class="table-warning">نوع الأملاك</th>
               <th class="table-warning">جهة الولاية</th>
               <th class="table-warning">القانونية</th>
               <th class="table-warning">الرد</th>
@@ -70,11 +70,11 @@
                                         {{ $item->gnump3 }}
                                     </td>
                                     {{-- <td class="table-primary">{{ $item->gnump4 }}</td>
-                <td class="table-primary">{{ $item->gnump5 }}</td>
-                <td class="table-primary">{{ $item->gnump6 }}</td>
-                <td class="table-primary">{{ $item->gnump7 }}</td>
-                <td class="table-primary">{{ $item->gnump8 }}</td>
-                <td class="table-primary">{{ $item->gnump9 }}</td>
+                                    <td class="table-primary">{{ $item->gnump5 }}</td>
+                                    <td class="table-primary">{{ $item->gnump6 }}</td>
+                                    <td class="table-primary">{{ $item->gnump7 }}</td>
+                                    <td class="table-primary">{{ $item->gnump8 }}</td>
+                                    <td class="table-primary">{{ $item->gnump9 }}</td>
                                     <td class="table-primary">
                                         {{ $item->gnump10 }}
                                     </td> --}}
@@ -100,7 +100,8 @@
                                     <td class="table-primary">
                                         <span>
 
-                                            <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}">إنهاء
+                                            <a class="btn btn-danger"
+                                                href="{{ route('soft.delete', $item->slug) }}">إنهاء
                                                 عمل
                                                 المتغير</a>
 
@@ -133,5 +134,6 @@
 
 
             @endif
+
         </div>
         @endsection
