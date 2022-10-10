@@ -27,6 +27,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('table-list', function () {
         return view('pages.table_list');
     })->name('table');
+
+    // Routes for Comments
+    Route::resource('comments', 'CommentController');
+
     // Routes for Posts
     Route::get('/places', 'PlaceController@index')->name('places');
     Route::get('/place/create', 'PlaceController@create')->name('place.create');

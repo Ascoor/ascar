@@ -20,4 +20,9 @@ class Place extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->whereNull('parent_id');
+    }
 }

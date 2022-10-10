@@ -51,38 +51,6 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
-        $data = new uploadsplace();
-
-        if ($request->hasFile('photo1')) {
-            $imagenameArr = [];
-            foreach ($request->photo1 as $file) {
-                // you can also use the original name
-                $imagename = time() . '-' . $file->getClientOriginalName();
-                $imagenameArr[] = $imagename;
-            }
-            // Upload file to public path in images directory
-            $file->move(public_path('/storage/posts/'), $imagename);
-            $data->place_id = $request->place->id;
-
-
-            $data->filename = $request->photo1;
-            $data->save();
-        }
-        if ($request->hasFile('photo2')) {
-            $imagenameArr = [];
-            foreach ($request->photo2 as $file) {
-                // you can also use the original name
-                $imagename = time() . '-' . $file->getClientOriginalName();
-                $imagenameArr[] = $imagename;
-            }
-            // Upload file to public path in images directory
-            $file->move(public_path('/storage/posts/'), $imagename);
-            $data->place_id = Place::id();
-
-
-            $data->filename = $imagename;
-            $data->save();
-        }
 
         $this->validate($request, [
             'gnump' => 'required',
@@ -120,6 +88,39 @@ class PlaceController extends Controller
 
 
         ]);
+        $data = new uploadsplace();
+
+        if ($request->hasFile('photo1')) {
+            $imagenameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = $request->place->id;
+
+
+            $data->filename = $request->photo1;
+            $data->save();
+        }
+        if ($request->hasFile('photo2')) {
+            $imagenameArr = [];
+            foreach ($request->photo2 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = Place::id();
+
+
+            $data->filename = $imagename;
+            $data->save();
+        }
+
         return redirect()->back();
     }
 

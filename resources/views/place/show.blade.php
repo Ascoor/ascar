@@ -278,26 +278,6 @@
 </div>
 
 
-<div class="card">
-    <div class="card-content">
-        <div class="card-body">
-            <div class="media d-flex">
-                <div class="media-body text-right">
-                    <h3 class="success">الملاحظات</h3>
-                    <span>{{ $place->gnump11 }}</span>
-                </div>
-                <div class="align-self-center"> <i class="icon-direction danger font-large-2 float-right"></i>
-                </div>
-            </div>
-            <div class="progress mt-1 mb-0" style="height: 7px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="60"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 <div class="card">
     <div class="card-content">
@@ -349,17 +329,39 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <div class="card-body">
+            <div class="media d-flex">
+                <div class="media-body text-right">
+                    <h3 class="success">الملاحظات</h3>
+                    <span>{{ $place->gnump11 }}</span>
+                </div>
+                <div class="align-self-center"> <i class="icon-direction danger font-large-2 float-right"></i>
 
+                </div>
 
+            </div>
+            <hr>
+            <h4>الردود</h4>
+                    @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
+                    <hr>
+                    <form method="POST" action="{{route('comments.store')}}">
+                        @csrf
 
-
-
-
-
-
+                        <div class="form-group">
+                            <textarea type="text" name="desc" class="form-control"></textarea>
+                            <input type="hidden" name="place_id" value="{{ $place->id }}" class="form-control">
+                        </div>
+                            <button type="submit" class="btn btn-primary">إضافة تعليق</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
 </section>
-</div>
+
 @endsection
