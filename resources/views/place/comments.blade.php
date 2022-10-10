@@ -1,8 +1,9 @@
 @foreach ($comments as $item )
 <div @if ($item->parent_id !=null )
-    style="margin-right60px;
-    color:red;"
-
+    style="margin-left:60px;
+    color:red;
+    font-size:20px;
+"
 @endif>
 
 
@@ -18,7 +19,7 @@
             <input type="hidden" name="parent_id" value="{{ $item->id }}" class="form-control">
 
         </div>
-            <button type="submit" class="btn btn-primary">رد </button>
+            <button type="submit" class="btn btn-danger text-white">رد </button>
     </form>
     @include('place.comments',['comments'=>$item->replies])
 
