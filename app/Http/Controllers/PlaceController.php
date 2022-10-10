@@ -19,7 +19,7 @@ class PlaceController extends Controller
 
     public function index()
     {
-        $places = Place::latest()->paginate(10);
+        $places = Place::latest()->paginate(50);
         return view('place.index', compact('places', $places));
     }
 
@@ -121,7 +121,7 @@ class PlaceController extends Controller
             $data->save();
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('تمت', 'تم الإضافة  بنجاح');
     }
 
     /**      Place show     */
@@ -169,8 +169,8 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'photo1.*' => 'required|image',
-            'photo2.*' => 'required|file',
+
+            'tags' => 'required',
 
         ]);
 

@@ -55,9 +55,9 @@
                         @if($item->id == $item2->id)
                         checked
                         @endif
+                        >
                         @endforeach
 
-                        >
 
                         <label for="">{{ $item->tag }}</label>
                         @endforeach
@@ -167,7 +167,14 @@
                                         <label for="exampleFormControlInput1">المرفقات 4</label>
                                         <input type="file" name="photo4" class="form-control" >
                                     </div>
-                       
+
          -->
+
+
+
+
+
+
+
 
             @endsection
