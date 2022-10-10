@@ -48,15 +48,15 @@
                             <label for="exampleFormControlInput1">مسلسل المتغير </label>
                             <input type="number" name="gnump" class="form-control" value="{{ $place->gnump }}">
                         </div>
-
                         @foreach($tags as $item)
+
                         <input type="checkbox" name="tags[]" value="{{ $item->id }}" @foreach ($place->tag as
                         $item2)
                         @if($item->id == $item2->id)
                         checked
                         @endif
-                        >
                         @endforeach
+                        >
 
 
                         <label for="">{{ $item->tag }}</label>
@@ -169,6 +169,8 @@
                                     </div>
 
          -->
+
+
 
 
 
