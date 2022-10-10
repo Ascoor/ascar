@@ -2,7 +2,8 @@
 <div @if ($item->parent_id !=null )
     style="margin-left:60px;
     color:red;
-    font-size:20px;
+    font-size:25px;
+    text-align:right;
 "
 @endif>
 
@@ -11,9 +12,9 @@
     <p>{{ $item->desc }}</p>
     <form method="POST" action="{{route('comments.store')}}">
         @csrf
-        <div class="form-group">
+        <div class="form-group" style="text-align: right;">
 
-            <input type="text" name="desc" class="form-control">
+            <input type="text" style="text-align: right;" name="desc" class="form-control">
 
             <input type="hidden" name="place_id" value="{{ $place_id }}" class="form-control">
             <input type="hidden" name="parent_id" value="{{ $item->id }}" class="form-control">

@@ -336,27 +336,28 @@
                 <div class="media-body text-right">
                     <h3 class="success">الملاحظات</h3>
                     <span>{{ $place->gnump11 }}</span>
+                    <div class="align-self-center"> <i class="icon-direction danger font-large-2 float-right"></i>
                 </div>
-                <div class="align-self-center"> <i class="icon-direction danger font-large-2 float-right"></i>
 
                 </div>
 
             </div>
-            <hr>
-            <h4>الردود</h4>
-                    @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
-                    <hr>
-                    <form method="POST" action="{{route('comments.store')}}">
-                        @csrf
 
-                        <div class="form-group">
-                            <textarea type="text" name="desc" class="form-control"></textarea>
-                            <input type="hidden" name="place_id" value="{{ $place->id }}" class="form-control">
-                        </div>
-                            <button type="submit" class="btn btn-primary">إضافة تعليق</button>
-                        </form>
-                    </div>
-                </div>
+            <hr>
+            <h4>الملاحظات</h4>
+            <hr>
+            <form method="POST" action="{{route('comments.store')}}">
+                @csrf
+
+                <div class="form-group">
+                    <textarea type="text" name="desc" class="form-control"></textarea>
+                    <input type="hidden" name="place_id" value="{{ $place->id }}" class="form-control">
+                    <button type="submit" class="btn btn-primary">إضافة ملاحظة</button>
+                </form>
+            </div>
+                @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
+        </div>
+    </div>
             </div>
         </div>
 
