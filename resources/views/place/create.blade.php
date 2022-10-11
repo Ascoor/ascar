@@ -5,39 +5,47 @@
 
 
 
-    <div class="card">
-        <div class="card-header card-header" style="
+<div class="card">
+    <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
     background-color: #153257;
     align-items: center;
     text-align: center;">
-            <h1 class="display-4">اضافة بيانات المتغير</h1>
+        <h1 class="display-4">اضافة بيانات المتغير</h1>
 
 
-            <p class="lead" style="text-align: center; padding-top: 20px"></p>
+        <p class="lead" style="text-align: center; padding-top: 20px"></p>
 
-            <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
-        </div>
-
+        <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
     </div>
 
+</div>
+<div class="col">
+    <div class="card">
+        <div class="card-body">
 
-    <div class="row">
+            @if($message = Session::get('تمت'))
+            <div class="alert alert-danger" role="alert">
+                {{ $message }}
+            </div>
+            @endif
+            @if(session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+                @endif
 
-        @if(count($errors) > 0)
-        <ul>
-            @foreach($errors->all() as $item)
-            <li>
-                {{ $item }}
-            </li>
-            @endforeach
-        </ul>
-        @endif
-        <br>
-    </div>
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
+
+                @if(count($errors) > 0)
+                <ul>
+                    @foreach($errors->all() as $item)
+                    <li>
+                        {{ $item }}
+                    </li>
+                    @endforeach
+                </ul>
+                @endif
+                <br>
+
                 <form action="{{route('place.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">

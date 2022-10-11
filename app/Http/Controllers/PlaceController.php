@@ -19,7 +19,7 @@ class PlaceController extends Controller
 
     public function index()
     {
-        $places = Place::latest()->paginate(10);
+        $places = Place::latest()->paginate(50);
         return view('place.index', compact('places', $places));
     }
 
@@ -51,38 +51,6 @@ class PlaceController extends Controller
 
     public function store(Request $request)
     {
-        $data = new uploadsplace();
-
-        if ($request->hasFile('photo1')) {
-            $imagenameArr = [];
-            foreach ($request->photo1 as $file) {
-                // you can also use the original name
-                $imagename = time() . '-' . $file->getClientOriginalName();
-                $imagenameArr[] = $imagename;
-            }
-            // Upload file to public path in images directory
-            $file->move(public_path('/storage/posts/'), $imagename);
-            $data->place_id = $request->place->id;
-
-
-            $data->filename = $request->photo1;
-            $data->save();
-        }
-        if ($request->hasFile('photo2')) {
-            $imagenameArr = [];
-            foreach ($request->photo2 as $file) {
-                // you can also use the original name
-                $imagename = time() . '-' . $file->getClientOriginalName();
-                $imagenameArr[] = $imagename;
-            }
-            // Upload file to public path in images directory
-            $file->move(public_path('/storage/posts/'), $imagename);
-            $data->place_id = Place::id();
-
-
-            $data->filename = $imagename;
-            $data->save();
-        }
 
         $this->validate($request, [
             'gnump' => 'required',
@@ -120,7 +88,40 @@ class PlaceController extends Controller
 
 
         ]);
-        return redirect()->back();
+        $data = new uploadsplace();
+
+        if ($request->hasFile('photo1')) {
+            $imagenameArr = [];
+            foreach ($request->photo1 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = $request->place->id;
+
+
+            $data->filename = $request->photo1;
+            $data->save();
+        }
+        if ($request->hasFile('photo2')) {
+            $imagenameArr = [];
+            foreach ($request->photo2 as $file) {
+                // you can also use the original name
+                $imagename = time() . '-' . $file->getClientOriginalName();
+                $imagenameArr[] = $imagename;
+            }
+            // Upload file to public path in images directory
+            $file->move(public_path('/storage/posts/'), $imagename);
+            $data->place_id = Place::id();
+
+
+            $data->filename = $imagename;
+            $data->save();
+        }
+
+        return redirect()->back()->with('تمت', 'تم الإضافة  بنجاح');
     }
 
     /**      Place show     */
@@ -168,8 +169,8 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'photo1.*' => 'required|image',
-            'photo2.*' => 'required|file',
+
+            'tags' => 'required',
 
         ]);
 
@@ -250,10 +251,24 @@ class PlaceController extends Controller
         return redirect()->back();
     }
 
-    public function backFromSoftDelete($id)
+    public function backFromSoftDelete($slug)
     {
-        $place = Place::withTrashed()->where('id',  $id)->first();
+        $place = Place::withTrashed()->where('slug',  $slug)->first();
         $place->restore();
+        return redirect()->back();
+    }
+
+    public function Softdeletes($slug)
+    {
+        //dd($id);
+        // $post = Post::find( $id ) ;
+
+        $place = Place::where('slug', $slug);
+        if ($place === null) {
+            return redirect()->back();
+        }
+
+        $place->delete($slug);
         return redirect()->back();
     }
 }

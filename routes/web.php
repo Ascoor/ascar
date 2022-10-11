@@ -27,6 +27,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('table-list', function () {
         return view('pages.table_list');
     })->name('table');
+
+    // Routes for Comments
+    Route::resource('comments', 'CommentController');
+
     // Routes for Posts
     Route::get('/places', 'PlaceController@index')->name('places');
     Route::get('/place/create', 'PlaceController@create')->name('place.create');
@@ -36,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/place/update/{id}', 'PlaceController@update')->name('place.update');
 
 
-    Route::get('place/soft/selete/{id}', 'PlaceController@softDeletes')
+    Route::get('place/soft/delete/{id}', 'PlaceController@softDeletes')
         ->name('soft.delete');
 
 

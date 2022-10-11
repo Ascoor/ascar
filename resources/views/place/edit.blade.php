@@ -25,7 +25,9 @@
 
         <p class="lead" style="text-align: center; padding-top: 20px">{{$place->gnump}}</p>
 
+        <a class="btn btn-ask1" href="{{route('place.show',['slug'=> $place->slug])}}">الرجوع للمتغير</a>
         <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
+
     </div>
     @if($message = Session::get('تمت'))
     <div class="alert alert-danger" role="alert">
@@ -48,16 +50,16 @@
                             <label for="exampleFormControlInput1">مسلسل المتغير </label>
                             <input type="number" name="gnump" class="form-control" value="{{ $place->gnump }}">
                         </div>
-
                         @foreach($tags as $item)
+
                         <input type="checkbox" name="tags[]" value="{{ $item->id }}" @foreach ($place->tag as
                         $item2)
                         @if($item->id == $item2->id)
                         checked
                         @endif
                         @endforeach
-
                         >
+
 
                         <label for="">{{ $item->tag }}</label>
                         @endforeach
@@ -167,7 +169,21 @@
                                         <label for="exampleFormControlInput1">المرفقات 4</label>
                                         <input type="file" name="photo4" class="form-control" >
                                     </div>
-                       
+
          -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             @endsection
