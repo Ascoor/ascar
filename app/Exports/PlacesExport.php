@@ -2,20 +2,38 @@
 
 namespace App\Exports;
 
-use App\Http\Controllers\SearchController;
-use App\Place;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Events\AfterSheet;
 
-use Maatwebsite\Excel\Concerns\FromArray;
-
-class PlacesExport implements FromArray
+class PlacesExport implements FromView, ShouldAutoSize, WithEvents
 {
-    public function __construct(SearchController $places)
+    private $places;
+
+    public function __construct($places)
     {
         $this->places = $places;
     }
 
-    public function collection()
+    /**
+     * @return View
+     */
+    public function view(): View
     {
-        return $this->Place->all();
+        return view('place.export', ['places' => $this->places]);
+    }
+
+    /**
+     * @return array
+     */
+    public function registerEvents(): array
+    {
+        return [
+            AfterSheet::class => function (AfterSheet $event) {
+                $event->sheet->getDelegate()->setRightToLeft(true);
+            },
+        ];
     }
 }
