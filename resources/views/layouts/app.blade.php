@@ -117,9 +117,7 @@
     integrity="sha384-VmD+lKnI0Y4FPvr6hvZRw6xvdt/QZoNHQ4h5k0RL30aGkR9ylHU56BzrE2UoohWK" crossorigin="anonymous">
 </script>
 ---->
-        $(document).ready(function () {
-        $('#example').DataTable();
-        });
+
     </body>
 
 </html>
