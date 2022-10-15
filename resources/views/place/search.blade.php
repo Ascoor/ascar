@@ -13,7 +13,7 @@
         <h4 class="card-title " style="text-align: center;">نتائج البحث</h4>
         <p class="card-category" style="text-align: center;"> يمكنك البحث برقم المتغير او المركز او القرية
         </p>
-        <a href="{!! route('places.export-filter') !!}" class="btn btn-success">
+        <a href="{{  route('export')  }}" class="btn btn-success">
             <i class="la la-download"></i>
             Export Filter
         </a>
