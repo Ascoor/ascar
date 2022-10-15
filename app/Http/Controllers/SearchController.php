@@ -35,7 +35,7 @@ class SearchController extends Controller
         }
         return view('place.search')->with('places', $places);
     }
-    public function export($request)
+    public function export()
     {
 
         return Excel::download(new PlacesExport, 'users.xlsx');
