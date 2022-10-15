@@ -2,38 +2,15 @@
 
 namespace App\Exports;
 
-use Illuminate\Contracts\View\View;
-use Maatwebsite\Excel\Concerns\FromView;
-use Maatwebsite\Excel\Concerns\ShouldAutoSize;
-use Maatwebsite\Excel\Concerns\WithEvents;
-use Maatwebsite\Excel\Events\AfterSheet;
+use App\Place;
 
-class PlacesExport implements FromView, ShouldAutoSize, WithEvents
+
+use Maatwebsite\Excel\Concerns\FromCollection;
+
+class PlacesExport implements FromCollection
 {
-    private $places;
-
-    public function __construct($places)
+    public function collection()
     {
-        $this->places = $places;
-    }
-
-    /**
-     * @return View
-     */
-    public function view(): View
-    {
-        return view('place.search', ['places' => $this->places]);
-    }
-
-    /**
-     * @return array
-     */
-    public function registerEvents(): array
-    {
-        return [
-            AfterSheet::class => function (AfterSheet $event) {
-                $event->sheet->getDelegate()->setRightToLeft(true);
-            },
-        ];
+        return Place::select('id', 'gnump', 'gnumh', 'gnumw', 'gnump1', 'gnump2', 'gnump3', 'gnump4', 'gnump5', 'gnump6', 'gnump7', 'gnump8', 'gnump9', 'gnump10', 'gnump11')->get();
     }
 }
