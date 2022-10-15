@@ -22,7 +22,11 @@ class PlacesExport implements FromView, ShouldAutoSize, WithEvents
      */
     public function view(): View
     {
+<<<<<<< HEAD
         return view('place.export', ['places' => $this->places]);
+=======
+        return view('place.search', ['places' => $this->places]);
+>>>>>>> 3a72732 (Revert "Revert "ok"")
     }
 
     /**
