@@ -18,7 +18,9 @@
         "laravel/helpers": "^1.5",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
-        "maatwebsite/excel": "^3.1"
+        "maatwebsite/excel": "^3.1",
+
+        "phpoffice/phpspreadsheet": "^1.23"
     },
     "require-dev": {
         "bestmomo/laravel5-artisan-language": "^0.3.3",
@@ -31,7 +33,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.3"
+        }
     },
     "extra": {
         "laravel": {
@@ -66,4 +71,4 @@
             "@php artisan key:generate --ansi"
         ]
     }
-}
+    }
