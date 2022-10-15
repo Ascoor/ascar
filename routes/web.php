@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('place.back.from.trash');
     Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
         ->name('place.delete.from.database');
+    Route::get('/places/export-filter', 'SearchController@filter')->name('places.export-filter');
     Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
     Route::get('/download/{filename}', ['uses' => 'PlaceController@download', 'as' => 'download']);
     Route::get('/view/{filename}', ['uses' => 'PlaceController@view', 'as' => 'view']);
