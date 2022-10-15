@@ -31,24 +31,24 @@
 
 
 
-                <th class="table-warning">مسلسل المتغير</th>
-                <th class="table-warning">خط العرض</th>
-                <th class="table-warning">خط الطول</th>
-                <th class="table-warning">المحافظة</th>
-                <th class="table-warning">المركز</th>
-                <th class="table-warning">القرية</th>
-                <!--     <th class="table-warning">نوع الأملاك</th>
-                                <th class="table-warning">جهة الولاية</th>
-              <th class="table-warning">القانونية</th>
-              <th class="table-warning">الرد</th>
-              <th class="table-warning">تفاصيل الرد</th>
-              <th class="table-warning">موقف الإزالة</th>--->
+                <th>مسلسل المتغير</th>
+                <th>خط العرض</th>
+                <th>خط الطول</th>
+                <th>المحافظة</th>
+                <th>المركز</th>
+                <th>القرية</th>
+                <!--     <th >نوع الأملاك</th>
+                                <th >جهة الولاية</th>
+              <th >القانونية</th>
+              <th >الرد</th>
+              <th >تفاصيل الرد</th>
+              <th >موقف الإزالة</th>--->
 
 
-                <th class="table-warning">التاريخ</th>
-                <th class="table-warning">تعديل</th>
-                <th class="table-warning">عرض</th>
-                <th class="table-warning">التحكم</th>
+                <th>التاريخ</th>
+                <th>تعديل</th>
+                <th>عرض</th>
+                <th>التحكم</th>
 
             </thead>
             @if($places->isNotEmpty())
@@ -58,34 +58,34 @@
 
 
 
-                    <th class="table-primary">{{ $item->gnump }}</th>
-                    <td class="table-primary">{{ $item->gnumh }}</td>
-                    <td class="table-primary">{{ $item->gnumw }}</td>
-                    <td class="table-primary">{{ $item->gnump1 }}</td>
-                    <td class="table-primary">{{ $item->gnump2 }}</td>
-                    <td class="table-primary">{{ $item->gnump3 }}</td>
-                    <!---<td class="table-primary">{{ $item->gnump4 }}</td>
-                <td class="table-primary">{{ $item->gnump5 }}</td>
-                <td class="table-primary">{{ $item->gnump6 }}</td>
-                <td class="table-primary">{{ $item->gnump7 }}</td>
-                <td class="table-primary">{{ $item->gnump8 }}</td>
-                <td class="table-primary">{{ $item->gnump9 }}</td>-->
-                    <td class="table-primary">{{ $item->gnump10 }}</td>
+                    <th>{{ $item->gnump }}</th>
+                    <td>{{ $item->gnumh }}</td>
+                    <td>{{ $item->gnumw }}</td>
+                    <td>{{ $item->gnump1 }}</td>
+                    <td>{{ $item->gnump2 }}</td>
+                    <td>{{ $item->gnump3 }}</td>
+                    <!---<td >{{ $item->gnump4 }}</td>
+                <td >{{ $item->gnump5 }}</td>
+                <td >{{ $item->gnump6 }}</td>
+                <td >{{ $item->gnump7 }}</td>
+                <td >{{ $item->gnump8 }}</td>
+                <td >{{ $item->gnump9 }}</td>-->
+                    <td>{{ $item->gnump10 }}</td>
 
-                    <td class="table-primary">
+                    <td>
                         <span>
                             <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
                                 تعديل</a>
                         </span>
                     </td>
-                    <td class="table-primary">
+                    <td>
                         <span>
                             <span>
                                 <a class="btn btn-success" href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
                             </span>
                     </td>
 
-                    <td class="table-primary">
+                    <td>
                         <span>
                             <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حفظ
                                 المتغير </a>
