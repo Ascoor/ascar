@@ -21,120 +21,119 @@
 
                 @if($places->count() > 0 )
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="text-dark">
-                                <th class="table-warning">مسلسل المتغير</th>
-                                <th class="table-warning">خط العرض</th>
-                                <th class="table-warning">خط الطول</th>
-                                <th class="table-warning">المحافظة</th>
-                                <th class="table-warning">المركز</th>
-                                <th class="table-warning">القرية</th>
-                                <th class="table-warning">الملاحظات</th>
-                                {{-- <th class="table-warning">نوع الأملاك</th>
-              <th class="table-warning">جهة الولاية</th>
-              <th class="table-warning">القانونية</th>
-              <th class="table-warning">الرد</th>
-              <th class="table-warning">تفاصيل الرد</th>
-              <th class="table-warning">موقف الإزالة</th>
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>مسلسل المتغير</th>
+                                <th>خط العرض</th>
+                                <th>خط الطول</th>
+                                <th>المحافظة</th>
+                                <th>المركز</th>
+                                <th>القرية</th>
+                                <th>الملاحظات</th>
+                                <!-- <th >نوع الأملاك</th>
+              <th >جهة الولاية</th>
+              <th >القانونية</th>
+              <th >الرد</th>
+              <th >تفاصيل الرد</th>
+              <th >موقف الإزالة</th>
 
-                                <th class="table-warning">التاريخ</th> --}}
+                                <th >التاريخ</th>  -->
 
-                                <th class="table-warning"></th>
-                                <th class="table-warning">التحكم</th>
-                                <th class="table-warning"></th>
-                            </thead>
+                                <th></th>
+                                <th>التحكم</th>
+                                <th></th>
+                        </thead>
 
-                            <tbody>
-                                @php
-                                $i = 1;
-                                @endphp
-                                @foreach ($places as $item)
-                                <tr>
-                                    <th class="table-primary">
-                                        {{ $item->gnump }}
-                                    </th>
-                                    <td class="table-primary">
-                                        {{ $item->gnumh }}
-                                    </td>
-                                    <td class="table-primary">
-                                        {{ $item->gnumw }}
-                                    </td>
-                                    <td class="table-primary">
-                                        {{ $item->gnump1 }}
-                                    </td>
-                                    <td class="table-primary">
-                                        {{ $item->gnump2 }}
-                                    </td>
-                                    <td class="table-primary">
-                                        {{ $item->gnump3 }}
-                                    </td>
-                                    {{-- <td class="table-primary">{{ $item->gnump4 }}</td>
-                                    <td class="table-primary">{{ $item->gnump5 }}</td>
-                                    <td class="table-primary">{{ $item->gnump6 }}</td>
-                                    <td class="table-primary">{{ $item->gnump7 }}</td>
-                                    <td class="table-primary">{{ $item->gnump8 }}</td>
-                                    <td class="table-primary">{{ $item->gnump9 }}</td>
-                                    <td class="table-primary">
-                                        {{ $item->gnump10 }}
-                                    </td> --}}
-                                    <td class="table-primary">
-                                        {{ $item->gnump11 }}
-                                    </td>
+                        <tbody>
+                            @php
+                            $i = 1;
+                            @endphp
+                            @foreach ($places as $item)
+                            <tr>
+                                <th>
+                                    {{ $item->gnump }}
+                                </th>
+                                <td>
+                                    {{ $item->gnumh }}
+                                </td>
+                                <td>
+                                    {{ $item->gnumw }}
+                                </td>
+                                <td>
+                                    {{ $item->gnump1 }}
+                                </td>
+                                <td>
+                                    {{ $item->gnump2 }}
+                                </td>
+                                <td>
+                                    {{ $item->gnump3 }}
+                                </td>
+                                <!-- {{-- <td >{{ $item->gnump4 }}</td>
+                                <td >{{ $item->gnump5 }}</td>
+                                <td >{{ $item->gnump6 }}</td>
+                                <td >{{ $item->gnump7 }}</td>
+                                <td >{{ $item->gnump8 }}</td>
+                                <td >{{ $item->gnump9 }}</td>
+                                <td >
+                                    {{ $item->gnump10 }}
+                                </td> --}} -->
+                                <td>
+                                    {{ $item->gnump11 }}
+                                </td>
 
-                                    <td class="table-primary">
-                                        <span>
-                                            <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
-                                                تعديل</a>
-                                        </span>
-                                    </td>
+                                <td>
+                                    <span>
+                                        <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
+                                            تعديل</a>
+                                    </span>
+                                </td>
 
-                                    <td class="table-primary">
-                                        <span>
-                                            <a class="btn btn-success"
-                                                href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
+                                <td>
+                                    <span>
+                                        <a class="btn btn-success"
+                                            href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
 
-                                        </span>
-                                    </td>
+                                    </span>
+                                </td>
 
-                                    <td class="table-primary">
-                                        <span>
+                                <td>
+                                    <span>
 
-                                            <a class="btn btn-danger"
-                                                href="{{ route('soft.delete', $item->slug) }}">إنهاء
-                                                عمل
-                                                المتغير</a>
+                                        <a class="btn btn-danger" href="{{ route('soft.delete', $item->slug) }}">إنهاء
+                                            عمل
+                                            المتغير</a>
 
-                                        </span>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
+                                    </span>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
 
-                        </table>
-                        {!! $places->links() !!}
-                    </div>
+                    </table>
+                    {!! $places->links() !!}
                 </div>
             </div>
-
-
-            @else
-            <div class="col">
-                <div class="alert alert-danger" role="alert">
-                    لا بوجد متغيرات
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-            @endif
-
-
         </div>
-        @endsection
+
+
+        @else
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                لا بوجد متغيرات
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        @endif
+
+
+    </div>
+    @endsection

@@ -2,38 +2,18 @@
 
 namespace App\Exports;
 
-use Illuminate\Contracts\View\View;
-use Maatwebsite\Excel\Concerns\FromView;
+use App\Place;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\FromQuery;
+
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
-use Maatwebsite\Excel\Concerns\WithEvents;
-use Maatwebsite\Excel\Events\AfterSheet;
 
-class PlacesExport implements FromView, ShouldAutoSize, WithEvents
+class PlacesExport implements FromQuery, ShouldAutoSize
 {
-    private $places;
+    use Exportable;
 
-    public function __construct($places)
+    public function query()
     {
-        $this->places = $places;
-    }
-
-    /**
-     * @return View
-     */
-    public function view(): View
-    {
-        return view('place.export', ['places' => $this->places]);
-    }
-
-    /**
-     * @return array
-     */
-    public function registerEvents(): array
-    {
-        return [
-            AfterSheet::class => function (AfterSheet $event) {
-                $event->sheet->getDelegate()->setRightToLeft(true);
-            },
-        ];
+        return Place::query();
     }
 }
