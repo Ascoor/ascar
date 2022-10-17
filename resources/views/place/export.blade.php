@@ -9,40 +9,11 @@
     align-items: center;
     text-align: center;">
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($places as $place)
-                <tr>
-                    <td>{{ $place->gnump1 }}</td>
-                    <td>{{ $place->gnump2 }}</td>
-                    <td>{{ $place->gnump3 }}</td>
-                    <td>{{ $place->gnump4 }}</td>
-                    <td>{{ $place->gnump5 }}</td>
-                    <td>{{ $place->gnump6 }}</td>
-                    <td>{{ $place->gnump7 }}</td>
-                    <td>{{ $place->gnump8 }}</td>
-                    <td>{{ $place->gnump9 }}</td>
-                    <td>{{ $place->gnump11 }}</td>
-                    <td>{{ $place->gnump13 }}</td>
-
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-
+        <iframe id="T:theTaskFlow:contentTmplt:j_id524352088_4b05cad6:if1" title=""
+            class="embed-responsive-item m-auto af_inlineFrame p_AFFlow" frameborder="0"
+            src="/w
+ebcenter/content/conn/WebCenterSpaces-ucm/path/Enterprise%20Libraries/PPOPortalFiles/PortalFiles/PPODynamicFiles/NewsFiles/PPOResources/PDF/PDF1585066499258.pdf"
+            onload="AdfDhtmlInlineFramePeer.__iframeLoadHandler(event)" _adfloaded="1"
+            style="min-width: 0px; min-height: 0px;"></iframe>
 
         @endsection
