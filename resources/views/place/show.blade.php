@@ -19,13 +19,15 @@
 
             </div>
         </div>
-
-
-
-
-        <div class="card">
-        </div>
     </div>
+</div>
+
+
+
+
+
+<div class="card">
+
     <div class="card-body">
         <div class=" text-center text-lg">
             <a class="btn btn-primary btn-lg text-white" href="{{ route('place.edit', $place->id) }}" role="button">
@@ -369,6 +371,10 @@
     </div>
 </div>
 </div>
+
+
+
+
 
 
 
