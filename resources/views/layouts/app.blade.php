@@ -18,13 +18,15 @@
         name='viewport' />
 
 
-    <!---Font--->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/v/bs4/dt-1.12.1/b-2.2.3/b-print-2.2.3/r-2.3.0/sc-2.0.7/sb-1.3.4/datatables.min.css" />
-    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
         integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
@@ -32,21 +34,16 @@
     <!-- CSS -->
 
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/v/bs4/dt-1.12.1/ b-2.2.3/sc-2.0.7/sb-1.3.4/sl-1.4.0/datatables.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
 
 
-    <link rel="stylesheet" type="text/css"
-        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.jqueryui.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="{{ asset('assets') }}/css/app.css" rel="stylesheet" />
-    <link href="{{ asset('assets') }}/css/settings.js" rel="stylesheet" />
 
+
+
+    <link href="{{ asset('assets') }}/css/app.css" rel="stylesheet" />
 
 </head>
 
@@ -100,16 +97,16 @@
         <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.bundle.min.js"
             integrity="sha384-40ix5a3dj6/qaC7tfz0Yr+p9fqWLzzAXiwxVLt9dw7UjQzGYw6rWRhFAnRapuQyK" crossorigin="anonymous">
         </script>
+        <link href="{{ asset('assets') }}/js/settings.js" rel="stylesheet" />
 
-        <script type="text/javascript"
-            src="https://cdn.datatables.net/v/bs4/dt-1.12.1/b-2.2.3/b-print-2.2.3/r-2.3.0/sc-2.0.7/sb-1.3.4/datatables.min.js">
+
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js">
         </script>
 
-        <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
         </script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
-        </script>
 
+        </script>
 
 
         <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
@@ -126,12 +123,47 @@ tegrity
 TGAW83E
 W2RDu2S
 0VKaIza
-p3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-        </script>
+p3H66lZ
+H81PoYl
+FhbGU+6
+BZp6G7n
+iu735Sk
+7lN" cr
+ossorigin="anonymous">
 
-    <script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.min.js"
+ </scri
+pt>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <sc
+ript sr
+c="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.min.js"
     integrity="sha384-VmD+lKnI0Y4FPvr6hvZRw6xvdt/QZoNHQ4h5k0RL30aGkR9ylHU56BzrE2UoohWK" crossorigin="anonymous">
-</script>
+</scrip
+t>
+
+
+
+
+
+
+
 ---->
 
     </body>

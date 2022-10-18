@@ -13,6 +13,7 @@
     background-color: #153257;
     align-items: center;
     text-align: center;">
+
                 <h3 class="display-8    ">جميع المستخدمين</h3>
                 <a class="btn btn-ask2" href="{{route('user.create')}}"> إضافة مستخدم</a>
             </div>
@@ -29,7 +30,7 @@
                     {{ session('status') }}
                     @endif
                     <table class="table">
-                        <thead class="thead-dark">
+                        <thead class="thead text-white" style=" background-color:#153257">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">الإسم</th>
@@ -72,6 +73,8 @@
             </div>
 
         </div>
+
+
 
 
         @endsection
