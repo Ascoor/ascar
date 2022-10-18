@@ -30,7 +30,7 @@
                     @endif
 
                     <table id="example" class=" table-striped " style="width:100%">
-                        <thead class="thead text-white" style=" background-color:#153257">
+                        <thead>
                             <tr>
                                 <th scope="col">مسلسل</th>
                                 <th scope="col">الحالة</th>
