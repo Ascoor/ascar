@@ -32,7 +32,7 @@
                     <table id="example" class=" table-striped " style="width:100%">
                         <thead class="thead text-white" style=" background-color:#153257">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">مسلسل</th>
                                 <th scope="col">الحالة</th>
                                 <th scope="col"> التحكم</th>
                             </tr>
