@@ -29,7 +29,8 @@
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
                     @endif
-                    <table class="table">
+                    <table id="example" class=" table-striped " style="width:100%">
+
                         <thead class="thead text-white" style=" background-color:#153257">
                             <tr>
                                 <th scope="col">#</th>

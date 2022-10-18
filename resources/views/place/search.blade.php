@@ -22,9 +22,8 @@
 
 </div>
 <div class="card-body">
-
-    <table class="table">
-        <div class="table-responsive-md">
+    <div class="table-responsive-md">
+        <table id="example" class=" table-striped " style="width:100%">
             <thead class=" text-dark">
 
 
@@ -103,8 +102,8 @@
                 @endif
             </tbody>
             {!! $places->links() !!}
-    </table>
-</div>
+        </table>
+    </div>
 
 
 </div>

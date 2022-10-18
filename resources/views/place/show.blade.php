@@ -1,7 +1,7 @@
 @extends('layouts.app', ['activePage' => 'show', 'titlePage' => __('عرض المتغير')])
 
 @section('content')
-</div>
+
 <div class="card">
     <div class="card-header" style="
             color: rgb(255, 242, 64);
@@ -122,7 +122,7 @@
                                         <div class="media d-flex">
                                             <div class="align-self-center">
                                                 <div class="media-body text-right">
-                                                    <h3>المحافظة</h3>
+                                                    <h3 class="danger">المحافظة</h3>
                                                     <span>{{ $place->gnump1 }}</span>
                                                 </div>
                                             </div>
@@ -141,7 +141,7 @@
                                         </div>
                                         <div class="media-body text-right">
                                             <div class="align-self-center">
-                                                <h3>المركز</h3>
+                                                <h3 class="danger">المركز</h3>
 
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                         <div class="media-body text-right">
                                             <div class="align-self-center">
                                             </div>
-                                            <h3>القرية</h3>
+                                            <h3 class="danger">القرية</h3>
                                             <span>{{ $place->gnump3 }}</span>
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@
                                             <div class="align-self-center">
                                             </div>
                                             <div class="media-body text-right">
-                                                <h3>نوع الأملاك</h3>
+                                                <h3 class="danger">نوع الأملاك</h3>
                                                 <span>{{ $place->gnump4 }}</span>
                                             </div>
                                         </div>
@@ -369,6 +369,8 @@
     </div>
 </div>
 </div>
+
+
 
 
 
