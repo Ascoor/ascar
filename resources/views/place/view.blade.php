@@ -19,17 +19,15 @@
         </div>
         <!-- <img src="/storage/posts/{{$data->filename}}" class="img-fluid" alt=""> -->
 
-        <div class="container">
-            <iframe id="T:theTaskFlow:contentTmplt:j_id524352088_4b05cad6:if1" title=""
-                class="embed-responsive-item m-auto af_inlineFrame p_AFFlow" frameborder="0"
-                src="/storage/posts/{{$data->filename}}" _adfloaded="0"
-                style="min-width: 1100px;  align-items: center;min-height: 1000px;"></iframe>
-
-
-
-
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="/storage/posts/{{$data->filename}}" allowfullscreen></iframe>
         </div>
+
+
+
+
     </div>
+</div>
 
 
 
@@ -46,4 +44,4 @@
 
 
 
-    @endsection
+@endsection
