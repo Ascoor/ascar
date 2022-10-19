@@ -280,8 +280,7 @@
                         </div>
                     </div>
                     <div class="progress mt-1 mb-0" style="height: 7px;">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="35"
-                            aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
             </div>
@@ -303,8 +302,7 @@
                     </div>
                 </div>
                 <div class="progress mt-1 mb-0" style="height: 7px;">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="40"
-                        aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
@@ -330,8 +328,7 @@
                     </div>
                 </div>
                 <div class="progress mt-1 mb-0" style="height: 7px;">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="40"
-                        aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
@@ -354,17 +351,17 @@
 
                 </div>
 
-                <hr>
-                <h4>الملاحظات</h4>
-                <hr>
-                <form method="POST" action="{{route('comments.store')}}">
-                    @csrf
+                <hegr>
+                    <h4>الملاحظات</h4>
+                    <hr>
+                    <form method="POST" action="{{route('comments.store')}}">
+                        @csrf
 
-                    <div class="form-group">
-                        <textarea type="text" name="desc" class="form-control"></textarea>
-                        <input type="hidden" name="place_id" value="{{ $place->id }}" class="form-control">
-                        <button type="submit" class="btn btn-primary">إضافة ملاحظة</button>
-                </form>
+                        <div class="form-group">
+                            <textarea type="text" name="desc" class="form-control"></textarea>
+                            <input type="hidden" name="place_id" value="{{ $place->id }}" class="form-control">
+                            <button type="submit" class="btn btn-primary">إضافة ملاحظة</button>
+                    </form>
             </div>
             @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use Illuminate\Http\Request;
+use PlaceTag;
 
 class TagController extends Controller
 {
@@ -18,7 +19,12 @@ class TagController extends Controller
         $tags = Tag::all();
         return view('tag.index')->with('tags', $tags);
     }
+    public function places($tagid)
+    {
+        $tag = $this->tags->find($tagid)->places()->paginate(12);
 
+        return view('plce.plactags', compact('tag'));
+    }
 
 
     public function create()
@@ -52,7 +58,6 @@ class TagController extends Controller
         $tag = Tag::find($id);
         return view('tag.edit')->with('tag', $tag);
     }
-
 
 
 
