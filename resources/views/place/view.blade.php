@@ -20,14 +20,12 @@
         <!-- <img src="/storage/posts/{{$data->filename}}" class="img-fluid" alt=""> -->
 
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="/storage/posts/{{$data->filename}}"
-                style="min-width: 1100px;  align-items: center;min-height: 1000px;" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="/storage/posts/{{$data->filename}}" "
+                allowfullscreen></iframe>
         </div>
 
 
 
-    </div>
-</div>
 
 
 
@@ -42,6 +40,4 @@
 
 
 
-
-
-@endsection
+        @endsection
