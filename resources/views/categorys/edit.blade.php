@@ -1,12 +1,8 @@
-@extends('layouts.app', ['activePage' => 'tag.edit', 'titlePage' => __('تعديل الحالة')])
+@extends('layouts.app', ['activePage' => 'categoryس.edit', 'titlePage' => __('تعديل التصنيف')])
 
 
 @section('content')
-</div>
-</div>
-</div>
-</div>
-</div>
+
 
 @if ($message = Session::get('تمت'))
 <div class="alert alert-danger" role="alert">
@@ -26,13 +22,13 @@
                 <div class="card-header card-header"
                     style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
 
-                    <h3>تعديل الحالة</h3>
-                    <h4 class="display-6"> الحالة : {{ $tag->tag }}</h4>
+                    <h3>تعديل التصنيف</h3>
+                    <h4 class="display-6"> التصنيف : {{ $category->name }}</h4>
 
 
                     <p class="lead" style="text-align: center; padding-top: 20px;"></p>
 
-                    <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
+                    <a class="btn btn-success" href="{{route('categorys')}}">جميع التصنيفات</a>
                 </div>
 
                 @if (count($errors) > 0)
@@ -48,21 +44,21 @@
 
                 <div class="card-body">
 
-                    <form action="{{ route('tag.update', $tag->id) }}" method="post">
+                    <form action="{{ route('categorys.update', $category->id) }}" method="post">
                         <div class="form-group">
                             @csrf
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">إسم الحالة</label>
-                                <input type="text" name="tag" value="{{ $tag->tag }}">
+                                <label for="exampleFormControlInput1">إسم التصنيف</label>
+                                <input type="text" name="name" value="{{ $category->name }}">
                             </div>
 
 
 
                             <div class="form-group">
 
-                                <button class="btn btn-danger" class="form-group" type="submit">save</button>
+                                <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
                             </div>
 
                     </form>

@@ -4,16 +4,17 @@ namespace App\Exports;
 
 use App\Place;
 use Maatwebsite\Excel\Concerns\Exportable;
-use Maatwebsite\Excel\Concerns\FromQuery;
+use Maatwebsite\Excel\Concerns\FromCollection;
+
 
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class PlacesExport implements FromQuery, ShouldAutoSize
+class PlacesExport implements FromCollection, ShouldAutoSize
 {
     use Exportable;
 
-    public function query()
+    public function collection()
     {
-        return Place::query();
+        // return $places->collect('places')
     }
 }

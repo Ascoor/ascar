@@ -243,6 +243,9 @@ class PlaceController extends Controller
         return view('place.view', compact('data'));
     }
 
+    /* Places with Tags*/
+
+
 
     public function deleteForEver($id)
     {

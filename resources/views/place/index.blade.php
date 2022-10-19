@@ -18,7 +18,7 @@
         </p>
     </div>
     <div class="card-body">
-
+        <a class="btn btn-danger btn-md">متغيرات قيد العمل</a>
         @if($places->count() > 0 )
 
 

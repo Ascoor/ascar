@@ -50,12 +50,20 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('place.back.from.trash');
     Route::get('place/delete/from/database/{id}', 'PlaceController@deleteForEver')
         ->name('place.delete.from.database');
-    Route::get('/places/export-filter', 'SearchController@filter')->name('places.export-filter');
+
     Route::get('/search', ['uses' => 'SearchController@Search', 'as' => 'search']);
     Route::get('/download/{filename}', ['uses' => 'PlaceController@download', 'as' => 'download']);
     Route::get('/view/{filename}', ['uses' => 'PlaceController@view', 'as' => 'view']);
 
 
+    // Routes for Category
+    Route::get('/categorys', 'CategoryController@index')->name('categorys');
+    Route::get('/categorys/create', 'CategoryController@create')->name('categorys.create');
+    Route::post('/categorys/store', 'CategoryController@store')->name('categorys.store');
+
+    Route::get('/categorys/edit/{id}', 'CategoryController@edit')->name('categorys.edit');
+    Route::get('categorys/soft/selete/{id}', 'CategoryController@softDeletes')->name('softCategory.delete');
+    Route::post('/categorys/update/{id}', 'CategoryController@update')->name('categorys.update');
     // Routes for Tags
     Route::get('/tags', 'TagController@index')->name('tags');
     Route::get('/tag/create', 'TagController@create')->name('tag.create');
