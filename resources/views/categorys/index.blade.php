@@ -14,7 +14,7 @@
     align-items: center;
     text-align: center;">
                 <h1 class="display-8">جميع التصنيفات</h1>
-                <a class="btn btn-ask1" href="{{route('categorys.create')}}"> إضافة تصنيف</a>
+                <a class="btn btn-red" href="{{route('categorys.create')}}"> إضافة تصنيف</a>
             </div>
 
 

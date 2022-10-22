@@ -52,14 +52,13 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">إسم التصنيف</label>
                                 <input type="text" name="name" value="{{ $category->name }}">
-                            </div>
 
 
 
-                            <div class="form-group">
+                                <div class="form-group">
 
-                                <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
-                            </div>
+                                    <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
+                                </div>
 
                     </form>
                 </div>

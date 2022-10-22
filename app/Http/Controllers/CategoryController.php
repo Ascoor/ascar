@@ -47,19 +47,9 @@ class CategoryController extends Controller
         $category = new Category;
         $category->name = $request->name;
         $category->save();
-        return redirect()->back();
+        return redirect()->route('categorys')->with('تمت', 'تم الإضافة بنجاج');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Category $category)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -103,8 +93,16 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+
+
+    public function softDeletes($id)
     {
-        //
+        $category = Category::where('id', $id);
+        if ($category === null) {
+            return redirect()->back();
+        }
+
+        $category->delete($id);
+        return redirect()->back()->with('تمت', 'تم الحذف ');
     }
 }

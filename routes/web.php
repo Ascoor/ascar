@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/categorys/store', 'CategoryController@store')->name('categorys.store');
 
     Route::get('/categorys/edit/{id}', 'CategoryController@edit')->name('categorys.edit');
-    Route::get('categorys/soft/selete/{id}', 'CategoryController@softDeletes')->name('softCategory.delete');
+    Route::get('/category/soft/selete/{id}', 'CategoryController@softDeletes')->name('softCategory.delete');
     Route::post('/categorys/update/{id}', 'CategoryController@update')->name('categorys.update');
     // Routes for Tags
     Route::get('/tags', 'TagController@index')->name('tags');

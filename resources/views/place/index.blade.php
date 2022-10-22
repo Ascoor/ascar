@@ -18,7 +18,11 @@
         </p>
     </div>
     <div class="card-body">
-        <a class="btn btn-danger btn-md">متغيرات قيد العمل</a>
+
+        <a href="{{route('place.create')}}" class="btn btn-ask btn-lg btn-block active" role="button"
+            aria-pressed="true">إضافة
+            متغير
+            جديد</a>
         @if($places->count() > 0 )
 
 

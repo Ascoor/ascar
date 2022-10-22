@@ -24,34 +24,33 @@
             <a class="dropdown-item" href="{{ route('places') }}">{{ __('المتغيرات قيد التشغيل') }}</a>
             <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('المتغيرات قيد الحفظ') }}</a>
         </div> -->
-    </div>
-    <button id="btnGroupDrop1" type="button" class="btn btn-ask1 btn-lg" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">تصنيف المتغيرات
-    </button>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <button id="btnGroupDrop1" type="button" class="btn btn-ask1 btn-lg" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">تصنيف المتغيرات
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
-        <!-- <a class="dropdown-item" href="{{ route('place.create') }}">{{ __('إضافة تصنيف') }}</a>
-        <a class="dropdown-item" href="{{ route('place.trash') }}">{{ __('التصنيفات') }}</a> -->
-        <a class="dropdown-item" href="{{ route('categorys.create') }}">{{ __('إضافة تصنيف') }}</a>
+            <a class="dropdown-item" href="{{ route('categorys') }}">{{ __('إدارة التصنيفات') }}</a>
+            <a class="dropdown-item" href="{{ route('categorys.create') }}">{{ __('إضافة تصنيف') }}</a>
+        </div>
+    </div>
+
+
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-ask1 btn-lg" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            إدارة الحالة
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+
+            <a class="dropdown-item" href="{{ route('tags') }}">{{ __('قائمة الحالات') }}</a>
+            <a class="dropdown-item" href="{{ route('tag.create') }}">{{ __('إضافة حالة') }}</a>
+        </div>
+        <div class="btn-group" role="group" style="align-items: center">
+            <a class="btn btn-ask btn-lg"" type=" button" href="{{ route('users') }}">المستخدمين
+            </a>
+        </div>
     </div>
 </div>
-
-<div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-ask1 btn-lg" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        إدارة الحالة
-    </button>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-
-        <a class="dropdown-item" href="{{ route('tags') }}">{{ __('قائمة الحالات') }}</a>
-        <a class="dropdown-item" href="{{ route('tag.create') }}">{{ __('إضافة حالة') }}</a>
-    </div>
-</div>
-<div class="btn-group" role="group" style="align-items: center">
-    <a class="btn btn-ask btn-lg"" type=" button" href="{{ route('users') }}">المستخدمين
-    </a>
-</div>
-
 
 
 

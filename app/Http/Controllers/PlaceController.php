@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Place;
 use App\Tag;
 use App\UploadsPlace;
+use App\Category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,11 +43,12 @@ class PlaceController extends Controller
     /**      Place Create     */
     public function create()
     {
+
         $tags = Tag::all();
         if ($tags->count() == 0) {
             return   redirect()->route('tag.create');
         }
-        return view('place.create')->with('tags',  $tags);
+        return view('place.create')->with('tags',  $tags)->with('categories', Category::all());;
     }
 
     public function store(Request $request)
@@ -60,9 +62,8 @@ class PlaceController extends Controller
             'gnump2' => 'required',
             'gnump3' => 'required',
             'tags' =>  'required',
+            'photo3' => 'required',
 
-            'photo1.*' => 'required | photos',
-            'photo2.*' => 'required | photos'
 
         ]);
 
@@ -82,6 +83,7 @@ class PlaceController extends Controller
             'gnump8' => $request->gnump8,
             'gnump9' => $request->gnump9,
             'gnump10' => $request->gnump10,
+            'photo3' => $request->photo3,
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
@@ -147,7 +149,7 @@ class PlaceController extends Controller
         $tags = Tag::all();
         $place = Place::find($id);
         return view('place.edit')->with('place', $place)
-            ->with('tags', $tags);
+            ->with('tags', $tags)->with('categories', Category::all());
     }
 
 
@@ -169,10 +171,12 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-
+            'photo3' => 'required',
             'tags' => 'required',
 
+
         ]);
+
 
 
 
@@ -192,10 +196,10 @@ class PlaceController extends Controller
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
         $place->gnump12 =  Auth::id();
+        $place->photo3 =  $request->photo3;
 
         $place->tag()->sync($request->tags);
         $place->save();
-
         $data = new UploadsPlace();
         if ($request->hasFile('photo1')) {
             $files = $request->file('photo1');

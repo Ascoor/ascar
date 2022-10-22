@@ -23,7 +23,7 @@
     text-align: center;">
 
                         <h1 class="display-4">إضافة تصنيف</h1>
-                        <a class="btn btn-success" href="{{route('categorys')}}">جميع التصنيفات</a>
+                        <a class="btn btn-red" href="{{route('categorys')}}">جميع التصنيفات</a>
 
                     </div>
 
@@ -31,34 +31,40 @@
 
 
                         <div class="col">
-                            <form action="{{route('categorys.store')}}" method="post" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">التصنيف</label>
 
-                                    <input type="text" name="name" class="form-control">
+                            <div class="card-body">
 
-
-
-
+                                <form action="{{route('categorys.store')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="form-group">
+                                        <label for="exampleFormControlInput1">التصنيف</label>
 
-                                        <button class="btn btn-danger" class="form-group" type="submit">save</button>
-                                    </div>
+                                        <input type="text" name="name" class="form-control">
 
-                            </form>
+
+
+
+                                        <div class="form-group">
+
+                                            <button class="btn btn-danger" class="form-group"
+                                                type="submit">save</button>
+                                        </div>
+
+                                </form>
+                            </div>
                         </div>
-
-                        @if (count($errors) > 0)
-                        <ul>
-                            @foreach ($errors->all() as $item)
-                            <li>
-                                {{$item}}
-                            </li>
-                            @endforeach
-                        </ul>
-                        @endif
                     </div>
-                </div>
 
-                @endsection
+                    @if (count($errors) > 0)
+                    <ul>
+                        @foreach ($errors->all() as $item)
+                        <li>
+                            {{$item}}
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+            </div>
+
+            @endsection
