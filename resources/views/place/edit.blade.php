@@ -47,24 +47,31 @@
                         enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
+
+                            <label for="exampleFormControlInput1">الإجراءات المنتهية </label>
+
+                            @foreach($tags as $item)
+                            <input type="checkbox" name="tags[]" value="{{ $item->id }}">
+                            <label for="">{{ $item->tag }}</label>
+                            @endforeach
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">وضع المتغير </label>
+                            <select name="photo3" class="form-control">
+
+                                @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+
+                                @endforeach
+                            </select>
+
+                        </div>
+                        <div class=" form-group">
                             <label for="exampleFormControlInput1">مسلسل المتغير </label>
                             <input type="number" name="gnump" class="form-control" value="{{ $place->gnump }}">
                         </div>
-                        @foreach($tags as $item)
-
-                        <input type="checkbox" name="tags[]" value="{{ $item->id }}" @foreach ($place->tag as
-                        $item2)
-                        @if($item->id == $item2->id)
-                        checked
-                        @endif
-                        @endforeach
-                        >
 
 
-                        <label for="">{{ $item->tag }}</label>
-                        @endforeach
-
-                        <br>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">خط العرض </label>
                             <input type="float" name="gnumh" class="form-control" value="{{ $place->gnumh }}">
