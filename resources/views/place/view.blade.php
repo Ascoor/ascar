@@ -16,13 +16,32 @@
                     <h1 class="display-8">عرض المرفق</h1>
                 </div>
             </div>
-        </div>
-        <!-- <img src="/storage/posts/{{$data->filename}}" class="img-fluid" alt=""> -->
 
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="/storage/posts/{{$data->filename}}" "
-                allowfullscreen></iframe>
+            <!-- <img src="/storage/posts/{{$data->filename}}" class="img-fluid" alt=""> -->
+
+
+
+            <center>
+                <div class="card-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="responsive-item" src="/storage/posts/{{$data->filename}}"
+                            allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </center>
         </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

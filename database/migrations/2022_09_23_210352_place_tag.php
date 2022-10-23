@@ -17,6 +17,7 @@ class PlaceTag extends Migration
             $table->increments('id');
             $table->integer('place_id');
             $table->integer('tag_id');
+
             $table->timestamps();
         });
     }

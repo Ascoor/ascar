@@ -1,15 +1,16 @@
 @extends('layouts.app', ['activePage' => 'category.store', 'titlePage' => __('إضافة تصنيف')])
 
 @section('content')
-@if ($message = Session::get('تمت'))
-<div class="alert alert-danger" role="alert">
-    {{$message}}
+@if($message = Session::get('تمت'))
+<div class="alert alert-success" role="alert">
+    {{ $message }}
 </div>
 @endif
-@if (session('status'))
-<div class="alert alert-success" role="alert">
+@if(session('status'))
+<div class="alert alert-danger" role="alert">
     {{ session('status') }}
     @endif
+
 
     <div class="container">
         <div class="row">
@@ -66,5 +67,7 @@
                     @endif
                 </div>
             </div>
+
+
 
             @endsection

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/test', function () {
-    return view('place.test');
+    return App\Category::find(1)->places;
+})->name('test');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 

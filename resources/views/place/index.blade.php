@@ -27,7 +27,7 @@
 
 
 
-        <table id="example" class=" table-striped " style="width:100%">
+        <table id="example" class=" table " style="width:100%">
             <thead>
                 <tr>
 
@@ -50,6 +50,7 @@
                     <th></th>
                     <th>التحكم</th>
                     <th></th>
+
 
 
 
@@ -93,30 +94,24 @@
                         {{ $item->gnump11 }}
                     </td>
 
-                    <span>
-                        <td>
 
-                            <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
-                                تعديل</a>
-                        </td>
-                    </span>
-                    <span>
-                        <td>
+                    <td>
+                        <span>
 
 
                             <a class="btn btn-success" href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
 
-                        </td>
-                    </span>
-                    <span>
-                        <td>
+                        </span>
+                    </td>
+                    <td>
+                        <span>
 
 
                             <a class="btn btn-danger" href="{{ route('soft.delete', $item->slug) }}">إنهاء
                                 عمل
                                 المتغير</a>
-                        </td>
-                    </span>
+                        </span>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -144,6 +139,13 @@
 </div>
 </div>
 @endif
+
+
+
+
+
+
+
 
 
 

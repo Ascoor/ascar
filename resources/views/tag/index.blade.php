@@ -19,15 +19,16 @@
 
 
             <div class="container">
-                @if ($message = Session::get('تمت'))
+                @if($message = Session::get('تمت'))
                 <div class="alert alert-danger" role="alert">
-                    {{$message}}
+                    {{ $message }}
                 </div>
                 @endif
-                @if (session('status'))
+                @if(session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
                     @endif
+
 
                     <table id="example" class=" table-striped " style="width:100%">
                         <thead>

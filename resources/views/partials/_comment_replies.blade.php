@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'post.comment_replies', 'titlePage' => __('الرد على  المنشورات')])
+@extends('layouts.app', ['activePage' => 'place.comment_replies', 'titlePage' => __('الرد على المنشورات')])
 @foreach($comments as $comment)
 <div class="display-comment">
     <strong>{{ $comment->user->name }}</strong>
@@ -12,9 +12,9 @@
             <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
         </div>
     </form>
-    @include('partials._comment_replis', ['comments' => $post->comments, 'post_id' => $post->id])  
-        <div class="form-group">
-            <input type="submit" class="btn btn-warning" value="Reply" />
-        </div>
+    @include('partials._comment_replis', ['comments' => $post->comments, 'post_id' => $post->id])
+    <div class="form-group">
+        <input type="submit" class="btn btn-warning" value="Reply" />
     </div>
+</div>
 @endforeach
