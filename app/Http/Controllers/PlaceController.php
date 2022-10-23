@@ -135,7 +135,7 @@ class PlaceController extends Controller
         $place = Place::where('slug', $slug)->first();
         $data = UploadsPlace::all();
         return view('place.show')->with('place', $place)
-            ->with('tags', $tags)->with('data', $data);
+            ->with('tags', $tags)->with('data', $data)->with('categories', Category::all());;
     }
 
 

@@ -30,12 +30,12 @@
 
     </div>
     @if($message = Session::get('تمت'))
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-success" role="alert">
         {{ $message }}
     </div>
     @endif
     @if(session('status'))
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-danger" role="alert">
         {{ session('status') }}
         @endif
         <div class="container">
@@ -66,24 +66,22 @@
                             @endforeach
 
                             <br>
-
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">وضع المتغير </label>
-                                <select name="photo3" type="text" value="{{$place->photo3}}"
-                                    placeholder="{{$place->photo3}}" class="form-control">
+                                <label for="category_id">حالة المتغير</label>
+                                <select class="form-control" name="photo3" id="category">
 
                                     @foreach ($categories as $category)
-                                    <option value="{{$category->id}}" placeholder="">
-                                        {{$category->name}}
-                                    </option>
+                                    @if ($category->id == $place->photo3)
+                                    <option value="{{$category->id}}" selected>{{$category->name}}</option>
+
+                                    @else
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endif
+
                                     @endforeach
-
-                                    {{$place->photo3}}
-
 
 
                                 </select>
-
                             </div>
                             <div class=" form-group">
                                 <label for="exampleFormControlInput1">مسلسل المتغير </label>

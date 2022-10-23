@@ -16,6 +16,11 @@ class Place extends Model
         return $this->belongsTo('App\User', 'gnump12');
     }
 
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
     public function tag()
     {
         return $this->belongsToMany('App\Tag');
