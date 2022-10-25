@@ -59,10 +59,10 @@
 
             <div class="form-group">
                 <label for="category_id">حالة المتغير</label>
-                <select class="form-control" name="photo3" id="category">
+                <select class="form-control" name="category_id" id="category">
 
                     @foreach ($categories as $category)
-                    @if ($category->id == $place->photo3)
+                    @if ($category->id == $place->category_id)
                     <option value="{{$category->id}}" selected>{{$category->name}}</option>
 
                     @else

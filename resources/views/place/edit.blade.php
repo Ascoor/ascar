@@ -44,8 +44,7 @@
 
 
                 <div class="form-group">
-                    <form action="{{route('place.update',['id'=> $place->id])}}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{route('place.update',['id'=> $place->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -68,10 +67,10 @@
                             <br>
                             <div class="form-group">
                                 <label for="category_id">حالة المتغير</label>
-                                <select class="form-control" name="photo3" id="category">
+                                <select class="form-control" name="category_id" id="category">
 
                                     @foreach ($categories as $category)
-                                    @if ($category->id == $place->photo3)
+                                    @if ($category->id == $place->category_id)
                                     <option value="{{$category->id}}" selected>{{$category->name}}</option>
 
                                     @else
@@ -146,15 +145,13 @@
                             </div>
                             <div class="md-form">
                                 <label for="exampleFormControlInput1"> التاريخ </label>
-                                <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد" type="date"
-                                    value="{{ $place->gnump10 }}" class="form-control datepicker">
+                                <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد" type="date" value="{{ $place->gnump10 }}" class="form-control datepicker">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">الملاحظات </label>
-                            <textarea class="form-control" type="text" name="gnump11"
-                                rows="3">{{ $place->gnump11 }}</textarea>
+                            <textarea class="form-control" type="text" name="gnump11" rows="3">{{ $place->gnump11 }}</textarea>
 
 
                         </div>
@@ -185,7 +182,7 @@
                                     <div class="form-group">
 
                                         <label for="exampleFormControlInput1">المرفقات 3</label>
-                                        <input type="file" name="photo3" class="form-control" >
+                                        <input type="file" name="category_id" class="form-control" >
                                     </div>
 
 

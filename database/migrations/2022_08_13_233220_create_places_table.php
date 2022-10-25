@@ -34,14 +34,12 @@ class CreatePlacesTable extends Migration
             $table->string('gnump13')->nullable();
             $table->string('photo1')->nullable();
             $table->string('photo2')->nullable();
-            $table->string('photo3')->nullable();
+            $table->bigInteger('category_id')->nullable();
             $table->string('slug')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
-
         });
-
     }
 
     /**

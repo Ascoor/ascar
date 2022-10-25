@@ -10,7 +10,7 @@ class Category extends Model
     use SoftDeletes;
     protected $fillable = ['name'];
     protected $dates = ['deleted_at'];
-    public function place()
+    public function places()
     {
         return $this->hasMany('App\place');
     }

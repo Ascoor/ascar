@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Place;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -28,6 +29,14 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function showcategory($id)
+    {
+        $category = Category::where('id', $id)->firstOrFail();
+        empty($category) ? abort(404) : '';
+        $places = $category->places()->paginate(10);
+        return view('categorys.sort')->with('places', $places);
+    }
+
     public function create()
     {
         return view('categorys.create');

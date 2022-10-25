@@ -21,7 +21,8 @@ class PlaceController extends Controller
     public function index()
     {
         $places = Place::latest()->paginate(50);
-        return view('place.index', compact('places', $places));
+        $categories = Category::all();
+        return view('place.index', compact('places', $places))->with('categories', $categories);
     }
 
 
@@ -62,7 +63,7 @@ class PlaceController extends Controller
             'gnump2' => 'required',
             'gnump3' => 'required',
             'tags' =>  'required',
-            'photo3' => 'required',
+            'category_id' => 'required',
 
 
         ]);
@@ -83,7 +84,7 @@ class PlaceController extends Controller
             'gnump8' => $request->gnump8,
             'gnump9' => $request->gnump9,
             'gnump10' => $request->gnump10,
-            'photo3' => $request->photo3,
+            'category_id' => $request->category_id,
             'gnump11' => $request->gnump11,
             'gnump12' =>  Auth::id(),
             'slug' =>   str_slug($request->gnump),
@@ -171,7 +172,7 @@ class PlaceController extends Controller
             'gnump1' => 'required',
             'gnump2' => 'required',
             'gnump3' => 'required',
-            'photo3' => 'required',
+            'category_id' => 'required',
             'tags' => 'required',
 
 
@@ -196,7 +197,7 @@ class PlaceController extends Controller
         $place->gnump10 = $request->gnump10;
         $place->gnump11 = $request->gnump11;
         $place->gnump12 =  Auth::id();
-        $place->photo3 =  $request->photo3;
+        $place->category_id =  $request->category_id;
 
         $place->tag()->sync($request->tags);
         $place->save();

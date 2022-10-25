@@ -16,7 +16,7 @@ use App\Category;
 
 
 Route::get('/test', function () {
-    return App\Category::find(1)->places;
+    return Category::find(1)->places;
 })->name('test');
 Route::get('/', function () {
     return view('welcome');
@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/categorys', 'CategoryController@index')->name('categorys');
     Route::get('/categorys/create', 'CategoryController@create')->name('categorys.create');
     Route::post('/categorys/store', 'CategoryController@store')->name('categorys.store');
+    Route::get('/categorys/sort/{id}', 'CategoryController@showcategory')->name('categorys.sort');
 
     Route::get('/categorys/edit/{id}', 'CategoryController@edit')->name('categorys.edit');
     Route::get('/category/soft/selete/{id}', 'CategoryController@softDeletes')->name('softCategory.delete');
