@@ -37,7 +37,7 @@ class CategoryController extends Controller
         $id = $request->category_id;
         $category = Category::where('id', $id)->firstOrFail();
 
-        $places = $category->places()->paginate(10);
+        $places = $category->places()->paginate(50);
         return view('categorys.sort')->with('places', $places)->with('categorya', $category);
     }
 
