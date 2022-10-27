@@ -14,7 +14,7 @@
     align-items: center;
     text-align: center;">
 
-                <a class="btn btn-red" href="{{route('categorys.create')}}"> إضافة تصنيف</a>
+                <a class="btn btn-warning" href="{{route('categorys.create')}}"> إضافة تصنيف</a>
             </div>
 
 
@@ -28,11 +28,10 @@
 
 
 
-                            <th></th>
                             <th scope="col"> التحكم
 
                             </th>
-                            <th></th>
+
                         </tr>
                     </thead>
                     <tbody>
