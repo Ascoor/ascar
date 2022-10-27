@@ -53,7 +53,7 @@
 
 
 
-                <table id="example" class=" table " style="width:100%">
+                <table id="example" class=" table-striped " style="width:100%">
                     <thead>
                         <tr>
 
