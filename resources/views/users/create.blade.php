@@ -28,10 +28,10 @@
                         <a class="btn btn-success" href="{{route('users')}}">جميع ا المستخدمين</a>
 
 
+                        <div class="card-header">{{ __('Register') }}</div>
+                    </div>
+                    <div class="card">
 
-                        <div class="card">
-                            <div class="card-header">{{ __('Register') }}</div>
-                        </div>
                         <div class="card-body">
                             <form method="POST" action="{{ route('user.store') }}">
                                 @csrf
