@@ -7,16 +7,32 @@
                         background-color: #153257;
                         align-items: center;
                         text-align: center;">
+        <form action="{{route('categorys.sort')}}" method="GET">
 
-        @if($message = Session::get('تمت'))
-        <div class="alert alert-success" role="alert">
-            @if(session('status'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('status') }}
-                @endif
-                {{ $message }}
+            <div class="form-group">
+                <label>إختر حالة المتغيرات المراده</label>
+
+                <select class="form-control" name=" category_id">
+                    @foreach ($categories as $category)
+
+
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+
+                    @endforeach
+                </select>
+
+                <button class="btn btn-md btn-success" href="{{route('categorys.sort')}}">فرز</button>
             </div>
-        </div>
+
+            @if($message = Session::get('تمت'))
+            <div class="alert alert-success" role="alert">
+                @if(session('status'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('status') }}
+                    @endif
+                    {{ $message }}
+                </div>
+            </div>
     </div>
     @endif
 
@@ -54,9 +70,9 @@
               <th >موقف الإزالة</th>
 
                                 <th >التاريخ</th>  -->
-                <th></th>
+
                 <th>التحكم</th>
-                <th></th>
+
 
 
 
@@ -110,7 +126,7 @@
 
                     </span>
                 </td>
-                <td>
+                <!-- <td>
                     <span>
 
 
@@ -118,7 +134,7 @@
                             عمل
                             المتغير</a>
                     </span>
-                </td>
+                </td> -->
             </tr>
             @endforeach
         </tbody>
