@@ -21,7 +21,7 @@
                     @endforeach
                 </select>
 
-                <button class="btn btn-md btn-success" href="{{route('categorys.sort')}}">فرز</button>
+                <button class="btn btn-lg btn-warning" href="{{route('categorys.sort')}}">فرز</button>
             </div>
 
             @if($message = Session::get('تمت'))
@@ -138,8 +138,9 @@
             </tr>
             @endforeach
         </tbody>
-        {!! $places->links() !!}
     </table>
+</div>
+{!! $places->links() !!}
 </div>
 @else
 <div class="col">

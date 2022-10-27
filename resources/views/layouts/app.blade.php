@@ -20,7 +20,7 @@
 
 
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> -->
 
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -36,9 +36,9 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
 
-
+    <!--
     <link rel="stylesheet" type="text/css"
-        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+        href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css"> -->
 
     <link rel="stylesheet" type="text/css"
         href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
@@ -105,7 +105,7 @@
         </script>
 
         </script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"> -->
 
         </script>
 
@@ -158,6 +158,10 @@ c="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.min.js"
     integrity="sha384-VmD+lKnI0Y4FPvr6hvZRw6xvdt/QZoNHQ4h5k0RL30aGkR9ylHU56BzrE2UoohWK" crossorigin="anonymous">
 </scrip
 t>
+
+
+
+
 
 
 

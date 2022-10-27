@@ -23,27 +23,27 @@
 
 
 
+    @if($message = Session::get('تمت'))
+    <div class="alert alert-warning" role="alert">
+        {{ $message }}
+    </div>
+    @endif
+    @if(session('status'))
+    {{ session('status') }}
+    @endif
+
+
+    @if(count($errors) > 0)
+
+    @foreach($errors->all() as $item)
+    <div class="alert alert-danger" role="alert">
+        {{ $item }}
+
+    </div>
+    @endforeach
+
+    @endif
     <div class="card">
-        @if($message = Session::get('تمت'))
-        <div class="alert alert-success" role="alert">
-            {{ $message }}
-        </div>
-        @endif
-        @if(session('status'))
-        {{ session('status') }}
-        @endif
-
-
-        @if(count($errors) > 0)
-
-        @foreach($errors->all() as $item)
-        <div class="alert alert-danger" role="alert">
-            {{ $item }}
-
-        </div>
-        @endforeach
-
-        @endif
 
 
         <div class="card-body">
