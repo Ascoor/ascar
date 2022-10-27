@@ -130,7 +130,7 @@
 
                                 </span>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <span>
 
 
@@ -138,7 +138,7 @@
                                         عمل
                                         المتغير</a>
                                 </span>
-                            </td>
+                            </td> -->
                         </tr>
                         @endforeach
                     </tbody>

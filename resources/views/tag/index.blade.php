@@ -47,13 +47,13 @@
                                 <th scope="row">{{$i++}}</th>
                                 <td>{{$item->tag}}</td>
 
-                                <td>
+                                <!-- <td>
                                     <a class="btn btn-ask" href="{{route('tag.edit',['id'=> $item->id])}}">
                                         تعديل</a>
 
                                     <a class="btn btn-ask1" href="{{route('softtag.delete',['id'=>$item->id])}}">حذف</a>
 
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
 

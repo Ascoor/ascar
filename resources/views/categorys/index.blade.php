@@ -104,13 +104,13 @@
                                     <a class="btn btn-ask" ">
                                         تعديل</a> -->
 
-
+                                    <!-- 
                                     <td>
 
                                         <a class=" btn btn-ask1"
                                             href="{{route('softCategory.delete',['id'=>$item->id])}}">حذف</a>
 
-                                    </td>
+                                    </td> -->
                         </tr>
                         @endforeach
 
