@@ -13,7 +13,7 @@
         <form action="{{route('categorys.sort')}}" method="GET">
 
             <div class="form-group">
-                <label>إختر حالة المتغيرات المراده</label>
+                <label>إختر تصنيف المتغيرات المراده</label>
 
                 <select class="form-control" name=" category_id">
                     @foreach ($categories as $category)
@@ -24,7 +24,7 @@
                     @endforeach
                 </select>
 
-                <button class="btn btn-md btn-success" href="{{route('categorys.sort')}}">فرز</button>
+                <button class="btn btn-lg btn-success" href="{{route('categorys.sort')}}">فرز</button>
             </div>
             @if($message = Session::get('تمت'))
             <div class="alert alert-success" role="alert">
@@ -45,7 +45,7 @@
             </div>
             <div class="card-body">
 
-                <a href="{{route('place.create')}}" class="btn btn-ask btn-lg btn-block active" role="button"
+                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg btn-block active" role="button"
                     aria-pressed="true">إضافة
                     متغير
                     جديد</a>

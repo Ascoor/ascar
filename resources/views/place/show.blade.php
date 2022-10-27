@@ -73,7 +73,7 @@
 
                                                         <br>
                                                         <div class="form-group">
-                                                            <label for="category_id">حالة المتغير</label>
+                                                            <label for="category_id">تصنيف المتغير</label>
                                                             <select class="form-control" name="category_id" id="category">
 
                                                                 @foreach ($categories as $category)
@@ -239,7 +239,7 @@
                                 <div class="media-body">
                                     <div class="align-self-center">
 
-                                        <h1>حالة المتغير</h1>
+                                        <h1>تصنيف المتغير</h1>
                                         @foreach ($categories as $category)
                                         @if ($category->id == $place->category_id)
                                         <option value="{{$category->id}}" selected>{{$category->name}}
@@ -491,7 +491,7 @@
                                             <div class="align-self-center">
                                                 <i class="icon-direction danger font-large-2 float-left"></i>
                                             </div>
-                                            <h3 class="danger"> الحالة</h3>
+                                            <h3 class="danger"> الإجراء</h3>
 
                                             @foreach ($tags as $item)
                                             <span class=" warning">

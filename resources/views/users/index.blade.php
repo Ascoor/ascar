@@ -15,7 +15,7 @@
     text-align: center;">
 
                 <h3 class="display-8    ">جميع المستخدمين</h3>
-                <a class="btn btn-ask2" href="{{route('user.create')}}"> إضافة مستخدم</a>
+                <a class="btn btn-warning" href="{{route('user.create')}}"> إضافة مستخدم</a>
             </div>
 
 

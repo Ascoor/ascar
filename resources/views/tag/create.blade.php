@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'tags', 'titlePage' => __('إضافة حالة')])
+@extends('layouts.app', ['activePage' => 'tags', 'titlePage' => __('إضافة إجراء')])
 
 @section('content')
 @if ($message = Session::get('تمت'))
@@ -22,8 +22,8 @@
     align-items: center;
     text-align: center;">
 
-                        <h1 class="display-4">إضافةحالة</h1>
-                        <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
+                        <h1 class="display-4">إضافةإجراء</h1>
+                        <a class="btn btn-success" href="{{route('tags')}}">جميع الإجراءات</a>
 
                     </div>
 
@@ -34,7 +34,7 @@
                             <form action="{{route('tag.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">الحالة</label>
+                                    <label for="exampleFormControlInput1">الإجراء</label>
 
                                     <input type="text" name="tag" class="form-control">
 

@@ -45,7 +45,7 @@
 
                             <td>
                                 <button type="button" href="{{route('categorys.edit',['id'=> $item->id])}}"
-                                    class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                    class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal">
 
                                     تعديل
                                 </button>

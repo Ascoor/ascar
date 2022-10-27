@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'tag.edit', 'titlePage' => __('تعديل الحالة')])
+@extends('layouts.app', ['activePage' => 'tag.edit', 'titlePage' => __('تعديل الإجراء')])
 
 
 @section('content')
@@ -23,16 +23,15 @@
 
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header card-header"
-                    style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
+                <div class="card-header card-header" style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
 
-                    <h3>تعديل الحالة</h3>
-                    <h4 class="display-6"> الحالة : {{ $tag->tag }}</h4>
+                    <h3>تعديل الإجراء</h3>
+                    <h4 class="display-6"> الإجراء : {{ $tag->tag }}</h4>
 
 
                     <p class="lead" style="text-align: center; padding-top: 20px;"></p>
 
-                    <a class="btn btn-success" href="{{route('tags')}}">جميع الحالات</a>
+                    <a class="btn btn-success" href="{{route('tags')}}">جميع الإجراءات</a>
                 </div>
 
                 @if (count($errors) > 0)
@@ -54,7 +53,7 @@
 
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">إسم الحالة</label>
+                                <label for="exampleFormControlInput1">إسم الإجراء</label>
                                 <input type="text" name="tag" value="{{ $tag->tag }}">
                             </div>
 

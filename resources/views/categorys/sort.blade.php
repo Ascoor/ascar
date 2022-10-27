@@ -10,7 +10,7 @@
         <form action="{{route('categorys.sort')}}" method="GET">
 
             <div class="form-group">
-                <label>إختر حالة المتغيرات المراده</label>
+                <label>إختر تصنيف المتغيرات المراده</label>
 
                 <select class="form-control" name=" category_id">
                     @foreach ($categories as $category)

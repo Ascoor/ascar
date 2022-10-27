@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="category_id">حالة المتغير</label>
+                    <label for="category_id">تصنيف المتغير</label>
                     <select class="form-control" name="category_id" id="category">
 
                         @foreach ($categories as $category)

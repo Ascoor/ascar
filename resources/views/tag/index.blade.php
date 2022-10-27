@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'tag.index', 'titlePage' => __('إدارة الحالات ')])
+@extends('layouts.app', ['activePage' => 'tag.index', 'titlePage' => __('إدارة الإجراءات ')])
 
 
 @section('content')
@@ -13,8 +13,8 @@
     background-color: #153257;
     align-items: center;
     text-align: center;">
-                <h1 class="display-8">جميع الحالات</h1>
-                <a class="btn btn-ask1" href="{{route('tag.create')}}"> إضافة حالة</a>
+                <h1 class="display-8">جميع الإجراءات</h1>
+                <a class="btn btn-warning" href="{{route('tag.create')}}"> إضافة إجراء</a>
             </div>
 
 
@@ -34,7 +34,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">مسلسل</th>
-                                <th scope="col">الحالة</th>
+                                <th scope="col">الإجراء</th>
                                 <th scope="col"> التحكم</th>
                             </tr>
                         </thead>
@@ -47,13 +47,13 @@
                                 <th scope="row">{{$i++}}</th>
                                 <td>{{$item->tag}}</td>
 
-                                <!-- <td>
-                                    <a class="btn btn-ask" href="{{route('tag.edit',['id'=> $item->id])}}">
+                                <td>
+                                    <a class="btn btn-success" href="{{route('tag.edit',['id'=> $item->id])}}">
                                         تعديل</a>
 
-                                    <a class="btn btn-ask1" href="{{route('softtag.delete',['id'=>$item->id])}}">حذف</a>
+                                    <!--     <a class="btn btn-ask1" href="{{route('softtag.delete',['id'=>$item->id])}}">حذف</a>-->
 
-                                </td> -->
+                                </td>
                             </tr>
                             @endforeach
 
