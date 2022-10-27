@@ -36,7 +36,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">الإسم</th>
 
-                                <th scope="col"> اللإيميل</th>
+                                <th scope="col"> الإيميل</th>
                                 <th scope="col"> التحكم</th>
                             </tr>
                         </thead>
