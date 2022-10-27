@@ -10,6 +10,6 @@ class UploadsPlace extends Model
 
     public function place()
     {
-        return $this->belongsTo('App\place', 'id');
+        return $this->belongsTo('App\Place', 'id');
     }
 }

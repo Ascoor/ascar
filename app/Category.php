@@ -12,6 +12,6 @@ class Category extends Model
     protected $dates = ['deleted_at'];
     public function places()
     {
-        return $this->hasMany('App\place');
+        return $this->hasMany('App\Place');
     }
 }

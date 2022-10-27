@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
-    protected $table = 'profile_users';
+   protected $table = 'profile_users';
    protected $fillable = [
-'nickname','user_id','place','postion'
+      'nickname', 'user_id', 'place', 'postion'
 
    ];
    public function user()
    {
-    return $this->beLongsTo('App\user','user_id');
+      return $this->beLongsTo('App\User', 'user_id');
    }
 }
