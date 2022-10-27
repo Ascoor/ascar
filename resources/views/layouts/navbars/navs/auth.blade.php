@@ -15,7 +15,7 @@
         <form action="{{ route('search') }}" method="GET">
             @csrf
             <input style="border-bottom: #fff;" type="text" name="search" required />
-            <button class="btn btn-ask3" type="submit">بحث</button>
+            <button class="btn btn-warning" type="submit">بحث</button>
         </form>
     </div>
 
@@ -41,8 +41,8 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
 
-      
-          </li>
+
+                </li>
             </ul>
 
 </nav>

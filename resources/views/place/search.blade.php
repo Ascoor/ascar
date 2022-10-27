@@ -48,9 +48,9 @@
 
 
                         <th>الملاحظات</th>
-                        <th></th>
+
                         <th>التحكم</th>
-                        <th></th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -73,28 +73,28 @@
                 <td >{{ $item->gnump8 }}</td>
                 <td >{{ $item->gnump9 }}</td>-->
                         <td>{{ $item->gnump11 }}</td>
-
                         <td>
                             <span>
-                                <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
-                                    تعديل</a>
+
+                                <a class="btn btn-lg btn-warning"
+                                    href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
                             </span>
                         </td>
-                        <td>
-                            <span>
-                                <span>
-                                    <a class="btn btn-success"
-                                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
-                                </span>
-                        </td>
 
+                        <!-- <td>
+                        <span>
+                            <a class="btn btn-info" href="{{ route('place.edit', $item->id) }}">
+                                تعديل</a>
+                        </span>
+                    </td>
+                    <td>
                         <td>
                             <span>
                                 <a class="btn btn-danger" href="{{ route('soft.delete', $item->id) }}"> حفظ
                                     المتغير </a>
                             </span>
                         </td>
-
+ -->
 
 
                     </tr>
