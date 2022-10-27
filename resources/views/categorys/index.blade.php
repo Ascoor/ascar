@@ -25,11 +25,13 @@
                         <tr>
                             <th scope="col">مسلسل</th>
                             <th scope="col">التصنيف</th>
-                            <th></th>
 
 
-                            <th scope="col"> التحكم</th>
+
                             <th></th>
+                            <th scope="col"> التحكم
+
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -49,10 +51,7 @@
                                     تعديل
                                 </button>
                             </td>
-                            <td>
-                                <a class="btn btn-red" href="{{route('categorys.sort',['id'=> $item->id])}}">جميع
-                                    التصنيفات</a>
-                            </td>
+
 
                             <div class="grey-bg container-fluid">
                                 <section id="minimal-statistics">

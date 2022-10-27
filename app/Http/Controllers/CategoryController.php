@@ -29,12 +29,16 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showcategory($id)
+    public function showcategory(Request $request)
     {
+        $this->validate($request, [
+            'category_id' => 'required'
+        ]);
+        $id = $request->category_id;
         $category = Category::where('id', $id)->firstOrFail();
-        empty($category) ? abort(404) : '';
+
         $places = $category->places()->paginate(10);
-        return view('categorys.sort')->with('places', $places);
+        return view('categorys.sort')->with('places', $places)->with('categorya', $category);
     }
 
     public function create()
