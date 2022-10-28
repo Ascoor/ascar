@@ -7,7 +7,7 @@
 
     <div class="card-header card-header" style="
                         color: rgb(255, 242, 64);
-                        background-color: #153257;
+                        background-color: #031f42;
                         align-items: center;
                         text-align: center;">
         <form action="{{route('categorys.sort')}}" method="GET">
@@ -45,8 +45,7 @@
             </div>
             <div class="card-body">
 
-                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg btn-block active" role="button"
-                    aria-pressed="true">إضافة
+                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg btn-block active" role="button" aria-pressed="true">إضافة
                     متغير
                     جديد</a>
                 @if($places->count() > 0 )
@@ -124,8 +123,7 @@
                                 <span>
 
 
-                                    <a class="btn btn-success"
-                                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
+                                    <a class="btn btn-success" href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
 
                                 </span>
                             </td>
@@ -158,6 +156,7 @@
 
 
     @endif
+
 
 
 

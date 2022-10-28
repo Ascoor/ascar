@@ -9,7 +9,7 @@
             <a class="btn btn-ask1" href="{{ route('places') }}">جميع المتغيرات</a>
             <div class="card-header" style="
                 color: rgb(255, 242, 64);
-                background-color: #153257;
+                background-color: #031f42;
 
                 text-align: center;">
                 <div class="head-text">
@@ -24,8 +24,7 @@
             <center>
                 <div class="card-body">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="responsive-item" src="/storage/posts/{{$data->filename}}"
-                            allowfullscreen></iframe>
+                        <iframe class="responsive-item" src="/storage/posts/{{$data->filename}}" allowfullscreen></iframe>
                     </div>
 
                 </div>

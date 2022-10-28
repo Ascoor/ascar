@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
-    background-color: #153257;
+    background-color: #031f42;
     align-items: center;
     text-align: center;">
 
@@ -47,8 +47,7 @@
 
                                         <div class="form-group">
 
-                                            <button class="btn btn-danger" class="form-group"
-                                                type="submit">save</button>
+                                            <button class="btn btn-danger" class="form-group" type="submit">save</button>
                                         </div>
 
                                 </form>

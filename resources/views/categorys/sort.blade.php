@@ -4,7 +4,7 @@
 
     <div class="card-header card-header" style="
                         color: rgb(255, 242, 64);
-                        background-color: #153257;
+                        background-color: #031f42;
                         align-items: center;
                         text-align: center;">
         <form action="{{route('categorys.sort')}}" method="GET">

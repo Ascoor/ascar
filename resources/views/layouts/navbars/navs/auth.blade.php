@@ -1,8 +1,6 @@
-<nav class="navbar navbar-dark "
-    style="font-size:21px;background:#ffffff;background-color: #153257;outline-color:#ffffff;">
+<nav class="navbar navbar-dark " style="font-size:28px;background:#ffffff;background-color: #031f42;outline-color:#ffffff;">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
         </span>
     </button>
@@ -30,16 +28,14 @@
 
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         الحساب
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">{{ __('الإعدادت') }}</a>
                         <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('ملف المستخدم') }}</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('تسجيل الخروج') }}</a>
 
 
                 </li>
