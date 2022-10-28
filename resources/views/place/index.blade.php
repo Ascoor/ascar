@@ -45,7 +45,8 @@
             </div>
             <div class="card-body">
 
-                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg btn-block active" role="button" aria-pressed="true">إضافة
+                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg btn-block active" role="button"
+                    aria-pressed="true">إضافة
                     متغير
                     جديد</a>
                 @if($places->count() > 0 )
@@ -123,7 +124,8 @@
                                 <span>
 
 
-                                    <a class="btn btn-success" href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
+                                    <a class="btn btn-success"
+                                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
 
                                 </span>
                             </td>

@@ -178,40 +178,39 @@
                                                             </div>
                                                             <div class="md-form">
                                                                 <label for="exampleFormControlInput1"> التاريخ </label>
-                                                                <<<<<<< HEAD <input dir="rtl" name="gnump10"
+                                                                <input dir="rtl" name="gnump10"
                                                                     placeholder="التاريخ المحدد" type="date"
                                                                     value="{{ $place->gnump10 }}"
                                                                     class="form-control datepicker">
 
-                                                                    <div class="form-group">
-                                                                        <label
-                                                                            for="exampleFormControlTextarea1">الملاحظات
-                                                                        </label>
-                                                                        <textarea class="form-control" type="text"
-                                                                            name="gnump11"
-                                                                            rows="3">{{ $place->gnump11 }}</textarea>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">الملاحظات
+                                                                    </label>
+                                                                    <textarea class="form-control" type="text"
+                                                                        name="gnump11"
+                                                                        rows="3">{{ $place->gnump11 }}</textarea>
 
 
-                                                                    </div>
+                                                                </div>
 
 
-                                                                    <div class="form-group">
+                                                                <div class="form-group">
 
-                                                                        <label for="exampleFormControlInput1">الصور
-                                                                        </label>
-                                                                        <input type="file" name="photo1[]" multiple />
-                                                                    </div>
+                                                                    <label for="exampleFormControlInput1">الصور
+                                                                    </label>
+                                                                    <input type="file" name="photo1[]" multiple />
+                                                                </div>
 
-                                                                    <div class="form-group">
-                                                                        <label for="exampleFormControlInput1">المرفقات
-                                                                        </label>
-                                                                        <input type="file" name="photo2[]"
-                                                                            class="form-control" multiple>
-                                                                    </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">المرفقات
+                                                                    </label>
+                                                                    <input type="file" name="photo2[]"
+                                                                        class="form-control" multiple>
+                                                                </div>
 
                                                             </div>
                                                         </div>
-                                                        =======
+
                                                         <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد"
                                                             type="date" value="{{ $place->gnump10 }}"
                                                             class="form-control datepicker">
@@ -238,7 +237,7 @@
                                                 <input type="file" name="photo2[]" class="form-control" multiple>
                                             </div>
 
-                                            >>>>>>> b1adec287e0e98114f68083e9f590749c1fb4edc
+
                                         </div>
 
                                         <div class="modal-footer">
