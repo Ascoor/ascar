@@ -2,11 +2,6 @@
 
 
 @section('content')
-</div>
-</div>
-</div>
-</div>
-</div>
 
 @if($message = Session::get('تمت'))
 <div class="alert alert-danger" role="alert">
@@ -23,8 +18,7 @@
 
 
         <div class="card">
-            <div class="card-header card-header"
-                style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
+            <div class="card-header card-header" style="color:rgb(255, 242, 64);background-color:#153257;align-items: center;text-align:center;">
 
                 <h3>تعديل الإجراء</h3>
                 <h4 class="display-6"> الإجراء : {{ $tag->tag }}</h4>
