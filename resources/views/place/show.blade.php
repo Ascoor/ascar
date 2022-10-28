@@ -182,31 +182,35 @@
                                                                     placeholder="التاريخ المحدد" type="date"
                                                                     value="{{ $place->gnump10 }}"
                                                                     class="form-control datepicker">
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">الملاحظات
+                                                                    </label>
+                                                                    <textarea class="form-control" type="text"
+                                                                        name="gnump11"
+                                                                        rows="3">{{ $place->gnump11 }}</textarea>
+
+
+                                                                </div>
+
+
+                                                                <div class="form-group">
+
+                                                                    <label for="exampleFormControlInput1">الصور </label>
+                                                                    <input type="file" name="photo1[]" multiple />
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">المرفقات
+                                                                    </label>
+                                                                    <input type="file" name="photo2[]"
+                                                                        class="form-control" multiple>
+                                                                </div>
+
                                                             </div>
                                                         </div>
-
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlTextarea1">الملاحظات </label>
-                                                            <textarea class="form-control" type="text" name="gnump11"
-                                                                rows="3">{{ $place->gnump11 }}</textarea>
-
-
-                                                        </div>
-
-
-                                                        <div class="form-group">
-
-                                                            <label for="exampleFormControlInput1">الصور </label>
-                                                            <input type="file" name="photo1[]" multiple />
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlInput1">المرفقات </label>
-                                                            <input type="file" name="photo2[]" class="form-control"
-                                                                multiple>
-                                                        </div>
-
                                                     </div>
+
                                                     <div class="modal-footer">
 
                                                         <div class="form-group">
@@ -219,6 +223,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="container">
+
+                        </div>
+                        <div class="card-body">
                             <table class="table-info">
 
                                 <table border="1px">
