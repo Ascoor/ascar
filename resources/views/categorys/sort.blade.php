@@ -51,7 +51,7 @@
 
 <div class="card-body">
     <table id="example" class=" table-striped " style="width:100%">
-        <thead>
+        <thead class="thead text-white" style=" background-color:#153257">
             <tr>
 
 

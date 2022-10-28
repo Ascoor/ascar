@@ -11,19 +11,29 @@
             text-align: center;">
             <div class="head-text">
                 <h1 class="display-5">عرض بيانات المتغير</h1>
+
+
                 <div class="button-group">
 
                     <a class="btn btn-primary btn-lg" href="{{ route('places') }}" role="button">جميع المتغيرات</a>
-                    <!-- <a class="btn btn-danger btn-lg" href="{{ route('soft.delete', $place->slug ) }}"
-                        role="button">إنهاء
-                        عمل
-                        المتغير</a> -->
+
+
+                    @if($message = Session::get('تمت'))
+                    <div class="alert alert-success" role="alert">
+                        {{ $message }}
+                    </div>
+
+                    @endif
+                    @if(session('status'))
+                    <div class="alert alert-warning" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+
 
                 </div>
             </div>
         </div>
-
-
 
         <div class="card-body">
 
@@ -59,7 +69,8 @@
 
                                                     <div class="form-group">
 
-                                                        <label for="exampleFormControlInput1">الإجراءات المنتهية
+                                                        <label for="exampleFormControlInput1">الإجراءات
+                                                            المنتهية
                                                         </label>
                                                         <div class="col">
                                                             @foreach($tags as $item)
@@ -76,14 +87,16 @@
                                                             <label for="">{{ $item->tag }}</label>
                                                             @endforeach
 
-                                                            <br>
+
                                                             <div class="form-group">
-                                                                <label for="category_id">تصنيف المتغير</label>
+                                                                <label for="category_id">تصنيف
+                                                                    المتغير</label>
                                                                 <select class="form-control" name="category_id"
                                                                     id="category">
 
                                                                     @foreach ($categories as $category)
-                                                                    @if ($category->id == $place->category_id)
+                                                                    @if ($category->id ==
+                                                                    $place->category_id)
                                                                     <option value="{{$category->id}}" selected>
                                                                         {{$category->name}}</option>
 
@@ -99,7 +112,8 @@
                                                                 </select>
                                                             </div>
                                                             <div class=" form-group">
-                                                                <label for="exampleFormControlInput1">مسلسل المتغير
+                                                                <label for="exampleFormControlInput1">مسلسل
+                                                                    المتغير
                                                                 </label>
                                                                 <input type="number" name="gnump" class="form-control"
                                                                     value="{{ $place->gnump }}">
@@ -107,77 +121,93 @@
 
 
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">خط العرض </label>
+                                                                <label for="exampleFormControlInput1">خط
+                                                                    العرض
+                                                                </label>
                                                                 <input type="float" name="gnumh" class="form-control"
                                                                     value="{{ $place->gnumh }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">خط الطول </label>
+                                                                <label for="exampleFormControlInput1">خط
+                                                                    الطول
+                                                                </label>
                                                                 <input type="float" name="gnumw" class="form-control"
                                                                     value="{{ $place->gnumw }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">المحافظة </label>
+                                                                <label for="exampleFormControlInput1">المحافظة
+                                                                </label>
                                                                 <input type="text" name="gnump1" class="form-control"
                                                                     value="{{ $place->gnump1 }}">
 
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1"> المركز </label>
+                                                                <label for="exampleFormControlInput1">
+                                                                    المركز
+                                                                </label>
                                                                 <input type="text" name="gnump2" class="form-control"
                                                                     value="{{ $place->gnump2 }}">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">القرية </label>
+                                                                <label for="exampleFormControlInput1">القرية
+                                                                </label>
                                                                 <input type="text" name="gnump3" class="form-control"
                                                                     value="{{ $place->gnump3 }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">نوع الأملاك
+                                                                <label for="exampleFormControlInput1">نوع
+                                                                    الأملاك
                                                                 </label>
                                                                 <input type="text" name="gnump4" class="form-control"
                                                                     value="{{ $place->gnump4 }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">جهة الولاية
+                                                                <label for="exampleFormControlInput1">جهة
+                                                                    الولاية
                                                                 </label>
                                                                 <input type="text" name="gnump5" class="form-control"
                                                                     value="{{ $place->gnump5 }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">القانونية </label>
+                                                                <label for="exampleFormControlInput1">القانونية
+                                                                </label>
                                                                 <input type="text" name="gnump6" class="form-control"
                                                                     value="{{ $place->gnump6 }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">الرد </label>
+                                                                <label for="exampleFormControlInput1">الرد
+                                                                </label>
                                                                 <input type="text" name="gnump7" class="form-control"
                                                                     value="{{ $place->gnump7 }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">تفاصيل الرد
+                                                                <label for="exampleFormControlInput1">تفاصيل
+                                                                    الرد
                                                                 </label>
                                                                 <input type="text" name="gnump8" class="form-control"
                                                                     value="{{ $place->gnump8 }}">
 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="exampleFormControlInput1">موقف الإزالة
+                                                                <label for="exampleFormControlInput1">موقف
+                                                                    الإزالة
                                                                 </label>
                                                                 <input type="text" name="gnump9" class="form-control"
                                                                     value="{{ $place->gnump9 }}">
 
                                                             </div>
                                                             <div class="md-form">
-                                                                <label for="exampleFormControlInput1"> التاريخ </label>
+                                                                <label for="exampleFormControlInput1">
+                                                                    التاريخ
+                                                                </label>
                                                                 <input dir="rtl" name="gnump10"
                                                                     placeholder="التاريخ المحدد" type="date"
                                                                     value="{{ $place->gnump10 }}"
@@ -597,7 +627,8 @@
                                                 <textarea type="text" name="desc" class="form-control"></textarea>
                                                 <input type="hidden" name="place_id" value="{{ $place->id }}"
                                                     class="form-control">
-                                                <button type="submit" class="btn btn-primary">إضافة ملاحظة</button>
+                                                <button type="submit" class="btn btn-primary">إضافة
+                                                    ملاحظة</button>
                                         </form>
                                     </div>
                                     @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
@@ -609,8 +640,6 @@
             </div>
         </div>
     </div>
-</div>
-</div>
 
 
 
@@ -719,10 +748,6 @@
 
 
 
+    </section>
 
-
-
-
-</section>
-
-@endsection
+    @endsection
