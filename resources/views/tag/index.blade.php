@@ -3,6 +3,7 @@
 
 @section('content')
 
+@if ($tags->count() > 0 )
 
 
 <div class="container">
@@ -17,8 +18,9 @@
             </div>
 
             <div class="card">
-                <button type="button" href="{{route('categorys.create')}}" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">
-                    إضافة إجراء
+
+                <button type="button" href="{{route('tag.create')}}" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">
+                    إضافة تصنيف
                 </button>
 
                 <div class="grey-bg container-fluid">
@@ -36,10 +38,11 @@
                                             غلق
                                         </button>
                                     </div>
-
                                     <div class="modal-body">
-                                        <form action="{{route('tag.store')}}" method="post" enctype="multipart/form-data">
-                                            @csrf
+
+                                        <form action="{{route('tag.store')}}" method="post" enctype="form-data">
+
+
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1">الإجراء</label>
 
@@ -47,18 +50,16 @@
 
 
 
+
                                                 <div class="modal-footer">
+
+
                                                     <div class="form-group">
 
-
-                                                        <div class="form-group">
-
-                                                            <div class="form-group">
-
-                                                                <button class="btn btn-danger" class="form-group" type="submit">save</button>
-                                                            </div>
-
+                                                        <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
+                                                    </div>
                                         </form>
+
                                     </div>
                                 </div>
                             </div>
@@ -68,27 +69,22 @@
         </div>
     </div>
 </div>
-</div>
-
-</div>
-</div>
-
 
 
 
 <div class="card">
-    <div class="card-body">
 
-        @if($message = Session::get('تمت'))
-        <div class="alert alert-success" role="alert">
-            {{ $message }}
-        </div>
+    @if($message = Session::get('تمت'))
+    <div class="alert alert-success" role="alert">
+        {{ $message }}
+    </div>
+    @endif
+    @if(session('status'))
+    <div class="alert alert-warning" role="alert">
+        {{ session('status') }}
         @endif
-        @if(session('status'))
-        <div class="alert alert-warning" role="alert">
-            {{ session('status') }}
-            @endif
 
+        <div class="card-body">
 
 
             <table id="example" class=" table-striped " style="width:100%">
@@ -100,59 +96,26 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($tags as $item)
                     @php
                     $i = 1;
                     @endphp
-                    @foreach ($tags as $item)
                     <tr>
                         <th scope="row">{{$i++}}</th>
                         <td>{{$item->tag}}</td>
 
                         <td>
-                            <button type="button" href="{{route('tag.edit',['id'=> $item->id])}}" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal">
 
-                                تعديل
-                            </button>
+
+                            <a href="{{ route('categorys.edit',$item->id) }}" class="btn-success btn-md">تعديل
+                            </a>
+
                         </td>
 
                         <!--     <a class="btn btn-ask1" href="{{route('softtag.delete',['id'=>$item->id])}}">حذف</a>-->
-                        <div class="grey-bg container-fluid">
-                            <section id="minimal-statistics">
-
-
-                                <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">
-                                                    تعديل
-                                                    بيانات
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    غلق
-                                                </button>
-
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <form action="{{ route('categorys.update', $item->id) }}" method="post">
-                                                            @csrf
 
 
 
-                                                            <label for="exampleFormControlInput1">إسم
-                                                                التصنيف</label>
-                                                            <input type="text" name="tag" value="{{ $item->tag }}">
-
-                                                    </div>
-
-
-                                                    <div class="modal-footer">
-                                                        <div class="form-group">
-
-                                                            <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
-                                                        </div>
-                                                        </form>
 
                     </tr>
 
@@ -160,7 +123,6 @@
 
                 </tbody>
             </table>
-            @if ($tags->count() > 0 )
 
         </div>
         @else
@@ -214,6 +176,49 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             @endsection
