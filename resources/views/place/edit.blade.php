@@ -44,7 +44,8 @@
 
 
                 <div class="form-group">
-                    <form action="{{route('place.update',['id'=> $place->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('place.update',['id'=> $place->id])}}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -145,13 +146,15 @@
                             </div>
                             <div class="md-form">
                                 <label for="exampleFormControlInput1"> التاريخ </label>
-                                <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد" type="date" value="{{ $place->gnump10 }}" class="form-control datepicker">
+                                <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد" type="date"
+                                    value="{{ $place->gnump10 }}" class="form-control datepicker">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">الملاحظات </label>
-                            <textarea class="form-control" type="text" name="gnump11" rows="3">{{ $place->gnump11 }}</textarea>
+                            <textarea class="form-control" type="text" name="gnump11"
+                                rows="3">{{ $place->gnump11 }}</textarea>
 
 
                         </div>
@@ -170,15 +173,19 @@
 
                         <div class="form-group">
 
-                            <button class="btn btn-danger" type="submit">save</button>
+                            <button class="btn btn-danger" type="submit">حفظ</button>
                         </div>
 
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-                <!--
+<!--
                                     <div class="form-group">
 
                                         <label for="exampleFormControlInput1">المرفقات 3</label>
@@ -263,4 +270,4 @@
 
 
 
-                @endsection
+@endsection
