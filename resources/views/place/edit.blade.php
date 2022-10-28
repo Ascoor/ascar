@@ -17,7 +17,7 @@
 <div class="card">
     <div class="card-header card-header" style="
     color: rgb(255, 242, 64);
-    background-color: #153257;
+    background-color: #031f42;
     align-items: center;
     text-align: center;">
         <h3 class="display-5">تعديل بيانات المتغير </h3>
@@ -193,6 +193,7 @@
                                     </div>
 
          -->
+
 
 
 
