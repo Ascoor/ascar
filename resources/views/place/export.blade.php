@@ -7,7 +7,7 @@
 
 $connect = new PDO("mysql:host=127.0.0.1;dbname=asc", "root", "");
 
-$query = "SELECT * FROM tbl_place ORDER BY gnump ASC";
+$query = "SELECT * FROM tbl_places ORDER BY name ASC";
 
 $result = $connect->query($query);
 @endphp
@@ -29,25 +29,55 @@ $result = $connect->query($query);
         <div class="card-body">
             <table id="employee_data" class="table table-striped table-bordered">
                 <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Gender</th>
-                    <th>Designation</th>
-                    <th>Age</th>
+
+
+                    <!--     <th >نوع الأملاك</th>
+        <th >جهة الولاية</th>
+<th >القانونية</th>
+<th >الرد</th>
+<th >تفاصيل الرد</th>
+<th >موقف الإزالة</th>--->
+
+                    <th>مسلسل المتغير</th>
+                    <th>خط العرض</th>
+                    <th>خط الطول</th>
+                    <th>المحافظة</th>
+                    <th>المركز</th>
+                    <th>القرية</th>
+
+
+                    <th>الملاحظات</th>
+
+                    <th>التحكم</th>
+
                 </tr>
                 <?php
                 foreach ($places as $row) {
                     echo '
-                        <tr>
-                            <td>' . $row["name"] . '</td>
-                            <td>' . $row["address"] . '</td>
-                            <td>' . $row["gender"] . '</td>
-                            <td>' . $row["designation"] . '</td>
-                            <td>' . $row["age"] . '</td>
+
+                    <tr>
+
+                        <td>' . $row["gnump"] . '</td>
+                            <td>' . $row["gnumh"] . '</td>
+                            <td>' . $row["gnumw"] . '</td>
+                            <td>' . $row["gnump1"] . '</td>
+                            <td>' . $row["gnump2"] . '</td>
+                            <td>' . $row["gnump3"] . '</td>
+                            <td>' . $row["gnump4"] . '</td>
+                            <td>' . $row["gnump5"] . '</td>
+                            <td>' . $row["gnump6"] . '</td>
+                            <td>' . $row["gnump7"] . '</td>
+                            <td>' . $row["gnump8"] . '</td>
+                            <td>' . $row["gnump9"] . '</td>
+                            <td>' . $row["gnump10"] . '</td>
+                            <td>' . $row["gnump11"] . '</td>
+
+
                         </tr>
                         ';
                 }
                 ?>
+                {!! $places->links() !!}
             </table>
         </div>
     </div>

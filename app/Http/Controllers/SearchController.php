@@ -3,18 +3,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\PlacesExport;
+
 use App\Place;
 use App\Http\Controllers\Controller;
-use Facade\Ignition\QueryRecorder\Query;
+
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
+
 
 use function GuzzleHttp\Promise\queue;
 
 class SearchController extends Controller
 {
-    public function index(Request $request)
+    public function search(Request $request)
     {
 
         $search = $request->input('search');

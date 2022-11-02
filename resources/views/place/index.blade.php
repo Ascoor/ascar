@@ -54,7 +54,7 @@
 
 
                 <table id="example" class=" table-striped " style="width:100%">
-                    <thead class="thead text-white" style=" background-color:#153257">
+                    <thead>
                         <tr>
 
 
@@ -69,7 +69,7 @@
                         <th >جهة الولاية</th>
                         <th >القانونية</th>
                         <th >الرد</th>
-                        <th >تفاصيل الرد</thitem>
+                        <th >تفاصيل الرد</th>
               <th >موقف الإزالة</th>
 
                                 <th >التاريخ</th>  -->
@@ -82,41 +82,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($places as $place)
 
                         @php
                         $i = 1;
                         @endphp
+                        @foreach ($places as $item)
                         <tr>
                             <td>
-                                {{ $place->gnump }}
+                                {{ $item->gnump }}
                             </td>
                             <td>
-                                {{ $place->gnumh }}
+                                {{ $item->gnumh }}
                             </td>
                             <td>
-                                {{ $place->gnumw }}
+                                {{ $item->gnumw }}
                             </td>
                             <td>
-                                {{ $place->gnump1 }}
+                                {{ $item->gnump1 }}
                             </td>
                             <td>
-                                {{ $place->gnump2 }}
+                                {{ $item->gnump2 }}
                             </td>
                             <td>
-                                {{ $place->gnump3 }}
+                                {{ $item->gnump3 }}
                             </td>
-                            <!-- {{-- <td >{{ $place->gnump4 }}</td>
-                                <td >{{ $place->gnump5 }}</td>
-                                <td >{{ $place->gnump6 }}</td>
-                                <td >{{ $place->gnump7 }}</td>
-                                <td >{{ $place->gnump8 }}</td>
-                                <td >{{ $place->gnump9 }}</td>
+                            <!-- {{-- <td >{{ $item->gnump4 }}</td>
+                                <td >{{ $item->gnump5 }}</td>
+                                <td >{{ $item->gnump6 }}</td>
+                                <td >{{ $item->gnump7 }}</td>
+                                <td >{{ $item->gnump8 }}</td>
+                                <td >{{ $item->gnump9 }}</td>
                                 <td >
-                                    {{ $place->gnump10 }}
+                                    {{ $item->gnump10 }}
                                 </td> --}} -->
                             <td>
-                                {{ $place->gnump11 }}
+                                {{ $item->gnump11 }}
                             </td>
 
 
@@ -125,7 +125,7 @@
 
 
                                     <a class="btn btn-success"
-                                        href="{{route('place.show',['slug'=> $place->slug])}}">عرض</a>
+                                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
 
                                 </span>
                             </td>
@@ -133,7 +133,7 @@
                                 <span>
 
 
-                                    <a class="btn btn-danger" href="{{ route('soft.delete', $place->slug) }}">إنهاء
+                                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->slug) }}">إنهاء
                                         عمل
                                         المتغير</a>
                                 </span>
