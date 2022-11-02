@@ -110,30 +110,7 @@
         </script>
 
 
-        <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-
-     in
-tegrity
-="sha38
-4-9/reF
-TGAW83E
-W2RDu2S
-0VKaIza
-p3H66lZ
-H81PoYl
-FhbGU+6
-BZp6G7n
-iu735Sk
-7lN" cr
-ossorigin="anonymous">
-
- </scri
-pt>
+        <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
 
 
@@ -144,32 +121,6 @@ pt>
 
 
 
-
-
-
-
-
-
-
-
-    <sc
-ript sr
-c="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.min.js"
-    integrity="sha384-VmD+lKnI0Y4FPvr6hvZRw6xvdt/QZoNHQ4h5k0RL30aGkR9ylHU56BzrE2UoohWK" crossorigin="anonymous">
-</scrip
-t>
-
-
-
-
-
-
-
-
-
-
-
----->
 
     </body>
 

@@ -69,7 +69,7 @@
                         <th >جهة الولاية</th>
                         <th >القانونية</th>
                         <th >الرد</th>
-                        <th >تفاصيل الرد</th>
+                        <th >تفاصيل الرد</thitem>
               <th >موقف الإزالة</th>
 
                                 <th >التاريخ</th>  -->
@@ -82,41 +82,41 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($places as $place)
 
                         @php
                         $i = 1;
                         @endphp
-                        @foreach ($places as $item)
                         <tr>
                             <td>
-                                {{ $item->gnump }}
+                                {{ $place->gnump }}
                             </td>
                             <td>
-                                {{ $item->gnumh }}
+                                {{ $place->gnumh }}
                             </td>
                             <td>
-                                {{ $item->gnumw }}
+                                {{ $place->gnumw }}
                             </td>
                             <td>
-                                {{ $item->gnump1 }}
+                                {{ $place->gnump1 }}
                             </td>
                             <td>
-                                {{ $item->gnump2 }}
+                                {{ $place->gnump2 }}
                             </td>
                             <td>
-                                {{ $item->gnump3 }}
+                                {{ $place->gnump3 }}
                             </td>
-                            <!-- {{-- <td >{{ $item->gnump4 }}</td>
-                                <td >{{ $item->gnump5 }}</td>
-                                <td >{{ $item->gnump6 }}</td>
-                                <td >{{ $item->gnump7 }}</td>
-                                <td >{{ $item->gnump8 }}</td>
-                                <td >{{ $item->gnump9 }}</td>
+                            <!-- {{-- <td >{{ $place->gnump4 }}</td>
+                                <td >{{ $place->gnump5 }}</td>
+                                <td >{{ $place->gnump6 }}</td>
+                                <td >{{ $place->gnump7 }}</td>
+                                <td >{{ $place->gnump8 }}</td>
+                                <td >{{ $place->gnump9 }}</td>
                                 <td >
-                                    {{ $item->gnump10 }}
+                                    {{ $place->gnump10 }}
                                 </td> --}} -->
                             <td>
-                                {{ $item->gnump11 }}
+                                {{ $place->gnump11 }}
                             </td>
 
 
@@ -125,7 +125,7 @@
 
 
                                     <a class="btn btn-success"
-                                        href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
+                                        href="{{route('place.show',['slug'=> $place->slug])}}">عرض</a>
 
                                 </span>
                             </td>
@@ -133,7 +133,7 @@
                                 <span>
 
 
-                                    <a class="btn btn-danger" href="{{ route('soft.delete', $item->slug) }}">إنهاء
+                                    <a class="btn btn-danger" href="{{ route('soft.delete', $place->slug) }}">إنهاء
                                         عمل
                                         المتغير</a>
                                 </span>

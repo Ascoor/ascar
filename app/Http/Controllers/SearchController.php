@@ -14,7 +14,7 @@ use function GuzzleHttp\Promise\queue;
 
 class SearchController extends Controller
 {
-    public function search(Request $request)
+    public function index(Request $request)
     {
 
         $search = $request->input('search');
@@ -33,11 +33,6 @@ class SearchController extends Controller
         } else {
             $places = Place::paginate(60);
         }
-        return view('place.search')->with('places', $places);
-    }
-    public function export()
-    {
-
-        return Excel::download(new PlacesExport, 'users.xlsx');
+        return view('place.export')->with('places', $places);
     }
 }

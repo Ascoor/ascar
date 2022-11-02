@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('soft.delete');
 
 
-    Route::get('place/export', 'SearchController@export')
+    Route::get('place/export', 'SearchController@index')
         ->name('export');
     Route::get('place/trash', 'PlaceController@PlacesTrashed')
         ->name('place.trash');

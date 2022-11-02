@@ -2,14 +2,77 @@
 
 @section('content')
 
-<div class="card">
-    <div class="card-header card-header" style="
-    color: rgb(255, 242, 64);
-    background-color: #031f42;
-    align-items: center;
-    text-align: center;">
+@php
 
-        <iframe id="T:theTaskFlow:contentTmplt:j_id524352088_4b05cad6:if1" title="" class="embed-responsive-item m-auto af_inlineFrame p_AFFlow" frameborder="0" src="/w
-ebcenter/content/conn/WebCenterSpaces-ucm/path/Enterprise%20Libraries/PPOPortalFiles/PortalFiles/PPODynamicFiles/NewsFiles/PPOResources/PDF/PDF1585066499258.pdf" onload="AdfDhtmlInlineFramePeer.__iframeLoadHandler(event)" _adfloaded="1" style="min-width: 0px; min-height: 0px;"></iframe>
 
-        @endsection
+$connect = new PDO("mysql:host=127.0.0.1;dbname=asc", "root", "");
+
+$query = "SELECT * FROM tbl_place ORDER BY gnump ASC";
+
+$result = $connect->query($query);
+@endphp
+
+
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+<div class="container">
+    <h2 class="text-center mt-4 mb-4">Export HTML table data to excel using JavaScript</h2>
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col col-md-6">Sample Data</div>
+                <div class="col col-md-6 text-right">
+                    <button type="button" id="export_button" class="btn btn-success btn-sm">Export</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="employee_data" class="table table-striped table-bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Designation</th>
+                    <th>Age</th>
+                </tr>
+                <?php
+                foreach ($places as $row) {
+                    echo '
+                        <tr>
+                            <td>' . $row["name"] . '</td>
+                            <td>' . $row["address"] . '</td>
+                            <td>' . $row["gender"] . '</td>
+                            <td>' . $row["designation"] . '</td>
+                            <td>' . $row["age"] . '</td>
+                        </tr>
+                        ';
+                }
+                ?>
+            </table>
+        </div>
+    </div>
+    <script>
+    function html_table_to_excel(type) {
+        var data = document.getElementById('employee_data');
+
+        var file = XLSX.utils.table_to_book(data, {
+            sheet: "sheet1"
+        });
+
+        XLSX.write(file, {
+            bookType: type,
+            bookSST: true,
+            type: 'base64'
+        });
+
+        XLSX.writeFile(file, 'file.' + type);
+    }
+
+    const export_button = document.getElementById('export_button');
+
+    export_button.addEventListener('click', () => {
+        html_table_to_excel('xlsx');
+    });
+    </script>
+
+    @endsection
