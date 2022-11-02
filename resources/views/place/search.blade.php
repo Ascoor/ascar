@@ -27,7 +27,7 @@
     <div class="card-body">
         <div class="table-responsive-md">
             <table id="example" class=" table-striped " style="width:100%">
-                <thead>
+                <thead class="thead text-white" style=" background-color:#153257">
 
                     <tr>
 
@@ -76,7 +76,8 @@
                         <td>
                             <span>
 
-                                <a class="btn btn-lg btn-warning" href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
+                                <a class="btn btn-lg btn-warning"
+                                    href="{{route('place.show',['slug'=> $item->slug])}}">عرض</a>
                             </span>
                         </td>
 
