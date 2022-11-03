@@ -42,13 +42,13 @@
                     يمكنك البحث برقم المتغير او المركز او القرية
                 </p>
 
-            </div>
-            <div class="card-body">
 
-                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg btn-block active" role="button"
+                <a href="{{route('place.create')}}" class="btn btn-warning btn-lg  btn-block " role="button"
                     aria-pressed="true">إضافة
                     متغير
                     جديد</a>
+            </div>
+            <div class="card-body">
                 @if($places->count() > 0 )
 
 
@@ -158,6 +158,12 @@
 
 
     @endif
+
+
+
+
+
+
 
 
 
