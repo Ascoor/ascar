@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Place;
+
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -38,7 +38,7 @@ class CategoryController extends Controller
         $category = Category::where('id', $id)->firstOrFail();
         $categories = Category::all();
         $places = $category->places()->paginate(30);
-        return view('categorys.sort')->with('places', $places)->with('categorya', $category)->with('categories', $categories);
+        return view('place.export')->with('places', $places)->with('categorya', $category)->with('categories', $categories);
     }
 
     public function create()
