@@ -111,7 +111,7 @@
                                 <td>{{$item->name}}</td>
 
                                 <td>
-                                    <a class="btn-success btn-md" href="{{route('categorys.edit',$item->id)}}">تعديل</a>
+                                    <a class="btn-success btn-sm" href="{{route('categorys.edit',$item->id)}}">تعديل</a>
 
                                 </td>
                                 <!-- <td>
@@ -142,6 +142,7 @@
     </div>
 
 </div>
+
 
 
 

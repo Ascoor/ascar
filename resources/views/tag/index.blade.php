@@ -99,7 +99,7 @@
                             <td>
 
 
-                                <a href="{{ route('categorys.edit',$item->id) }}" class="btn-success btn-md">تعديل
+                                <a href="{{ route('categorys.edit',$item->id) }}" class="btn-success btn-sm">تعديل
                                 </a>
 
                             </td>
@@ -185,6 +185,7 @@
 
 
                 @endif
+
 
 
 
