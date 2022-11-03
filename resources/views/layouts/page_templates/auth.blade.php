@@ -13,7 +13,7 @@
 
 
         <a class="btn btn-ask1 btn-lg" type=" button" href="{{ route('places') }}">فهرس المتغيرات</a>
-        <a class="btn btn-ask1 btn-lg" type=" button" href="{{ route('categorys') }}">إدارة التصنيفات</a>
+        <a class="btn btn-ask1 btn-lg" type=" button" href="{{ route('categorys') }}"> التصنيفات</a>
         <a class="btn btn-ask1 btn-lg" type=" button" href="{{ route('tags') }}">الإجراءات</a>
 
         <a class="btn btn-ask btn-lg" type=" button" href="{{ route('users') }}">المستخدمين
