@@ -20,8 +20,8 @@ $result = $connect->query($query);
     <div class="card">
         <div class="card-header" style="      background-color: #ffc107;">
             <div class="row">
-                <div class="col col-md-6">نتائج البحث</div>
-                <div class="col col-md-6 text-right">
+                <div class="col col-md-5">نتائج البحث</div>
+                <div class="col col-md-7 item-center">
                     <button type="button" id="export_button" class="btn btn-success btn-lg">إستخراج Excel</button>
                 </div>
             </div>
