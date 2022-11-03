@@ -5,7 +5,7 @@
 @php
 
 
-$connect = new PDO("mysql:host=127.0.0.1;dbname=asc", "root", "");
+$connect = new PDO("mysql:host=127.0.0.1;dbname=u973484608_ask", "u973484608_ask1", "Ask@123456");
 
 $query = "SELECT * FROM tbl_places ORDER BY name ASC";
 
