@@ -80,7 +80,7 @@ $result = $connect->query($query);
                     foreach ($places as $row) {
                         echo '
 
-                        <tbody>
+
                     <tr>
 
                             <td>' . $row["gnump"] . '</td>
@@ -100,7 +100,7 @@ $result = $connect->query($query);
 
 
                         </tr>
-                        </tbody>
+
                         ';
                     }
                     ?>
