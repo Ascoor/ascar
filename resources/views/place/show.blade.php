@@ -212,139 +212,129 @@
                                                                     placeholder="التاريخ المحدد" type="date"
                                                                     value="{{ $place->gnump10 }}"
                                                                     class="form-control datepicker">
-
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlTextarea1">الملاحظات
-                                                                    </label>
-                                                                    <textarea class="form-control" type="text"
-                                                                        name="gnump11"
-                                                                        rows="3">{{ $place->gnump11 }}</textarea>
-
-
-                                                                </div>
-
-
-                                                                <div class="form-group">
-
-                                                                    <label for="exampleFormControlInput1">الصور
-                                                                    </label>
-                                                                    <input type="file" name="photo1[]" multiple />
-                                                                </div>
-
-                                                                <div class="form-group">
-                                                                    <label for="exampleFormControlInput1">المرفقات
-                                                                    </label>
-                                                                    <input type="file" name="photo2[]"
-                                                                        class="form-control" multiple>
-                                                                </div>
-
                                                             </div>
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlInput1">المرفقات
+                                                                </label>
+                                                                <input type="file" name="photo2[]" class="form-control"
+                                                                    multiple>
+                                                            </div>
+
+                                                            <div class="form-group">
+
+                                                                <label for="exampleFormControlInput1">الصور
+                                                                </label>
+                                                                <input type="file" name="photo1[]" multiple>
+                                                            </div>
+
+
                                                         </div>
-
-                                                        <input dir="rtl" name="gnump10" placeholder="التاريخ المحدد"
-                                                            type="date" value="{{ $place->gnump10 }}"
-                                                            class="form-control datepicker">
                                                     </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleFormControlTextarea1">الملاحظات </label>
+                                                        <textarea class="form-control" type="text" name="gnump11"
+                                                            rows="3">{{ $place->gnump11 }}</textarea>
+
+
+                                                    </div>
+
+
+
+                                                    <div class="modal-footer">
+
+                                                        <div class="form-group">
+
+                                                            <button class="btn btn-danger" type="submit">حفظ</button>
+                                                        </div>
+                                                </form>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleFormControlTextarea1">الملاحظات </label>
-                                                <textarea class="form-control" type="text" name="gnump11"
-                                                    rows="3">{{ $place->gnump11 }}</textarea>
-
-
-                                            </div>
-
-
-                                            <div class="form-group">
-
-                                                <label for="exampleFormControlInput1">الصور </label>
-                                                <input type="file" name="photo1[]" multiple />
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="exampleFormControlInput1">المرفقات </label>
-                                                <input type="file" name="photo2[]" class="form-control" multiple>
-                                            </div>
-
-
-                                        </div>
-
-                                        <div class="modal-footer">
-
-                                            <div class="form-group">
-
-                                                <button class="btn btn-danger" type="submit">save</button>
-                                            </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="container">
+                        <div class="container">
 
-                            </div>
-                            <div class="card-body">
-                                <table class="table-info">
+                        </div>
+                        <div class="card-body">
+                            <table class="table-info">
 
-                                    <table border="1px">
-                                        <tr>
+                                <table border="1px">
+                                    <tr>
 
-                                            <th>مرفقات المتغير</th>
+                                        <th>مرفقات المتغير</th>
 
-                                            <th>مشاهدة
-                                            </th>
+                                        <th>مشاهدة
+                                        </th>
 
-                                            <th>تحميل
-                                            </th>
-                                        </tr>
-                                        @foreach ($data as $data )
+                                        <th>تحميل
+                                        </th>
+                                    </tr>
+                                    @foreach ($data as $data )
 
-                                        <tr>
+                                    <tr>
 
-                                            <td>{{$data->filename}}</td>
-                                            <td><a href="{{url('/view',$data->id)}}">مشاهدة </a>
-                                            </td>
-                                            <td><a href="{{url('/download',$data->filename)}}">تحميل</a>
-                                            </td>
-                                        </tr>
+                                        <td>{{$data->filename}}</td>
+                                        <td><a href="{{url('/view',$data->id)}}">مشاهدة </a>
+                                        </td>
+                                        <td><a href="{{url('/download',$data->filename)}}">تحميل</a>
+                                        </td>
+                                    </tr>
 
 
 
-                                        @endforeach
+                                    @endforeach
 
-                                    </table>
+                                </table>
 
-                            </div>
                         </div>
                 </div>
-                <center>
+            </div>
+            <center>
 
-                    <div class="card overflow-hidden">
-                        <div class="card-content">
-                            <div class="card-body cleartfix">
-                                <div class="media align-items-stretch">
-                                    <i class="icon-book-open primary font-large-2 float-left"></i>
-                                    <div class="media-body">
-                                        <div class="align-self-center">
+                <div class="card overflow-hidden">
+                    <div class="card-content">
+                        <div class="card-body cleartfix">
+                            <div class="media align-items-stretch">
+                                <i class="icon-book-open primary font-large-2 float-left"></i>
+                                <div class="media-body">
+                                    <div class="align-self-center">
 
-                                            <h1>تصنيف المتغير</h1>
-                                            @foreach ($categories as $category)
-                                            @if ($category->id == $place->category_id)
-                                            <option value="{{$category->id}}" selected>{{$category->name}}
-                                            </option>
+                                        <h1>تصنيف المتغير</h1>
+                                        @foreach ($categories as $category)
+                                        @if ($category->id == $place->category_id)
+                                        <option value="{{$category->id}}" selected>{{$category->name}}
+                                        </option>
 
 
-                                            @endif
+                                        @endif
 
-                                            @endforeach
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="card overflow-hidden">
+                    <div class="card-content">
+                        <div class="card-body cleartfix">
+                            <div class="media align-items-stretch">
+                                <i class="icon-pointer danger font-large-2 float-left"></i>
+                                <div class="media-body">
+                                    <div class="align-self-center">
+                                        <h1>خط العرض</h1>
+
+                                        <span>{{ $place->gnumh }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="card overflow-hidden">
                         <div class="card-content">
                             <div class="card-body cleartfix">
@@ -352,101 +342,29 @@
                                     <i class="icon-pointer danger font-large-2 float-left"></i>
                                     <div class="media-body">
                                         <div class="align-self-center">
-                                            <h1>خط العرض</h1>
+                                            <h1>خط الطول</h1>
 
-                                            <span>{{ $place->gnumh }}</span>
+                                            <span>{{ $place->gnumw }}</span>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-
-                        <div class="card overflow-hidden">
-                            <div class="card-content">
-                                <div class="card-body cleartfix">
-                                    <div class="media align-items-stretch">
-                                        <i class="icon-pointer danger font-large-2 float-left"></i>
-                                        <div class="media-body">
-                                            <div class="align-self-center">
-                                                <h1>خط الطول</h1>
-
-                                                <span>{{ $place->gnumw }}</span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                </center>
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-support primary font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                        <div class="align-self-center">
-                                            <div class="media-body text-left">
-                                                <h3 class="danger">المحافظة</h3>
-                                                <span>{{ $place->gnump1 }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-support primary font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                    </div>
-                                    <div class="media-body text-left">
-                                        <div class="align-self-center">
-                                            <h3 class="danger">المركز</h3>
-
-                                        </div>
-                                    </div>
-                                    <span>{{ $place->gnump2 }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-support primary font-large-2 float-left"></i>
-                                <div class="card-body">
-
-                                    <div class="media d-flex">
-                                    </div>
-                                    <div class="media-body text-left">
-                                        <div class="align-self-center">
-                                        </div>
-                                        <h3 class="danger">القرية</h3>
-                                        <span>{{ $place->gnump3 }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-support primary font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                        <div class="align-self-center">
-                                        </div>
+            </center>
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-support primary font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
                                         <div class="media-body text-left">
-                                            <h3 class="danger">نوع الأملاك</h3>
-                                            <span>{{ $place->gnump4 }}</span>
+                                            <h3 class="danger">المحافظة</h3>
+                                            <span>{{ $place->gnump1 }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -455,184 +373,238 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-direction danger font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                        <div class="media-body text-left">
-                                            <h3 class="danger">جهة الولاية</h3>
-                                            <span>{{ $place->gnump5 }}</span>
-                                        </div>
-                                        <div class="align-self-center">
-                                        </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-support primary font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                </div>
+                                <div class="media-body text-left">
+                                    <div class="align-self-center">
+                                        <h3 class="danger">المركز</h3>
+
                                     </div>
                                 </div>
+                                <span>{{ $place->gnump2 }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-direction danger font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                        <div class="media-body text-left">
-                                            <h3 class="danger">القانونية</h3>
-                                            <span>{{ $place->gnump6 }}</span>
-                                        </div>
-                                        <div class="align-self-center">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-direction danger font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                        <div class="media-body text-left">
-                                            <h3 class="danger">التاريخ</h3>
-                                            <span>{{ $place->gnump10 }}</span>
-                                        </div>
-                                        <div class="align-self-center">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card">
-                            <div class="card-content">
-                                <i class="icon-direction danger font-large-2 float-left"></i>
-                                <div class="card-body">
-                                    <div class="media d-flex">
-                                        <div class="media-body text-left">
-                                            <h3 class="danger">موقف الإزالة</h3>
-                                            <span>{{ $place->gnump9 }}</span>
-                                        </div>
-                                        <div class="align-self-center">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-support primary font-large-2 float-left"></i>
+                            <div class="card-body">
+
+                                <div class="media d-flex">
+                                </div>
+                                <div class="media-body text-left">
+                                    <div class="align-self-center">
+                                    </div>
+                                    <h3 class="danger">القرية</h3>
+                                    <span>{{ $place->gnump3 }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-support primary font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                    </div>
+                                    <div class="media-body text-left">
+                                        <h3 class="danger">نوع الأملاك</h3>
+                                        <span>{{ $place->gnump4 }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-direction danger font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3 class="danger">جهة الولاية</h3>
+                                        <span>{{ $place->gnump5 }}</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-direction danger font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3 class="danger">القانونية</h3>
+                                        <span>{{ $place->gnump6 }}</span>
+                                    </div>
+                                    <div class="align-self-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-direction danger font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3 class="danger">التاريخ</h3>
+                                        <span>{{ $place->gnump10 }}</span>
+                                    </div>
+                                    <div class="align-self-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <i class="icon-direction danger font-large-2 float-left"></i>
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3 class="danger">موقف الإزالة</h3>
+                                        <span>{{ $place->gnump9 }}</span>
+                                    </div>
+                                    <div class="align-self-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="media d-flex">
+                            <div class="media-body text-left">
+                                <div class="align-self-center">
+                                    <i class="icon-direction danger font-large-2 float-left"></i>
+                                </div>
+                                <h3 class="warning">الرد</h3>
+                                <span>{{ $place->gnump7 }}</span>
+                            </div>
+                        </div>
+                        <div class="progress mt-1 mb-0" style="height: 7px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%"
+                                aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
 
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
+                                    <i class="icon-direction danger font-large-2 float-left"></i>
                                     <div class="align-self-center">
-                                        <i class="icon-direction danger font-large-2 float-left"></i>
                                     </div>
-                                    <h3 class="warning">الرد</h3>
-                                    <span>{{ $place->gnump7 }}</span>
+                                    <h3 class="danger">تفاصيل الرد</h3>
+
+                                    <span>{{ $place->gnump8 }}</span>
+
+                                    <div class="progress mt-1 mb-0" style="height: 7px;">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
+                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="progress mt-1 mb-0" style="height: 7px;">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 100%"
-                                    aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
-                    </div>
 
 
 
-
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-body">
-                                <div class="media d-flex">
-                                    <div class="media-body text-left">
-                                        <i class="icon-direction danger font-large-2 float-left"></i>
-                                        <div class="align-self-center">
-                                        </div>
-                                        <h3 class="danger">تفاصيل الرد</h3>
-
-                                        <span>{{ $place->gnump8 }}</span>
-
-                                        <div class="progress mt-1 mb-0" style="height: 7px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
-                                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="media d-flex">
-                                            <div class="media-body text-left">
-                                                <div class="align-self-center">
-                                                    <i class="icon-direction danger font-large-2 float-left"></i>
-                                                </div>
-                                                <h3 class="danger"> الإجراء</h3>
-
-                                                @foreach ($tags as $item)
-                                                <span class=" warning">
-                                                    {{$item->tag}}
-
-                                                </span>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                        <div class="progress mt-1 mb-0" style="height: 7px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
-                                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <div class="media d-flex">
-                                            <i class="icon-direction success font-large-1 float-left"></i>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="media d-flex">
+                                        <div class="media-body text-left">
                                             <div class="align-self-center">
-                                                <h3 class="success">الملاحظات</h3>
-                                                <div class="media-body text-left">
-                                                    <span>{{ $place->gnump11 }}</span>
-                                                </div>
+                                                <i class="icon-direction danger font-large-2 float-left"></i>
+                                            </div>
+                                            <h3 class="danger"> الإجراء</h3>
 
+                                            @foreach ($tags as $item)
+                                            <span class=" warning">
+                                                {{$item->tag}}
+
+                                            </span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    <div class="progress mt-1 mb-0" style="height: 7px;">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%"
+                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="media d-flex">
+                                        <i class="icon-direction success font-large-1 float-left"></i>
+                                        <div class="align-self-center">
+                                            <h3 class="success">الملاحظات</h3>
+                                            <div class="media-body text-left">
+                                                <span>{{ $place->gnump11 }}</span>
                                             </div>
 
                                         </div>
 
-
-                                        <form method="POST" action="{{route('comments.store')}}">
-                                            @csrf
-
-                                            <div class="form-group">
-                                                <textarea type="text" name="desc" class="form-control"></textarea>
-                                                <input type="hidden" name="place_id" value="{{ $place->id }}"
-                                                    class="form-control">
-                                                <button type="submit" class="btn btn-primary">إضافة
-                                                    ملاحظة</button>
-                                        </form>
                                     </div>
-                                    @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
+
+
+                                    <form method="POST" action="{{route('comments.store')}}">
+                                        @csrf
+
+                                        <div class="form-group">
+                                            <textarea type="text" name="desc" class="form-control"></textarea>
+                                            <input type="hidden" name="place_id" value="{{ $place->id }}"
+                                                class="form-control">
+                                            <button type="submit" class="btn btn-primary">إضافة
+                                                ملاحظة</button>
+                                    </form>
                                 </div>
+                                @include('place.comments',['comments'=>$place->comments,'place_id'=>$place->id])
                             </div>
                         </div>
                     </div>
@@ -640,6 +612,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
 
@@ -748,6 +721,13 @@
 
 
 
-    </section>
 
-    @endsection
+
+
+
+
+
+
+</section>
+
+@endsection
