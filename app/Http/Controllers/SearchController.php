@@ -29,7 +29,7 @@ class SearchController extends Controller
                 ->orWhere('gnump3', 'LIKE', "%{$search}%")
                 ->orWhere('gnump4', 'LIKE', "%{$search}%");
         })
-            ->paginate(2000);
+            ->paginate(12000);
         $places->appends(['search' => $search]);
 
         return view('place.export')->with('places', $places)->with('categories', Category::all());
