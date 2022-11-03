@@ -39,25 +39,26 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                            </div>
-                            <form action="{{route('tag.store')}}" method="post" enctype="form-data">
 
+                                <form action="{{route('tag.store')}}" method="post" enctype="form-data">
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">الإجراء</label>
-
-                                    <input type="text" name="tag" class="form-control">
-
-
-
-
-                                    <div class="modal-footer">
-                                    </div>
 
                                     <div class="form-group">
+                                        <label for="exampleFormControlInput1">الإجراء</label>
 
-                                        <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
-                            </form>
+                                        <input type="text" name="tag" class="form-control">
+
+
+
+
+                                        <div class="modal-footer">
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <button class="btn btn-danger" class="form-group" type="submit">حفظ</button>
+                                        </div>
+                                </form>
             </section>
         </div>
     </div>
@@ -185,6 +186,8 @@
 
 
                 @endif
+
+
 
 
 
