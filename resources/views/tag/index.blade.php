@@ -14,13 +14,13 @@
     align-items: center;
     text-align: center;">
             <h3 class="display-8">جميع الإجراءات</h3>
+
+
+            <button type="button" href="{{route('tag.create')}}" class="btn btn-warning btn-lg btn-block"
+                data-toggle="modal" data-target="#exampleModal">
+                إضافة إجراء
+            </button>
         </div>
-
-
-        <button type="button" href="{{route('tag.create')}}" class="btn btn-warning btn-lg btn-block"
-            data-toggle="modal" data-target="#exampleModal">
-            إضافة إجراء
-        </button>
 
         <div class="grey-bg container-fluid">
             <section id="minimal-statistics">
@@ -185,6 +185,7 @@
 
 
                 @endif
+
 
 
 

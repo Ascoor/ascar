@@ -14,10 +14,8 @@
     align-items: center;
     text-align: center;">
                 إدارة التصنيفات
-            </div>
-            <div class="card">
 
-                <button type="button" href="{{route('categorys.create')}}" class="btn btn-warning btn-lg"
+                <button type="button" href="{{route('categorys.create')}}" class="btn btn-warning btn-lg btn-block"
                     data-toggle="modal" data-target="#exampleModal">
                     إضافة تصنيف
                 </button>
@@ -31,6 +29,7 @@
                 @if(session('status'))
                 <div class="alert alert-warning" role="alert">
                     {{ session('status') }}
+
                     @endif
 
                     <div class="grey-bg container-fluid">
@@ -79,69 +78,70 @@
                             </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
 
 
-        <div class="card">
-
-            <div class="card-body">
-
-                <table id="example" class=" table-striped " style="width:100%">
-                    <thead class="thead text-white" style=" background-color:#153257">
-                        <tr>
-                            <th scope="col">مسلسل</th>
-                            <th scope="col">التصنيف</th>
 
 
+                <div class="card-body">
 
-                            <th scope="col"> التحكم
+                    <table id="example" class=" table-striped " style="width:100%">
+                        <thead class="thead text-white" style=" background-color:#153257">
+                            <tr>
+                                <th scope="col">مسلسل</th>
+                                <th scope="col">التصنيف</th>
 
-                            </th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                        $i = 1;
-                        @endphp
-                        @if ($categorys->count() > 0 )
-                        @foreach ($categorys as $item)
-                        <tr>
-                            <th scope="row">{{$i++}}</th>
-                            <td>{{$item->name}}</td>
 
-                            <td>
-                                <a class="btn-success btn-lg" href="{{route('categorys.edit',$item->id)}}">تعديل</a>
+                                <th scope="col"> التحكم
 
-                            </td>
-                            <!-- <td>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $i = 1;
+                            @endphp
+                            @if ($categorys->count() > 0 )
+                            @foreach ($categorys as $item)
+                            <tr>
+                                <th scope="row">{{$i++}}</th>
+                                <td>{{$item->name}}</td>
+
+                                <td>
+                                    <a class="btn-success btn-md" href="{{route('categorys.edit',$item->id)}}">تعديل</a>
+
+                                </td>
+                                <!-- <td>
 
                             <a class=" btn btn-ask1" href="{{route('softCategory.delete',['id'=>$item->id])}}">حذف</a>
 
                         </td> -->
 
-                        </tr>
-                        @endforeach
+                            </tr>
+                            @endforeach
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
-            </div>
-            @else
-            <div class="col">
-                <div class="alert alert-danger" role="alert">
-                    Not tags
+
+
                 </div>
             </div>
-
-            @endif
+        </div>
+        @else
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                Not tags
+            </div>
         </div>
 
+        @endif
     </div>
 
+</div>
 
 
 
@@ -282,4 +282,28 @@
 
 
 
-    @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endsection
