@@ -104,7 +104,7 @@ $result = $connect->query($query);
                         ';
                     }
                     ?>
-
+                    {!! $places->links() !!}
                 </table>
             </div>
         </div>
