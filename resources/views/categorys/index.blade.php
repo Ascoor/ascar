@@ -58,18 +58,18 @@
                                                     <label for="exampleFormControlInput1">التصنيف</label>
 
                                                     <input type="text" name="name" class="form-control">
+                                                </div>
 
 
 
+                                                <div class="modal-footer">
 
-                                                    <div class="modal-footer">
 
+                                                    <div class="form-group">
 
-                                                        <div class="form-group">
-
-                                                            <button class="btn btn-danger" class="form-group"
-                                                                type="submit">حفظ</button>
-                                                        </div>
+                                                        <button class="btn btn-danger" class="form-group"
+                                                            type="submit">حفظ</button>
+                                                    </div>
 
                                             </form>
                                         </div>
@@ -77,71 +77,74 @@
                                 </div>
                             </div>
                     </div>
-                </div>
 
 
 
 
 
 
-                <div class="card-body">
-
-                    <table id="example" class=" table-striped " style="width:100%">
-                        <thead class="thead text-white" style=" background-color:#153257">
-                            <tr>
-                                <th scope="col">مسلسل</th>
-                                <th scope="col">التصنيف</th>
 
 
+                    <div class="card-body">
 
-                                <th scope="col"> التحكم
+                        <table id="example" class=" table-striped " style="width:100%">
+                            <thead class="thead text-white" style=" background-color:#153257">
+                                <tr>
+                                    <th scope="col">مسلسل</th>
+                                    <th scope="col">التصنيف</th>
 
-                                </th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php
-                            $i = 1;
-                            @endphp
-                            @if ($categorys->count() > 0 )
-                            @foreach ($categorys as $item)
-                            <tr>
-                                <th scope="row">{{$i++}}</th>
-                                <td>{{$item->name}}</td>
 
-                                <td>
-                                    <a class="btn-success btn-sm" href="{{route('categorys.edit',$item->id)}}">تعديل</a>
+                                    <th scope="col"> التحكم
 
-                                </td>
-                                <!-- <td>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                $i = 1;
+                                @endphp
+                                @if ($categorys->count() > 0 )
+                                @foreach ($categorys as $item)
+                                <tr>
+                                    <th scope="row">{{$i++}}</th>
+                                    <td>{{$item->name}}</td>
+
+                                    <td>
+                                        <a class="btn-success btn-sm"
+                                            href="{{route('categorys.edit',$item->id)}}">تعديل</a>
+
+                                    </td>
+                                    <!-- <td>
 
                             <a class=" btn btn-ask1" href="{{route('softCategory.delete',['id'=>$item->id])}}">حذف</a>
 
                         </td> -->
 
-                            </tr>
-                            @endforeach
+                                </tr>
+                                @endforeach
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
 
 
 
+                    </div>
                 </div>
             </div>
-        </div>
-        @else
-        <div class="col">
-            <div class="alert alert-danger" role="alert">
-                Not tags
+            @else
+            <div class="col">
+                <div class="alert alert-danger" role="alert">
+                    Not tags
+                </div>
             </div>
+
+            @endif
         </div>
 
-        @endif
     </div>
 
-</div>
 
 
 
@@ -307,4 +310,7 @@
 
 
 
-@endsection
+
+
+
+    @endsection
